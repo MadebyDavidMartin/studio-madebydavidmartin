@@ -3,7 +3,7 @@
 //  - studio.*  : the studio site, as before.
 //  - fizola.*  : the Fizola Cola brand page (public/fizola-site/index.html),
 //                plus the shared images, video and fonts it uses.
-const ASSET = /\.(css|js|jpe?g|png|svg|webp|gif|mp4|ico|woff2?|pdf)$/i;
+const ASSET = /\.(css|js|jpe?g|png|svg|webp|gif|mp4|mp3|ico|woff2?|pdf)$/i;
 const LEGACY = {
   "/fizzypop": "/fizola",
   "/fizzypop.html": "/fizola",

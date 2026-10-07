@@ -77,6 +77,19 @@ a{color:inherit}
 .b-role{font:400 14px/1.3 'Righteous',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#3A1F14;margin:0 0 16px}
 .b-bio p{font-size:17px;line-height:1.7;margin:0 0 14px}
 .b-bio .b-kick{font:400 13px/1.3 'Righteous',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#E8742A;margin:0}
+.b-song{background:#F2B630;box-shadow:0 0 0 100vmax #F2B630;clip-path:inset(0 -100vmax);padding:clamp(40px,5vw,64px) 0}
+.b-song-in{display:grid;grid-template-columns:220px 1fr;gap:clamp(24px,4vw,52px);align-items:center;max-width:920px;margin:0 auto}
+@media(max-width:700px){.b-song-in{grid-template-columns:1fr;text-align:center}.b-disc{margin:0 auto}.b-song .b-btns{justify-content:center}}
+.b-disc{width:220px;height:220px;border-radius:50%;background:repeating-radial-gradient(circle at 50% 50%,#2A1712 0 2px,#3A1F14 2px 5px);box-shadow:0 18px 40px rgba(58,31,20,.4);display:flex;align-items:center;justify-content:center;animation:spin 9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.b-disc-label{width:96px;height:96px;border-radius:50%;background:#FFF1D6;display:flex;align-items:center;justify-content:center;border:4px solid #D7392B}
+.b-disc-label img{width:76px;height:auto}
+.b-song-eyebrow{font:400 13px/1.3 'Righteous',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#3A1F14;margin:0 0 8px}
+.b-song h2{font-family:'Shrikhand',serif;font-weight:400;font-size:clamp(30px,4vw,46px);line-height:1.1;margin:0 0 12px;color:#D7392B}
+.b-song p{margin:0 0 16px;font-size:17px;line-height:1.6;color:#3A1F14}
+.b-song audio{width:100%;max-width:460px;display:block}
+@media(max-width:700px){.b-song audio{margin:0 auto}}
+.btn-gold{background:#D7392B;color:#FFF1D6;box-shadow:4px 4px 0 #3A1F14}
 /* footer */
 .b-foot{background:#D7392B;color:#FFF1D6;box-shadow:0 0 0 100vmax #D7392B;clip-path:inset(0 -100vmax);padding:clamp(40px,5vw,64px) 0 28px;text-align:center}
 .b-foot img{height:64px;width:auto;margin:0 auto 18px;display:block}
@@ -89,7 +102,7 @@ a{color:inherit}
 :root{--fz-red:#D7392B;--fz-red-deep:#B42C20;--fz-orange:#E8742A;--fz-gold:#F2B630;--fz-cola:#3A1F14;--fz-cream:#FFF1D6;--fz-peach:#FCE3C2}
 .fz-display{font-family:'Shrikhand',serif;font-weight:400;letter-spacing:0}
 .fz-hero{background:var(--fz-red);color:#fff;position:relative;isolation:isolate;box-shadow:0 0 0 100vmax var(--fz-red);clip-path:inset(0 -100vmax)}
-.fz-hero::before{content:"";position:absolute;inset:0 -100vmax;z-index:-1;background:linear-gradient(180deg,rgba(215,57,43,.72) 0%,rgba(58,31,20,.88) 100%),url("img/fizola/s04.jpg") center 40%/cover no-repeat}
+.fz-hero::before{content:"";position:absolute;inset:0 -100vmax;z-index:-1;background:linear-gradient(180deg,rgba(215,57,43,.72) 0%,rgba(58,31,20,.88) 100%),url("/img/fizola/s04.jpg") center 40%/cover no-repeat}
 .fz-hero-in{padding:clamp(28px,4vw,54px) 0 clamp(36px,5vw,64px);text-align:center}
 .fz-hero-logo{width:min(440px,78vw);height:auto;display:block;margin:0 auto 26px;filter:drop-shadow(0 6px 14px rgba(58,31,20,.35))}
 .fz-hero h1{font-size:clamp(46px,8vw,108px);line-height:1.05;margin:30px 0 16px;color:var(--fz-cream);text-shadow:3px 3px 0 var(--fz-gold),6px 6px 0 var(--fz-orange),9px 9px 0 var(--fz-cola)}
@@ -97,9 +110,6 @@ a{color:inherit}
 .fz-player{max-width:680px;margin:0 auto;border-radius:18px;overflow:hidden;box-shadow:0 24px 70px rgba(58,31,20,.45);border:6px solid var(--fz-cream)}
 .fz-player video{display:block;width:100%;aspect-ratio:16/9;background:var(--fz-cola)}
 .fz-fine{margin:18px 0 0;font-size:13.5px;color:rgba(255,255,255,.85)}
-.fz-orivex-thumb{display:block;max-width:340px;border-radius:14px;overflow:hidden;border:1px solid var(--line);text-decoration:none;margin:20px 0 22px;background:#fff}
-.fz-orivex-thumb img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
-.fz-orivex-thumb span{display:block;padding:10px 14px;font:600 12px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
 .fz-sec{padding-block:clamp(40px,5vw,72px);position:relative;background:#fff;box-shadow:0 0 0 100vmax #fff;clip-path:inset(0 -100vmax)}
 .fz-sec-head{max-width:720px;margin-bottom:30px}
 .fz-kicker{font:600 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--fz-red);margin:0 0 10px}
@@ -169,32 +179,31 @@ a{color:inherit}
 <header class="bh"><div class="wrap bh-in"><a class="bh-logo" href="#top" aria-label="Fizola Cola, back to top"><img src="/img/fizola/FZ_logo_red.png" alt="Fizola Cola" width="900" height="421"></a><nav aria-label="Fizola"><a href="#ad">The ad</a><a href="#cola">The cola</a><a href="#making">Behind the ad</a><a href="#director">The director</a><a class="cta" href="#ad">Watch the ad</a></nav></div></header>
 <main id="main"><span id="top"></span>
 
-<section class="b-hero">
-  <div class="wrap b-hero-in">
-    <div>
-      <p class="b-eyebrow">Ice-cold sunshine cola</p>
-      <h1>Turn on the sunshine.</h1>
-      <p class="lede">Some afternoons go flat. Fizola brings the colour back. Crack a cold can, pour it over ice, and let the whole street light up with you.</p>
-      <div class="b-btns"><a class="btn btn-cream" href="#ad">Watch the ad</a><a class="btn btn-line" href="#cola">Meet the can</a></div>
-    </div>
-    <div class="b-hero-art">
-      <img src="/img/fizola/s09.jpg" alt="A can of Fizola Cola floating among ice cubes and bubbles on a gold background" width="1280" height="714">
-      <div class="sticker" aria-hidden="true"><small>A PARTY IN</small><b>every sip</b></div>
-    </div>
-  </div>
-</section>
-
-<section class="b-ad" id="ad">
-  <div class="wrap">
-    <h2 class="b-title">The new Fizola ad.</h2>
-    <p class="b-sub">Thirty seconds of summer on Maple Street. Sound on.</p>
-    <figure class="b-player" style="margin:0 auto">
-      <video controls playsinline preload="metadata" poster="/video/fizola-poster.jpg" aria-label="Fizola Cola, Turn on the sunshine, a 30-second commercial">
+<section class="fz-hero" id="ad">
+  <div class="wrap fz-hero-in">
+    <img class="fz-hero-logo" src="/img/fizola/FZ_logo_cream.png" alt="Fizola Cola logo" width="900" height="421">
+    <figure class="fz-player" style="margin:0 auto">
+      <video controls playsinline preload="metadata" poster="/video/fizola-poster.jpg" aria-label="Fizola Cola, a 30-second commercial">
         <source src="/video/fizola.mp4" type="video/mp4">
         Your browser can&rsquo;t play this video. <a href="/video/fizola.mp4">Download the MP4</a>.
       </video>
     </figure>
-    <p class="b-cap">Fizola Cola &middot; &ldquo;Turn on the sunshine&rdquo; &middot; 30 seconds</p>
+    <h1 class="fz-display">Turn on the sunshine.</h1>
+    <p class="fz-lede">A 30-second commercial for a 1970s cola. Brand, story, song, visual direction and edit, directed end to end. No cameras. No studio. One faded summer afternoon, brought back to colour.</p>
+    <p class="fz-fine">Spec commercial. Fizola is a fictional brand.</p>
+  </div>
+</section>
+
+<section class="b-song" id="song">
+  <div class="wrap b-song-in">
+    <div class="b-disc" aria-hidden="true"><div class="b-disc-label"><img src="/img/fizola/FZ_logo_red.png" alt=""></div></div>
+    <div class="b-song-body">
+      <p class="b-song-eyebrow">The song from the ad &middot; Full length</p>
+      <h2>&ldquo;Turn On The Sunshine&rdquo;</h2>
+      <p>Heard it in the ad and can&rsquo;t stop humming? Here&rsquo;s the whole thing. Fifty-five seconds of 1970s funk, soul and disco, with slap bass, horn stabs and a chorus built for the summer crowd.</p>
+      <audio controls preload="none" src="/audio/fizola-turn-on-the-sunshine.mp3" aria-label="Turn On The Sunshine, the Fizola song, full length"></audio>
+      <div class="b-btns" style="margin-top:16px"><a class="btn btn-gold" href="/audio/fizola-turn-on-the-sunshine.mp3" download="Fizola - Turn On The Sunshine.mp3">Download the song (MP3)</a></div>
+    </div>
   </div>
 </section>
 
@@ -224,32 +233,10 @@ a{color:inherit}
   </div>
 </section>
 
-<section class="fz-sec">
-  <div class="wrap">
-    <div class="fz-sec-head">
-      <p class="fz-kicker">01 &middot; The backstory</p>
-      <h2>The opposite test.</h2>
-    </div>
-    <div class="fz-body">
-      <p>ORIVEX ARC-7 was a technical product film. Precision, narration, a sterile lab, a robotic arm. It proved the pipeline could direct something exact.</p>
-      <a class="fz-orivex-thumb" href="https://studio.madebydavidmartin.com/video#orivex">
-        <img src="/video/orivex-poster.jpg" alt="ORIVEX ARC-7: a robotic arm in a sterile lab, from the AI-directed product film" loading="lazy">
-        <span>ORIVEX ARC-7 &middot; the first test &rarr;</span>
-      </a>
-      <p>Fizola is the opposite test.</p>
-      <p>A soda commercial. Character, colour, music and nostalgia.</p>
-      <p>Same AI-assisted production pipeline. A completely different creative problem.</p>
-      <p>The question was simple: <b>can an AI-assisted production make a 1970s-style TV spot that feels like a summer you remember?</b></p>
-      <p>The goal was a real commercial, with a brand you could believe had always existed and a song you might find yourself humming afterward.</p>
-      <p>So I invented a cola, gave it a summer, and directed the entire spot without a camera.</p>
-    </div>
-  </div>
-</section>
-
 <section class="fz-sec fz-band-cream">
   <div class="wrap">
     <div class="fz-sec-head">
-      <p class="fz-kicker">02 &middot; The brand</p>
+      <p class="fz-kicker">01 &middot; The brand</p>
       <h2 class="fz-display">Built to feel remembered.</h2>
     </div>
     <div class="fz-body">
@@ -281,7 +268,7 @@ a{color:inherit}
 <section class="fz-sec">
   <div class="wrap">
     <div class="fz-sec-head">
-      <p class="fz-kicker">03 &middot; The world</p>
+      <p class="fz-kicker">02 &middot; The world</p>
       <h2>Lock the world before you shoot it.</h2>
     </div>
     <div class="fz-body">
@@ -292,7 +279,7 @@ a{color:inherit}
       <p>The location is a fictional residential street called Maple Street. Brick townhouses in mint, peach and butter yellow. Front stoops with potted geraniums. A corner store with a red-and-white striped awning. A red fire hydrant.</p>
       <p>Every detail supports the same feeling: <b>a hot, slightly boring summer afternoon that is about to become something else.</b></p>
       <h3 class="fz-sub">The consistency system</h3>
-      <p>Generative video becomes difficult when the world keeps changing underneath the story. So I used the same consistency system developed for ORIVEX. Four master references: the can, Juno&rsquo;s portrait, Juno full body, and Maple Street.</p>
+      <p>Generative video becomes difficult when the world keeps changing underneath the story. So I used the consistency system I use on every AI production. Four master references: the can, Juno&rsquo;s portrait, Juno full body, and Maple Street.</p>
       <p>Each reference received one canonical description, repeated word for word across the prompts. Each shot had an approved keyframe before motion was generated. The logo was attached as an image ingredient so the model reproduced the actual lettering instead of inventing a new version. Every can in the film inherits that same master reference.</p>
     </div>
     <div class="refgrid">
@@ -307,7 +294,7 @@ a{color:inherit}
 <section class="fz-sec fz-band-peach">
   <div class="wrap">
     <div class="fz-sec-head">
-      <p class="fz-kicker">04 &middot; The idea</p>
+      <p class="fz-kicker">03 &middot; The idea</p>
       <h2 class="fz-display">Colour is the story.</h2>
     </div>
     <div class="fz-body">
@@ -323,7 +310,7 @@ a{color:inherit}
 <section class="fz-sec">
   <div class="wrap">
     <div class="fz-sec-head">
-      <p class="fz-kicker">05 &middot; The nine shots</p>
+      <p class="fz-kicker">04 &middot; The nine shots</p>
       <h2>One idea per shot.</h2>
     </div>
     <div class="fz-body">
@@ -347,7 +334,7 @@ a{color:inherit}
 <section class="fz-sec fz-band-cola">
   <div class="wrap">
     <div class="fz-sec-head">
-      <p class="fz-kicker">06 &middot; The song</p>
+      <p class="fz-kicker">05 &middot; The song</p>
       <h2 class="fz-display">A cola needs a song.</h2>
     </div>
     <div class="fz-body">
@@ -373,7 +360,7 @@ a{color:inherit}
 <section class="fz-sec">
   <div class="wrap">
     <div class="fz-sec-head">
-      <p class="fz-kicker">07 &middot; The edit</p>
+      <p class="fz-kicker">06 &middot; The edit</p>
       <h2>Cut on the beat. Keep it honest.</h2>
     </div>
     <div class="fz-body">
@@ -398,7 +385,7 @@ a{color:inherit}
 <section class="fz-sec">
   <div class="wrap">
     <div class="fz-sec-head">
-      <p class="fz-kicker">08 &middot; The pipeline</p>
+      <p class="fz-kicker">07 &middot; The pipeline</p>
       <h2>The same machine. A different film.</h2>
     </div>
     <div class="fz-body">
