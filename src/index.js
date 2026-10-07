@@ -5,9 +5,8 @@
 //                plus the shared images, video and fonts it uses.
 const ASSET = /\.(css|js|jpe?g|png|svg|webp|gif|mp4|mp3|ico|woff2?|pdf)$/i;
 const LEGACY = {
-  "/fizzypop": "/fizola",
-  "/fizzypop.html": "/fizola",
-  "/files/fizzy-pop-press-kit.pdf": "/fizola",
+  "/fizola": "/fizzypop",
+  "/fizola.html": "/fizzypop",
   "/lab": "/method#lab",
   "/lab.html": "/method#lab",
 };
