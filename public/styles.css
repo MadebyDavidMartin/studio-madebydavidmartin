@@ -1215,3 +1215,6 @@ h1,h2{font-family:"Clash Display","Geist",sans-serif;letter-spacing:-.018em}
 .head-in .nav{order:4}
 @media (max-width:999px){.head-in .course-btn{order:2;margin-left:auto}.head-in .menu-btn{order:3;margin-left:8px}.head-in .nav{order:6}}
 @media (max-width:420px){.head-in .course-btn small{display:none}.head-in .course-btn{padding:8px 11px}}
+
+.nav a.nav-course{display:none}
+@media (max-width:560px){.head-in .course-btn{display:none}.nav a.nav-course{display:block;color:#fff;background:#1D5AA6;margin-top:6px;text-align:left}}
