@@ -8,6 +8,8 @@ const LEGACY = {
   "/fizzypop": "/fizola",
   "/fizzypop.html": "/fizola",
   "/files/fizzy-pop-press-kit.pdf": "/fizola",
+  "/lab": "/method#lab",
+  "/lab.html": "/method#lab",
 };
 
 export default {
