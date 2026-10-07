@@ -120,6 +120,8 @@ body{overflow-x:hidden}
 .fx-song audio{width:100%;display:block;margin-top:6px}
 .fx-song .btn{margin-top:14px}
 .btn-fz{background:var(--fz-gold);color:var(--cola)}
+.btn-fp{background:#fff;color:var(--fp-deep)}
+.fx-song{display:flex;flex-direction:column}.fx-song audio{margin-top:auto}.fx-song .btn{align-self:flex-start}
 /* brands */
 .fx-brands{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 @media(max-width:860px){.fx-brands{grid-template-columns:1fr}}
@@ -405,10 +407,12 @@ main .btn,.x-foot .btn{border-radius:999px!important}
     <div class="fx-songs">
       <div class="fx-song fp">
         <h3 class="fp-type">Fizzy Pop!</h3>
-        <p class="meta">Jingle &middot; 116 BPM &middot; 68 seconds</p>
+        <p class="meta">Jingle &middot; 116 BPM &middot; 68 seconds &middot; Full length below</p>
         <p>The first plan was a voiceover over an instrumental. It needed a jingle instead. A 1970s TV jingle crossed with modern funk-pop: bright female lead, gang vocals on the hook, handclaps, slap bass, brass stabs, wah guitar, glockenspiel and a whistle.</p>
         <div class="fx-lyric"><p>Fizzy Pop, Fizzy Pop! Cherry cola, crack the top. Turn it up for the summer crowd. Fizzy Pop&hellip; open loud!</p></div>
         <p>The trick is a gap. The intro is sleepy, then one beat of silence. The can crack lands at 9.25 seconds and the drop at 9.61, so the sound lives inside the gap rather than on top of the music.</p>
+        <audio controls preload="none" src="/audio/fizzy-pop.mp3" aria-label="Fizzy Pop, the jingle, full length"></audio>
+        <a class="btn btn-fp" href="/audio/fizzy-pop.mp3" download="Fizzy Pop - Open Loud.mp3">Download the jingle (MP3)</a>
       </div>
       <div class="fx-song fz">
         <h3 class="fz-type">Fizola</h3>
