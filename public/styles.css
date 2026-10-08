@@ -1223,3 +1223,8 @@ h1,h2{font-family:"Clash Display","Geist",sans-serif;letter-spacing:-.018em}
 .mark-logo{padding:4px 0}
 .mark-logo img{display:block;height:44px;width:auto}
 @media(max-width:560px){.mark-logo img{height:38px}}
+
+/* MYRA ownership line under company videos */
+.yt-wrap{display:grid;gap:0;align-content:start}
+.myra-credit{font:500 12px/1.45 var(--mono);letter-spacing:.02em;opacity:.72;margin:8px 0 0;color:inherit}
+.fc-body .myra-credit,.vid-cell .myra-credit{margin-top:10px}
