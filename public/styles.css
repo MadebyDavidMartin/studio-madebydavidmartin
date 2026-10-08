@@ -1274,7 +1274,8 @@ h1,h2{font-family:"Clash Display","Geist",sans-serif;letter-spacing:-.018em}
 .foot-fine{color:#5C4F3A}
 
 /* hero: semi-transparent photo backgrounds (Oct 2026) */
-.cine::after,.band.slate.has-banner::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.16;background-size:cover;background-position:center;background-repeat:no-repeat}
+.cine::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.16;background-size:cover;background-position:center;background-repeat:no-repeat}
+.band.slate.has-banner::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.28;background-size:cover;background-position:center;background-repeat:no-repeat}
 .cine>* ,.band.slate.has-banner>*{position:relative;z-index:1}
 .cine::after{background-image:url(/img/hero-home.jpg)}
 .banner-work::after{background-image:url(/img/hero-work.jpg)}
