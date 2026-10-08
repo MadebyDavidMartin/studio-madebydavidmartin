@@ -8,6 +8,18 @@
 .cs8>div{padding:12px 0}
 .fn a{padding:14px 0}
 .flowline{margin:0 0 14px}
+
+/* ===== Work hero wall (Oct 2026) ===== */
+.workwall{position:relative;height:400px;overflow:hidden;transform:rotate(-2deg) translate(calc(var(--mx,0px)*.6),calc(var(--my,0px)*.6));-webkit-mask-image:linear-gradient(transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(transparent,#000 10%,#000 90%,transparent)}
+.ww-row{display:flex;gap:14px;width:max-content;margin-bottom:14px;animation:wwScroll 32s linear infinite}
+.ww-row.rev{animation:wwScrollRev 38s linear infinite}
+.ww-card{position:relative;width:216px;flex:none;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.2);box-shadow:0 16px 36px rgba(0,0,0,.35)}
+.ww-card img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.ww-card span{position:absolute;left:0;right:0;bottom:0;padding:20px 12px 8px;font-size:11px;font-weight:700;letter-spacing:.08em;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.78))}
+@keyframes wwScroll{to{transform:translateX(-50%)}}
+@keyframes wwScrollRev{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+@media(max-width:520px){.workwall{height:330px}.ww-card{width:180px}}
+@media(prefers-reduced-motion:reduce){.ww-row{animation:none}}
 </style></head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="head-in"><a class="mark mark-logo" href="./" aria-label="madebydavidmartin, home"><img src="/img/logo-madebydavidmartin@2x.png" srcset="/img/logo-madebydavidmartin@2x.png 2x, /img/logo-madebydavidmartin@3x.png 3x" alt="madebydavidmartin" width="131" height="44"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span></span>Menu</button><nav class="nav" id="site-nav" aria-label="Main"><a href="./">Home</a><a href="work.html" aria-current="page">Work</a><a href="method.html">Method</a><a href="video.html">Video</a><a href="orivex.html">ORIVEX</a><a href="fizzypop.html">Fizzy Pop!</a><a href="djc.html">DJC</a><a href="about.html">About</a><a class="nav-course" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair course</a></nav><a class="course-btn" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener"><span class="cb-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span><span class="cb-tx"><b>Director&rsquo;s Chair</b><small>AI enablement course</small></span></a></div></header><main class="wrap" id="main">
 <style>
 .fws{font-size:clamp(28px,4.4vw,54px);line-height:1.14;font-weight:600;letter-spacing:-.015em;max-width:22ch;margin:0 0 18px}
@@ -35,14 +47,38 @@
 </style>
 
 <section class="band slate has-banner banner-work">
-  <div class="slate-in">
-    <div class="slate-main">
+  <div class="slate-in ph-hero">
+    <div class="slate-main ph-copy">
       <span class="slate-kicker">Selected work</span>
       <h1>Campaigns, brand, content.</h1>
       <p class="lede">Video is the specialty. The same directing philosophy runs through campaigns, brand systems and content ecosystems.</p>
       <div class="btns"><a class="btn btn-primary" href="video.html">Video / Film</a><a class="btn btn-ghost" href="method.html#lab">The Lab</a></div>
     </div>
-    <dl class="credits">
+    <div class="ph-visual" id="phVisualWork">
+      <div class="workwall" aria-hidden="true">
+        <div class="ww-row">
+          <div class="ww-card"><img src="/video/orivex-poster.jpg" alt="" loading="lazy"><span>ORIVEX</span></div>
+          <div class="ww-card"><img src="/img/fizzypop/s05-party.jpg" alt="" loading="lazy"><span>Fizzy Pop</span></div>
+          <div class="ww-card"><img src="/video/fizola-poster.jpg" alt="" loading="lazy"><span>Fizola</span></div>
+          <div class="ww-card"><img src="/img/fizola/s03.jpg" alt="" loading="lazy"><span>Fizola</span></div>
+          <div class="ww-card"><img src="/video/orivex-poster.jpg" alt="" loading="lazy"><span>ORIVEX</span></div>
+          <div class="ww-card"><img src="/img/fizzypop/s05-party.jpg" alt="" loading="lazy"><span>Fizzy Pop</span></div>
+          <div class="ww-card"><img src="/video/fizola-poster.jpg" alt="" loading="lazy"><span>Fizola</span></div>
+          <div class="ww-card"><img src="/img/fizola/s03.jpg" alt="" loading="lazy"><span>Fizola</span></div>
+        </div>
+        <div class="ww-row rev">
+          <div class="ww-card"><img src="/video/fizzypop-poster.jpg" alt="" loading="lazy"><span>Fizzy Pop</span></div>
+          <div class="ww-card"><img src="/img/orivex/r3.jpg" alt="" loading="lazy"><span>ORIVEX</span></div>
+          <div class="ww-card"><img src="/img/fizzypop/s09-float.jpg" alt="" loading="lazy"><span>Fizzy Pop</span></div>
+          <div class="ww-card"><img src="/video/promo-poster.jpg" alt="" loading="lazy"><span>Promo</span></div>
+          <div class="ww-card"><img src="/video/fizzypop-poster.jpg" alt="" loading="lazy"><span>Fizzy Pop</span></div>
+          <div class="ww-card"><img src="/img/orivex/r3.jpg" alt="" loading="lazy"><span>ORIVEX</span></div>
+          <div class="ww-card"><img src="/img/fizzypop/s09-float.jpg" alt="" loading="lazy"><span>Fizzy Pop</span></div>
+          <div class="ww-card"><img src="/video/promo-poster.jpg" alt="" loading="lazy"><span>Promo</span></div>
+        </div>
+      </div>
+    </div>
+    <dl class="credits ph-credits">
       <div><dt>Scope</dt><dd>Campaigns, brand systems, content, proposals</dd></div>
       <div><dt>Context</dt><dd>11 years inside a technology company</dd></div>
     </dl>
@@ -96,4 +132,6 @@
 </section>
 
 <section class="band cta-band-white"><div class="cta-in"><div><h2>More in the archive.</h2><p>Campaign work, brand systems and content, available on request.</p></div><a class="btn btn-primary" href="contact.html">Get in touch &rarr;</a></div></section>
-</main><footer class="foot" id="contact"><div class="wrap foot-in"><div class="foot-brand"><a class="mark" href="./"><span>David Martin<small>Creative Professional</small></span></a><p class="foot-tag">Directed work, at every scale.</p></div><div class="foot-cta"><h2>Thanks for visiting.</h2><p>If something here is useful to you or your team, I would be glad to hear about it.</p><div class="btns"><a class="btn btn-light" href="mailto:david.angus.martin@gmail.com">Email me</a><a class="btn btn-ghost" href="https://www.linkedin.com/in/david-martin-7a246522" target="_blank" rel="noopener">Connect on LinkedIn</a></div></div><nav class="foot-nav" aria-label="Footer"><a href="./">Home</a><a href="work.html" aria-current="page">Work</a><a href="method.html">Method</a><a href="video.html">Video</a><a href="orivex.html">ORIVEX</a><a href="fizzypop.html">Fizzy Pop!</a><a href="djc.html">DJC</a><a href="about.html">About</a><a href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair course</a></nav><p class="foot-fine">This is a personal portfolio. &copy; 2026 David Martin.</p></div></footer><script src="script.js?v=c1004"></script></body></html>
+</main><footer class="foot" id="contact"><div class="wrap foot-in"><div class="foot-brand"><a class="mark" href="./"><span>David Martin<small>Creative Professional</small></span></a><p class="foot-tag">Directed work, at every scale.</p></div><div class="foot-cta"><h2>Thanks for visiting.</h2><p>If something here is useful to you or your team, I would be glad to hear about it.</p><div class="btns"><a class="btn btn-light" href="mailto:david.angus.martin@gmail.com">Email me</a><a class="btn btn-ghost" href="https://www.linkedin.com/in/david-martin-7a246522" target="_blank" rel="noopener">Connect on LinkedIn</a></div></div><nav class="foot-nav" aria-label="Footer"><a href="./">Home</a><a href="work.html" aria-current="page">Work</a><a href="method.html">Method</a><a href="video.html">Video</a><a href="orivex.html">ORIVEX</a><a href="fizzypop.html">Fizzy Pop!</a><a href="djc.html">DJC</a><a href="about.html">About</a><a href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair course</a></nav><p class="foot-fine">This is a personal portfolio. &copy; 2026 David Martin.</p></div></footer><script>
+(function(){var v=document.getElementById('phVisualWork');if(!v)return;if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;var hero=v.closest('section');var raf=null;function set(e){var r=v.getBoundingClientRect();var x=(e.clientX-(r.left+r.width/2))/r.width;var y=(e.clientY-(r.top+r.height/2))/r.height;x=Math.max(-1,Math.min(1,x));y=Math.max(-1,Math.min(1,y));v.style.setProperty('--mx',(x*16).toFixed(1)+'px');v.style.setProperty('--my',(y*12).toFixed(1)+'px');}hero.addEventListener('pointermove',function(e){if(raf)return;raf=requestAnimationFrame(function(){raf=null;set(e);});});hero.addEventListener('pointerleave',function(){v.style.setProperty('--mx','0px');v.style.setProperty('--my','0px');});})();
+</script><script src="script.js?v=c1004"></script></body></html>
