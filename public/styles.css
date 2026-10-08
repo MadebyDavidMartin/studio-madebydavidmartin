@@ -1134,7 +1134,7 @@ main .band.slate.has-banner::after{background-image:radial-gradient(rgba(255,255
 
 
 /* ===== Awwwards pass: cinematic + Swiss editorial (Oct 2026) ===== */
-.cine{background:#F8E9BC;color:#2B2119;position:relative;overflow:hidden;box-shadow:0 0 0 100vmax #F8E9BC;clip-path:inset(0 -100vmax)}
+.cine{background:#F8E9BC;color:#2B2119;position:relative;box-shadow:0 0 0 100vmax #F8E9BC;clip-path:inset(0 -100vmax)}
 .cine-in{max-width:1200px;margin:0 auto;padding:clamp(36px,5vw,64px) 24px clamp(40px,5vw,64px)}
 .cine-kicker{display:flex;align-items:center;gap:14px;font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#6E5F46;margin-bottom:34px}
 .cine-kicker img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:1.5px solid rgba(43,33,25,.25)}
@@ -1274,7 +1274,7 @@ h1,h2{font-family:"Clash Display","Geist",sans-serif;letter-spacing:-.018em}
 .foot-fine{color:#5C4F3A}
 
 /* hero: semi-transparent photo backgrounds (Oct 2026) */
-.cine::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.16;background-size:cover;background-position:center;background-repeat:no-repeat}
+.cine::after{content:"";position:absolute;inset:0 -100vmax;z-index:0;pointer-events:none;opacity:.16;background-size:cover;background-position:center;background-repeat:no-repeat}
 .band.slate.has-banner::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.28;background-size:cover;background-position:center;background-repeat:no-repeat}
 .cine>* ,.band.slate.has-banner>*{position:relative;z-index:1}
 main .cine::after{background-image:url(/img/hero-home.jpg)}
