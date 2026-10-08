@@ -1196,7 +1196,7 @@ h1,h2{font-family:"Clash Display","Geist",sans-serif;letter-spacing:-.018em}
 #what-i-make .card-grid>div b{color:#D85A20}
 #what-i-make .card-grid.pills>div ul li{background:transparent;border-color:#D85A20;color:#D85A20}
 .band-sage .btn-line{color:#8A6D1B;border-color:#8A6D1B}
-.band-sage .btn-line:hover{background:#0E6B5C;color:#fff;box-shadow:none}
+.band-sage .btn-line:hover{background:#D85A20;border-color:#D85A20;color:#fff;box-shadow:none}
 
 /* about "From idea to finished work": steps as uniform boxes matching the video height */
 #how-i-work .hiw-wrap{align-items:stretch}
