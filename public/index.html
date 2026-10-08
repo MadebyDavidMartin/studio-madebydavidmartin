@@ -3,7 +3,7 @@
 .flag-card{display:grid;grid-template-columns:minmax(240px,400px) 1fr;gap:28px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:0;overflow:hidden;color:var(--ink);margin:26px 0 4px}
 .flag-card video{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:16/9;background:#000}
 .flag-card .yt,.flag-mini .yt{border-radius:0}
-.flag-card .yt{align-self:stretch}
+@media(min-width:701px){.flag-card .yt{align-self:stretch;aspect-ratio:auto}}
 .flag-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:26px 0 4px}
 @media(max-width:860px){.flag-grid{grid-template-columns:1fr}}
 .flag-mini{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;color:var(--ink)}
