@@ -279,6 +279,15 @@ main .btn,.x-foot .btn{border-radius:999px!important}
 .jb-card.jp .jb-body h3{color:var(--fp)}
 .jb-card.jp .jb-meta{color:var(--cola)}
 .jb-card.jp .jb-label{background:var(--fp);border:3px solid var(--fp-sun)}
+
+/* japanese section layout fix (Oct 2026) */
+.fx-jpsec .fx-head{max-width:760px;margin:0 0 30px;text-align:left}
+.fx-jpsec .fx-head h2{text-align:left}
+.fx-jpsec .fx-body{max-width:760px}
+.fx-jpsec .tools{max-width:760px}
+.fx-jpsec .jp-gallery{grid-template-columns:repeat(4,minmax(0,1fr));max-width:100%}
+.fx-jpsec .jp-gallery img{height:160px;object-fit:contain;width:100%;max-width:100%}
+.fx-jpsec .jp-gallery figure{min-width:0;overflow:hidden}
 </style></head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="head-in"><a class="mark mark-logo" href="./" aria-label="madebydavidmartin, home"><img src="/img/logo-madebydavidmartin-wordmark.jpg" alt="madebydavidmartin" width="2752" height="1536"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span></span>Menu</button><nav class="nav" id="site-nav" aria-label="Main"><a href="./">Home</a><a href="work.html">Work</a><a href="method.html">Method</a><a href="video.html">Video</a><a href="orivex.html">ORIVEX</a><a href="fizzypop.html" aria-current="page">Fizzy Pop!</a><a href="djc.html">DJC</a><a href="about.html">About</a><a class="nav-course" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair course</a></nav><a class="course-btn" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener"><span class="cb-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span><span class="cb-tx"><b>Director&rsquo;s Chair</b><small>AI enablement course</small></span></a></div></header>
 <main id="main">
 
@@ -342,6 +351,7 @@ main .btn,.x-foot .btn{border-radius:999px!important}
         <button class="jb-disc" type="button" aria-label="Play or pause the Fizzy Pop jingle" data-for="aFP"><span class="jb-label"><img src="/img/fizzypop/FP_logo_white_flat.svg" alt="" width="80" height="64"></span></button>
         <div class="jb-body">
           <h3 class="fp-type">Fizzy Pop!</h3>
+          <p class="jb-meta">Open Loud &middot; Jingle &middot; 116 BPM &middot; 68 s</p>
           <audio id="aFP" controls preload="none" src="/audio/fizzy-pop.mp3" aria-label="Fizzy Pop, the jingle, full length"></audio>
           <a class="btn btn-fp" href="/audio/fizzy-pop.mp3" download="Fizzy Pop - Open Loud.mp3">Download the jingle (MP3)</a>
         </div>
@@ -350,6 +360,7 @@ main .btn,.x-foot .btn{border-radius:999px!important}
         <button class="jb-disc" type="button" aria-label="Play or pause the Fizola song" data-for="aFZ"><span class="jb-label"><img src="/img/fizola/FZ_logo_red.png" alt="" width="90" height="42"></span></button>
         <div class="jb-body">
           <h3 class="fz-type">Fizola</h3>
+          <p class="jb-meta">Turn On The Sunshine &middot; 112 BPM &middot; 90 s</p>
           <audio id="aFZ" controls preload="none" src="/audio/fizola-turn-on-the-sunshine.mp3" aria-label="Turn On The Sunshine, the Fizola song, full length"></audio>
           <a class="btn btn-fz" href="/audio/fizola-turn-on-the-sunshine.mp3" download="Fizola - Turn On The Sunshine.mp3">Download the song (MP3)</a>
         </div>
@@ -358,6 +369,7 @@ main .btn,.x-foot .btn{border-radius:999px!important}
         <button class="jb-disc" type="button" aria-label="Play or pause the Japanese Fizzy Pop jingle" data-for="aJP"><span class="jb-label"><img src="/img/fizzypop/FP_logo_white_flat.svg" alt="" width="80" height="64"></span></button>
         <div class="jb-body">
           <h3 class="fp-type">フィジーポップ</h3>
+          <p class="jb-meta">Japanese version &middot; J-pop jingle &middot; 117 BPM</p>
           <audio id="aJP" controls preload="none" src="/audio/Fizzy%20Pop%20Japanese.mp3" aria-label="Fizzy Pop, the Japanese jingle, full length"></audio>
           <a class="btn btn-fp" href="/audio/Fizzy%20Pop%20Japanese.mp3" download="Fizzy Pop - Japanese version.mp3">Download the Japanese jingle (MP3)</a>
         </div>
@@ -705,7 +717,7 @@ main .btn,.x-foot .btn{border-radius:999px!important}
   </div>
 </section>
 
-<section class="fx-sec fx-paper">
+<section class="fx-sec fx-paper fx-jpsec">
   <div class="wrap">
     <div class="fx-head">
       <p class="fx-kicker">08 &middot; The Japanese version</p>
