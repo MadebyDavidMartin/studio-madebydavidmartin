@@ -280,17 +280,16 @@ main .btn,.x-foot .btn{border-radius:999px!important}
 .jb-card.jp .jb-meta{color:var(--cola)}
 .jb-card.jp .jb-label{background:var(--fp);border:3px solid var(--fp-sun)}
 
-/* japanese section layout fix (Oct 2026) */
-.fx-jpsec .fx-head{max-width:760px;margin:0 0 30px;text-align:left}
-.fx-jpsec .fx-head h2{text-align:left}
-.fx-jpsec .fx-body{max-width:760px}
-.fx-jpsec .tools{max-width:760px}
-.fx-jpsec .jp-gallery{grid-template-columns:repeat(4,minmax(0,1fr));max-width:100%}
-.fx-jpsec .jp-gallery img{height:160px;object-fit:contain;width:100%;max-width:100%}
-.fx-jpsec .jp-gallery figure{min-width:0;overflow:hidden}
 
 /* jukebox: disc visibility on dark card (Oct 2026) */
 .jb-card.fz .jb-disc{box-shadow:0 16px 34px rgba(0,0,0,.4),0 0 0 5px var(--fz-gold),0 0 24px rgba(233,163,25,.35)}
+
+/* jp gallery: contained (Oct 2026) */
+.jp-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:18px;max-width:100%}
+@media(max-width:900px){.jp-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.jp-gallery figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;min-width:0;max-width:100%}
+.jp-gallery img{display:block;width:100%;max-width:100%;height:170px;object-fit:contain;background:#FFF9F0}
+.jp-gallery figcaption{font:600 13px/1.4 var(--sans);text-align:center;padding:10px;color:var(--cola)}
 </style></head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="head-in"><a class="mark mark-logo" href="./" aria-label="madebydavidmartin, home"><img src="/img/logo-madebydavidmartin-wordmark.jpg" alt="madebydavidmartin" width="2752" height="1536"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span></span>Menu</button><nav class="nav" id="site-nav" aria-label="Main"><a href="./">Home</a><a href="work.html">Work</a><a href="method.html">Method</a><a href="video.html">Video</a><a href="orivex.html">ORIVEX</a><a href="fizzypop.html" aria-current="page">Fizzy Pop!</a><a href="djc.html">DJC</a><a href="about.html">About</a><a class="nav-course" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair course</a></nav><a class="course-btn" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener"><span class="cb-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span><span class="cb-tx"><b>Director&rsquo;s Chair</b><small>AI enablement course</small></span></a></div></header>
 <main id="main">
 
@@ -720,7 +719,7 @@ main .btn,.x-foot .btn{border-radius:999px!important}
   </div>
 </section>
 
-<section class="fx-sec fx-paper fx-jpsec">
+<section class="fx-sec fx-paper">
   <div class="wrap">
     <div class="fx-head">
       <p class="fx-kicker">08 &middot; The Japanese version</p>
