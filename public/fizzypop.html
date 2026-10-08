@@ -294,6 +294,25 @@ main .btn,.x-foot .btn{border-radius:999px!important}
 /* container (Oct 2026): .wrap was unstyled, causing full-width layout */
 .wrap{max-width:1160px;margin:0 auto;padding-left:24px;padding-right:24px}
 .fx-sec{overflow:hidden}
+/* Oct 8 2026: hero layout, records match video cards, JP graphics around the circle */
+.fx-hero-in{max-width:1320px}
+.fx-duo{grid-template-columns:1fr 1fr!important;gap:clamp(20px,3vw,36px)}
+.fx-card-jp{grid-column:1/-1;justify-self:center;width:min(100%,600px);margin-top:clamp(8px,1.5vw,16px)}
+@media(max-width:700px){.fx-duo{grid-template-columns:1fr!important}}
+.cheers-stage{position:relative;max-width:900px;margin:8px auto 36px}
+.cheers-stage .cheers{margin:0 auto}
+.cheers-stage .jp-float{position:absolute;inset:0;margin:0;display:block;pointer-events:none}
+.jf{position:absolute;transform:translate(-50%,-50%)}
+.jf1{left:12%;top:50%}
+.jf2{left:84%;top:80%}
+.jf3{left:84%;top:18%}
+.jp-float .jf img{display:block}
+.jp-float .jf3 img{height:104px}
+@media(max-width:820px){.cheers-stage .jp-float{position:static;display:flex;gap:18px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:24px}.jf{position:static;transform:none}}
+.jb-card.fp,.jb-card.jp{background:var(--fp);box-shadow:8px 8px 0 var(--fp-sun);border:0}
+.jb-card.fz{background:var(--cola);box-shadow:8px 8px 0 var(--fz-orange);border:3px solid var(--fz-gold)}
+.jb-card.jp .jb-body h3{color:#fff}
+.jb-card.jp .jb-meta{color:rgba(255,255,255,.85)}
 .fx-wide .fx-body,.fx-wide .fx-note,.fx-wide .tools{max-width:none}
 
 /* overflow guard (Oct 2026): prevent horizontal scroll from breaking layout */
@@ -307,6 +326,7 @@ img,video{max-width:100%}
     <p class="fx-eyebrow">Fizzy Pop + Fizola</p>
     <h1>One brief. Three films.</h1>
     <p class="fx-lede">Two fictional cola brands. Two 30-second commercials. One production system. I made Fizzy Pop and Fizola from the same creative foundation, then deliberately pushed them in different directions.</p>
+    <div class="cheers-stage">
     <div class="cheers" id="phVisualFizz" aria-hidden="true">
       <svg class="cheers-burst" viewBox="0 0 200 200"><circle cx="100" cy="100" r="98" fill="#E9A319"/><circle cx="100" cy="100" r="78" fill="none" stroke="#E94E7A" stroke-width="40" pathLength="36" stroke-dasharray="1 1"/><circle cx="100" cy="100" r="98" fill="none" stroke="rgba(255,246,230,.85)" stroke-width="3"/></svg>
       <img class="cheers-can cc-fp" src="/img/fizzypop/fizzy-pop-can.png" alt="" width="487" height="819">
@@ -316,9 +336,10 @@ img,video{max-width:100%}
       <div class="cheers-bubbles"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
     </div>
     <div class="jp-float" aria-hidden="true">
-      <img src="/img/JP/cropped/Fizzy%20Pop%20Japanese%20(1).png" alt="" loading="lazy">
-      <img src="/img/JP/cropped/Fizzy%20Pop%20Japanese%20(4).png" alt="" loading="lazy">
-      <img src="/img/JP/cropped/Fizzy%20Pop%20Japanese%20(7).png" alt="" loading="lazy">
+      <span class="jf jf1"><img src="/img/JP/cropped/Fizzy%20Pop%20Japanese%20(1).png" alt="" loading="lazy"></span>
+      <span class="jf jf2"><img src="/img/JP/cropped/Fizzy%20Pop%20Japanese%20(4).png" alt="" loading="lazy"></span>
+      <span class="jf jf3"><img src="/img/JP/cropped/Fizzy%20Pop%20Japanese%20(7).png" alt="" loading="lazy"></span>
+    </div>
     </div>
     <div class="fx-duo">
       <div class="fx-card fp" id="fizzy-pop">
@@ -330,7 +351,7 @@ img,video{max-width:100%}
         <div class="fx-card-top"><img src="/img/fizola/FZ_logo_cream.png" alt="Fizola Cola logo" width="900" height="421"><p class="fx-tag fz-type">Turn on the sunshine.</p></div>
         <video controls playsinline preload="metadata" poster="/video/fizola-poster.jpg" aria-label="Fizola Cola, a 30-second spec commercial"><source src="/video/Fizola.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="/video/Fizola.mp4">Download the MP4</a>.</video>
         <div class="fx-card-facts"><span>1970s cola</span><span>Funk, soul, disco</span><span>112 BPM</span><span>9 shots</span></div>
-      </div><div class="fx-card fp" id="fizzy-pop-jp">
+      </div><div class="fx-card fp fx-card-jp" id="fizzy-pop-jp">
         <div class="fx-card-top"><img src="/img/fizzypop/FP_logo_white_flat.svg" alt="Fizzy Pop Cherry Cola logo" width="440" height="352"><p class="fx-tag fp-type">プシュッと あけよう！</p></div>
         <video controls playsinline preload="metadata" poster="/video/fizzypop-poster.jpg" aria-label="Fizzy Pop Cherry Cola, the Japanese version, a 30-second spec commercial"><source src="/video/FizzyPop_v6B_JP_web.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="/video/FizzyPop_v6B_JP_web.mp4">Download the MP4</a>.</video>
         <div class="fx-card-facts"><span>フィジーポップ</span><span>J-pop jingle</span><span>117 BPM</span><span>30 s</span></div>
@@ -774,16 +795,6 @@ img,video{max-width:100%}
         <li>Product line and fine print are fully Japanese: “355mL缶・キンキンに冷やして” and “スペックCM。フィジーポップは架空のブランドです。”</li>
       </ul>
       <p>One honest note: Suno didn’t render the one-beat silence before the drop in this take, so the drop lands straight after “あけよう”. The cut follows the song as delivered.</p>
-    </div>
-    <div class="fx-note">
-      <h3 class="fx-subh">Selected frames</h3>
-      <p>A few of the Japanese on-screen moments, as designed.</p>
-    </div>
-    <div class="jp-gallery">
-      <figure><img src="/img/JP/cropped/Fizzy%20Pop%20Japanese%20(1).png" alt="ほんものチェリー！ on-screen graphic" loading="lazy"><figcaption>ほんものチェリー！</figcaption></figure>
-      <figure><img src="/img/JP/cropped/Fizzy%20Pop%20Japanese%20(4).png" alt="シュワシュワ！ on-screen graphic" loading="lazy"><figcaption>シュワシュワ！</figcaption></figure>
-      <figure><img src="/img/JP/cropped/Fizzy%20Pop%20Japanese%20(7).png" alt="キンキン！ on-screen graphic" loading="lazy"><figcaption>キンキン！</figcaption></figure>
-      <figure><img src="/img/JP/cropped/Fizzy%20Pop%20Japanese%20(10).png" alt="ちょうチル on-screen graphic" loading="lazy"><figcaption>ちょうチル</figcaption></figure>
     </div>
   </div>
 </section>
