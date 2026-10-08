@@ -1218,3 +1218,8 @@ h1,h2{font-family:"Clash Display","Geist",sans-serif;letter-spacing:-.018em}
 
 .nav a.nav-course{display:none}
 @media (max-width:560px){.head-in .course-btn{display:none}.nav a.nav-course{display:block;color:#fff;background:#1D5AA6;margin-top:6px;text-align:left}}
+
+/* header logo image */
+.mark-logo{padding:4px 0}
+.mark-logo img{display:block;height:44px;width:auto}
+@media(max-width:560px){.mark-logo img{height:38px}}
