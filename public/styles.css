@@ -1141,7 +1141,7 @@ main .band.slate.has-banner::after{background-image:radial-gradient(rgba(255,255
 .cine-title{font-family:"Clash Display","Geist",sans-serif;font-weight:700;font-size:clamp(52px,9.5vw,148px);line-height:.98;letter-spacing:-.025em;margin:0 0 26px}
 .cine-title em{font-style:normal;color:#0E6B5C}
 .cine-sub{font-size:clamp(19px,2.4vw,28px);font-weight:600;letter-spacing:-.01em;margin:0 0 14px;color:#0E6B5C}
-.cine-lede{max-width:620px;color:#5C4F3A;font-size:17px;line-height:1.6;margin:0 0 30px}
+.cine-lede{max-width:620px;color:#000;font-size:17px;line-height:1.6;margin:0 0 30px}
 .cine .btns{display:flex;gap:14px;flex-wrap:wrap}
 .btn-cine{background:#D85A20;color:#fff;border-color:#D85A20}
 .btn-cine:hover{background:#7FD6BE;border-color:#7FD6BE;color:#0C0F14}
