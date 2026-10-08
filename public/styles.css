@@ -1090,19 +1090,19 @@ main .band.slate.has-banner::after{background-image:radial-gradient(rgba(255,255
 .banner-blog{--g1:600px 400px at 78% 30%; --c1:20,130,110; --a1:.34;
   --g2:480px 380px at 64% 76%; --c2:210,178,106; --a2:.22;
   --g3:820px 580px at 88% 58%; --c3:31,140,118; --a3:.16;}
-.banner-about{--g1:680px 460px at 50% 42%; --c1:20,130,110; --a1:.40;
+.banner-about{--g1:680px 460px at 50% 42%; --c1:224,132,82; --a1:.42;
   --g2:520px 400px at 78% 74%; --c2:210,178,106; --a2:.30;
   --g3:860px 600px at 88% 30%; --c3:31,140,118; --a3:.18;}
 .banner-video{--g1:660px 420px at 80% 12%; --c1:210,178,106; --a1:.38;
   --g2:520px 420px at 66% 80%; --c2:20,130,110; --a2:.40;
   --g3:880px 600px at 92% 55%; --c3:31,140,118; --a3:.20;}
-.banner-work{--g1:700px 440px at 86% 38%; --c1:20,130,110; --a1:.55;
+.banner-work{--g1:700px 440px at 86% 38%; --c1:64,124,224; --a1:.55;
   --g2:460px 380px at 62% 74%; --c2:210,178,106; --a2:.26;
   --g3:760px 560px at 74% 20%; --c3:45,160,135; --a3:.30;}
-.banner-djckids{--g1:640px 440px at 72% 40%; --c1:210,178,106; --a1:.42;
+.banner-djckids{--g1:640px 440px at 72% 40%; --c1:232,112,172; --a1:.42;
   --g2:520px 400px at 30% 70%; --c2:20,130,110; --a2:.30;
   --g3:860px 600px at 88% 60%; --c3:31,140,118; --a3:.18;}
-.banner-method{--g1:680px 460px at 50% 30%; --c1:210,178,106; --a1:.40;
+.banner-method{--g1:680px 460px at 50% 30%; --c1:141,102,231; --a1:.42;
   --g2:520px 400px at 78% 74%; --c2:20,130,110; --a2:.32;
   --g3:860px 600px at 20% 60%; --c3:31,140,118; --a3:.20;}
 .banner-lab{--g1:700px 460px at 78% 30%; --c1:31,140,118; --a1:.55;
@@ -1229,3 +1229,28 @@ h1,h2{font-family:"Clash Display","Geist",sans-serif;letter-spacing:-.018em}
 .myra-credit{font:500 12px/1.45 var(--mono);letter-spacing:.02em;opacity:.72;margin:8px 0 0;color:inherit}
 .fc-body .myra-credit,.vid-cell .myra-credit{margin-top:10px}
 .myra-group{margin-top:14px}
+
+/* ===== Page heroes, dynamic visuals (Oct 2026) ===== */
+.slate-in.ph-hero{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);align-items:center;gap:clamp(24px,4vw,56px)}
+.ph-copy{min-width:0;position:relative;z-index:2}
+.ph-visual{position:relative;min-width:0;--mx:0px;--my:0px}
+.ph-credits{grid-column:1/-1}
+@media(max-width:900px){.slate-in.ph-hero{grid-template-columns:1fr}}
+.ph-float{animation:phFloat 7s ease-in-out infinite}
+@keyframes phFloat{0%,100%{margin-top:0}50%{margin-top:-14px}}
+@media(prefers-reduced-motion:reduce){.ph-float{animation:none}}
+@keyframes phSpin{to{rotate:360deg}}
+@keyframes phSpinRev{to{rotate:-360deg}}
+
+/* ===== Per-page hero banner colors (Oct 2026) ===== */
+.band.slate.has-banner.banner-work{background:#14315E;box-shadow:0 0 0 100vmax #14315E}
+.band.slate.has-banner.banner-method{background:#5C1E28;box-shadow:0 0 0 100vmax #5C1E28}
+.band.slate.has-banner.banner-djckids{background:#0C4A3E;box-shadow:0 0 0 100vmax #0C4A3E}
+.band.slate.has-banner.banner-about{background:#5E2F16;box-shadow:0 0 0 100vmax #5E2F16}
+
+/* ===== Flat hero backgrounds, no gradients (Oct 2026) ===== */
+.band.slate.has-banner.banner-work::before,
+.band.slate.has-banner.banner-method::before,
+.band.slate.has-banner.banner-video::before,
+.band.slate.has-banner.banner-djckids::before,
+.band.slate.has-banner.banner-about::before{content:none}
