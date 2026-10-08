@@ -8,6 +8,16 @@
 .cs8>div{padding:12px 0}
 .fn a{padding:14px 0}
 .flowline{margin:0 0 14px}
+
+/* ===== About hero portrait (Oct 2026) ===== */
+.portrait{position:relative;width:min(100%,360px);aspect-ratio:1;margin:0 auto;transform:translate(calc(var(--mx,0px)*.5),calc(var(--my,0px)*.5))}
+.portrait-ring{position:absolute;inset:0;animation:phSpin 42s linear infinite}
+.portrait-ring text{font:600 17px var(--mono);letter-spacing:.32em;fill:rgba(255,255,255,.85)}
+.portrait img{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:68%;height:68%;object-fit:cover;border-radius:50%;border:3px solid rgba(255,255,255,.85);box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.portrait-chip{position:absolute;padding:9px 16px;border-radius:99px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;font-size:13px;font-weight:600;letter-spacing:.02em;animation:phFloat 6s ease-in-out infinite;white-space:nowrap}
+.pc1{left:0;top:22%}
+.pc2{right:0;bottom:20%;animation-delay:1.7s}
+@media(prefers-reduced-motion:reduce){.portrait-ring,.portrait-chip{animation:none}}
 </style></head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="head-in"><a class="mark mark-logo" href="./" aria-label="madebydavidmartin, home"><img src="/img/logo-madebydavidmartin@2x.png" srcset="/img/logo-madebydavidmartin@2x.png 2x, /img/logo-madebydavidmartin@3x.png 3x" alt="madebydavidmartin" width="131" height="44"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span></span>Menu</button><nav class="nav" id="site-nav" aria-label="Main"><a href="./">Home</a><a href="work.html">Work</a><a href="method.html">Method</a><a href="video.html">Video</a><a href="orivex.html">ORIVEX</a><a href="fizzypop.html">Fizzy Pop!</a><a href="djc.html">DJC</a><a href="about.html" aria-current="page">About</a><a class="nav-course" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair course</a></nav><a class="course-btn" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener"><span class="cb-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span><span class="cb-tx"><b>Director&rsquo;s Chair</b><small>AI enablement course</small></span></a></div></header><main class="wrap" id="main">
 <style>
 .fws{font-size:clamp(28px,4.4vw,54px);line-height:1.14;font-weight:600;letter-spacing:-.015em;max-width:22ch;margin:0 0 18px}
@@ -35,14 +45,21 @@
 </style>
 
 <section class="band slate has-banner banner-about">
-  <div class="slate-in has-photo">
-    <div class="slate-main">
+  <div class="slate-in ph-hero">
+    <div class="slate-main ph-copy">
       <span class="slate-kicker">About</span>
       <h1>A creative director who can actually make things.</h1>
       <p class="lede">I am David Martin, a creative director in North Vancouver, BC. 15+ years across video, content, brand, technology and business. I build ideas, direct creative systems, and use emerging technology to make ambitious work possible.</p>
     </div>
-    <figure class="slate-photo"><img src="img/about/headshot-600.jpg" alt="David Martin" width="600" height="600"></figure>
-    <dl class="credits">
+    <div class="ph-visual" id="phVisualAbout">
+      <div class="portrait">
+        <svg class="portrait-ring" viewBox="0 0 300 300" aria-hidden="true"><defs><path id="aboutRing" d="M150,150 m-120,0 a120,120 0 1,1 240,0 a120,120 0 1,1 -240,0"/></defs><text><textPath href="#aboutRing" textLength="752" lengthAdjust="spacingAndGlyphs">CREATIVE DIRECTOR &#183; VIDEO &#183; AI &#183; BRAND &#183; CONTENT &#183;</textPath></text></svg>
+        <img src="img/about/headshot-600.jpg" alt="David Martin" width="600" height="600">
+        <span class="portrait-chip pc1" aria-hidden="true">15+ years</span>
+        <span class="portrait-chip pc2" aria-hidden="true">JLPT N2</span>
+      </div>
+    </div>
+    <dl class="credits ph-credits">
       <div><dt>Based</dt><dd>North Vancouver, BC</dd></div>
       <div><dt>Education</dt><dd>BSc and Diploma in Engineering, Mount Allison University</dd></div>
       <div><dt>Languages</dt><dd>English, business Japanese (JLPT Level 2)</dd></div>
@@ -118,4 +135,6 @@
 </section>
 
 <section class="band cta-band-white"><div class="cta-in"><div><h2>Let&rsquo;s make something.</h2><p>For creative direction, video, campaigns, brand and AI-native production.</p></div><a class="btn btn-primary" href="contact.html">Get in touch &rarr;</a></div></section>
-</main><footer class="foot" id="contact"><div class="wrap foot-in"><div class="foot-brand"><a class="mark" href="./"><span>David Martin<small>Creative Professional</small></span></a><p class="foot-tag">Directed work, at every scale.</p></div><div class="foot-cta"><h2>Thanks for visiting.</h2><p>If something here is useful to you or your team, I would be glad to hear about it.</p><div class="btns"><a class="btn btn-light" href="mailto:david.angus.martin@gmail.com">Email me</a><a class="btn btn-ghost" href="https://www.linkedin.com/in/david-martin-7a246522" target="_blank" rel="noopener">Connect on LinkedIn</a></div></div><nav class="foot-nav" aria-label="Footer"><a href="./">Home</a><a href="work.html">Work</a><a href="method.html">Method</a><a href="video.html">Video</a><a href="orivex.html">ORIVEX</a><a href="fizzypop.html">Fizzy Pop!</a><a href="djc.html">DJC</a><a href="about.html" aria-current="page">About</a><a href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair course</a></nav><p class="foot-fine">This is a personal portfolio. &copy; 2026 David Martin.</p></div></footer><script src="script.js?v=c1004"></script></body></html>
+</main><footer class="foot" id="contact"><div class="wrap foot-in"><div class="foot-brand"><a class="mark" href="./"><span>David Martin<small>Creative Professional</small></span></a><p class="foot-tag">Directed work, at every scale.</p></div><div class="foot-cta"><h2>Thanks for visiting.</h2><p>If something here is useful to you or your team, I would be glad to hear about it.</p><div class="btns"><a class="btn btn-light" href="mailto:david.angus.martin@gmail.com">Email me</a><a class="btn btn-ghost" href="https://www.linkedin.com/in/david-martin-7a246522" target="_blank" rel="noopener">Connect on LinkedIn</a></div></div><nav class="foot-nav" aria-label="Footer"><a href="./">Home</a><a href="work.html">Work</a><a href="method.html">Method</a><a href="video.html">Video</a><a href="orivex.html">ORIVEX</a><a href="fizzypop.html">Fizzy Pop!</a><a href="djc.html">DJC</a><a href="about.html" aria-current="page">About</a><a href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair course</a></nav><p class="foot-fine">This is a personal portfolio. &copy; 2026 David Martin.</p></div></footer><script>
+(function(){var v=document.getElementById('phVisualAbout');if(!v)return;if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;var hero=v.closest('section');var raf=null;function set(e){var r=v.getBoundingClientRect();var x=(e.clientX-(r.left+r.width/2))/r.width;var y=(e.clientY-(r.top+r.height/2))/r.height;x=Math.max(-1,Math.min(1,x));y=Math.max(-1,Math.min(1,y));v.style.setProperty('--mx',(x*16).toFixed(1)+'px');v.style.setProperty('--my',(y*12).toFixed(1)+'px');}hero.addEventListener('pointermove',function(e){if(raf)return;raf=requestAnimationFrame(function(){raf=null;set(e);});});hero.addEventListener('pointerleave',function(){v.style.setProperty('--mx','0px');v.style.setProperty('--my','0px');});})();
+</script><script src="script.js?v=c1004"></script></body></html>
