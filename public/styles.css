@@ -1195,7 +1195,7 @@ h1,h2{font-family:"Clash Display","Geist",sans-serif;letter-spacing:-.018em}
 #what-i-make .card-grid>div{background:transparent;border:1.5px solid #D85A20}
 #what-i-make .card-grid>div b{color:#D85A20}
 #what-i-make .card-grid.pills>div ul li{background:transparent;border-color:#D85A20;color:#D85A20}
-.band-sage .btn-line{color:#0E6B5C;border-color:#0E6B5C}
+.band-sage .btn-line{color:#8A6D1B;border-color:#8A6D1B}
 .band-sage .btn-line:hover{background:#0E6B5C;color:#fff;box-shadow:none}
 
 /* about "From idea to finished work": steps as uniform boxes matching the video height */
@@ -1263,7 +1263,12 @@ h1,h2{font-family:"Clash Display","Geist",sans-serif;letter-spacing:-.018em}
 /* footer wordmark (Oct 2026) */
 .foot-logo img{display:block;height:52px;width:auto}
 
-/* footer: orange scheme (Oct 2026) */
+/* footer: light yellow theme (Oct 2026) */
+.foot{background:#F8E9BC;color:#2B2119;box-shadow:0 0 0 100vmax #F8E9BC}
+.foot h2{color:#2B2119}
+.foot .foot-cta p{color:#5C4F3A}
 .foot .btn-light{background:#D85A20;color:#fff}
 .foot .btn-ghost{border-color:#D85A20;color:#D85A20}
+.foot-nav a{color:#2B2119}
 .foot-nav a:hover{color:#D85A20}
+.foot-fine{color:#5C4F3A}
