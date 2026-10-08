@@ -1143,9 +1143,9 @@ main .band.slate.has-banner::after{background-image:radial-gradient(rgba(255,255
 .cine-sub{font-size:clamp(19px,2.4vw,28px);font-weight:600;letter-spacing:-.01em;margin:0 0 14px;color:#0E6B5C}
 .cine-lede{max-width:620px;color:#5C4F3A;font-size:17px;line-height:1.6;margin:0 0 30px}
 .cine .btns{display:flex;gap:14px;flex-wrap:wrap}
-.btn-cine{background:#0E6B5C;color:#fff;border-color:#0E6B5C}
+.btn-cine{background:#D85A20;color:#fff;border-color:#D85A20}
 .btn-cine:hover{background:#7FD6BE;border-color:#7FD6BE;color:#0C0F14}
-.btn-ghost-cine{border-color:#0E6B5C;color:#0E6B5C}
+.btn-ghost-cine{border-color:#D85A20;color:#D85A20}
 .btn-ghost-cine:hover{border-color:#F5F2EA}
 .cine-stats{display:flex;gap:clamp(24px,5vw,72px);flex-wrap:wrap;margin-top:clamp(40px,6vw,72px);padding-top:28px;border-top:1px solid rgba(43,33,25,.16)}
 .cine-stats div{display:grid;gap:6px}
