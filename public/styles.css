@@ -1149,7 +1149,7 @@ main .band.slate.has-banner::after{background-image:radial-gradient(rgba(255,255
 .btn-ghost-cine:hover{border-color:#F5F2EA}
 .cine-stats{display:flex;gap:clamp(24px,5vw,72px);flex-wrap:wrap;margin-top:clamp(40px,6vw,72px);padding-top:28px;border-top:1px solid rgba(43,33,25,.16)}
 .cine-stats div{display:grid;gap:6px}
-.cine-stats dt{font-family:"Clash Display","Geist",sans-serif;font-size:clamp(30px,4vw,52px);font-weight:700;letter-spacing:-.02em;color:#0E6B5C}
+.cine-stats dt{font-family:"Clash Display","Geist",sans-serif;font-size:clamp(30px,4vw,52px);font-weight:700;letter-spacing:-.02em;color:#D85A20}
 .cine-stats dd{margin:0;font:500 11.5px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#6E5F46}
 .marquee{overflow:hidden;border-block:1px solid var(--line);background:var(--card);padding:15px 0}
 .marquee-in{display:inline-flex;gap:0;white-space:nowrap;animation:mq 30s linear infinite;will-change:transform}
