@@ -1192,9 +1192,9 @@ h1,h2{font-family:"Clash Display","Geist",sans-serif;letter-spacing:-.018em}
 .foot .ic{color:#F8E9BC}
 
 /* homepage green sections: pills lose the white boxes, buttons stay visible */
-#what-i-make .card-grid>div{background:transparent;border:1.5px solid #0E6B5C}
-#what-i-make .card-grid>div b{color:#0E6B5C}
-#what-i-make .card-grid.pills>div ul li{background:transparent;border-color:#0E6B5C;color:#0E6B5C}
+#what-i-make .card-grid>div{background:transparent;border:1.5px solid #D85A20}
+#what-i-make .card-grid>div b{color:#D85A20}
+#what-i-make .card-grid.pills>div ul li{background:transparent;border-color:#D85A20;color:#D85A20}
 .band-sage .btn-line{color:#0E6B5C;border-color:#0E6B5C}
 .band-sage .btn-line:hover{background:#0E6B5C;color:#fff;box-shadow:none}
 
