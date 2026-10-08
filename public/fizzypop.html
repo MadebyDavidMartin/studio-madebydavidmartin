@@ -172,6 +172,21 @@ body{overflow-x:clip}
 .fx-cuts li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;border-radius:2px;background:var(--fp)}
 .fx-project{margin-top:34px}
 html{scroll-padding-top:80px}
+
+/* japanese frames gallery */
+.jp-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+@media(max-width:900px){.jp-gallery{grid-template-columns:repeat(2,1fr)}}
+.jp-gallery figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;min-width:0}
+.jp-gallery img{display:block;width:100%;height:180px;object-fit:contain;background:#FFF9F0}
+.jp-gallery figcaption{font:600 13px/1.4 var(--sans);text-align:center;padding:10px;color:var(--cola)}
+
+/* japanese floating words in hero */
+.jp-float{display:flex;gap:18px;justify-content:center;align-items:center;margin:6px 0 26px;flex-wrap:wrap}
+.jp-float img{height:64px;width:auto;filter:drop-shadow(0 6px 12px rgba(0,0,0,.25));animation:jpbob 3.4s ease-in-out infinite}
+.jp-float img:nth-child(2){animation-delay:-1.1s;height:56px}
+.jp-float img:nth-child(3){animation-delay:-2.2s;height:70px}
+@keyframes jpbob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-10px) rotate(2deg)}}
+@media(prefers-reduced-motion:reduce){.jp-float img{animation:none}}
 /* jukebox */
 .fx-jukebox{background:var(--fz-gold);box-shadow:0 0 0 100vmax var(--fz-gold);clip-path:inset(0 -100vmax);padding:clamp(44px,6vw,76px) 0;position:relative;isolation:isolate}
 .fx-jukebox::before{content:"";position:absolute;inset:0 -100vmax;z-index:-1;background:repeating-linear-gradient(-12deg,transparent 0 46px,rgba(232,116,42,.16) 46px 62px,rgba(224,17,43,.10) 62px 78px,transparent 78px 130px)}
@@ -179,7 +194,8 @@ html{scroll-padding-top:80px}
 .jb-head .fx-eyebrow{color:var(--cola)}
 .jb-head h2{font-family:'Shrikhand',serif;font-weight:400;font-size:clamp(40px,6vw,70px);line-height:1.05;margin:0 0 12px;color:var(--cream);text-shadow:3px 3px 0 var(--fp),6px 6px 0 var(--cola)}
 .jb-head p{margin:0;font-size:17.5px;line-height:1.6;color:var(--cola)}
-.jb-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,28px)}
+.jb-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(16px,2.4vw,28px)}
+@media(max-width:1100px){.jb-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:860px){.jb-grid{grid-template-columns:1fr}}
 .jb-card{display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,2.4vw,28px);align-items:center;border-radius:24px;padding:clamp(20px,2.6vw,30px)}
 @media(max-width:520px){.jb-card{grid-template-columns:1fr;justify-items:center;text-align:center}}
@@ -262,6 +278,11 @@ main .btn,.x-foot .btn{border-radius:999px!important}
       <div class="cheers-pop"><i style="--px:-46px;--py:-70px"></i><i style="--px:40px;--py:-84px"></i><i style="--px:-70px;--py:-30px"></i><i style="--px:66px;--py:-38px"></i><i style="--px:0px;--py:-100px"></i></div>
       <div class="cheers-bubbles"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
     </div>
+    <div class="jp-float" aria-hidden="true">
+      <img src="/img/JP/cropped/Fizzy%20Pop%20Japanese%20(1).png" alt="" loading="lazy">
+      <img src="/img/JP/cropped/Fizzy%20Pop%20Japanese%20(4).png" alt="" loading="lazy">
+      <img src="/img/JP/cropped/Fizzy%20Pop%20Japanese%20(7).png" alt="" loading="lazy">
+    </div>
     <div class="fx-duo">
       <div class="fx-card fp" id="fizzy-pop">
         <div class="fx-card-top"><img src="/img/fizzypop/FP_logo_white_flat.svg" alt="Fizzy Pop Cherry Cola logo" width="440" height="352"><p class="fx-tag fp-type">Open loud.</p></div>
@@ -316,6 +337,15 @@ main .btn,.x-foot .btn{border-radius:999px!important}
           <p class="jb-meta">Turn On The Sunshine &middot; 112 BPM &middot; 90 s</p>
           <audio id="aFZ" controls preload="none" src="/audio/fizola-turn-on-the-sunshine.mp3" aria-label="Turn On The Sunshine, the Fizola song, full length"></audio>
           <a class="btn btn-fz" href="/audio/fizola-turn-on-the-sunshine.mp3" download="Fizola - Turn On The Sunshine.mp3">Download the song (MP3)</a>
+        </div>
+      </article>
+      <article class="jb-card fp">
+        <button class="jb-disc" type="button" aria-label="Play or pause the Japanese Fizzy Pop jingle" data-for="aJP"><span class="jb-label"><img src="/img/fizzypop/FP_logo_white_flat.svg" alt="" width="80" height="64"></span></button>
+        <div class="jb-body">
+          <h3 class="fp-type">フィジーポップ</h3>
+          <p class="jb-meta">Japanese version &middot; J-pop jingle &middot; 117 BPM</p>
+          <audio id="aJP" controls preload="none" src="/audio/Fizzy%20Pop%20Japanese.mp3" aria-label="Fizzy Pop, the Japanese jingle, full length"></audio>
+          <a class="btn btn-fp" href="/audio/Fizzy%20Pop%20Japanese.mp3" download="Fizzy Pop - Japanese version.mp3">Download the Japanese jingle (MP3)</a>
         </div>
       </article>
     </div>
@@ -713,11 +743,11 @@ main .btn,.x-foot .btn{border-radius:999px!important}
       <h3 class="fx-subh">Selected frames</h3>
       <p>A few of the Japanese on-screen moments, as designed.</p>
     </div>
-    <div class="jb-grid" style="margin-top:18px">
-      <img src="/img/JP/cropped/Fizzy%20Pop%20Japanese%20(1).png" alt="Japanese Fizzy Pop frame" loading="lazy" style="width:100%;border-radius:14px">
-      <img src="/img/JP/cropped/Fizzy%20Pop%20Japanese%20(4).png" alt="Japanese Fizzy Pop frame" loading="lazy" style="width:100%;border-radius:14px">
-      <img src="/img/JP/cropped/Fizzy%20Pop%20Japanese%20(7).png" alt="Japanese Fizzy Pop frame" loading="lazy" style="width:100%;border-radius:14px">
-      <img src="/img/JP/cropped/Fizzy%20Pop%20Japanese%20(10).png" alt="Japanese Fizzy Pop frame" loading="lazy" style="width:100%;border-radius:14px">
+    <div class="jp-gallery">
+      <figure><img src="/img/JP/cropped/Fizzy%20Pop%20Japanese%20(1).png" alt="ほんものチェリー！ on-screen graphic" loading="lazy"><figcaption>ほんものチェリー！</figcaption></figure>
+      <figure><img src="/img/JP/cropped/Fizzy%20Pop%20Japanese%20(4).png" alt="シュワシュワ！ on-screen graphic" loading="lazy"><figcaption>シュワシュワ！</figcaption></figure>
+      <figure><img src="/img/JP/cropped/Fizzy%20Pop%20Japanese%20(7).png" alt="キンキン！ on-screen graphic" loading="lazy"><figcaption>キンキン！</figcaption></figure>
+      <figure><img src="/img/JP/cropped/Fizzy%20Pop%20Japanese%20(10).png" alt="ちょうチル on-screen graphic" loading="lazy"><figcaption>ちょうチル</figcaption></figure>
     </div>
   </div>
 </section>
