@@ -32,7 +32,7 @@
 .mk li{font-size:13.5px;border:1px solid var(--line);border-radius:99px;padding:5px 12px;color:var(--muted)}
 
 /* ===== Method hero chair (Oct 2026) ===== */
-.chair-wrap{position:relative;width:min(100%,330px);margin:0 auto;transform:translate(calc(var(--mx,0px)*.6),calc(var(--my,0px)*.6))}
+.chair-wrap{position:relative;width:min(100%,360px);margin:0 auto;transform:translate(calc(var(--mx,0px)*.6),calc(var(--my,0px)*.6))}
 .chair-disc{position:absolute;left:50%;top:47%;width:118%;aspect-ratio:1;transform:translate(-50%,-50%);background:#6E2432;border-radius:50%}
 .chair{position:relative;display:block;width:100%;height:auto;filter:drop-shadow(0 24px 28px rgba(0,0,0,.35));animation:phFloat 7s ease-in-out infinite,chairRock 7s ease-in-out infinite}
 @keyframes chairRock{0%,100%{rotate:-1.1deg}50%{rotate:1.1deg}}
@@ -74,23 +74,7 @@
     <div class="ph-visual" id="phVisualMethod">
       <div class="chair-wrap" aria-hidden="true">
         <div class="chair-disc"></div>
-        <svg class="chair" viewBox="0 0 400 470">
-          <ellipse cx="200" cy="444" rx="112" ry="13" fill="rgba(0,0,0,.32)"/>
-          <rect x="112" y="40" width="16" height="168" rx="6" fill="#7A4E2D"/>
-          <rect x="272" y="40" width="16" height="168" rx="6" fill="#7A4E2D"/>
-          <rect x="102" y="26" width="196" height="72" rx="10" fill="#F3EAD6" stroke="#D8C7A4" stroke-width="2"/>
-          <text x="203" y="70" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="24" letter-spacing="5" fill="#7A1F30">DIRECTOR</text>
-          <rect x="62" y="198" width="276" height="18" rx="9" fill="#7A4E2D"/>
-          <rect x="62" y="198" width="276" height="7" rx="3.5" fill="#8F6136"/>
-          <rect x="76" y="216" width="12" height="34" fill="#7A4E2D"/>
-          <rect x="312" y="216" width="12" height="34" fill="#7A4E2D"/>
-          <polygon points="94,216 306,216 288,274 112,274" fill="#EADFC4" stroke="#D8C7A4" stroke-width="2"/>
-          <rect x="70" y="216" width="16" height="206" rx="6" fill="#7A4E2D"/>
-          <rect x="314" y="216" width="16" height="206" rx="6" fill="#7A4E2D"/>
-          <rect x="86" y="332" width="228" height="14" rx="7" fill="#7A4E2D"/>
-          <rect x="68" y="416" width="20" height="14" rx="4" fill="#2B1B12"/>
-          <rect x="312" y="416" width="20" height="14" rx="4" fill="#2B1B12"/>
-        </svg>
+        <img class="chair" src="/img/directors-chair.png" alt="" width="600" height="807">
       </div>
     </div>
     <dl class="credits ph-credits">
