@@ -171,23 +171,50 @@ main.ox .ox-bio h2{color:var(--ox-ink);font-size:clamp(34px,4vw,48px);margin:4px
 .ox-foot-nav a{font:500 12px/1 var(--ox-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ox-dim);text-decoration:none;padding:10px 12px;border-radius:3px}
 .ox-foot-nav a:hover,.ox-foot-nav a[aria-current]{color:var(--ox-amber);background:rgba(255,138,31,.08)}
 .ox-foot .fine2{font:500 11.5px/1.6 var(--ox-mono);color:var(--ox-dim2);max-width:70ch;margin:24px auto 0}
+
+/* ===== ORIVEX hero HUD (Oct 2026) ===== */
+.ox-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(28px,4vw,56px);align-items:center;text-align:left;position:relative;z-index:1}
+.ox-copy .ox-lockup{margin:0 0 6px}
+.ox-copy .ox-model{margin:6px 0 22px}
+.ox-grid h1{margin:0 0 16px}
+.ox-grid .ox-lede{margin:0 0 18px}
+.ox-hud{position:relative;--mx:0px;--my:0px;transform:translate(calc(var(--mx)*.5),calc(var(--my)*.5))}
+.ox-ring{position:absolute;left:50%;top:50%;width:min(104%,540px);aspect-ratio:1;transform:translate(-50%,-54%);border:1.5px dashed rgba(255,138,31,.38);border-radius:50%;animation:phSpin 46s linear infinite;pointer-events:none}
+.ox-hud .ox-corners{max-width:none;margin:0}
+.ox-scan{position:absolute;left:20px;right:20px;height:2px;background:linear-gradient(90deg,transparent,var(--ox-amber),transparent);box-shadow:0 0 18px 2px rgba(255,138,31,.55);animation:oxScan 7s ease-in-out infinite;pointer-events:none;z-index:3}
+@keyframes oxScan{0%,100%{top:26px;opacity:0}10%{opacity:1}90%{opacity:1}50%{top:calc(100% - 28px)}}
+.ox-tag{position:absolute;font:600 11px/1 var(--ox-mono);letter-spacing:.14em;color:var(--ox-amber);background:rgba(20,24,27,.88);border:1px solid var(--ox-line2);border-radius:6px;padding:9px 13px;z-index:4;animation:phFloat 6s ease-in-out infinite}
+.ox-t1{left:-10px;top:16%}
+.ox-t2{right:-8px;bottom:14%;animation-delay:1.8s}
+@media(max-width:900px){.ox-grid{grid-template-columns:1fr}.ox-t1{left:6px}.ox-t2{right:6px}}
+@media(prefers-reduced-motion:reduce){.ox-ring,.ox-scan,.ox-tag{animation:none}}
 </style></head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="head-in"><a class="mark mark-logo" href="./" aria-label="madebydavidmartin, home"><img src="/img/logo-madebydavidmartin@2x.png" srcset="/img/logo-madebydavidmartin@2x.png 2x, /img/logo-madebydavidmartin@3x.png 3x" alt="madebydavidmartin" width="131" height="44"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span></span>Menu</button><nav class="nav" id="site-nav" aria-label="Main"><a href="./">Home</a><a href="work.html">Work</a><a href="method.html">Method</a><a href="video.html">Video</a><a href="orivex.html" aria-current="page">ORIVEX</a><a href="fizzypop.html">Fizzy Pop!</a><a href="djc.html">DJC</a><a href="about.html">About</a><a class="nav-course" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair course</a></nav><a class="course-btn" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener"><span class="cb-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span><span class="cb-tx"><b>Director&rsquo;s Chair</b><small>AI enablement course</small></span></a></div></header><main id="main" class="ox">
 
 <section class="ox-band ox-hero" id="film">
   <div class="wrap">
-    <div class="ox-lockup" aria-label="ORIVEX"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17" fill="none" stroke="#F4F5F5" stroke-width="3" stroke-dasharray="80 27" transform="rotate(-50 24 24)"/><circle cx="37.6" cy="13.6" r="4" fill="#FF8A1F"/></svg><span class="ox-word">ORIVEX</span></div>
-    <p class="ox-model">ARC-7</p>
-    <div class="ox-corners">
-      <figure class="ox-player" style="margin:0">
-        <video controls playsinline preload="metadata" poster="video/orivex-poster.jpg" aria-label="ORIVEX ARC-7, a 45-second AI-directed product film">
-          <source src="video/orivex-arc7.mp4" type="video/mp4">
-          Your browser can&rsquo;t play this video. <a href="video/orivex-arc7.mp4">Download the MP4</a>.
-        </video>
-      </figure>
+    <div class="ox-grid">
+      <div class="ox-copy">
+        <div class="ox-lockup" aria-label="ORIVEX"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17" fill="none" stroke="#F4F5F5" stroke-width="3" stroke-dasharray="80 27" transform="rotate(-50 24 24)"/><circle cx="37.6" cy="13.6" r="4" fill="#FF8A1F"/></svg><span class="ox-word">ORIVEX</span></div>
+        <p class="ox-model">ARC-7</p>
+        <h1>Precision, without compromise.</h1>
+        <p class="ox-lede">A 45-second product film for a seven-axis fabrication arm that does not exist. Brand, specifications, script, narration, score, graphics and edit, directed end to end. No cameras. No studio. No robot.</p>
+        <p class="ox-fine">Spec product film. ORIVEX and ARC-7 are fictional.</p>
+      </div>
+      <div class="ox-hud" id="oxHud">
+        <div class="ox-ring" aria-hidden="true"></div>
+        <div class="ox-corners">
+          <figure class="ox-player" style="margin:0">
+            <video controls playsinline preload="metadata" poster="video/orivex-poster.jpg" aria-label="ORIVEX ARC-7, a 45-second AI-directed product film">
+              <source src="video/orivex-arc7.mp4" type="video/mp4">
+              Your browser can&rsquo;t play this video. <a href="video/orivex-arc7.mp4">Download the MP4</a>.
+            </video>
+          </figure>
+          <div class="ox-scan" aria-hidden="true"></div>
+        </div>
+        <span class="ox-tag ox-t1" aria-hidden="true">&plusmn;2&mu;m</span>
+        <span class="ox-tag ox-t2" aria-hidden="true">7-AXIS</span>
+      </div>
     </div>
-    <h1>Precision, without compromise.</h1>
-    <p class="ox-lede">A 45-second product film for a seven-axis fabrication arm that does not exist. Brand, specifications, script, narration, score, graphics and edit, directed end to end. No cameras. No studio. No robot.</p>
-    <p class="ox-fine">Spec product film. ORIVEX and ARC-7 are fictional.</p>
     <div class="ox-stats" role="list">
       <div class="ox-stat" role="listitem"><b>45<small>S</small></b><span>Runtime</span></div>
       <div class="ox-stat" role="listitem"><b>8</b><span>Shots</span></div>
@@ -519,4 +546,6 @@ main.ox .ox-bio h2{color:var(--ox-ink);font-size:clamp(34px,4vw,48px);margin:4px
   })();
 })();
 </script>
-<script src="script.js?v=c1004"></script></body></html>
+<script>
+(function(){var v=document.getElementById('oxHud');if(!v)return;if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;var hero=v.closest('section');var raf=null;function set(e){var r=v.getBoundingClientRect();var x=(e.clientX-(r.left+r.width/2))/r.width;var y=(e.clientY-(r.top+r.height/2))/r.height;x=Math.max(-1,Math.min(1,x));y=Math.max(-1,Math.min(1,y));v.style.setProperty('--mx',(x*14).toFixed(1)+'px');v.style.setProperty('--my',(y*10).toFixed(1)+'px');}hero.addEventListener('pointermove',function(e){if(raf)return;raf=requestAnimationFrame(function(){raf=null;set(e);});});hero.addEventListener('pointerleave',function(){v.style.setProperty('--mx','0px');v.style.setProperty('--my','0px');});})();
+</script><script src="script.js?v=c1004"></script></body></html>
