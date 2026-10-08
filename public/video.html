@@ -8,6 +8,22 @@
 .cs8>div{padding:12px 0}
 .fn a{padding:14px 0}
 .flowline{margin:0 0 14px}
+
+/* ===== Video hero film strip (Oct 2026) ===== */
+.strip{position:relative;height:400px;max-width:296px;margin:0 auto;overflow:hidden;transform:rotate(3deg) translate(calc(var(--mx,0px)*.7),calc(var(--my,0px)*.7));border-radius:16px;-webkit-mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent)}
+.strip::before,.strip::after{content:"";position:absolute;top:0;bottom:0;width:24px;background-color:rgba(8,8,10,.72);background-image:radial-gradient(circle at 50% 50%,rgba(255,255,255,.9) 3.2px,transparent 3.9px);background-size:24px 30px;background-repeat:repeat-y;z-index:2}
+.strip::before{left:0;border-radius:16px 0 0 16px}
+.strip::after{right:0;border-radius:0 16px 16px 0}
+.strip-track{display:grid;padding:0 34px;animation:stripScroll 26s linear infinite}
+.strip-track img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:14px;border:1px solid rgba(255,255,255,.18)}
+@keyframes stripScroll{to{transform:translateY(-50%)}}
+.strip-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-3deg);width:78px;height:78px;border-radius:50%;background:#0E6B5C;display:grid;place-items:center;box-shadow:0 12px 32px rgba(0,0,0,.45);z-index:3}
+.strip-play::before,.strip-play::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid rgba(255,255,255,.55);animation:playPing 2.6s ease-out infinite}
+.strip-play::after{animation-delay:1.3s}
+@keyframes playPing{from{transform:scale(1);opacity:.8}to{transform:scale(1.9);opacity:0}}
+.strip-play svg{width:30px;height:30px}
+@media(max-width:520px){.strip{height:340px;max-width:250px}}
+@media(prefers-reduced-motion:reduce){.strip-track,.strip-play::before,.strip-play::after{animation:none}}
 </style></head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="head-in"><a class="mark mark-logo" href="./" aria-label="madebydavidmartin, home"><img src="/img/logo-madebydavidmartin@2x.png" srcset="/img/logo-madebydavidmartin@2x.png 2x, /img/logo-madebydavidmartin@3x.png 3x" alt="madebydavidmartin" width="131" height="44"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span></span>Menu</button><nav class="nav" id="site-nav" aria-label="Main"><a href="./">Home</a><a href="work.html">Work</a><a href="method.html">Method</a><a href="video.html" aria-current="page">Video</a><a href="orivex.html">ORIVEX</a><a href="fizzypop.html">Fizzy Pop!</a><a href="djc.html">DJC</a><a href="about.html">About</a><a class="nav-course" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair course</a></nav><a class="course-btn" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener"><span class="cb-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span><span class="cb-tx"><b>Director&rsquo;s Chair</b><small>AI enablement course</small></span></a></div></header><main class="wrap" id="main">
 <style>
 .fws{font-size:clamp(28px,4.4vw,54px);line-height:1.14;font-weight:600;letter-spacing:-.015em;max-width:22ch;margin:0 0 18px}
@@ -55,14 +71,29 @@
 </style>
 
 <section class="band slate has-banner banner-video">
-  <div class="slate-in">
-    <div class="slate-main">
+  <div class="slate-in ph-hero">
+    <div class="slate-main ph-copy">
       <span class="slate-kicker">Video / Film</span>
       <h1>Directed. Produced. Finished.</h1>
       <p class="lede">Promotional, corporate, technology, educational, training, children&rsquo;s media, social, campaign and AI-native video. Script to final edit, directed end to end.</p>
       <div class="btns"><a class="btn btn-primary" href="#orivex">AI-directed film</a><a class="btn btn-ghost" href="#cybersecurity">Featured series</a><a class="btn btn-ghost" href="#djc">DJC</a></div>
     </div>
-    <dl class="credits">
+    <div class="ph-visual" id="phVisualVideo">
+      <div class="strip" aria-hidden="true">
+        <div class="strip-track">
+          <img src="video/orivex-poster.jpg" alt="" loading="lazy">
+          <img src="video/fizola-poster.jpg" alt="" loading="lazy">
+          <img src="video/fizzypop-poster.jpg" alt="" loading="lazy">
+          <img src="video/promo-poster.jpg" alt="" loading="lazy">
+          <img src="video/orivex-poster.jpg" alt="" loading="lazy">
+          <img src="video/fizola-poster.jpg" alt="" loading="lazy">
+          <img src="video/fizzypop-poster.jpg" alt="" loading="lazy">
+          <img src="video/promo-poster.jpg" alt="" loading="lazy">
+        </div>
+        <span class="strip-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#fff"/></svg></span>
+      </div>
+    </div>
+    <dl class="credits ph-credits">
       <div><dt>Disciplines</dt><dd>Scriptwriting, storyboarding, visual development, direction, production, editing, motion</dd></div>
       <div><dt>AI video</dt><dd>AI-generated and AI-assisted production</dd></div>
       <div><dt>Scale</dt><dd>460+ videos published, a quarter billion views</dd></div>
@@ -213,4 +244,6 @@
 </section>
 
 <section class="band cta-band-white"><div class="cta-in"><div><h2>Full archive on request.</h2><p>Scripts, treatments, storyboards and process work.</p></div><a class="btn btn-primary" href="contact.html">Get in touch &rarr;</a></div></section>
-</main><footer class="foot" id="contact"><div class="wrap foot-in"><div class="foot-brand"><a class="mark" href="./"><span>David Martin<small>Creative Professional</small></span></a><p class="foot-tag">Directed work, at every scale.</p></div><div class="foot-cta"><h2>Thanks for visiting.</h2><p>If something here is useful to you or your team, I would be glad to hear about it.</p><div class="btns"><a class="btn btn-light" href="mailto:david.angus.martin@gmail.com">Email me</a><a class="btn btn-ghost" href="https://www.linkedin.com/in/david-martin-7a246522" target="_blank" rel="noopener">Connect on LinkedIn</a></div></div><nav class="foot-nav" aria-label="Footer"><a href="./">Home</a><a href="work.html">Work</a><a href="method.html">Method</a><a href="video.html" aria-current="page">Video</a><a href="orivex.html">ORIVEX</a><a href="fizzypop.html">Fizzy Pop!</a><a href="djc.html">DJC</a><a href="about.html">About</a><a href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair course</a></nav><p class="foot-fine">This is a personal portfolio. &copy; 2026 David Martin.</p></div></footer><script src="script.js?v=c1004"></script></body></html>
+</main><footer class="foot" id="contact"><div class="wrap foot-in"><div class="foot-brand"><a class="mark" href="./"><span>David Martin<small>Creative Professional</small></span></a><p class="foot-tag">Directed work, at every scale.</p></div><div class="foot-cta"><h2>Thanks for visiting.</h2><p>If something here is useful to you or your team, I would be glad to hear about it.</p><div class="btns"><a class="btn btn-light" href="mailto:david.angus.martin@gmail.com">Email me</a><a class="btn btn-ghost" href="https://www.linkedin.com/in/david-martin-7a246522" target="_blank" rel="noopener">Connect on LinkedIn</a></div></div><nav class="foot-nav" aria-label="Footer"><a href="./">Home</a><a href="work.html">Work</a><a href="method.html">Method</a><a href="video.html" aria-current="page">Video</a><a href="orivex.html">ORIVEX</a><a href="fizzypop.html">Fizzy Pop!</a><a href="djc.html">DJC</a><a href="about.html">About</a><a href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair course</a></nav><p class="foot-fine">This is a personal portfolio. &copy; 2026 David Martin.</p></div></footer><script>
+(function(){var v=document.getElementById('phVisualVideo');if(!v)return;if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;var hero=v.closest('section');var raf=null;function set(e){var r=v.getBoundingClientRect();var x=(e.clientX-(r.left+r.width/2))/r.width;var y=(e.clientY-(r.top+r.height/2))/r.height;x=Math.max(-1,Math.min(1,x));y=Math.max(-1,Math.min(1,y));v.style.setProperty('--mx',(x*16).toFixed(1)+'px');v.style.setProperty('--my',(y*12).toFixed(1)+'px');}hero.addEventListener('pointermove',function(e){if(raf)return;raf=requestAnimationFrame(function(){raf=null;set(e);});});hero.addEventListener('pointerleave',function(){v.style.setProperty('--mx','0px');v.style.setProperty('--my','0px');});})();
+</script><script src="script.js?v=c1004"></script></body></html>
