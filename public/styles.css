@@ -1264,6 +1264,7 @@ h1,h2{font-family:"Clash Display","Geist",sans-serif;letter-spacing:-.018em}
 
 /* footer: light yellow theme (Oct 2026) */
 .foot{background:#F8E9BC;color:#2B2119;box-shadow:0 0 0 100vmax #F8E9BC}
+.foot::before{background:#F8E9BC!important}
 .foot h2{color:#2B2119}
 .foot .foot-cta p{color:#5C4F3A}
 .foot .btn-light{background:#D85A20;color:#fff}
