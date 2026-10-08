@@ -1205,8 +1205,8 @@ h1,h2{font-family:"Clash Display","Geist",sans-serif;letter-spacing:-.018em}
 @media(max-width:900px){#how-i-work .hiw-wrap{grid-template-columns:1fr}#how-i-work .cs-steps{grid-template-columns:repeat(2,1fr);height:auto}}
 
 /* Director's Chair course badge in the header (matches the main site's guides button) */
-.head-in .course-btn{order:5;display:inline-flex;align-items:center;gap:9px;margin-left:10px;background:#1D5AA6;color:#fff;text-decoration:none;border-radius:10px;padding:7px 14px 7px 11px;white-space:nowrap;line-height:1.1;transition:background .15s ease}
-.head-in .course-btn:hover{background:#174C8E}
+.head-in .course-btn{order:5;display:inline-flex;align-items:center;gap:9px;margin-left:10px;background:#D85A20;color:#fff;text-decoration:none;border-radius:10px;padding:7px 14px 7px 11px;white-space:nowrap;line-height:1.1;transition:background .15s ease}
+.head-in .course-btn:hover{background:#B84A1A}
 .head-in .course-btn .cb-ic{display:inline-grid;place-items:center;color:#fff}
 .head-in .course-btn .cb-ic svg{width:18px;height:18px}
 .head-in .course-btn .cb-tx{display:inline-grid;text-align:left}
