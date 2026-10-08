@@ -1277,8 +1277,8 @@ h1,h2{font-family:"Clash Display","Geist",sans-serif;letter-spacing:-.018em}
 .cine::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.16;background-size:cover;background-position:center;background-repeat:no-repeat}
 .band.slate.has-banner::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.28;background-size:cover;background-position:center;background-repeat:no-repeat}
 .cine>* ,.band.slate.has-banner>*{position:relative;z-index:1}
-.cine::after{background-image:url(/img/hero-home.jpg)}
-.banner-work::after{background-image:url(/img/hero-work.jpg)}
-.banner-method::after{background-image:url(/img/hero-method.jpg)}
-.banner-video::after{background-image:url(/img/hero-video.jpg)}
-.banner-djckids::after{background-image:url(/img/hero-djc.jpg)}
+main .cine::after{background-image:url(/img/hero-home.jpg)}
+main .band.slate.has-banner.banner-work::after{background-image:url(/img/hero-work.jpg)}
+main .band.slate.has-banner.banner-method::after{background-image:url(/img/hero-method.jpg)}
+main .band.slate.has-banner.banner-video::after{background-image:url(/img/hero-video.jpg)}
+main .band.slate.has-banner.banner-djckids::after{background-image:url(/img/hero-djc.jpg)}
