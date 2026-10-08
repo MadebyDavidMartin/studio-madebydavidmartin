@@ -3,6 +3,7 @@
 .flag-card{display:grid;grid-template-columns:minmax(240px,400px) 1fr;gap:28px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:0;overflow:hidden;color:var(--ink);margin:26px 0 4px}
 .flag-card video{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:16/9;background:#000}
 .flag-card .yt,.flag-mini .yt{border-radius:0}
+.flag-card .yt{align-self:stretch}
 .flag-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:26px 0 4px}
 @media(max-width:860px){.flag-grid{grid-template-columns:1fr}}
 .flag-mini{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;color:var(--ink)}
@@ -94,7 +95,9 @@
 </style><style>
 /* ===== Page band rhythm (Oct 2026) ===== */
 @media(prefers-color-scheme:light){
-main section.sec{background:#FDF8E7;box-shadow:0 0 0 100vmax #FDF8E7;clip-path:inset(0 -100vmax)}
+/* page accent: colored text matches banner */
+main{--blue:#8A6D1B;--blue-deep:#6E5715;}.cine-title em{color:#8A6D1B}.cine-sub{color:#8A6D1B}
+main section.band-sage{background:#FDF8E7;box-shadow:0 0 0 100vmax #FDF8E7;clip-path:inset(0 -100vmax)}
 main section.cta-band-white{background:#F8E9BC;box-shadow:0 0 0 100vmax #F8E9BC;color:#2B2119}
 main section.cta-band-white .cta-in h2{color:#2B2119}
 main section.cta-band-white .cta-in p{color:rgba(43,33,25,.72)}
