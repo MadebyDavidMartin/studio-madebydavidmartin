@@ -1173,8 +1173,7 @@ h1,h2{font-family:"Clash Display","Geist",sans-serif;letter-spacing:-.018em}
 @media(max-width:900px){.hiw-wrap{grid-template-columns:1fr}}
 .hiw-wrap .feature-vid{margin:0;max-width:560px}
 .hiw-wrap .cs-steps{grid-template-columns:1fr;gap:10px;margin:0}
-/* footer: deep brand green with light text, contrasts the white CTA above */
-.foot{background:#0E6B5C;color:#FFFDF7;box-shadow:0 0 0 100vmax #0E6B5C}
+/* (deep green footer retired Oct 2026 - now light yellow) */
 .foot::before{background:
   linear-gradient(rgba(255,253,247,.06) 1px,transparent 1px) 0 0/56px 56px,
   linear-gradient(90deg,rgba(255,253,247,.06) 1px,transparent 1px) 0 0/56px 56px,#0E6B5C!important}
