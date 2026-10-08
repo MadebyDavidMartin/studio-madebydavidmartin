@@ -30,6 +30,13 @@
 .mk p{margin:0;max-width:640px}
 .mk ul{margin:8px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
 .mk li{font-size:13.5px;border:1px solid var(--line);border-radius:99px;padding:5px 12px;color:var(--muted)}
+
+/* ===== Method hero chair (Oct 2026) ===== */
+.chair-wrap{position:relative;width:min(100%,330px);margin:0 auto;transform:translate(calc(var(--mx,0px)*.6),calc(var(--my,0px)*.6))}
+.chair-disc{position:absolute;left:50%;top:47%;width:118%;aspect-ratio:1;transform:translate(-50%,-50%);background:#6E2432;border-radius:50%}
+.chair{position:relative;display:block;width:100%;height:auto;filter:drop-shadow(0 24px 28px rgba(0,0,0,.35));animation:phFloat 7s ease-in-out infinite,chairRock 7s ease-in-out infinite}
+@keyframes chairRock{0%,100%{rotate:-1.1deg}50%{rotate:1.1deg}}
+@media(prefers-reduced-motion:reduce){.chair{animation:none}}
 </style></head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="head-in"><a class="mark mark-logo" href="./" aria-label="madebydavidmartin, home"><img src="/img/logo-madebydavidmartin@2x.png" srcset="/img/logo-madebydavidmartin@2x.png 2x, /img/logo-madebydavidmartin@3x.png 3x" alt="madebydavidmartin" width="131" height="44"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span></span>Menu</button><nav class="nav" id="site-nav" aria-label="Main"><a href="./">Home</a><a href="work.html">Work</a><a href="method.html" aria-current="page">Method</a><a href="video.html">Video</a><a href="orivex.html">ORIVEX</a><a href="fizzypop.html">Fizzy Pop!</a><a href="djc.html">DJC</a><a href="about.html">About</a><a class="nav-course" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair course</a></nav><a class="course-btn" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener"><span class="cb-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span><span class="cb-tx"><b>Director&rsquo;s Chair</b><small>AI enablement course</small></span></a></div></header><main class="wrap" id="main">
 <style>
 .fws{font-size:clamp(28px,4.4vw,54px);line-height:1.14;font-weight:600;letter-spacing:-.015em;max-width:22ch;margin:0 0 18px}
@@ -57,14 +64,36 @@
 </style>
 
 <section class="band slate has-banner banner-method">
-  <div class="slate-in">
-    <div class="slate-main">
+  <div class="slate-in ph-hero">
+    <div class="slate-main ph-copy">
       <span class="slate-kicker">The Method</span>
       <h1>The Director&rsquo;s Chair.</h1>
       <p class="lede">How do you direct great creative work when AI becomes part of the production crew?</p>
       <p class="lede">My creative philosophy and production methodology. AI is the crew. The creative director is still the director.</p>
     </div>
-    <dl class="credits">
+    <div class="ph-visual" id="phVisualMethod">
+      <div class="chair-wrap" aria-hidden="true">
+        <div class="chair-disc"></div>
+        <svg class="chair" viewBox="0 0 400 470">
+          <ellipse cx="200" cy="444" rx="112" ry="13" fill="rgba(0,0,0,.32)"/>
+          <rect x="112" y="40" width="16" height="168" rx="6" fill="#7A4E2D"/>
+          <rect x="272" y="40" width="16" height="168" rx="6" fill="#7A4E2D"/>
+          <rect x="102" y="26" width="196" height="72" rx="10" fill="#F3EAD6" stroke="#D8C7A4" stroke-width="2"/>
+          <text x="203" y="70" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="24" letter-spacing="5" fill="#7A1F30">DIRECTOR</text>
+          <rect x="62" y="198" width="276" height="18" rx="9" fill="#7A4E2D"/>
+          <rect x="62" y="198" width="276" height="7" rx="3.5" fill="#8F6136"/>
+          <rect x="76" y="216" width="12" height="34" fill="#7A4E2D"/>
+          <rect x="312" y="216" width="12" height="34" fill="#7A4E2D"/>
+          <polygon points="94,216 306,216 288,274 112,274" fill="#EADFC4" stroke="#D8C7A4" stroke-width="2"/>
+          <rect x="70" y="216" width="16" height="206" rx="6" fill="#7A4E2D"/>
+          <rect x="314" y="216" width="16" height="206" rx="6" fill="#7A4E2D"/>
+          <rect x="86" y="332" width="228" height="14" rx="7" fill="#7A4E2D"/>
+          <rect x="68" y="416" width="20" height="14" rx="4" fill="#2B1B12"/>
+          <rect x="312" y="416" width="20" height="14" rx="4" fill="#2B1B12"/>
+        </svg>
+      </div>
+    </div>
+    <dl class="credits ph-credits">
       <div><dt>What it is</dt><dd>A philosophy of creative direction for AI-native production</dd></div>
       <div><dt>Built from</dt><dd>Directing DJC Media at catalogue scale</dd></div>
       <div><dt>The question</dt><dd>How to direct when the crew includes machines</dd></div>
@@ -219,4 +248,6 @@
 </section>
 
 <section class="band cta-band"><div class="cta-in"><div><h2>See the method in practice.</h2><p>Case studies from productions that ran on it.</p></div><a class="btn btn-light" href="work.html">Selected work &rarr;</a></div></section>
-</main><footer class="foot" id="contact"><div class="wrap foot-in"><div class="foot-brand"><a class="mark" href="./"><span>David Martin<small>Creative Professional</small></span></a><p class="foot-tag">Directed work, at every scale.</p></div><div class="foot-cta"><h2>Thanks for visiting.</h2><p>If something here is useful to you or your team, I would be glad to hear about it.</p><div class="btns"><a class="btn btn-light" href="mailto:david.angus.martin@gmail.com">Email me</a><a class="btn btn-ghost" href="https://www.linkedin.com/in/david-martin-7a246522" target="_blank" rel="noopener">Connect on LinkedIn</a></div></div><nav class="foot-nav" aria-label="Footer"><a href="./">Home</a><a href="work.html">Work</a><a href="method.html" aria-current="page">Method</a><a href="video.html">Video</a><a href="orivex.html">ORIVEX</a><a href="fizzypop.html">Fizzy Pop!</a><a href="djc.html">DJC</a><a href="about.html">About</a><a href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair course</a></nav><p class="foot-fine">This is a personal portfolio. &copy; 2026 David Martin.</p></div></footer><script src="script.js?v=c1004"></script></body></html>
+</main><footer class="foot" id="contact"><div class="wrap foot-in"><div class="foot-brand"><a class="mark" href="./"><span>David Martin<small>Creative Professional</small></span></a><p class="foot-tag">Directed work, at every scale.</p></div><div class="foot-cta"><h2>Thanks for visiting.</h2><p>If something here is useful to you or your team, I would be glad to hear about it.</p><div class="btns"><a class="btn btn-light" href="mailto:david.angus.martin@gmail.com">Email me</a><a class="btn btn-ghost" href="https://www.linkedin.com/in/david-martin-7a246522" target="_blank" rel="noopener">Connect on LinkedIn</a></div></div><nav class="foot-nav" aria-label="Footer"><a href="./">Home</a><a href="work.html">Work</a><a href="method.html" aria-current="page">Method</a><a href="video.html">Video</a><a href="orivex.html">ORIVEX</a><a href="fizzypop.html">Fizzy Pop!</a><a href="djc.html">DJC</a><a href="about.html">About</a><a href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair course</a></nav><p class="foot-fine">This is a personal portfolio. &copy; 2026 David Martin.</p></div></footer><script>
+(function(){var v=document.getElementById('phVisualMethod');if(!v)return;if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;var hero=v.closest('section');var raf=null;function set(e){var r=v.getBoundingClientRect();var x=(e.clientX-(r.left+r.width/2))/r.width;var y=(e.clientY-(r.top+r.height/2))/r.height;x=Math.max(-1,Math.min(1,x));y=Math.max(-1,Math.min(1,y));v.style.setProperty('--mx',(x*16).toFixed(1)+'px');v.style.setProperty('--my',(y*12).toFixed(1)+'px');}hero.addEventListener('pointermove',function(e){if(raf)return;raf=requestAnimationFrame(function(){raf=null;set(e);});});hero.addEventListener('pointerleave',function(){v.style.setProperty('--mx','0px');v.style.setProperty('--my','0px');});})();
+</script><script src="script.js?v=c1004"></script></body></html>
