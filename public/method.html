@@ -42,13 +42,14 @@
 .chair-tilt.clap .wv3{animation-delay:.16s}
 @keyframes chairBounce{0%{transform:perspective(1000px) scale(1)}35%{transform:perspective(1000px) scale(.95) rotate(-1.2deg)}70%{transform:perspective(1000px) scale(1.02)}100%{transform:perspective(1000px) scale(1)}}
 @keyframes wvOut{0%{opacity:0;transform:scale(.55)}25%{opacity:1}100%{opacity:0;transform:scale(1.25)}}
-.chair{position:relative;display:block;width:100%;height:auto;filter:drop-shadow(0 24px 28px rgba(0,0,0,.35));animation:phFloat 7s ease-in-out infinite,chairRock 7s ease-in-out infinite}
-@keyframes chairRock{0%,100%{rotate:-1.1deg}50%{rotate:1.1deg}}
+.chair{position:relative;display:block;width:100%;height:auto;filter:drop-shadow(0 24px 28px rgba(0,0,0,.35))}
 @media(prefers-reduced-motion:reduce){.chair{animation:none}.chair-tilt.clap,.chair-tilt.clap .wv{animation:none}}
 </style><style>
 /* ===== Page band rhythm (Oct 2026) ===== */
 @media(prefers-color-scheme:light){
-main section.sec{background:#F2E4E6;box-shadow:0 0 0 100vmax #F2E4E6;clip-path:inset(0 -100vmax)}
+/* page accent: colored text matches banner */
+main{--blue:#5C1E28;--blue-deep:#471620;}
+main section.band-sage{background:#F2E4E6;box-shadow:0 0 0 100vmax #F2E4E6;clip-path:inset(0 -100vmax)}
 main section.cta-band-white{background:#5C1E28;box-shadow:0 0 0 100vmax #5C1E28;color:#fff}
 main section.cta-band-white .cta-in h2{color:#fff}
 main section.cta-band-white .cta-in p{color:rgba(255,255,255,.72)}
