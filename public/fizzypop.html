@@ -195,7 +195,7 @@ html{scroll-padding-top:80px}
 .jb-head .fx-eyebrow{color:var(--cola)}
 .jb-head h2{font-family:'Shrikhand',serif;font-weight:400;font-size:clamp(40px,6vw,70px);line-height:1.05;margin:0 0 12px;color:var(--cream);text-shadow:3px 3px 0 var(--fp),6px 6px 0 var(--cola)}
 .jb-head p{margin:0;font-size:17.5px;line-height:1.6;color:var(--cola)}
-.jb-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(16px,2.4vw,28px)}
+.jb-grid{display:grid;grid-template-columns:1fr 1fr;max-width:960px;margin:0 auto;gap:clamp(16px,2.4vw,28px)}
 @media(max-width:1100px){.jb-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:860px){.jb-grid{grid-template-columns:1fr}}
 .jb-card{display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,2.4vw,28px);align-items:center;border-radius:24px;padding:clamp(20px,2.6vw,30px)}
@@ -324,7 +324,7 @@ main .btn,.x-foot .btn{border-radius:999px!important}
 /* overflow guard (Oct 2026): prevent horizontal scroll from breaking layout (clip, not hidden, so the sticky header keeps working) */
 html,body{overflow-x:clip;max-width:100%}
 img,video{max-width:100%}
-</style></head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="head-in"><a class="mark mark-logo" href="./" aria-label="madebydavidmartin, home"><img src="/img/logo-madebydavidmartin-portfolio.png" alt="madebydavidmartin portfolio" width="505" height="99"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span></span>Menu</button><nav class="nav" id="site-nav" aria-label="Main"><a href="./">Home</a><a href="work.html">Work</a><a href="method.html">Method</a><a href="video.html">Video</a><a href="orivex.html">ORIVEX</a><a href="fizzypop.html" aria-current="page">Fizzy Pop!</a><a href="djc.html">DJC</a><a href="about.html">About</a><a href="https://jp.madebydavidmartin.com/" lang="ja">日本語</a><a class="nav-course" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair course</a></nav><a class="course-btn" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener"><span class="cb-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span><span class="cb-tx"><b>Director&rsquo;s Chair</b><small>AI enablement course</small></span></a></div></header>
+.jb-year{display:inline-block;margin-top:6px;padding:4px 14px;border-radius:99px;background:#E9A319;color:#24130C;font-size:14px;font-weight:800;letter-spacing:.06em}</style></head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="head-in"><a class="mark mark-logo" href="./" aria-label="madebydavidmartin, home"><img src="/img/logo-madebydavidmartin-portfolio.png" alt="madebydavidmartin portfolio" width="505" height="99"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span></span>Menu</button><nav class="nav" id="site-nav" aria-label="Main"><a href="./">Home</a><a href="work.html">Work</a><a href="method.html">Method</a><a href="video.html">Video</a><a href="orivex.html">ORIVEX</a><a href="fizzypop.html" aria-current="page">Fizzy Pop!</a><a href="djc.html">DJC</a><a href="about.html">About</a><a href="https://jp.madebydavidmartin.com/" lang="ja">日本語</a><a class="nav-course" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair course</a></nav><a class="course-btn" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener"><span class="cb-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span><span class="cb-tx"><b>Director&rsquo;s Chair</b><small>AI enablement course</small></span></a></div></header>
 <main id="main">
 
 <section class="fx-hero" id="ad">
@@ -378,7 +378,7 @@ img,video{max-width:100%}
       <article class="jb-card fp">
         <button class="jb-disc" type="button" aria-label="Play or pause the Fizzy Pop jingle" data-for="aFP"><span class="jb-label"><img src="/img/fizzypop/FP_logo_white_flat.svg" alt="" width="80" height="64"></span></button>
         <div class="jb-body">
-          <h3 class="fp-type">Fizzy Pop!</h3>
+          <h3 class="fp-type">Fizzy Pop! <span class="jb-year">1976</span></h3>
           <p class="jb-meta">Open Loud &middot; Jingle &middot; 116 BPM &middot; 68 s</p>
           <audio id="aFP" controls preload="none" src="/audio/fizzy-pop.mp3" aria-label="Fizzy Pop, the jingle, full length"></audio>
           <a class="btn btn-fp" href="/audio/fizzy-pop.mp3" download="Fizzy Pop - Open Loud.mp3">Download the jingle (MP3)</a>
@@ -387,7 +387,7 @@ img,video{max-width:100%}
       <article class="jb-card fp">
         <button class="jb-disc" type="button" aria-label="Play or pause the Fizzy Pop 2026 track" data-for="aFP26"><span class="jb-label"><img src="/img/fizzypop/FP_logo_white_flat.svg" alt="" width="80" height="64"></span></button>
         <div class="jb-body">
-          <h3 class="fp-type">Fizzy Pop! 2026</h3>
+          <h3 class="fp-type">Fizzy Pop! <span class="jb-year">2026</span></h3>
           <p class="jb-meta">Open Loud &middot; 2026 remake</p>
           <audio id="aFP26" controls preload="none" src="/audio/fizzypop-2026.wav" aria-label="Fizzy Pop 2026, the track, full length"></audio>
           <a class="btn btn-fp" href="/audio/fizzypop-2026.wav" download="Fizzy Pop 2026 - Open Loud.wav">Download the 2026 track (WAV)</a>
