@@ -92,16 +92,16 @@
 
 .showcase-feature{margin:26px 0}
 .showcase-feature .flag-card{margin:0}
-.then-now{margin:38px 0;padding:30px clamp(18px,3vw,36px);background:#FFF8EE;border:2px solid #E9A319;border-radius:22px}
-.tn-head{display:flex;align-items:center;gap:16px;margin-bottom:22px}
-.tn-year{font-size:clamp(30px,4.5vw,52px);font-weight:800;letter-spacing:-.02em;color:#24130C;line-height:1}
-.tn-line{flex:1;height:3px;background:linear-gradient(90deg,#E9A319,#D85A20);border-radius:2px}
-.tn-bridge{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8A5A00;white-space:nowrap}
-.tn-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.5vw,28px)}
-@media(max-width:760px){.tn-grid{grid-template-columns:1fr}}
-.tn-grid .flag-card{margin:0}
-.tn-cap{margin:20px 0 0;font-size:15.5px;color:#5A4A3A;max-width:640px}
-.tn-cap a{color:#0E6B5C;font-weight:600}</style><style>
+
+.showcase-box{margin:38px 0;padding:clamp(24px,3vw,40px);background:#FFF8EE;border:2px solid #E9A319;border-radius:22px}
+.trio-head{max-width:680px;margin-bottom:24px}
+.trio-head h3{font-size:clamp(22px,2.6vw,30px);margin:0 0 10px;letter-spacing:-.02em}
+.trio-head p{margin:0;font-size:16px;line-height:1.6;color:#5A4A3A}
+.trio-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(16px,2.5vw,28px)}
+@media(max-width:900px){.trio-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto}}
+.flag-card-v{flex-direction:column}
+.flag-card-v video{aspect-ratio:16/9;width:100%}
+.flag-card-v .fc-body{padding:20px}.sb-head{max-width:680px;margin-bottom:24px}.sb-head h3{font-size:clamp(22px,2.6vw,30px);margin:0 0 10px;letter-spacing:-.02em}.sb-head p{margin:0;font-size:16px;line-height:1.6;color:#5A4A3A}</style><style>
 /* ===== Page band rhythm (Oct 2026) ===== */
 @media(prefers-color-scheme:light){
 /* page accent: colored text matches banner */
@@ -180,37 +180,37 @@ main section.cta-band-white .btn-primary{background:#1A120C;border-color:#1A120C
 <section class="sec band-white" id="selected-video">
   <div class="sec-head"><div><span class="eyebrow">Selected video</span><h2>Directed and produced.</h2></div><p><a href="video.html">All video &rarr;</a></p></div>
   <p class="lede" style="max-width:700px">Four films. Four different jobs. One director. A selected sample of the video work, each one directed end to end. The full archive, including the six-part cybersecurity series and the DJC catalogue, lives on the video page.</p>
-      <div class="showcase-feature">
+      <div class="showcase-box">
+    <div class="sb-head">
+      <h3>Flagship product film.</h3>
+      <p>A 45-second AI-directed concept film for a fictional robotic arm. Every shot, line, and graphic generated and assembled under human direction.</p>
+    </div>
+    <div class="showcase-feature">
     <div class="flag-card">
     <video controls playsinline preload="metadata" poster="video/orivex-poster.jpg" aria-label="ORIVEX ARC-7, an AI-directed product film, 45 seconds"><source src="video/orivex-arc7.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/orivex-arc7.mp4">Download the MP4</a>.</video>
     <div class="fc-body"><span class="pnote-num">Flagship &middot; AI-directed product film</span><h3>ORIVEX ARC-7</h3><p>45 seconds, 1080p. A concept product film made with an AI-assisted pipeline: every shot, line and graphic generated or assembled under human direction. <a href="orivex.html">Read the case study &rarr;</a></p></div>
   </div>
   </div>
-  <div class="then-now">
-    <div class="tn-head" aria-hidden="true">
-      <span class="tn-year">1976</span>
-      <span class="tn-line"></span>
-      <span class="tn-bridge">50 years apart</span>
-      <span class="tn-line"></span>
-      <span class="tn-year">2026</span>
+  </div>
+  <div class="showcase-box">
+    <div class="trio-head">
+      <h3>One brief. Three directions.</h3>
+      <p>The same 30-second cola brief, executed three ways: the 1976 original, the 2026 remake, and Fizola, a funky reimagining under a different name. Generation, theme, genre. Same director.</p>
     </div>
-    <div class="tn-grid">
-      <div class="flag-card">
+    <div class="trio-grid">
+      <div class="flag-card flag-card-v">
     <video controls playsinline preload="metadata" poster="video/fizzypop-poster.jpg" aria-label="Fizzy Pop Cherry Cola, the 1976 original, a 30-second spec commercial"><source src="video/fizzypop.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/fizzypop.mp4">Download the MP4</a>.</video>
     <div class="fc-body"><span class="pnote-num">Flagship &middot; AI-directed spec commercial</span><h3>Fizzy Pop! 1976</h3><p>30 seconds, 1080p. The original. A 1970s cherry cola spot, loud and fizzy, directed end to end. <a href="fizzypop.html">Compare 1976 vs 2026 &rarr;</a></p></div>
   </div>
-      <div class="flag-card">
+      <div class="flag-card flag-card-v">
     <video controls playsinline preload="metadata" poster="img/fizzypop-2026-poster.jpg" aria-label="Fizzy Pop Cherry Cola, the 2026 version, a 30-second spec commercial"><source src="video/fizzypop-2026.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/fizzypop-2026.mp4">Download the MP4</a>.</video>
     <div class="fc-body"><span class="pnote-num">Flagship &middot; AI-directed spec commercial</span><h3>Fizzy Pop! 2026</h3><p>30 seconds, 1080p. The 1976 classic remade fifty years on: same brand, new streets, new energy, directed end to end. <a href="fizzypop.html">Compare 1976 vs 2026 &rarr;</a></p></div>
   </div>
-    </div>
-    <p class="tn-cap">The same brand, fifty years apart. The 1976 original and its 2026 remake, directed end to end. <a href="fizzypop.html">See the full comparison &rarr;</a></p>
-  </div>
-  <div class="showcase-feature">
-    <div class="flag-card">
+      <div class="flag-card flag-card-v">
     <video controls playsinline preload="metadata" poster="video/fizola-poster.jpg" aria-label="Fizola Cola, a 30-second spec commercial"><source src="video/Fizola.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/Fizola.mp4">Download the MP4</a>.</video>
     <div class="fc-body"><span class="pnote-num">Flagship &middot; AI-directed spec commercial</span><h3>Fizola Cola</h3><p>30 seconds, 1080p. A 1970s-style spec TV spot for a fictional cola, with an original song. Brand, world, music and edit, directed end to end. <a href="fizzypop.html">See it side by side with Fizzy Pop! &rarr;</a></p></div>
   </div>
+    </div>
   </div>
   
   
