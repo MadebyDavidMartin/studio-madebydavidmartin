@@ -33,7 +33,7 @@ body{overflow-x:clip}
 .fx-card-top{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 22px}
 .fx-card-top img{height:74px;width:auto;display:block}
 .fx-card.fz .fx-card-top img{height:58px}
-.fx-tag{font-size:clamp(24px,2.8vw,34px);line-height:1;color:#fff;margin:0;text-align:right}
+.fx-year{display:inline-block;margin-left:8px;padding:2px 10px;border-radius:99px;background:rgba(255,255,255,.22);font-size:12px;letter-spacing:.08em;vertical-align:2px}.fx-tag{font-size:clamp(24px,2.8vw,34px);line-height:1;color:#fff;margin:0;text-align:right}
 .fx-card.fz .fx-tag{color:var(--fz-gold);font-size:clamp(20px,2.4vw,28px)}
 .fx-card video{display:block;width:100%;aspect-ratio:16/9;background:#000}
 .fx-card-facts{display:flex;flex-wrap:wrap;gap:8px;padding:16px 22px 20px}
@@ -329,9 +329,9 @@ img,video{max-width:100%}
 
 <section class="fx-hero" id="ad">
   <div class="wrap fx-hero-in">
-    <p class="fx-eyebrow">Fizzy Pop + Fizola</p>
-    <h1>One brief. Three films.</h1>
-    <p class="fx-lede">Two fictional cola brands. Two 30-second commercials. One production system. I made Fizzy Pop and Fizola from the same creative foundation, then deliberately pushed them in different directions.</p>
+    <p class="fx-eyebrow">Fizzy Pop Cherry Cola</p>
+    <h1>Fifty years of pop.</h1>
+    <p class="fx-lede">In 1976, Fizzy Pop Cherry Cola was the loudest thing on television. Fifty years later I remade it from scratch: same brand, new streets, new energy. The Japanese version and the Fizola alternate take round out the set, all from one production system.</p>
     <div class="cheers-stage">
     <div class="cheers" id="phVisualFizz" aria-hidden="true">
       <svg class="cheers-burst" viewBox="0 0 200 200"><circle cx="100" cy="100" r="98" fill="#E9A319"/><circle cx="100" cy="100" r="78" fill="none" stroke="#E94E7A" stroke-width="40" pathLength="36" stroke-dasharray="1 1"/><circle cx="100" cy="100" r="98" fill="none" stroke="rgba(255,246,230,.85)" stroke-width="3"/></svg>
@@ -347,16 +347,20 @@ img,video{max-width:100%}
     </div>
     </div>
     <div class="fx-duo">
-      <div class="fx-card fp" id="fizzy-pop">
-        <div class="fx-card-top"><img src="/img/fizzypop/FP_logo_white_flat.svg" alt="Fizzy Pop Cherry Cola logo" width="440" height="352"><p class="fx-tag fp-type">Open loud.</p></div>
-        <video controls playsinline preload="metadata" poster="/video/fizzypop-poster.jpg" aria-label="Fizzy Pop Cherry Cola, a 30-second spec commercial"><source src="/video/fizzypop.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="/video/fizzypop.mp4">Download the MP4</a>.</video>
+      <div class="fx-card fp" id="fizzy-pop-1976">
+        <div class="fx-card-top"><img src="/img/fizzypop/FP_logo_white_flat.svg" alt="Fizzy Pop Cherry Cola logo" width="440" height="352"><p class="fx-tag fp-type">Open loud. <span class="fx-year">1976</span></p></div>
+        <video controls playsinline preload="metadata" poster="/video/fizzypop-poster.jpg" aria-label="Fizzy Pop Cherry Cola, the 1976 original, a 30-second spec commercial"><source src="/video/fizzypop.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="/video/fizzypop.mp4">Download the MP4</a>.</video>
       </div>
-      <div class="fx-card fz" id="fizola">
-        <div class="fx-card-top"><img src="/img/fizola/FZ_logo_cream.png" alt="Fizola Cola logo" width="900" height="421"><p class="fx-tag fz-type">Turn on the sunshine.</p></div>
-        <video controls playsinline preload="metadata" poster="/video/fizola-poster.jpg" aria-label="Fizola Cola, a 30-second spec commercial"><source src="/video/Fizola.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="/video/Fizola.mp4">Download the MP4</a>.</video>
-      </div><div class="fx-card fp fx-card-jp" id="fizzy-pop-jp">
+      <div class="fx-card fp" id="fizzy-pop-2026">
+        <div class="fx-card-top"><img src="/img/fizzypop/FP_logo_white_flat.svg" alt="Fizzy Pop Cherry Cola logo" width="440" height="352"><p class="fx-tag fp-type">Open loud. <span class="fx-year">2026</span></p></div>
+        <video controls playsinline preload="metadata" poster="/img/fizzypop-2026-poster.jpg" aria-label="Fizzy Pop Cherry Cola, the 2026 remake, a 30-second spec commercial"><source src="/video/fizzypop-2026.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="/video/fizzypop-2026.mp4">Download the MP4</a>.</video>
+      </div>
+      <div class="fx-card fp fx-card-jp" id="fizzy-pop-jp">
         <div class="fx-card-top"><img src="/img/fizzypop/FP_logo_white_flat.svg" alt="Fizzy Pop Cherry Cola logo" width="440" height="352"><p class="fx-tag fp-type">プシュッと あけよう！</p></div>
         <video controls playsinline preload="metadata" poster="/video/fizzypop-poster.jpg" aria-label="Fizzy Pop Cherry Cola, the Japanese version, a 30-second spec commercial"><source src="/video/FizzyPop_v6B_JP_web.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="/video/FizzyPop_v6B_JP_web.mp4">Download the MP4</a>.</video>
+      </div><div class="fx-card fz" id="fizola">
+        <div class="fx-card-top"><img src="/img/fizola/FZ_logo_cream.png" alt="Fizola Cola logo" width="900" height="421"><p class="fx-tag fz-type">Turn on the sunshine.</p></div>
+        <video controls playsinline preload="metadata" poster="/video/fizola-poster.jpg" aria-label="Fizola Cola, a 30-second spec commercial"><source src="/video/Fizola.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="/video/Fizola.mp4">Download the MP4</a>.</video>
       </div>
       
     </div>
