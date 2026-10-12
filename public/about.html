@@ -15,6 +15,11 @@
 .pp-fallback{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:50%;display:none;border:3px solid rgba(255,255,255,.85)}
 .pp-hint{position:absolute;left:50%;bottom:-36px;transform:translateX(-50%);font:600 11px/1 var(--mono);letter-spacing:.18em;color:rgba(255,255,255,.55);white-space:nowrap}
 @media(prefers-reduced-motion:reduce){.pp-hint{display:none}}
+/* About portrait: clean circular photo, particle effect retired (Oct 2026) */
+.pportrait .pp-canvas{display:none!important}
+.pportrait .pp-fallback{display:block!important}
+.pportrait .pp-hint{display:none!important}
+.pportrait{cursor:default}
 </style><style>
 /* ===== Page band rhythm (Oct 2026) ===== */
 @media(prefers-color-scheme:light){
