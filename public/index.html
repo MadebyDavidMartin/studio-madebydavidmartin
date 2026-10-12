@@ -108,7 +108,7 @@
 .cine{position:relative;isolation:isolate;--hero-photo-o:.8}
 .cine{background:#E7D6B4;box-shadow:0 0 0 100vmax #E7D6B4}
 main .cine::after{background-image:none} /* Oct 2026: retire old hero-home.jpg now that hero-edit-suite.jpg is the hero background */
-.cine::before{content:"";position:absolute;inset:0 -100vmax;z-index:0;pointer-events:none;opacity:0;animation:cineBgIn 1.8s ease .15s forwards;background:url("img/hero-edit-suite.jpg?v=2") center 38%/cover no-repeat}
+.cine::before{content:"";position:absolute;inset:0 -100vmax;z-index:0;pointer-events:none;opacity:0;animation:cineBgIn 1.8s ease .15s forwards;background:url("img/hero-studio-warm.jpg") center 38%/cover no-repeat}
 .cine-in{position:relative;z-index:1}
 @keyframes cineBgIn{from{opacity:0}to{opacity:var(--hero-photo-o,.8)}}
 @media (prefers-reduced-motion:reduce){.cine::before{animation:none;opacity:var(--hero-photo-o,.8)}}
