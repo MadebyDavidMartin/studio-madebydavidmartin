@@ -82,6 +82,7 @@
 @keyframes fizzRise{0%{transform:translateY(0) translateX(0);opacity:0}12%{opacity:.9}70%{opacity:.7}100%{transform:translateY(-380px) translateX(18px);opacity:0}}
 @keyframes fizzTwinkle{0%,100%{opacity:.25;scale:.7;rotate:0deg}50%{opacity:1;scale:1.15;rotate:20deg}}
 @media(max-width:900px){
+  .cine{--hero-photo-o:.55}
   .cine-hero{grid-template-columns:1fr}
   .cine-visual{margin-left:0;margin-top:8px}
   .fizz-stage{width:min(100%,380px)}
@@ -104,12 +105,12 @@
 .flag-card-v video{aspect-ratio:16/9;width:100%;height:auto}
 #selected-video .flag-card-v .fc-body{padding:24px!important;text-align:center}.sb-head{max-width:680px;margin-bottom:24px}.sb-head h3{font-size:clamp(22px,2.6vw,30px);margin:0 0 10px;letter-spacing:-.02em}.sb-head p{margin:0;font-size:16px;line-height:1.6;color:#5A4A3A}.box-logo{position:absolute;top:14px;right:20px;height:200px;width:auto;opacity:1;filter:drop-shadow(0 3px 8px rgba(0,0,0,.15))}.box-logo-text{position:absolute;top:28px;right:24px;font-size:88px;font-weight:800;letter-spacing:.04em;color:#1a1a1a;line-height:1}.showcase-box .sb-head,.showcase-box .trio-head{padding-right:220px}#selected-video .showcase-box .flag-card:not(.flag-card-v){grid-template-columns:1fr 1fr!important}.trio-grid-2{grid-template-columns:1fr 1fr!important;max-width:none}.trio-feature{margin-bottom:26px}.trio-feature .flag-card{margin:0;grid-template-columns:1fr 1fr!important}@media(max-width:900px){#selected-video .trio-grid-2{grid-template-columns:1fr!important}#selected-video .showcase-box .flag-card:not(.flag-card-v){grid-template-columns:1fr!important}.box-logo{height:84px!important;top:12px;right:14px}.box-logo-text{font-size:32px!important;top:18px;right:16px}.showcase-box .sb-head,.showcase-box .trio-head{padding-right:110px!important}}
 /* ===== Hero photo background (Oct 2026) ===== */
-.cine{position:relative;isolation:isolate}
+.cine{position:relative;isolation:isolate;--hero-photo-o:.8}
 .cine{background:#E7D6B4;box-shadow:0 0 0 100vmax #E7D6B4}
 .cine::before{content:"";position:absolute;inset:0 -100vmax;z-index:0;pointer-events:none;opacity:0;animation:cineBgIn 1.8s ease .15s forwards;background:url("img/hero-edit-suite.jpg") center 38%/cover no-repeat
 .cine-in{position:relative;z-index:1}
-@keyframes cineBgIn{from{opacity:0}to{opacity:.55}}
-@media (prefers-reduced-motion:reduce){.cine::before{animation:none;opacity:.55}}
+@keyframes cineBgIn{from{opacity:0}to{opacity:var(--hero-photo-o,.8)}}
+@media (prefers-reduced-motion:reduce){.cine::before{animation:none;opacity:var(--hero-photo-o,.8)}}
 @media (prefers-color-scheme:dark){.cine{--ink:#2B2119;--muted:#6B5B4C;--line:#E3DED3;--card:#FFFDF9;--blue:#0E6B5C;--blue-deep:#0A5146;color:#2B2119;color-scheme:light}}
 </style><style>
 /* ===== Page band rhythm (Oct 2026) ===== */
