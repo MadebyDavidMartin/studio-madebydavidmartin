@@ -1284,7 +1284,6 @@ main .band.slate.has-banner.banner-video::after{background-image:url(/img/hero-v
 main .band.slate.has-banner.banner-djckids::after{background-image:url(/img/hero-djc.jpg)}
 main .band.slate.has-banner.banner-about::after{background-image:url(/img/hero-about.jpg)}
 
-/* Header nav fits nine items on desktop (Oct 2026, OCCUPIED added) */
-@media (min-width:1000px){.nav a{padding:8px 7px}}
-@media (min-width:1000px) and (max-width:1279px){.head-in{gap:10px 10px}.nav a{font-size:13.5px;padding:8px 5px}.mark-logo img{width:210px;height:auto}}
-@media (min-width:1000px) and (max-width:1099px){.mark-logo img{width:170px}.nav a{font-size:13px;padding:8px 4px}}
+/* Header nav (Oct 2026): Home removed from the top menu (the logo goes home); OCCUPIED added */
+@media (min-width:1000px) and (max-width:1279px){.head-in{gap:10px 12px}.nav a{font-size:13.5px;padding:8px 6px}.mark-logo img{width:210px;height:auto}}
+@media (min-width:1000px) and (max-width:1099px){.mark-logo img{width:180px}.nav a{font-size:13px;padding:8px 5px}}
