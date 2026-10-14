@@ -41,9 +41,9 @@ p{margin:0}
 .mark i::after{content:"";position:absolute;inset:8px;border-radius:2px;border:2px solid #fff;border-right-color:transparent;transform:rotate(45deg)}
 .mark span{display:grid;line-height:1.15;font-weight:600;font-size:16px;letter-spacing:-.01em;color:#0E6B5C}
 .mark small{font-family:"Clash Display","Geist",sans-serif;font-weight:600;font-size:13px;color:#0E6B5C;letter-spacing:.02em}
-.nav{display:flex;gap:2px;margin-left:auto;overflow-x:auto;scrollbar-width:none;max-width:100%}
+.nav{display:flex;gap:4px;flex:1;justify-content:center;overflow-x:auto;scrollbar-width:none;max-width:100%}
 .nav::-webkit-scrollbar{display:none}
-.nav a{font-weight:500;font-size:14.5px;color:#0E6B5C;text-decoration:none;padding:8px 11px;border-radius:8px;white-space:nowrap}
+.nav a{font-weight:600;font-size:15.5px;color:#0E6B5C;text-decoration:none;padding:9px 18px;border-radius:8px;white-space:nowrap;letter-spacing:.01em}
 .nav a:hover{color:#0A5146;background:#E2EFEA}
 .nav a[aria-current="page"]{color:#0A5146;background:#E2EFEA}
 
