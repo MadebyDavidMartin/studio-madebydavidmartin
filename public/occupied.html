@@ -97,7 +97,8 @@ main.oc a{color:var(--oc-rust2)}
 .oc-stills figure{margin:0;background:#000;border:1px solid var(--oc-line);border-radius:3px;overflow:hidden}
 .oc-stills img{display:block;width:100%;height:auto}
 .oc-stills figcaption{padding:9px 12px;font:400 11px/1.4 var(--oc-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--oc-dim2);background:var(--oc-ink2)}
-.oc-lines{grid-template-columns:repeat(3,1fr)!important}
+.oc-lines{grid-template-columns:repeat(5,1fr)!important}
+@media(max-width:900px){.oc-lines{grid-template-columns:repeat(3,1fr)!important}}
 @media(max-width:620px){.oc-lines{grid-template-columns:1fr 1fr!important}}
 /* section heads */
 .oc-head{max-width:780px;margin-bottom:34px}
@@ -236,8 +237,8 @@ main.oc .oc-bio h2{color:var(--oc-ink);font-size:clamp(32px,4vw,46px);font-weigh
     <p class="oc-logline">Every door he opens, he&rsquo;s already home.</p>
     <figure class="oc-player" style="margin:0 auto">
       <video id="ocFilm" controls playsinline preload="metadata" poster="img/occupied/keyart-16x9.jpg" aria-label="OCCUPIED, a short film by David Martin, 1 minute 58 seconds">
-        <source src="video/occupied-v6.mp4" type="video/mp4">
-        Your browser can&rsquo;t play this video. <a href="video/occupied-v6.mp4">Download the MP4</a>.
+        <source src="video/occupied-v7.mp4" type="video/mp4">
+        Your browser can&rsquo;t play this video. <a href="video/occupied-v7.mp4">Download the MP4</a>.
       </video>
     </figure>
     <p class="oc-hint">Best with sound, full screen.</p>
@@ -247,7 +248,7 @@ main.oc .oc-bio h2{color:var(--oc-ink);font-size:clamp(32px,4vw,46px);font-weigh
       <div class="oc-stat" role="listitem"><b>1:58</b><span>Runtime</span></div>
       <div class="oc-stat" role="listitem"><b>8</b><span>Locked references</span></div>
       <div class="oc-stat" role="listitem"><b>1</b><span>Face, everywhere</span></div>
-      <div class="oc-stat" role="listitem"><b>31</b><span>Cuts to final</span></div>
+      <div class="oc-stat" role="listitem"><b>42</b><span>Cuts to final</span></div>
       <div class="oc-stat" role="listitem"><b>2.39<small>:1</small></b><span>Scope finish</span></div>
       <div class="oc-stat" role="listitem"><b>&minus;16<small>LUFS</small></b><span>Final mix</span></div>
     </div>
@@ -282,7 +283,7 @@ main.oc .oc-bio h2{color:var(--oc-ink);font-size:clamp(32px,4vw,46px);font-weigh
     <div class="oc-acts" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
     <div class="oc-ticks" aria-hidden="true"><span style="left:0">0:00</span><span style="left:10.18%">0:12</span><span style="left:42.41%">0:50</span><span style="left:63.61%">1:15</span><span style="left:100%">1:58</span></div>
     <div class="oc-cards">
-      <article class="oc-card"><img src="img/occupied/s01-dream.jpg?v=5" alt="Night. A figure in a rust jacket sits at a dorm desk in the glow of a monitor, back to camera" width="1280" height="536" loading="lazy"><div><p class="oc-tc"><b>Cold open</b><span>0:00</span></p><h3>The dream.</h3><p>3:12&nbsp;AM. The door slowly opens on a figure at the desk. He looks back. It is Eli. Hard cut to black.</p></div></article>
+      <article class="oc-card"><img src="img/occupied/s01-dream.jpg?v=7" alt="Night. A figure in a rust jacket sits at a dorm desk in the glow of a monitor, back to camera" width="1280" height="536" loading="lazy"><div><p class="oc-tc"><b>Cold open</b><span>0:00</span></p><h3>The dream.</h3><p>3:12&nbsp;AM. The door slowly opens on a figure at the desk. Cut to Eli in bed. His eyes snap open. Hard cut to black.</p></div></article>
       <article class="oc-card"><img src="img/occupied/s03-cafe.jpg?v=5" alt="Eli and Maya at a cafe table, seen through a rain-streaked window" width="1280" height="536" loading="lazy"><div><p class="oc-tc"><b>Act one</b><span>0:12</span></p><h3>The cafe.</h3><p>Rain on the window. &ldquo;He turns around&hellip; and it&rsquo;s&hellip; it&rsquo;s me.&rdquo; Maya: &ldquo;Hey&hellip; don&rsquo;t worry. It&rsquo;s just a dream.&rdquo; Then, from the street: &ldquo;Text me when you&rsquo;re home.&rdquo;</p></div></article>
       <article class="oc-card"><img src="img/occupied/s06-walk.jpg?v=5" alt="Eli walks a wet campus path; far ahead, a small figure in the same rust jacket" width="1280" height="536" loading="lazy"><div><p class="oc-tc"><b>Act two</b><span>0:50</span></p><h3>The walk.</h3><p>The path, the crosswalk, the lobby, the stairwell. A rust jacket far down the path. Another at the bus shelter. Easy to miss, on purpose.</p></div></article>
       <article class="oc-card"><img src="img/occupied/s09-every-door.jpg?v=5" alt="Eli from behind in the corridor as every door opens on another Eli" width="1280" height="536" loading="lazy"><div><p class="oc-tc"><b>Act three</b><span>1:15</span></p><h3>The door.</h3><p>4:47&nbsp;PM. Light under his door, typing inside. It opens exactly as in the dream. Every door he knocks on for help is answered by himself. Lights out.</p></div></article>
@@ -301,12 +302,12 @@ main.oc .oc-bio h2{color:var(--oc-ink);font-size:clamp(32px,4vw,46px);font-weigh
       <p class="oc-kicker">02 &middot; The cut</p>
       <h2>Beat by beat.</h2>
     </div>
-    <div class="oc-body"><p>The final cut, version 31, as it plays. Picture on the left, sound and dialogue on the right.</p></div>
+    <div class="oc-body"><p>The final cut, version 42, as it plays. Picture on the left, sound and dialogue on the right.</p></div>
     <div class="oc-scroll">
       <table class="oc-table oc-beats" aria-label="The final cut, beat by beat">
         <thead><tr><th>Time</th><th>Picture</th><th>Sound</th></tr></thead>
         <tbody>
-          <tr><td class="m">0:00</td><td>3:12&nbsp;AM. The door opens slowly. A push-in on a figure at the desk. He looks back: Eli.</td><td>A low drone. Hard cut to black.</td></tr>
+          <tr><td class="m">0:00</td><td>3:12&nbsp;AM. The door opens slowly. A push-in on a figure at the desk. Then Eli, in bed, wakes with a start.</td><td class="q">Eli: &ldquo;Hello?&rdquo; A low drone, a soft gasp. Hard cut to black.</td></tr>
           <tr><td class="m">0:09</td><td>Title. OCCUPIED, a short film by David Martin.</td><td>A single hit, then quiet.</td></tr>
           <tr><td class="m">0:12</td><td>A cafe in the rain. Eli tells Maya the dream.</td><td class="q">Eli: &ldquo;I&hellip; I had the dream again.&rdquo;<br>Maya: &ldquo;The same one?&rdquo;<br>Eli: &ldquo;I come home, I open my door, and&hellip; someone&rsquo;s sitting at my desk. He turns around&hellip; and it&rsquo;s&hellip; it&rsquo;s me. I&rsquo;m already in my room. So I run. I knock on every door on my floor, and&hellip; every single one&hellip; it&rsquo;s me.&rdquo;</td></tr>
           <tr><td class="m">&nbsp;</td><td>She covers his hand with hers.</td><td class="q">Maya: &ldquo;Hey&hellip; don&rsquo;t worry. It&rsquo;s just a dream. Look at you&hellip; you&rsquo;ve barely slept all week.&rdquo;</td></tr>
@@ -314,8 +315,8 @@ main.oc .oc-bio h2{color:var(--oc-ink);font-size:clamp(32px,4vw,46px);font-weigh
           <tr><td class="m">0:50</td><td>The walk home: the path, a crosswalk, the lobby, the stairwell, the corridor. A small rust-jacket double far down the path, another at the bus shelter.</td><td>A light flickers in the stairwell with a quiet static buzz. Real footsteps in the corridor.</td></tr>
           <tr><td class="m">1:15</td><td>His door. 4:47&nbsp;PM. Light and the shadow of feet underneath.</td><td>Muffled typing.</td></tr>
           <tr><td class="m">1:18</td><td>The door opens slowly. At the desk, the double turns.</td><td>One latch click. The music drops to a drone, a low hit on the turn.</td></tr>
-          <tr><td class="m">1:27</td><td>Eli backs away from the doorway.</td><td class="q">&ldquo;No&hellip; no. No, no, no!&rdquo;</td></tr>
-          <tr><td class="m">1:32</td><td>Rooms 214, 216 and 218. Each door cracks open on another Eli: irritated, eating noodles, on the phone.</td><td class="q">&ldquo;Hey! Hey&hellip; I&hellip; I need help!&rdquo; Three heavy knocks. &hellip; &ldquo;&hellip;Seriously?&rdquo; &hellip; &ldquo;One sec.&rdquo; A door shuts.</td></tr>
+          <tr><td class="m">1:27</td><td>Eli backs away from the doorway.</td><td class="q">&ldquo;No, no, no!&rdquo;</td></tr>
+          <tr><td class="m">1:32</td><td>Rooms 214, 216 and 218. Each door cracks open on another Eli: irritated, eating noodles, on the phone.</td><td class="q">Three heavy knocks. &ldquo;Hey! Hey&hellip; I&hellip; I need help!&rdquo; &hellip; &ldquo;&hellip;Seriously?&rdquo; &hellip; &ldquo;One sec.&rdquo; A door shuts.</td></tr>
           <tr><td class="m">1:46</td><td>Every door opens. A double in every doorway. The lights flicker, his head turns, the lights die.</td><td>Hard cut to silence.</td></tr>
           <tr><td class="m">1:50</td><td>Black. A notification: Maya, &ldquo;home yet?&rdquo;</td><td>Nothing at all.</td></tr>
           <tr><td class="m">1:54</td><td>End title.</td><td>The score&rsquo;s last held note.</td></tr>
@@ -368,12 +369,12 @@ main.oc .oc-bio h2{color:var(--oc-ink);font-size:clamp(32px,4vw,46px);font-weigh
     </div>
     <h3 class="oc-sub">Stills</h3>
     <div class="oc-stills">
-      <figure><img src="img/occupied/s02-look-back.jpg?v=5" alt="In the dream, Eli looks back over his shoulder from the desk" width="1280" height="536" loading="lazy"><figcaption>0:08 &middot; He looks back</figcaption></figure>
+      <figure><img src="img/occupied/s02-wake.jpg?v=7" alt="Eli in bed, eyes wide open, waking from the dream" width="1280" height="536" loading="lazy"><figcaption>0:08 &middot; He wakes</figcaption></figure>
       <figure><img src="img/occupied/s04-hands.jpg?v=5" alt="Maya&rsquo;s hand covers Eli&rsquo;s on the cafe table beside a mug" width="1280" height="536" loading="lazy"><figcaption>0:36 &middot; &ldquo;It&rsquo;s just a dream&rdquo;</figcaption></figure>
       <figure><img src="img/occupied/s05-maya.jpg?v=5" alt="On an autumn street, Maya turns back to Eli with a smile" width="1280" height="536" loading="lazy"><figcaption>0:47 &middot; &ldquo;Text me when you&rsquo;re home.&rdquo;</figcaption></figure>
       <figure><img src="img/occupied/s07-door.jpg?v=5" alt="His dorm door in the corridor, light showing underneath, timestamp 4:47 PM" width="1280" height="536" loading="lazy"><figcaption>1:16 &middot; 4:47 PM</figcaption></figure>
       <figure><img src="img/occupied/s08-noodles.jpg?v=5" alt="Another Eli answers a door holding a cup of noodles" width="1280" height="536" loading="lazy"><figcaption>1:41 &middot; Room 216</figcaption></figure>
-      <figure><img src="img/occupied/s00-title.jpg?v=5" alt="Title card: OCCUPIED in thin cream serif capitals on black" width="1280" height="536" loading="lazy"><figcaption>0:09 &middot; Title</figcaption></figure>
+      <figure><img src="img/occupied/s00-title.jpg?v=7" alt="Title card: OCCUPIED in thin cream serif capitals on black" width="1280" height="536" loading="lazy"><figcaption>0:09 &middot; Title</figcaption></figure>
     </div>
   </div>
 </section>
@@ -423,12 +424,13 @@ main.oc .oc-bio h2{color:var(--oc-ink);font-size:clamp(32px,4vw,46px);font-weigh
       </div>
     </div>
     <div class="oc-lines" role="list" aria-label="Spoken lines in the final cut and where each one plays">
+      <div class="oc-line" role="listitem"><q>Hello?</q><span>Eli &middot; The dream</span></div>
       <div class="oc-line" role="listitem"><q>I&hellip; I had the dream again.</q><span>Eli &middot; Cafe</span></div>
       <div class="oc-line" role="listitem"><q>The same one?</q><span>Maya &middot; Cafe</span></div>
       <div class="oc-line" role="listitem"><q>He turns around&hellip; and it&rsquo;s&hellip; it&rsquo;s me.</q><span>Eli &middot; Cafe</span></div>
       <div class="oc-line" role="listitem"><q>Hey&hellip; don&rsquo;t worry. It&rsquo;s just a dream.</q><span>Maya &middot; Over hands</span></div>
       <div class="oc-line on" role="listitem"><q>Text me when you&rsquo;re home.</q><span>Maya &middot; Synced</span></div>
-      <div class="oc-line on" role="listitem"><q>No&hellip; no. No, no, no!</q><span>Eli &middot; Soft focus</span></div>
+      <div class="oc-line on" role="listitem"><q>No, no, no!</q><span>Eli &middot; Soft focus</span></div>
       <div class="oc-line" role="listitem"><q>Hey! Hey&hellip; I&hellip; I need help!</q><span>Eli &middot; Over a door</span></div>
       <div class="oc-line on" role="listitem"><q>&hellip;Seriously?</q><span>Double &middot; Room 214</span></div>
       <div class="oc-line on" role="listitem"><q>One sec.</q><span>Double &middot; Room 218</span></div>
@@ -465,7 +467,7 @@ main.oc .oc-bio h2{color:var(--oc-ink);font-size:clamp(32px,4vw,46px);font-weigh
     <div class="oc-two" style="margin-top:30px">
       <div class="oc-body">
         <h3 class="oc-sub" style="margin-top:0">Sound effects carry the realism</h3>
-        <p>Footsteps come from the clips&rsquo; own audio, which beat synthetic ones. Knocks are a solid thud with a short decay, never hollow. Each door gets one latch click and no creak: synthetic creaks read as a horn. The stairwell light flickers with a quiet static buzz.</p>
+        <p>Footsteps come from the clips&rsquo; own audio, which beat synthetic ones. Knocks are a deep fist-on-hardwood boom, loud and panicked, tuned so small speakers still carry them. Each door gets one latch click and no creak: synthetic creaks read as a horn. The stairwell light flickers with a quiet static buzz.</p>
       </div>
       <div class="oc-body">
         <h3 class="oc-sub" style="margin-top:0">Mixed for the screen it plays on</h3>
@@ -494,7 +496,7 @@ main.oc .oc-bio h2{color:var(--oc-ink);font-size:clamp(32px,4vw,46px);font-weigh
         </table>
       </div>
       <div class="oc-body">
-        <p>The story began as my skeleton: a recurring dream, a walk home, a door. Thirty-one cuts later it was finished in four days. Every version was watched, noted and kept.</p>
+        <p>The story began as my skeleton: a recurring dream, a walk home, a door. Forty-two cuts later it was finished in five days. Every version was watched, noted and kept.</p>
         <p>Review caught what the tools missed. In version 12, motion interpolation left a white sliver on the edge of a door at 1:12; the fix was frame blending. A generated poster on a dorm wall read like a real game title; it was replaced with an invented one. Every sign and poster was checked for real brands.</p>
         <p><b>The tools generated the material. Every decision about what stayed, what moved and what got cut was made by a director.</b></p>
       </div>
