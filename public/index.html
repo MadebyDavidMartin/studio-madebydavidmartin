@@ -147,13 +147,11 @@ main section.cta-band-white .btn-primary{background:#1A120C;border-color:#1A120C
 @media (max-width:900px){main .cine::after{background:linear-gradient(180deg,rgba(8,8,10,.42),rgba(8,8,10,.62))}}
 /* Problems jump section (Oct 2026): a plain section header, no box. */
 #problems{scroll-margin-top:96px}
-.pjump{margin:42px 0 10px}
-.pjump-in{display:flex;justify-content:space-between;align-items:flex-end;gap:14px 48px;flex-wrap:wrap}
+.pjump{margin:48px 0}
+.pjump-in{display:flex;justify-content:space-between;align-items:center;gap:14px 48px;flex-wrap:wrap}
 .pjump h2{font-size:clamp(30px,3.6vw,46px);line-height:1.02;letter-spacing:-.02em;margin:8px 0 0}
 .pjump h2 a{color:var(--ink);text-decoration:none}
 .pjump h2 a:hover{color:#D85A20}
-.pjump-r{max-width:440px}
-.pjump-r p{margin:0 0 12px;font-size:16px;line-height:1.6;color:var(--muted)}
 .pjump-link{font-weight:600;font-size:16px;color:#D85A20;text-decoration:none}
 .pjump-link:hover{text-decoration:underline}
 .pjump-tags{list-style:none;margin:26px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
@@ -253,7 +251,7 @@ main section.cta-band-white .btn-primary{background:#1A120C;border-color:#1A120C
 <section class="pjump" aria-label="About the Problems I solve section">
   <div class="pjump-in">
     <div><span class="eyebrow">At a glance</span><h2><a href="#problems">Problems I solve.</a></h2></div>
-    <div class="pjump-r"><p>Further down this page is the short version of everything here: the problems that land on my desk, the work I do, and the solutions I build for them. If you are short on time, start there.</p><a class="pjump-link" href="#problems">Jump to the section &darr;</a></div>
+    <div class="pjump-r"><a class="pjump-link" href="#problems">Jump to the section &darr;</a></div>
   </div>
   <ul class="pjump-tags">
     <li>Video &amp; film direction</li>
