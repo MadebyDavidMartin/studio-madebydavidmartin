@@ -1,5 +1,5 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>David Martin | Creative Professional</title><meta name="description" content="Creative Director with a video and visual-content specialty. I create and direct video, visual content, campaigns and digital experiences, combining creative direction with hands-on production and emerging AI technology."><link rel="canonical" href="https://studio.madebydavidmartin.com/"><meta name="theme-color" content="#231A10"><meta name="author" content="David Martin"><meta property="og:type" content="website"><meta property="og:site_name" content="David Martin, Creative Professional"><meta property="og:title" content="David Martin | Creative Professional"><meta property="og:description" content="Creative Director with a video and visual-content specialty. I create and direct video, visual content, campaigns and digital experiences, combining creative direction with hands-on production and emerging AI technology."><meta property="og:url" content="https://studio.madebydavidmartin.com/"><meta property="og:image" content="https://studio.madebydavidmartin.com/img/og-card.jpg?v=2"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://studio.madebydavidmartin.com/img/og-card.jpg?v=2"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="icon" href="favicon.ico" sizes="any"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@600&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap"><link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap">
-<link rel="preload" as="image" href="img/hero-edit-suite.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="img/solentei/keyart-16x9.jpg" fetchpriority="high">
 <link rel="stylesheet" href="styles.css?v=c1032"><style>body{margin:0}
 .flag-card{display:grid;grid-template-columns:minmax(240px,400px) 1fr;gap:28px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:0;overflow:hidden;color:var(--ink);margin:26px 0 4px}
 .flag-card video{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:16/9;background:#000}
@@ -53,7 +53,7 @@
 .flowline{margin:0 0 14px}
 
 /* ===== Dynamic Fizzy hero (Oct 2026) ===== */
-.cine-hero{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(20px,3.5vw,48px);align-items:center}
+.cine-hero{display:grid;grid-template-columns:minmax(0,720px);gap:clamp(20px,3.5vw,48px);align-items:center}
 .cine-copy{position:relative;z-index:2;min-width:0}
 .cine-hero .cine-title{font-size:clamp(44px,5.4vw,92px)}
 .cine-visual{position:relative;z-index:1;min-width:0;margin-left:clamp(-90px,-6vw,-24px)}
@@ -82,7 +82,7 @@
 @keyframes fizzRise{0%{transform:translateY(0) translateX(0);opacity:0}12%{opacity:.9}70%{opacity:.7}100%{transform:translateY(-380px) translateX(18px);opacity:0}}
 @keyframes fizzTwinkle{0%,100%{opacity:.25;scale:.7;rotate:0deg}50%{opacity:1;scale:1.15;rotate:20deg}}
 @media(max-width:900px){
-  .cine{--hero-photo-o:.55}
+  .cine{--hero-photo-o:.8}
   .cine-hero{grid-template-columns:1fr}
   .cine-visual{margin-left:0;margin-top:8px}
   .fizz-stage{width:min(100%,380px)}
@@ -113,10 +113,10 @@
 .flag-card-v video{aspect-ratio:16/9;width:100%;height:auto}
 #selected-video .flag-card-v .fc-body{padding:24px!important;text-align:center}.sb-head{max-width:680px;margin-bottom:24px}.sb-head h3{font-size:clamp(22px,2.6vw,30px);margin:0 0 10px;letter-spacing:-.02em}.sb-head p{margin:0;font-size:16px;line-height:1.6;color:#5A4A3A}.box-logo{position:absolute;top:14px;right:20px;height:200px;width:auto;opacity:1;filter:drop-shadow(0 3px 8px rgba(0,0,0,.15))}.box-logo-text{position:absolute;top:28px;right:24px;font-size:88px;font-weight:800;letter-spacing:.04em;color:#1a1a1a;line-height:1}.showcase-box .sb-head,.showcase-box .trio-head{padding-right:220px}#selected-video .showcase-box .flag-card:not(.flag-card-v){grid-template-columns:1fr 1fr!important}.trio-grid-2{grid-template-columns:1fr 1fr!important;max-width:none}.trio-feature{margin-bottom:26px}.trio-feature .flag-card{margin:0;grid-template-columns:1fr 1fr!important}@media(max-width:900px){#selected-video .trio-grid-2{grid-template-columns:1fr!important}#selected-video .showcase-box .flag-card:not(.flag-card-v){grid-template-columns:1fr!important}.box-logo{height:84px!important;top:12px;right:14px}.box-logo-text{font-size:32px!important;top:18px;right:16px}.showcase-box .sb-head,.showcase-box .trio-head{padding-right:110px!important}}
 /* ===== Hero photo background (Oct 2026) ===== */
-.cine{position:relative;isolation:isolate;--hero-photo-o:.8}
+.cine{position:relative;isolation:isolate;--hero-photo-o:1}
 .cine{background:#E7D6B4;box-shadow:0 0 0 100vmax #E7D6B4}
-main .cine::after{background-image:none} /* Oct 2026: retire old hero-home.jpg now that hero-edit-suite.jpg is the hero background */
-.cine::before{content:"";position:absolute;inset:0 -100vmax;z-index:0;pointer-events:none;opacity:0;animation:cineBgIn 1.8s ease .15s forwards;background:url("img/hero-studio-warm.jpg") center 38%/cover no-repeat}
+main .cine::after{background:linear-gradient(90deg,rgba(250,245,230,.55),rgba(250,245,230,0) 62%)} /* Oct 2026: retire old hero-home.jpg now that hero-edit-suite.jpg is the hero background */
+.cine::before{content:"";position:absolute;inset:0 -100vmax;z-index:0;pointer-events:none;opacity:0;animation:cineBgIn 1.8s ease .15s forwards;background:url("img/solentei/keyart-16x9.jpg") center/cover no-repeat}
 .cine-in{position:relative;z-index:1}
 @keyframes cineBgIn{from{opacity:0}to{opacity:var(--hero-photo-o,.8)}}
 @media (prefers-reduced-motion:reduce){.cine::before{animation:none;opacity:var(--hero-photo-o,.8)}}
@@ -169,29 +169,7 @@ main section.cta-band-white .btn-primary{background:#1A120C;border-color:#1A120C
         <p class="cine-lede">I take creative projects from strategy to launch: video, campaigns, content, brand and digital experience, made hands-on with AI where it earns its place.</p>
         <div class="btns"><a class="btn btn-primary btn-cine" href="video.html">Watch the work</a><a class="btn btn-ghost btn-ghost-cine" href="method.html">The method</a></div>
       </div>
-      <div class="cine-visual" id="cineVisual">
-        <div class="fizz-stage" aria-hidden="false">
-          <svg class="fizz-disc" viewBox="0 0 520 560" aria-hidden="true">
-            <circle cx="260" cy="280" r="250" fill="#161210"/>
-            <g fill="none" stroke="#ffffff" opacity=".08" stroke-width="2">
-              <circle cx="260" cy="280" r="232"/><circle cx="260" cy="280" r="218"/><circle cx="260" cy="280" r="204"/><circle cx="260" cy="280" r="190"/><circle cx="260" cy="280" r="176"/><circle cx="260" cy="280" r="162"/><circle cx="260" cy="280" r="148"/><circle cx="260" cy="280" r="134"/><circle cx="260" cy="280" r="120"/><circle cx="260" cy="280" r="106"/>
-            </g>
-            <path d="M92 196A214 214 0 0 1 252 66" stroke="#ffffff" stroke-width="34" opacity=".10" fill="none" stroke-linecap="round"/>
-            <path d="M428 364A214 214 0 0 1 268 494" stroke="#ffffff" stroke-width="22" opacity=".07" fill="none" stroke-linecap="round"/>
-            <circle cx="260" cy="280" r="92" fill="#D8263F"/>
-            <circle cx="260" cy="280" r="92" fill="none" stroke="#E9A319" stroke-width="5"/>
-            <circle cx="260" cy="280" r="70" fill="none" stroke="#F8E9BC" stroke-width="2" opacity=".8"/>
-            <circle cx="260" cy="280" r="30" fill="#F8E9BC"/>
-            <circle cx="260" cy="280" r="7" fill="#161210"/>
-            <circle cx="260" cy="280" r="250" fill="none" stroke="#ffffff" stroke-width="2" opacity=".14"/>
-          </svg>
-          <div class="fizz-glow" aria-hidden="true"></div>
-          <img class="fizz-can" src="img/fizola/fizola-can.png" alt="Fizola Cola can, from the 30-second AI-directed spec commercial" width="351" height="596" fetchpriority="high">
-          <div class="fizz-bubbles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <svg class="fizz-spark fizz-spark-a" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 0l4.5 15.5L40 20l-15.5 4.5L20 40l-4.5-15.5L0 20l15.5-4.5Z" fill="#fff"/></svg>
-          <svg class="fizz-spark fizz-spark-b" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 0l4.5 15.5L40 20l-15.5 4.5L20 40l-4.5-15.5L0 20l15.5-4.5Z" fill="#FFC21A"/></svg>
-        </div>
-      </div>
+      
     </div>
     <dl class="cine-stats"><div><dt>Quarter billion</dt><dd>views directed</dd></div><div><dt>460+</dt><dd>videos published</dd></div><div><dt>15+ years</dt><dd>creative direction</dd></div></dl>
   </div>
