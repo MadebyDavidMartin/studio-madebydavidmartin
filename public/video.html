@@ -24,7 +24,7 @@
 .strip-play svg{width:30px;height:30px}
 @media(max-width:520px){.strip{height:340px;max-width:250px}}
 @media(prefers-reduced-motion:reduce){.strip-track,.strip-play::before,.strip-play::after{animation:none}}
-.fp-promo{margin-top:0!important}#orivex .fp-promo{border:0!important;outline:0!important}</style><style>
+</style><style>
 /* ===== Page band rhythm (Oct 2026) ===== */
 @media(prefers-color-scheme:light){
 /* page accent: colored text matches banner */
@@ -58,6 +58,8 @@ main section.cta-band-white .btn-primary{background:#fff;color:#121619}
 .vid-lead .yt-title{font-size:19px}
 .hero-sub{font-size:clamp(19px,2.4vw,28px);font-weight:600;letter-spacing:-.01em;margin:14px 0 0}
 .mk{display:grid;gap:0;border-top:1px solid var(--line);margin-top:18px}
+.mk-2x2{grid-template-columns:1fr 1fr;gap:0 34px}
+@media(max-width:760px){.mk-2x2{grid-template-columns:1fr}}
 .mk>div{padding:16px 0;border-bottom:1px solid var(--line)}
 .mk b{display:block;font:600 13px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
 .mk p{margin:0;max-width:640px}
@@ -113,6 +115,37 @@ main section.cta-band-white .btn-primary{background:#fff;color:#121619}
     </dl>
   </div>
 </section>
+<section class="sec band-white" id="solentei">
+  <div class="sec-head"><div><span class="eyebrow">Spec commercial &middot; Luxury automotive</span><h2>SOLENTEI 369.</h2></div><p>60 seconds | 2.39:1 in 1920 &times; 1080 | 24 fps | First Light. Written and directed by David Martin.</p></div>
+  <div class="orivex-lead">
+    <figure class="feature-vid">
+      <video controls playsinline preload="none" poster="img/solentei/poster.jpg" aria-label="SOLENTEI 369: First Light, a 60-second spec commercial by David Martin">
+        <source src="video/solentei-first-light.mp4" type="video/mp4">
+        Your browser can&rsquo;t play this video. <a href="video/solentei-first-light.mp4">Download the MP4</a>.
+      </video>
+    </figure>
+    <div>
+      <p class="lede2">A 60-second launch film for a luxury electric grand tourer that does not exist. One car, one coast road, one sunrise, built shot by shot from blue hour to first light. Brand, car, script, voice, score, graphics and edit, directed end to end.</p>
+      <table class="tools">
+        <tr><th>Stage</th><th>Tool</th></tr>
+        <tr><td>Stills, references, keyframes</td><td>Nano Banana Pro</td></tr>
+        <tr><td>Motion</td><td>Omni Flash 1.1</td></tr>
+        <tr><td>Voice</td><td>Speechify</td></tr>
+        <tr><td>Score</td><td>Suno Pro</td></tr>
+        <tr><td>Graphics</td><td>HyperFrames</td></tr>
+        <tr><td>Development, edit, grade, mix</td><td>Claude (Anthropic)</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="mk mk-2x2">
+    <div><b>Story</b><p>First Light. A grand tourer leaves a cedar house before dawn and drives one coast road into the sunrise. Fourteen shots, seven beats, one direction of travel, and a single payoff: at first light, the bronze flake in the graphite paint ignites.</p></div>
+    <div><b>Consistency</b><p>Seven locked references: the car front and rear, the driver, the cabin, the house, the road, the lookout. One canonical description of the car pasted word for word into every prompt. The sun always rises on frame right, and the sky warms through five fixed phrases, in order.</p></div>
+    <div><b>Staging for the model</b><p>Motion prompts only: one camera move, one subject move, everything slow. State changes, like the waking light bar, were made as paired stills. Speed, grain and the letterbox grade were added in the edit, never asked of the model.</p></div>
+    <div><b>Sound</b><p>The car never makes a motor sound. Real recordings only: forest air, gravel, rain on glass, surf, a dawn chorus. An orchestral score ducks under eight narration lines, held well under the voice, final mix at &minus;16 LUFS.</p></div>
+  </div>
+  <p style="margin:18px 0 10px"><a class="btn btn-light" href="solentei.html">How First Light was made &rarr;</a></p>
+  <p class="fine">Spec commercial. SOLENTEI 369 is a fictional brand. Concept, direction and production by David Martin, made with AI.</p>
+</section>
 <section class="sec band-white" id="occupied">
   <div class="sec-head"><div><span class="eyebrow">Short film &middot; Psychological thriller</span><h2>OCCUPIED.</h2></div><p>1:58 | 2.39:1 in 1920 &times; 1080 | 24 fps | Written and directed by David Martin.</p></div>
   <div class="orivex-lead">
@@ -133,7 +166,7 @@ main section.cta-band-white .btn-primary{background:#fff;color:#121619}
       </table>
     </div>
   </div>
-  <div class="mk">
+  <div class="mk mk-2x2">
     <div><b>Story</b><p>A cold open at 3:12 AM that comes true at 4:47 PM. One idea escalated three times, no exposition, and a last frame that hands the question to the audience.</p></div>
     <div><b>Consistency</b><p>Eight locked references for Eli, Maya and four places. The doubles are built from Eli&rsquo;s own references and kept small, far and easy to miss.</p></div>
     <div><b>Staging for the model</b><p>Door reveals made from reversed closing doors, knocks added in the edit, and shallow focus wherever a face starts to drift.</p></div>
@@ -165,34 +198,46 @@ main section.cta-band-white .btn-primary{background:#fff;color:#121619}
       </table>
     </div>
   </div>
-  <div class="mk">
-    <div><b>Creative development</b><p>Started with a written brief. Claude developed the concept, visual language, eight-shot storyboard, 80-word narration script and a complete production guide.</p></div>
-    <div><b>Visual consistency</b><p>Reference-locked workflow: four master reference images, one canonical description repeated word for word in every prompt, one approved keyframe per shot.</p></div>
-    <div><b>Motion</b><p>Keyframes animated in Google Flow with Gemini Omni 1.1 Flash. Camera moves around a stable subject; ambient sound kept as a layer under the mix.</p></div>
-    <div><b>Voice and score</b><p>Eight Speechify narration lines, each placed exactly on its shot. A Suno-generated 45-second score structured to follow the edit.</p></div>
-    <div><b>Assembly</b><p>Built in HyperFrames as code: frame-accurate edit, vector graphics, ducked mix at &minus;16 LUFS. Any change is a re-render, not a rebuild.</p></div>
+  <div class="mk mk-2x2">
+    <div><b>Story</b><p>Started with a written brief. Claude developed the concept, visual language, eight-shot storyboard, 80-word narration script and a complete production guide.</p></div>
+    <div><b>Consistency</b><p>Reference-locked workflow: four master reference images, one canonical description repeated word for word in every prompt, one approved keyframe per shot.</p></div>
+    <div><b>Staging for the model</b><p>Keyframes animated in Google Flow with Gemini Omni 1.1 Flash. Camera moves around a stable subject; ambient sound kept as a layer under the mix.</p></div>
+    <div><b>Sound</b><p>Eight Speechify narration lines, each placed exactly on its shot, over a Suno score structured to follow the edit. Assembly built as code in HyperFrames: frame-accurate edit, vector graphics, ducked mix at &minus;16 LUFS.</p></div>
   </div>
   <p style="margin:18px 0 10px"><a class="btn btn-light" href="orivex.html">Read the full ORIVEX case study &rarr;</a></p>
   <p class="fine">ORIVEX and ARC-7 are fictional. The brand, product and specifications were created for this production demonstration.</p>
 </section>
 
-<style>
-.fp-promo{background:#D7392B;border-top:0!important;border-radius:18px;padding:26px 28px;display:flex;gap:20px;align-items:center;color:#fff;margin:6px 0 0;flex-wrap:wrap}
-.fp-promo img{width:180px;height:auto;flex:none}
-.fp-promo .fp-promo-logos{display:flex;align-items:center;gap:14px;flex:none}.fp-promo .fp-promo-logos img{width:auto;height:72px}
-.fp-promo .fp-promo-body{flex:1 1 260px}
-.fp-promo .fp-promo-body b{display:block;font:600 11px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#F2B630;margin-bottom:6px}
-.fp-promo .fp-promo-body h3{font-family:"Shrikhand",serif;font-weight:400;font-size:clamp(22px,3vw,30px);margin:0 0 6px;color:#fff}
-.fp-promo .fp-promo-body p{margin:0;font-size:15px;line-height:1.55;color:#fff}
-.fp-promo .btn{flex:none}
-.vidgrid .yt{border-radius:18px}
-</style>
-<section class="sec band-white" style="padding-top:0;border-top:none">
-  <a href="fizzypop.html" class="fp-promo" style="text-decoration:none">
-    <span class="fp-promo-logos"><img src="img/fizzypop/FP_logo_white_flat.svg" alt="Fizzy Pop Cherry Cola logo" loading="lazy" width="120" height="96"><img src="img/fizola/FZ_logo_cream.png" alt="Fizola Cola logo" loading="lazy" width="150" height="70"></span>
-    <div class="fp-promo-body"><b>Two spec commercials &middot; One summer</b><h3>Fizzy Pop! and Fizola</h3><p>Two AI-directed 1970s cola spots on the same street with the same cast, and two different songs. Watch them side by side, with the numbers compared shot for shot.</p></div>
-    <span class="btn btn-light">Compare the two &rarr;</span>
-  </a>
+
+<section class="sec band-white" id="fizzypop">
+  <div class="sec-head"><div><span class="eyebrow">Spec commercials &middot; 1970s cola, one brief four ways</span><h2>Fizzy Pop! and Fizola.</h2></div><p>30 seconds each | 1920 &times; 1080 | 24 fps | The 1976 original, the 2026 remake, a Japanese adaptation and a funk reimagining.</p></div>
+  <div class="orivex-lead">
+    <figure class="feature-vid">
+      <video controls playsinline preload="metadata" poster="video/fizzypop-poster.jpg" aria-label="Fizzy Pop Cherry Cola, the 1976 original, a 30-second spec commercial">
+        <source src="video/fizzypop.mp4" type="video/mp4">
+        Your browser can&rsquo;t play this video. <a href="video/fizzypop.mp4">Download the MP4</a>.
+      </video>
+    </figure>
+    <div>
+      <p class="lede2">In 1976, Fizzy Pop Cherry Cola was the loudest thing on television. Fifty years later it was remade from scratch: same brand, new streets, new energy. A Japanese TV adaptation and Fizola, a funk alternate take under a different name, round out the set. Four finished commercials, one production system.</p>
+      <table class="tools">
+        <tr><th>Stage</th><th>Tool</th></tr>
+        <tr><td>Shot planning, lyrics, prompts, assembly</td><td>Claude (Anthropic)</td></tr>
+        <tr><td>Reference imagery and keyframes</td><td>Google Flow</td></tr>
+        <tr><td>Motion</td><td>Gemini Omni 1.1 Flash</td></tr>
+        <tr><td>Music</td><td>Suno</td></tr>
+        <tr><td>Compositing, graphics, mix, render</td><td>HyperFrames (open source)</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="mk mk-2x2">
+    <div><b>Story</b><p>One 30-second cola brief, executed four ways: the 1976 broadcast original, the 2026 remake fifty years on, a Japanese TV-commercial adaptation, and Fizola, the same street reimagined as funk under a different brand name.</p></div>
+    <div><b>Consistency</b><p>The same street and the same cast held across the executions, while the art direction stays era-locked in each one: 1976 broadcast colour and cars, modern streets for the remake, Japanese signage and casting for the adaptation.</p></div>
+    <div><b>Staging for the model</b><p>References and keyframes first, motion second. The working rule was simple: cut it, change it, re-render it. A warped logo gets cut. A disappearing ice cube gets cut. Hair that changes mid-shot starts later.</p></div>
+    <div><b>Sound</b><p>Original Suno songs carry the set, including Fizola&rsquo;s &ldquo;Turn On the Sunshine&rdquo;. The Japanese lyrics are written mostly in kana rather than kanji, so every word can be sounded out and pronounced correctly.</p></div>
+  </div>
+  <p style="margin:18px 0 10px"><a class="btn btn-light" href="fizzypop.html">See the full project &rarr;</a></p>
+  <p class="fine">Fizzy Pop and Fizola are fictional brands created for these spec commercials.</p>
 </section>
 
 <section class="sec band-sage">
@@ -286,6 +331,6 @@ main section.cta-band-white .btn-primary{background:#fff;color:#121619}
 </section>
 
 <section class="band cta-band-white"><div class="cta-in"><div><h2>Full archive on request.</h2><p>Scripts, treatments, storyboards and process work.</p></div><a class="btn btn-primary" href="contact.html">Get in touch &rarr;</a></div></section>
-</main><footer class="foot" id="contact"><div class="wrap foot-in"><div class="foot-brand"><a class="mark foot-logo" href="./"><img src="/img/logo-madebydavidmartin-wordmark-dark.png" alt="madebydavidmartin" width="2327" height="370"></a></div><div class="foot-cta"><h2>Thanks for visiting.</h2><p>If something here is useful to you or your team, I would be glad to hear about it.</p><div class="btns"><a class="btn btn-light" href="mailto:david.angus.martin@gmail.com">Email me</a><a class="btn btn-ghost" href="https://www.linkedin.com/in/david-martin-7a246522" target="_blank" rel="noopener">Connect on LinkedIn</a></div></div><nav class="foot-nav" aria-label="Footer"><a href="./">Home</a><a href="work.html">Work</a><a href="method.html">Method</a><a href="video.html" aria-current="page">Video</a><a href="occupied.html">OCCUPIED</a><a href="orivex.html">ORIVEX</a><a href="fizzypop.html">Fizzy Pop!</a><a href="djc.html">DJC</a><a href="about.html">About</a><a href="https://jp.madebydavidmartin.com/" lang="ja">日本語</a><a href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair course</a></nav><p class="foot-fine">This is a personal portfolio. &copy; 2026 David Martin.</p></div></footer><script>
+</main><footer class="foot" id="contact"><div class="wrap foot-in"><div class="foot-brand"><a class="mark foot-logo" href="./"><img src="/img/logo-madebydavidmartin-wordmark-dark.png" alt="madebydavidmartin" width="2327" height="370"></a></div><div class="foot-cta"><h2>Thanks for visiting.</h2><p>If something here is useful to you or your team, I would be glad to hear about it.</p><div class="btns"><a class="btn btn-light" href="mailto:david.angus.martin@gmail.com">Email me</a><a class="btn btn-ghost" href="https://www.linkedin.com/in/david-martin-7a246522" target="_blank" rel="noopener">Connect on LinkedIn</a></div></div><nav class="foot-nav" aria-label="Footer"><a href="./">Home</a><a href="work.html">Work</a><a href="method.html">Method</a><a href="video.html" aria-current="page">Video</a><a href="occupied.html">OCCUPIED</a><a href="orivex.html">ORIVEX</a><a href="solentei.html">SOLENTEI 369</a><a href="fizzypop.html">Fizzy Pop!</a><a href="djc.html">DJC</a><a href="about.html">About</a><a href="https://jp.madebydavidmartin.com/" lang="ja">日本語</a><a href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair course</a></nav><p class="foot-fine">This is a personal portfolio. &copy; 2026 David Martin.</p></div></footer><script>
 (function(){var v=document.getElementById('phVisualVideo');if(!v)return;if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;var hero=v.closest('section');var raf=null;function set(e){var r=v.getBoundingClientRect();var x=(e.clientX-(r.left+r.width/2))/r.width;var y=(e.clientY-(r.top+r.height/2))/r.height;x=Math.max(-1,Math.min(1,x));y=Math.max(-1,Math.min(1,y));v.style.setProperty('--mx',(x*16).toFixed(1)+'px');v.style.setProperty('--my',(y*12).toFixed(1)+'px');}hero.addEventListener('pointermove',function(e){if(raf)return;raf=requestAnimationFrame(function(){raf=null;set(e);});});hero.addEventListener('pointerleave',function(){v.style.setProperty('--mx','0px');v.style.setProperty('--my','0px');});})();
 </script><script src="script.js?v=c1004"></script></body></html style="border-top:none">
