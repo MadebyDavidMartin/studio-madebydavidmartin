@@ -133,7 +133,7 @@ main section.cta-band-white .cta-in p{color:#1A120C}
 main section.cta-band-white .btn-primary{background:#1A120C;border-color:#1A120C;color:#fff}
 }
 </style>
-</head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="head-in"><a class="mark mark-logo" href="./" aria-label="madebydavidmartin, home"><img src="/img/logo-madebydavidmartin-portfolio.png" alt="madebydavidmartin portfolio" width="505" height="99"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span></span>Menu</button><nav class="nav" id="site-nav" aria-label="Main"><a href="work.html">Work</a><a href="video.html">Video</a><a href="method.html">Method</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://jp.madebydavidmartin.com/" lang="ja">日本語</a></nav></div></header><main class="wrap" id="main">
+</head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="head-in"><a class="mark mark-logo" href="./" aria-label="madebydavidmartin, home"><img src="/img/logo-madebydavidmartin-portfolio.png" alt="madebydavidmartin portfolio" width="505" height="99"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span></span>Menu</button><nav class="nav" id="site-nav" aria-label="Main"><a href="work.html">Work</a><span class="dd"><a class="dd-btn" href="video.html" aria-haspopup="true" aria-expanded="false">Video<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><span class="dd-menu"><a href="video.html">My Process</a><a href="solentei.html">SOLENTEI 369</a><a href="occupied.html">OCCUPIED</a><a href="orivex.html">ORIVEX ARC-7</a><a href="fizzypop.html">Fizzy Pop</a></span></span><a href="method.html">Method</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://jp.madebydavidmartin.com/" lang="ja">日本語</a></nav></div></header><main class="wrap" id="main">
 <style>
 .fws{font-size:clamp(28px,4.4vw,54px);line-height:1.14;font-weight:600;letter-spacing:-.015em;max-width:22ch;margin:0 0 18px}
 .fws em{color:var(--blue);font-style:normal}
@@ -221,15 +221,15 @@ main section.cta-band-white .btn-primary{background:#1A120C;border-color:#1A120C
 .showcase-box.sb-sol{border-color:#3A3F45}
 .sb-sol .occ-kick{color:#C9CDD2}
 .sb-sol a.occ-link{color:#D9DCDF}
-/* Vertical showcase cards (Oct 2026): 2x2 grid, video on top, copy below, no corner logos */
-#selected-video .show-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin:26px 0}
-#selected-video .show-grid .showcase-box{margin:0}
+/* Spotlight productions (Oct 2026): video-page style, minimal. Eyebrow, title + pill, video, one line. */
+#selected-video .show-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px 30px;margin:30px 0 6px}
 @media(max-width:900px){#selected-video .show-grid{grid-template-columns:1fr}}
-#selected-video .show-grid .occ-grid{grid-template-columns:1fr}
-#selected-video .show-grid .showcase-box .flag-card:not(.flag-card-v){grid-template-columns:1fr!important}
-#selected-video .show-grid .flag-card .fc-body{padding:20px 24px 24px}
-#selected-video .show-grid .sb-head{padding-right:0!important;max-width:none}
-#selected-video .show-grid .showcase-feature{margin:10px 0 0}
+.mini-prod h3{font-size:clamp(26px,2.8vw,36px);line-height:1.1;margin:8px 0 0;letter-spacing:-.01em}
+.mini-prod .feature-vid{margin:14px 0 12px;max-width:none}
+.mini-prod p{margin:0;font-size:15px;line-height:1.55;color:var(--muted);max-width:52ch}
+.page-pill{display:inline-block;vertical-align:middle;margin-left:14px;padding:9px 18px;border-radius:999px;background:#D85A20;color:#fff;font:600 14px/1.2 var(--sans,'Geist',system-ui,sans-serif);letter-spacing:.01em;text-decoration:none;white-space:nowrap;transform:translateY(-4px)}
+.page-pill:hover{background:#B34A1A;color:#fff}
+@media(max-width:700px){.page-pill{margin-left:0;margin-top:10px;transform:none}}
 /* Showcase tightening (Oct 2026): boxes about 20% shorter */
 #selected-video .showcase-box{padding:clamp(18px,2.2vw,30px);margin:26px 0}
 #selected-video .flag-card .fc-body{padding:20px 24px 20px 0}
@@ -247,55 +247,30 @@ main section.cta-band-white .btn-primary{background:#1A120C;border-color:#1A120C
   <div class="sec-head"><div><span class="eyebrow">Spotlight</span><h2>Height and range.</h2></div><p><a href="video.html">All video &rarr;</a></p></div>
   <p class="lede" style="max-width:700px">A selected showcase, chosen for range and craft: a luxury car commercial, a flagship product film, a short film, and a 1970s cola brief executed four ways. Each one directed end to end. The full archive, including the six-part cybersecurity series and the DJC catalogue, lives on the video page.</p>
       <div class="show-grid">
-      <div class="showcase-box sb-occ sb-sol">
-    <span class="occ-kick">New &middot; Spec commercial &middot; Watch it here</span>
-    <div class="occ-grid">
-      <div class="occ-screen occ-player"><video controls playsinline preload="none" poster="img/solentei/poster.jpg" aria-label="SOLENTEI 369: First Light, a 60-second spec commercial by David Martin"><source src="video/solentei-first-light.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/solentei-first-light.mp4">Download the MP4</a>.</video></div>
-      <div>
-        <h3>Beyond the noise.</h3>
-        <p>A 60-second launch film for a luxury electric grand tourer that does not exist. One car, one coast road, one sunrise, built shot by shot from blue hour to first light. Brand, car, script, voice, score, graphics and edit, directed end to end.</p>
-        <p class="occ-meta">SOLENTEI 369 &middot; First Light &middot; 60 seconds &middot; 2.39:1</p>
-        <a class="btn btn-page btn-page-w" href="solentei.html">Official SOLENTEI page &rarr;</a>
-      </div>
+    <div class="mini-prod">
+      <span class="eyebrow">Spec commercial &middot; Luxury automotive</span>
+      <h3>SOLENTEI 369.<a class="page-pill" href="solentei.html">Official SOLENTEI page &rarr;</a></h3>
+      <figure class="feature-vid"><video controls playsinline preload="none" poster="img/solentei/poster.jpg" aria-label="SOLENTEI 369: First Light, a 60-second spec commercial by David Martin"><source src="video/solentei-first-light.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/solentei-first-light.mp4">Download the MP4</a>.</video></figure>
+      <p>First Light. A 60-second launch film for a luxury electric grand tourer that does not exist. 2.39:1, written and directed by David Martin.</p>
     </div>
-  </div>
-      <div class="showcase-box">
-    <div class="sb-head">
-      <h3>Flagship product film.</h3>
-      <p>A 45-second AI-directed concept film for a fictional robotic arm. Every shot, line, and graphic generated and assembled under human direction.</p>
+    <div class="mini-prod">
+      <span class="eyebrow">Flagship &middot; AI-directed product film</span>
+      <h3>ORIVEX ARC-7.<a class="page-pill" href="orivex.html">Official ORIVEX page &rarr;</a></h3>
+      <figure class="feature-vid"><video controls playsinline preload="metadata" poster="video/orivex-poster.jpg" aria-label="ORIVEX ARC-7, an AI-directed product film, 45 seconds"><source src="video/orivex-arc7.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/orivex-arc7.mp4">Download the MP4</a>.</video></figure>
+      <p>45 seconds. A product film for a seven-axis robotic arm that does not exist, concept to finished film in a single working session.</p>
     </div>
-    <div class="showcase-feature">
-    <div class="flag-card">
-    <video controls playsinline preload="metadata" poster="video/orivex-poster.jpg" aria-label="ORIVEX ARC-7, an AI-directed product film, 45 seconds"><source src="video/orivex-arc7.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/orivex-arc7.mp4">Download the MP4</a>.</video>
-    <div class="fc-body"><span class="pnote-num">Flagship &middot; AI-directed product film</span><h3>ORIVEX ARC-7</h3><p>45 seconds, 1080p. A concept product film made with an AI-assisted pipeline: every shot, line and graphic generated or assembled under human direction.</p><a class="btn btn-page btn-page-k" href="orivex.html">Official ORIVEX page &rarr;</a></div>
-  </div>
-  </div>
-  </div>
-      <div class="showcase-box sb-occ">
-    <span class="occ-kick">Short film &middot; Watch it here</span>
-    <div class="occ-grid">
-      <div class="occ-screen occ-player"><video controls playsinline preload="none" poster="img/occupied/keyart-16x9.jpg" aria-label="OCCUPIED, a short film by David Martin, 1 minute 58 seconds"><source src="video/occupied-v7.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/occupied-v7.mp4">Download the MP4</a>.</video></div>
-      <div>
-        <h3>Every door he opens, he&rsquo;s already home.</h3>
-        <p>A college student keeps dreaming he opens his dorm door and finds himself already at his desk. Tonight, the dream follows him home. A 1:58 psychological thriller, written and directed end to end, built around the one thing AI video finds hardest: the same face, everywhere.</p>
-        <p class="occ-meta">A short film by David Martin &middot; 1:58 &middot; 2.39:1</p>
-        <a class="btn btn-page btn-page-w" href="occupied.html">Official OCCUPIED page &rarr;</a>
-      </div>
+    <div class="mini-prod">
+      <span class="eyebrow">Short film &middot; Psychological thriller</span>
+      <h3>OCCUPIED.<a class="page-pill" href="occupied.html">Official OCCUPIED page &rarr;</a></h3>
+      <figure class="feature-vid"><video controls playsinline preload="metadata" poster="img/occupied/keyart-16x9.jpg" aria-label="OCCUPIED, a short film by David Martin, 1 minute 58 seconds"><source src="video/occupied-v7.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/occupied-v7.mp4">Download the MP4</a>.</video></figure>
+      <p>1:58. A college student keeps dreaming he opens his dorm door and finds himself already at his desk. Written and directed by David Martin.</p>
     </div>
-  </div>
-  <div class="showcase-box">
-    <div class="trio-head">
-      <h3>One brief. Four directions.</h3>
-      <p>The same 30-second cola brief, executed four ways: the 1976 original, the 2026 remake, a Japanese TV adaptation, and Fizola, a funky reimagining under a different name. The 1976 original plays here; the full set is on the project page.</p>
+    <div class="mini-prod">
+      <span class="eyebrow">Spec commercial &middot; 1970s cola</span>
+      <h3>Fizzy Pop! 1976.<a class="page-pill" href="fizzypop.html">Official Fizzy Pop! page &rarr;</a></h3>
+      <figure class="feature-vid"><video controls playsinline preload="metadata" poster="video/fizzypop-poster.jpg" aria-label="Fizzy Pop Cherry Cola, the 1976 original, a 30-second spec commercial"><source src="video/fizzypop.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/fizzypop.mp4">Download the MP4</a>.</video></figure>
+      <p>30 seconds. The 1976 original. The 2026 remake, the Japanese adaptation and Fizola are all on the project page.</p>
     </div>
-    <div class="showcase-feature">
-      <div class="flag-card">
-    <video controls playsinline preload="metadata" poster="video/fizzypop-poster.jpg" aria-label="Fizzy Pop Cherry Cola, the 1976 original, a 30-second spec commercial"><source src="video/fizzypop.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/fizzypop.mp4">Download the MP4</a>.</video>
-    <div class="fc-body"><span class="pnote-num">Flagship &middot; AI-directed spec commercial</span><h3>Fizzy Pop! 1976</h3><p>30 seconds, 1080p. The original. A 1970s cherry cola spot, loud and fizzy, directed end to end.</p><a class="btn btn-page btn-page-k" href="fizzypop.html">Official Fizzy Pop! page &rarr;</a></div>
-  </div>
-    </div>
-  
-  </div>
   </div>
   
   
