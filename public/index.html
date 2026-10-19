@@ -140,8 +140,19 @@ main section.cta-band-white .btn-primary{background:#1A120C;border-color:#1A120C
 .cine .cine-title{color:#F7F3EA}
 .cine-sub{color:#F7F3EA}
 .cine .btn-ghost{background:rgba(8,8,10,.28)}
+.cine .cine-lede{color:#fff}
+.cine-stats{border-top-color:rgba(255,255,255,.28)}
+.cine-stats dd{color:#fff}
 @media (prefers-color-scheme:dark){.cine{--ink:#F7F3EA;--muted:#DCD6C8;color:#F7F3EA}}
 @media (max-width:900px){main .cine::after{background:linear-gradient(180deg,rgba(8,8,10,.42),rgba(8,8,10,.62))}}
+/* Problems jump strip (Oct 2026) */
+#problems{scroll-margin-top:96px}
+.jump-prob{margin:36px 0 4px}
+.jump-prob-in{display:flex;justify-content:space-between;align-items:center;gap:14px 44px;flex-wrap:wrap;text-decoration:none;color:var(--ink);border:1.5px solid var(--line);border-radius:16px;padding:24px 28px;background:var(--card);transition:border-color .15s ease,background .15s ease}
+.jump-prob-in:hover{border-color:#D85A20;background:var(--bg-2)}
+.jump-prob-t{display:block;font-size:clamp(28px,3.2vw,40px);font-weight:700;letter-spacing:-.02em;line-height:1.05;margin-top:7px;color:var(--ink)}
+.jump-prob-r{max-width:430px;font-size:16px;line-height:1.55;color:var(--muted)}
+.jump-prob-arrow{display:inline-block;color:#D85A20;font-weight:700;font-size:19px;margin-left:6px}
 </style>
 </head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="head-in"><a class="mark mark-logo" href="./" aria-label="madebydavidmartin, home"><img src="/img/logo-madebydavidmartin-portfolio.png" alt="madebydavidmartin portfolio" width="505" height="99"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span></span>Menu</button><nav class="nav" id="site-nav" aria-label="Main"><a href="work.html">Work</a><a href="method.html">Method</a><span class="dd"><a class="dd-btn" href="video.html" aria-haspopup="true" aria-expanded="false">Video<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><span class="dd-menu"><a href="video.html">My Process</a><a href="solentei.html">SOLENTEI 369</a><a href="occupied.html">OCCUPIED</a><a href="orivex.html">ORIVEX ARC-7</a><a href="fizzypop.html">Fizzy Pop</a></span></span><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://jp.madebydavidmartin.com/" lang="ja">日本語</a><a class="nav-course" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair Course</a></nav><a class="course-btn" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener"><span class="cb-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span><span class="cb-tx"><b>Director&rsquo;s Chair</b><small>AI Enablement Course</small></span></a></div></header><main class="wrap" id="main">
 <style>
@@ -231,6 +242,13 @@ main section.cta-band-white .btn-primary{background:#1A120C;border-color:#1A120C
 #selected-video .btn-page-k{background:#16130E;color:#fff}
 #selected-video .btn-page-k:hover{background:#000;color:#fff}
 </style>
+<section class="jump-prob" aria-label="Jump to Problems I solve">
+  <a class="jump-prob-in" href="#problems">
+    <span class="jump-prob-l"><span class="eyebrow">At a glance</span><span class="jump-prob-t">Problems I solve.</span></span>
+    <span class="jump-prob-r">The short version of this site: the problems that land on my desk, and what happens next.<span class="jump-prob-arrow" aria-hidden="true">&darr;</span></span>
+  </a>
+</section>
+
 <section class="sec band-white" id="selected-video">
   <div class="sec-head"><div><span class="eyebrow">Spotlight</span><h2>Height and range.</h2></div><p><a href="video.html">All video &rarr;</a></p></div>
   <p class="lede" style="max-width:700px">A selected showcase, chosen for range and craft: a luxury car commercial, a flagship product film, a short film, and a 1970s cola brief executed four ways. Each one directed end to end. The full archive, including the six-part cybersecurity series and the DJC catalogue, lives on the video page.</p>
