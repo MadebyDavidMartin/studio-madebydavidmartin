@@ -116,7 +116,7 @@
 .cine{position:relative;isolation:isolate;--hero-photo-o:1}
 .cine{background:#E7D6B4;box-shadow:0 0 0 100vmax #E7D6B4}
 main .cine::after{background:linear-gradient(90deg,rgba(8,8,10,.66),rgba(8,8,10,0) 66%)} /* Oct 2026: retire old hero-home.jpg now that hero-edit-suite.jpg is the hero background */
-.cine::before{content:"";position:absolute;inset:0 -100vmax;z-index:0;pointer-events:none;opacity:0;animation:cineBgIn 1.8s ease .15s forwards;background:url("img/hero-banner.jpg") center 32%/cover no-repeat}
+.cine::before{content:"";position:absolute;inset:0 -100vmax;z-index:0;pointer-events:none;opacity:0;animation:cineBgIn 1.8s ease .15s forwards;background:url("img/hero-banner.jpg") center 38%/cover no-repeat}
 .cine-in{position:relative;z-index:1}
 @keyframes cineBgIn{from{opacity:0}to{opacity:var(--hero-photo-o,.8)}}
 @media (prefers-reduced-motion:reduce){.cine::before{animation:none;opacity:var(--hero-photo-o,.8)}}
@@ -136,6 +136,8 @@ main section.cta-band-white .btn-primary{background:#1A120C;border-color:#1A120C
 
 <style>
 /* Hero photo: SOLENTEI rear at dusk (Oct 2026). Dark photo, so the hero copy goes light. */
+.cine{min-height:92vh;display:flex;align-items:center}
+.cine-in{flex:1}
 .cine{--ink:#F7F3EA;--muted:#DCD6C8;--line:rgba(255,255,255,.28);color:#F7F3EA;color-scheme:dark}
 .cine .cine-title{color:#F7F3EA}
 .cine-sub{color:#F7F3EA}
