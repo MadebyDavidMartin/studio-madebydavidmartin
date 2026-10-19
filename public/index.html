@@ -221,9 +221,15 @@ main section.cta-band-white .btn-primary{background:#1A120C;border-color:#1A120C
 .showcase-box.sb-sol{border-color:#3A3F45}
 .sb-sol .occ-kick{color:#C9CDD2}
 .sb-sol a.occ-link{color:#D9DCDF}
-img.sol-boxlogo{height:104px!important;width:auto!important}
-img.occ-boxlogo{height:26px!important;width:auto!important;top:24px;right:30px}
-@media(max-width:700px){img.sol-boxlogo{height:60px!important}img.occ-boxlogo{height:18px!important;top:16px;right:18px}}
+/* Vertical showcase cards (Oct 2026): 2x2 grid, video on top, copy below, no corner logos */
+#selected-video .show-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin:26px 0}
+#selected-video .show-grid .showcase-box{margin:0}
+@media(max-width:900px){#selected-video .show-grid{grid-template-columns:1fr}}
+#selected-video .show-grid .occ-grid{grid-template-columns:1fr}
+#selected-video .show-grid .showcase-box .flag-card:not(.flag-card-v){grid-template-columns:1fr!important}
+#selected-video .show-grid .flag-card .fc-body{padding:20px 24px 24px}
+#selected-video .show-grid .sb-head{padding-right:0!important;max-width:none}
+#selected-video .show-grid .showcase-feature{margin:10px 0 0}
 /* Showcase tightening (Oct 2026): boxes about 20% shorter */
 #selected-video .showcase-box{padding:clamp(18px,2.2vw,30px);margin:26px 0}
 #selected-video .flag-card .fc-body{padding:20px 24px 20px 0}
@@ -240,8 +246,8 @@ img.occ-boxlogo{height:26px!important;width:auto!important;top:24px;right:30px}
 <section class="sec band-white" id="selected-video">
   <div class="sec-head"><div><span class="eyebrow">Spotlight</span><h2>Height and range.</h2></div><p><a href="video.html">All video &rarr;</a></p></div>
   <p class="lede" style="max-width:700px">A selected showcase, chosen for range and craft: a luxury car commercial, a flagship product film, a short film, and a 1970s cola brief executed four ways. Each one directed end to end. The full archive, including the six-part cybersecurity series and the DJC catalogue, lives on the video page.</p>
+      <div class="show-grid">
       <div class="showcase-box sb-occ sb-sol">
-    <img class="box-logo sol-boxlogo" src="img/solentei/lockup-horizontal.png" alt="SOLENTEI 369" loading="lazy" style="mix-blend-mode:screen">
     <span class="occ-kick">New &middot; Spec commercial &middot; Watch it here</span>
     <div class="occ-grid">
       <div class="occ-screen occ-player"><video controls playsinline preload="none" poster="img/solentei/poster.jpg" aria-label="SOLENTEI 369: First Light, a 60-second spec commercial by David Martin"><source src="video/solentei-first-light.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/solentei-first-light.mp4">Download the MP4</a>.</video></div>
@@ -254,7 +260,6 @@ img.occ-boxlogo{height:26px!important;width:auto!important;top:24px;right:30px}
     </div>
   </div>
       <div class="showcase-box">
-    <a href="orivex.html" aria-label="Go to the ORIVEX page" style="text-decoration:none"><span class="box-logo-text">ORIVEX</span></a>
     <div class="sb-head">
       <h3>Flagship product film.</h3>
       <p>A 45-second AI-directed concept film for a fictional robotic arm. Every shot, line, and graphic generated and assembled under human direction.</p>
@@ -267,7 +272,6 @@ img.occ-boxlogo{height:26px!important;width:auto!important;top:24px;right:30px}
   </div>
   </div>
       <div class="showcase-box sb-occ">
-    <img class="box-logo occ-boxlogo" src="img/occupied/wordmark.png" alt="OCCUPIED" loading="lazy">
     <span class="occ-kick">Short film &middot; Watch it here</span>
     <div class="occ-grid">
       <div class="occ-screen occ-player"><video controls playsinline preload="none" poster="img/occupied/keyart-16x9.jpg" aria-label="OCCUPIED, a short film by David Martin, 1 minute 58 seconds"><source src="video/occupied-v7.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/occupied-v7.mp4">Download the MP4</a>.</video></div>
@@ -280,7 +284,6 @@ img.occ-boxlogo{height:26px!important;width:auto!important;top:24px;right:30px}
     </div>
   </div>
   <div class="showcase-box">
-    <a href="fizzypop.html" aria-label="Go to the Fizzy Pop page"><img class="box-logo" src="img/fizzypop/FP_logo_colour_flat.svg" alt="Fizzy Pop"></a>
     <div class="trio-head">
       <h3>One brief. Four directions.</h3>
       <p>The same 30-second cola brief, executed four ways: the 1976 original, the 2026 remake, a Japanese TV adaptation, and Fizola, a funky reimagining under a different name. The 1976 original plays here; the full set is on the project page.</p>
@@ -292,6 +295,7 @@ img.occ-boxlogo{height:26px!important;width:auto!important;top:24px;right:30px}
   </div>
     </div>
   
+  </div>
   </div>
   
   
