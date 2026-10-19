@@ -221,9 +221,21 @@ main section.cta-band-white .btn-primary{background:#1A120C;border-color:#1A120C
 .showcase-box.sb-sol{border-color:#3A3F45}
 .sb-sol .occ-kick{color:#C9CDD2}
 .sb-sol a.occ-link{color:#D9DCDF}
-img.sol-boxlogo{height:52px!important;width:auto!important}
-img.occ-boxlogo{height:32px!important;width:auto!important}
-@media(max-width:700px){img.sol-boxlogo{height:38px!important}img.occ-boxlogo{height:22px!important}}
+img.sol-boxlogo{height:104px!important;width:auto!important}
+img.occ-boxlogo{height:26px!important;width:auto!important;top:24px;right:30px}
+@media(max-width:700px){img.sol-boxlogo{height:60px!important}img.occ-boxlogo{height:18px!important;top:16px;right:18px}}
+/* Showcase tightening (Oct 2026): boxes about 20% shorter */
+#selected-video .showcase-box{padding:clamp(18px,2.2vw,30px);margin:26px 0}
+#selected-video .flag-card .fc-body{padding:20px 24px 20px 0}
+#selected-video .flag-card h3{font-size:clamp(22px,2.6vw,30px)}
+.sb-occ .occ-grid{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(18px,2.4vw,32px)}
+.sb-occ h3{font-size:clamp(26px,3vw,36px)}
+#selected-video .showcase-box .flag-card:not(.flag-card-v){grid-template-columns:.92fr 1.08fr!important}
+#selected-video .btn-page{display:inline-block;margin-top:16px;padding:11px 24px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:0}
+#selected-video .btn-page-w{background:#fff;color:#14100C}
+#selected-video .btn-page-w:hover{background:#E8E3D9;color:#14100C}
+#selected-video .btn-page-k{background:#16130E;color:#fff}
+#selected-video .btn-page-k:hover{background:#000;color:#fff}
 </style>
 <section class="sec band-white" id="selected-video">
   <div class="sec-head"><div><span class="eyebrow">Spotlight</span><h2>Height and range.</h2></div><p><a href="video.html">All video &rarr;</a></p></div>
@@ -237,7 +249,7 @@ img.occ-boxlogo{height:32px!important;width:auto!important}
         <h3>Beyond the noise.</h3>
         <p>A 60-second launch film for a luxury electric grand tourer that does not exist. One car, one coast road, one sunrise, built shot by shot from blue hour to first light. Brand, car, script, voice, score, graphics and edit, directed end to end.</p>
         <p class="occ-meta">SOLENTEI 369 &middot; First Light &middot; 60 seconds &middot; 2.39:1</p>
-        <a class="btn btn-showcase btn-showcase-occ" href="solentei.html">How it was made &rarr;</a>
+        <a class="btn btn-page btn-page-w" href="solentei.html">Official SOLENTEI page &rarr;</a>
       </div>
     </div>
   </div>
@@ -250,7 +262,7 @@ img.occ-boxlogo{height:32px!important;width:auto!important}
     <div class="showcase-feature">
     <div class="flag-card">
     <video controls playsinline preload="metadata" poster="video/orivex-poster.jpg" aria-label="ORIVEX ARC-7, an AI-directed product film, 45 seconds"><source src="video/orivex-arc7.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/orivex-arc7.mp4">Download the MP4</a>.</video>
-    <div class="fc-body"><span class="pnote-num">Flagship &middot; AI-directed product film</span><h3>ORIVEX ARC-7</h3><p>45 seconds, 1080p. A concept product film made with an AI-assisted pipeline: every shot, line and graphic generated or assembled under human direction.</p><a class="btn btn-showcase" href="orivex.html">Read the case study &rarr;</a></div>
+    <div class="fc-body"><span class="pnote-num">Flagship &middot; AI-directed product film</span><h3>ORIVEX ARC-7</h3><p>45 seconds, 1080p. A concept product film made with an AI-assisted pipeline: every shot, line and graphic generated or assembled under human direction.</p><a class="btn btn-page btn-page-k" href="orivex.html">Official ORIVEX page &rarr;</a></div>
   </div>
   </div>
   </div>
@@ -263,7 +275,7 @@ img.occ-boxlogo{height:32px!important;width:auto!important}
         <h3>Every door he opens, he&rsquo;s already home.</h3>
         <p>A college student keeps dreaming he opens his dorm door and finds himself already at his desk. Tonight, the dream follows him home. A 1:58 psychological thriller, written and directed end to end, built around the one thing AI video finds hardest: the same face, everywhere.</p>
         <p class="occ-meta">A short film by David Martin &middot; 1:58 &middot; 2.39:1</p>
-        <a class="btn btn-showcase btn-showcase-occ" href="occupied.html">How it was made &rarr;</a>
+        <a class="btn btn-page btn-page-w" href="occupied.html">Official OCCUPIED page &rarr;</a>
       </div>
     </div>
   </div>
@@ -276,7 +288,7 @@ img.occ-boxlogo{height:32px!important;width:auto!important}
     <div class="showcase-feature">
       <div class="flag-card">
     <video controls playsinline preload="metadata" poster="video/fizzypop-poster.jpg" aria-label="Fizzy Pop Cherry Cola, the 1976 original, a 30-second spec commercial"><source src="video/fizzypop.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/fizzypop.mp4">Download the MP4</a>.</video>
-    <div class="fc-body"><span class="pnote-num">Flagship &middot; AI-directed spec commercial</span><h3>Fizzy Pop! 1976</h3><p>30 seconds, 1080p. The original. A 1970s cherry cola spot, loud and fizzy, directed end to end.</p><a class="btn btn-showcase" href="fizzypop.html">See the full project &rarr;</a></div>
+    <div class="fc-body"><span class="pnote-num">Flagship &middot; AI-directed spec commercial</span><h3>Fizzy Pop! 1976</h3><p>30 seconds, 1080p. The original. A 1970s cherry cola spot, loud and fizzy, directed end to end.</p><a class="btn btn-page btn-page-k" href="fizzypop.html">Official Fizzy Pop! page &rarr;</a></div>
   </div>
     </div>
   
