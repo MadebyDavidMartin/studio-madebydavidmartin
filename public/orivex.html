@@ -190,6 +190,18 @@ main.ox .ox-bio h2{color:var(--ox-ink);font-size:clamp(34px,4vw,48px);margin:4px
 .ox-t2{right:-8px;bottom:14%;animation-delay:1.8s}
 @media(max-width:900px){.ox-grid{grid-template-columns:1fr}.ox-t1{left:6px}.ox-t2{right:6px}}
 @media(prefers-reduced-motion:reduce){.ox-ring{animation:none}}
+
+/* Production guide card (added 2026-10-27) */
+.pg-band{background:var(--ox-ink2);box-shadow:0 0 0 100vmax var(--ox-ink2);padding-block:clamp(36px,5vw,64px)}
+.pg-card{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;border:1px solid var(--ox-line2);border-radius:10px;padding:clamp(24px,3.4vw,38px);background:linear-gradient(120deg,rgba(244,245,245,.05),rgba(244,245,245,.01))}
+.pg-text{max-width:640px;flex:1 1 340px}
+.pg-kicker{font:500 12px/1.4 var(--ox-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--ox-amber);margin:0 0 10px}
+.pg-card h2{font-family:var(--ox-cond);font-weight:600;font-size:clamp(28px,3.6vw,42px);line-height:1.1;letter-spacing:.01em;margin:0 0 10px;color:var(--ox-paper)}
+.pg-card h2 a{color:inherit;text-decoration:none}
+.pg-card h2 a:hover{text-decoration:underline}
+.pg-desc{margin:0;color:var(--ox-dim);font-size:16px;line-height:1.6}
+.pg-btn{flex-shrink:0}
+@media (max-width:640px){.pg-card{flex-direction:column;align-items:flex-start}}
 </style></head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="head-in"><a class="mark mark-logo" href="./" aria-label="madebydavidmartin, home"><img src="/img/logo-madebydavidmartin-portfolio.png" alt="madebydavidmartin portfolio" width="505" height="99"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span></span>Menu</button><nav class="nav" id="site-nav" aria-label="Main"><a href="work.html">Work</a><a href="method.html">Method</a><span class="dd"><a class="dd-btn" href="video.html" aria-haspopup="true" aria-expanded="false">Video<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><span class="dd-menu"><a href="video.html">My Process</a><a href="solentei.html">SOLENTEI 369</a><a href="occupied.html">OCCUPIED</a><a href="orivex.html" aria-current="page">ORIVEX ARC-7</a><a href="fizzypop.html">Fizzy Pop</a><a href="djc.html">DJC Media</a></span></span><a href="about.html">About</a><a href="https://jp.madebydavidmartin.com/orivex.html" lang="ja">日本語</a><a class="nav-course" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair Course</a></nav><a class="course-btn" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener"><span class="cb-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span><span class="cb-tx"><b>Director&rsquo;s Chair</b><small>AI Enablement Course</small></span></a></div></header><main id="main" class="ox">
 
 <section class="ox-band ox-hero" id="film">
@@ -228,6 +240,19 @@ main.ox .ox-bio h2{color:var(--ox-ink);font-size:clamp(34px,4vw,48px);margin:4px
   </div>
 </section>
 
+
+<section class="ox-band pg-band" id="production-guide">
+  <div class="wrap">
+    <div class="pg-card">
+      <div class="pg-text">
+        <p class="pg-kicker">The Production Guide</p>
+        <h2><a href="guides/orivex-arc-7-production-guide.html" target="_blank" rel="noopener">Read the complete production guide for ORIVEX ARC-7.</a></h2>
+        <p class="pg-desc">Flow setup and folder, the four reference images, every shot, voiceover, music and sound design, overlays and brand, and the hand-off checklist, documented in full. The guide opens in a new tab.</p>
+      </div>
+      <a class="ox-btn p pg-btn" href="guides/orivex-arc-7-production-guide.html" target="_blank" rel="noopener">Open the production guide &#8599;</a>
+    </div>
+  </div>
+</section>
 <section class="ox-band" id="brief">
   <div class="wrap">
     <div class="ox-head">

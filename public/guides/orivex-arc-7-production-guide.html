@@ -1,0 +1,437 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>ARC-7 Production Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: lab spec-sheet. Sticky step rail on the left, one step at a time on the right, prev/next at the foot. */
+:root{
+  --bg:#F1F3F2; --panel:#FFFFFF; --ink:#14181B; --muted:#5B646B; --line:#D5DADC; --soft:#E7EBEB;
+  --amber:#D9670A; --amber-ink:#FFFFFF; --amber-soft:#FBE9D9; --ok:#2F7D4F;
+  --f-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1113; --panel:#161A1D; --ink:#E6EAEC; --muted:#8F989F; --line:#2A3135; --soft:#1D2226;
+  --amber:#FF8A1F; --amber-ink:#160B02; --amber-soft:#2B1D10; --ok:#5CC08A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1113; --panel:#161A1D; --ink:#E6EAEC; --muted:#8F989F; --line:#2A3135; --soft:#1D2226;
+  --amber:#FF8A1F; --amber-ink:#160B02; --amber-soft:#2B1D10; --ok:#5CC08A; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.6 var(--f-body);margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:20px;padding-block:24px 64px}
+header.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:24px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand svg{width:40px;height:40px;flex:none}
+.brand h1{font:700 30px/1 var(--f-display);letter-spacing:.04em;margin:0;text-transform:uppercase}
+.brand p{margin:2px 0 0;color:var(--muted);font-size:13px}
+.progress{font:500 12px/1 var(--f-mono);color:var(--muted);display:flex;align-items:center;gap:10px}
+.bar{width:160px;height:6px;background:var(--soft);border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--amber);width:0;transition:width .3s}
+.layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:32px;align-items:start}
+nav.rail{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);display:flex;flex-direction:column;gap:2px}
+.rail .grp{font:600 11px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px 10px}
+.rail .grp:first-child{margin-top:0}
+.rail button{all:unset;cursor:pointer;display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:6px;font-size:14px;color:var(--ink)}
+.rail button:hover{background:var(--soft)}
+.rail button:focus-visible{outline:2px solid var(--amber);outline-offset:1px}
+.rail button[aria-current="step"]{background:var(--panel);box-shadow:inset 3px 0 0 var(--amber);font-weight:600}
+.rail .dot{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--line);flex:none;display:grid;place-items:center;font-size:10px;color:var(--amber-ink)}
+.rail .done .dot{background:var(--ok);border-color:var(--ok)}
+.rail .done .dot::after{content:"✓"}
+.rail .tc{margin-left:auto;font:400 11px var(--f-mono);color:var(--muted)}
+main{min-width:0}
+.eyebrow{font:500 12px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin:0 0 10px}
+h2{font:700 40px/1.05 var(--f-display);text-transform:uppercase;letter-spacing:.02em;margin:0 0 12px;text-wrap:balance}
+h3{font:600 20px/1.2 var(--f-display);text-transform:uppercase;letter-spacing:.05em;margin:0 0 10px}
+.lede{font-size:16px;color:var(--muted);max-width:66ch;margin:0 0 24px}
+section.step{display:flex;flex-direction:column;gap:22px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:20px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.specs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.specs div{background:var(--panel);padding:14px 16px}
+.specs b{display:block;font:700 26px/1.1 var(--f-display);letter-spacing:.02em}
+.specs span{font-size:12px;color:var(--muted)}
+.timeline{display:flex;gap:2px;border-radius:6px;overflow:hidden;min-width:640px}
+.timeline .seg{background:var(--soft);padding:10px 10px 12px;min-width:0;cursor:pointer;border:0;text-align:left;color:var(--ink);font:inherit}
+.timeline .seg:hover{background:var(--amber-soft)}
+.timeline .seg:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.timeline .seg small{display:block;font:500 11px var(--f-mono);color:var(--amber)}
+.timeline .seg strong{display:block;font:600 15px/1.2 var(--f-display);text-transform:uppercase;letter-spacing:.04em;margin:3px 0 4px}
+.timeline .seg em{display:block;font-style:normal;font-size:12px;line-height:1.35;color:var(--muted)}
+.scroll{overflow-x:auto}
+.flow{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch}
+.flow .node{flex:1 1 150px;border:1px solid var(--line);border-radius:6px;padding:12px;background:var(--panel)}
+.flow .node b{display:block;font:600 15px var(--f-display);text-transform:uppercase;letter-spacing:.05em}
+.flow .node span{font-size:13px;color:var(--muted)}
+.flow .node.me{border-color:var(--amber)}
+.flow .node .who{font:500 11px var(--f-mono);color:var(--amber);letter-spacing:.08em;text-transform:uppercase}
+ul.clean,ol.clean{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.prompt{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--panel)}
+.prompt .ph{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--soft)}
+.prompt .ph b{font:600 14px var(--f-display);text-transform:uppercase;letter-spacing:.07em}
+.prompt .ph small{display:block;font:400 12px var(--f-body);color:var(--muted);text-transform:none;letter-spacing:0}
+.prompt pre{margin:0;padding:14px;white-space:pre-wrap;word-wrap:break-word;font:13px/1.6 var(--f-mono)}
+.copy{all:unset;cursor:pointer;font:600 12px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;border-radius:5px;background:var(--amber);color:var(--amber-ink);white-space:nowrap}
+.copy:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.copy.ok{background:var(--ok);color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:500 12px var(--f-mono);padding:4px 9px;border:1px solid var(--line);border-radius:999px;background:var(--panel)}
+.chip.amber{border-color:var(--amber);color:var(--amber)}
+.meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.meta h4{font:600 12px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.meta p{margin:0}
+.vo{font-size:17px;line-height:1.5;border-left:3px solid var(--amber);padding-left:12px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 12px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+td.tc{font:500 13px var(--f-mono);white-space:nowrap;font-variant-numeric:tabular-nums}
+.note{font-size:13px;color:var(--muted);border:1px dashed var(--line);border-radius:6px;padding:10px 12px}
+.foot{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:18px;margin-top:8px}
+.btn{all:unset;cursor:pointer;padding:10px 16px;border-radius:6px;border:1px solid var(--line);font:600 14px var(--f-body);background:var(--panel)}
+.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.btn[disabled]{opacity:.35;cursor:default}
+label.done-toggle{display:flex;align-items:center;gap:8px;font-size:14px;cursor:pointer}
+label.done-toggle input{width:18px;height:18px;accent-color:var(--ok)}
+.mark-preview{display:flex;flex-wrap:wrap;gap:16px}
+.mark-preview .tile{flex:1 1 240px;border-radius:8px;padding:28px;display:flex;align-items:center;justify-content:center;gap:14px;min-height:130px}
+.tile.light{background:#F4F5F5;color:#14181B;border:1px solid var(--line)}
+.tile.dark{background:#0C0F11;color:#F4F5F5}
+.tile .wm{font:700 34px/1 "Barlow Condensed",Arial,sans-serif;letter-spacing:.22em}
+.tile .sub{font:500 11px/1 "IBM Plex Mono",monospace;letter-spacing:.18em;opacity:.7;margin-top:6px}
+.tile svg{width:46px;height:46px}
+@media (max-width:860px){
+  .layout{grid-template-columns:1fr}
+  nav.rail{position:static;flex-direction:row;overflow-x:auto;gap:4px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+  .rail .grp{display:none}
+  .rail button{white-space:nowrap;padding:6px 10px}
+  .rail .tc{display:none}
+  .grid2,.meta{grid-template-columns:1fr}
+  .specs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  h2{font-size:32px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17" fill="none" stroke="var(--ink)" stroke-width="3.2" stroke-dasharray="80 27" transform="rotate(-50 24 24)"/><circle cx="37.6" cy="13.6" r="4.2" fill="var(--amber)"/></svg>
+      <div>
+        <h1>ORIVEX ARC-7</h1>
+        <p>Production guide for a 45-second fictional product film. Google Flow, Speechify, HyperFrames.</p>
+      </div>
+    </div>
+    <div class="progress"><span id="progTxt">0 / 0 done</span><div class="bar"><i id="progBar"></i></div></div>
+  </header>
+  <div class="layout">
+    <nav class="rail" id="rail" aria-label="Steps"></nav>
+    <main id="main" aria-live="polite"></main>
+  </div>
+</div>
+
+<script>
+const B = {
+  ROBOT: "the ORIVEX ARC-7, a seven-axis industrial precision robotic arm with a slender, architectural silhouette: matte ceramic-white composite shell panels, satin graphite joint housings, a brushed titanium wrist ending in a hexagonal quick-change tool flange, a thin glowing amber light ring around every joint, mounted on a low round graphite pedestal base. Precise machined panel seams and small hex fasteners, no visible cables.",
+  LAB: "a pristine minimalist robotics lab: seamless matte white walls and ceiling with recessed linear LED light strips, a pale grey polished epoxy floor, a black honed-granite precision workbench at the centre of the room, a frosted glass partition in the background, cool 5600K daylight-balanced lighting, soft shadows, a faint clean haze in the air, sterile and quiet.",
+  OBJECT: "a palm-sized sphere made of an intricate titanium gyroid lattice, satin bead-blasted finish with polished edges, a small polished gold core visible at its centre",
+  STYLE: "Photorealistic high-end commercial product cinematography, shot on ARRI Alexa 35, 50mm prime lens at f/2.8, crisp micro detail, high dynamic range, neutral grade with cool whites and warm amber accents, subtle lens falloff. 16:9 frame. No text, no logos, no watermarks, no people.",
+  AUDIO: "No music, no voices, no dialogue."
+};
+
+const REFS = [
+  {id:"R1", file:"R1_arc7_hero.png", name:"ARC-7 hero (character reference)", why:"This is the robot's identity. Every shot uses it as a reference image so the arm keeps the same shape, colours and amber rings.",
+   prompt:`Studio product photograph of ${B.ROBOT} The arm stands in a raised, ready pose, seen in a three-quarter view from slightly below, the entire arm and its base fully in frame and centred, on a seamless light grey studio backdrop with a soft floor shadow. Even softbox lighting reveals every panel seam and joint. ${B.STYLE}`,
+   check:["Exactly one arm, six or seven visible joints, nothing fused or melted","White shell, graphite joints, amber rings on every joint","Hexagonal flange at the wrist, round graphite base","No text or logo anywhere on the arm"]},
+  {id:"R2", file:"R2_arc7_wrist.png", name:"ARC-7 wrist detail", why:"Used for the macro shots (03, 04, 05) so close-ups match the full arm.",
+   prompt:`Close-up product photograph of the wrist section of ${B.ROBOT} The frame is filled by the brushed titanium wrist, the hexagonal quick-change tool flange and one glowing amber light ring, seamless light grey backdrop, shallow depth of field. ${B.STYLE}`,
+   check:["Matches R1 materials exactly","Hexagonal flange clearly readable","Amber ring is a thin band, not a large glowing blob"]},
+  {id:"R3", file:"R3_lab_plate.png", name:"Lab environment plate", why:"Locks the room. The same lab appears in every shot.",
+   prompt:`Wide establishing interior photograph of ${B.LAB} The black granite workbench is empty and centred, camera at chest height, symmetrical one-point perspective with generous negative space. ${B.STYLE}`,
+   check:["Room reads as clean and clinical, not a factory","Granite bench centred and empty","No signage, screens with text, or people"]},
+  {id:"R4", file:"R4_lattice_sphere.png", name:"Hero object: lattice sphere", why:"The thing ARC-7 makes. Used in shots 05, 06, 07 and 08.",
+   prompt:`Studio product photograph of ${B.OBJECT}, resting on a black honed-granite surface, seamless light grey backdrop, soft overhead light with one crisp specular highlight running across the lattice. ${B.STYLE}`,
+   check:["Lattice is regular and intricate, not random noise","Gold core visible through the lattice","Reads as palm-sized"]}
+];
+
+const SHOTS = [
+  {n:"01", name:"Power-up", tc:"0:00 to 0:05", dur:5, refs:["R1","R3"],
+   purpose:"Intro. Dark lab, lights come on, the arm's amber rings ignite. Brand mark fades in.",
+   image:`Wide, symmetrical shot of ${B.LAB} The room is in near darkness, lit only by faint blue-grey ambient light. ${B.ROBOT} It stands folded in a compact rest pose on the granite workbench as a dark silhouette, its amber rings unlit. Low camera at workbench height. ${B.STYLE}`,
+   anim:`Static camera with a very slow push-in. The ceiling LED strips switch on one row at a time from the back of the room to the front, flooding the lab with clean white light. As the light reaches the workbench, the amber light rings on the robotic arm ignite one joint at a time, from the base up to the wrist. The arm itself does not move. Audio: deep electrical hum, sequential relay clicks, a soft rising power-up tone. ${B.AUDIO}`,
+   vo:"In fabrication, there has always been a trade-off.",
+   overlay:"ORIVEX mark and wordmark fade in at centre (1.8s), hold, fade out (4.6s).",
+   check:["Lights switch on in order, no flicker or strobing","Rings ignite on the arm, not elsewhere in the room","Arm stays still"]},
+  {n:"02", name:"Reveal", tc:"0:05 to 0:11", dur:6, refs:["R1","R3"],
+   purpose:"Hero introduction. Revised (v2): the first version asked for a full-body unfold and a camera orbit at the same time, which made Veo reinvent the arm's shape. Now the arm holds the same raised pose as R1 and the camera does the moving. The only arm motion is a small, slow wrist turn.",
+   image:`Three-quarter low-angle hero shot of ${B.ROBOT} The arm stands in a raised, ready pose, exactly matching the reference image, on the black granite workbench in ${B.LAB} The entire arm and its base are fully in frame with space around them. Amber rings glowing, clean bright background with a soft gradient, a rim light tracing the edges of the white shell. ${B.STYLE}`,
+   anim:`Slow, smooth cinematic dolly: the camera glides about 20 degrees around the robotic arm from left to right at a constant speed, keeping the whole arm in frame. The arm holds its pose completely still. Its body, base and joints do not move and keep exactly the same shape for the whole shot. Only the wrist turns slowly about a quarter turn, then stops. Soft reflections slide across the rigid white shell as the camera moves. Audio: one quiet smooth servo whir, soft room tone. ${B.AUDIO}`,
+   alt:[
+     ["Still changing shape? Remove the wrist turn","Delete the sentence about the wrist so the arm is fully static. A camera move around a still object is the most reliable shot Veo makes, and it still reads as a hero reveal."],
+     ["Want the unfold back? Pin both ends","Make an end frame: attach S02.png and prompt 'Edit this image. Keep the same camera, lighting and robot. Only change: the arm is folded low in a compact crouch, wrist tucked in. Nothing else changes. No text, no logos.' Save as S02_folded.png. Then use Frames to Video with S02_folded.png as the START and S02.png as the END, camera locked still, and the prompt 'Locked-off camera. The robotic arm slowly rises from its crouch into the ready pose. Rigid machined parts keep their exact shape and size. Audio: smooth servo whir. No music, no voices.' Locking both poses and the camera leaves Veo only one thing to invent."],
+     ["Use Quality and generate slow","Veo 3.1 Quality holds shape far better than Fast. Slow motion holds shape better than fast; Claude can speed it up in the edit."]
+   ],
+   vo:"Speed, or precision. Meet ARC-7, by Orivex.",
+   overlay:"Title lower left: ARC-7 / PRECISION FABRICATION ARM. Corner brand bug appears and stays until the end card.",
+   check:["Arm keeps the same number of joints and the same shape in every frame","Only the camera and the wrist move","Arm matches R1"]},
+  {n:"03", name:"Tool change", tc:"0:11 to 0:17", dur:6, refs:["R2","R3"],
+   purpose:"Macro. The wrist picks up a laser head from its cradle. Revised (v2): two objects joining is where video models morph shapes, so this shot is now pinned with a start AND an end frame, uses one tool instead of a rack of look-alikes, and is generated slow then sped up in the edit.",
+   image:`Extreme close-up macro, side view, of the wrist and hexagonal quick-change flange of ${B.ROBOT} The empty flange hovers about five centimetres directly above a single slim cylindrical laser end-effector that stands upright in a machined graphite cradle on the black granite workbench. Only one tool in frame. Amber ring glowing, very shallow depth of field, the white lab softly blurred behind. ${B.STYLE}`,
+   endImage:`Edit this image. Keep the exact same camera angle, framing, lighting, background, robotic wrist and laser tool. Only change: the laser end-effector is now attached to the bottom of the hexagonal flange and has been lifted about five centimetres straight up, out of the graphite cradle. The cradle is now empty. Two small amber indicator lights glow on the flange. Nothing else changes. No text, no logos.`,
+   anim:`Locked-off macro shot. The camera does not move. The robotic wrist moves slowly straight down until its flange meets the top of the laser tool, pauses for a moment, then lifts the tool straight up out of the cradle. One vertical movement down and one back up, with no rotation and no tilting. The wrist, the flange and the laser tool are rigid machined metal and keep exactly the same shape and size for the whole shot. Two small amber indicator lights blink on at the moment of contact. Audio: smooth servo whine, one solid metallic clunk at contact, a short electronic chirp. ${B.AUDIO}`,
+   alt:[
+     ["Plan B if it still morphs: split into two clips","Generate S03a: start S03.png, prompt ends when the flange touches the tool and stops. Generate S03b: start S03_end.png, the wrist lifts the tool further up and out of frame. Claude cuts between them at the moment of contact and hides the join with a short amber flash and the clunk sound. This is how real commercials shoot it."],
+     ["Why slow?","Fast motion is where Veo loses shape. Generate the move slowly and HyperFrames speeds the clip up 1.5 to 2 times in the edit, which also sells the 0.4 s spec."],
+     ["Still drifting?","Regenerate with Veo 3.1 Quality, not Fast. Check the start and end stills match each other exactly before animating; any difference between them gets 'solved' by morphing."]
+   ],
+   vo:"Twelve tool heads. A full tool change in four tenths of a second.",
+   overlay:"Callout with leader line to the flange: 12 TOOL HEADS · 0.4 s TOOL CHANGE. Clip played at 1.5 to 2x speed.",
+   check:["Wrist and tool keep their shape the whole time","Movement is straight down and straight up, no twisting","Tool ends up attached to the flange"]},
+  {n:"04", name:"Laser etch", tc:"0:17 to 0:23", dur:6, refs:["R2","R3"],
+   purpose:"Extreme macro. The laser traces a lattice pattern into titanium.",
+   image:`Extreme macro of a slim laser end-effector mounted on the wrist of ${B.ROBOT} It hovers a few millimetres above a polished titanium disc clamped on the black granite workbench. A hair-thin bright laser point touches the metal, delicate glowing etched lines form a precise geometric lattice pattern, tiny bright sparks and faint wisps of smoke lit by cool light, very shallow depth of field. ${B.STYLE}`,
+   anim:`Slow lateral slider move across the workpiece. The laser traces the geometric pattern across the titanium with fast, perfectly smooth movements, leaving glowing lines that cool from white-hot to amber to grey. Fine sparks and thin smoke curl upward. Audio: high-frequency laser hiss, soft crackle, faint fume-extractor airflow. ${B.AUDIO}`,
+   vo:"It etches titanium to within two microns. Every pass. Every part.",
+   overlay:"Spec readout: REPEATABILITY ±2 µm, plus a small live coordinate readout (X/Y/Z) ticking.",
+   check:["Lines look etched into the metal, not painted on","Pattern is geometric and regular","Sparks are fine, not fireworks"]},
+  {n:"05", name:"Micro placement", tc:"0:23 to 0:29", dur:6, refs:["R2","R4"],
+   purpose:"Macro. A micro gripper seats the gold core inside the lattice.",
+   image:`Macro close-up of a slender precision micro-gripper mounted on the wrist of ${B.ROBOT} It holds a tiny polished gold core between two fine tweezer fingers, about to place it into the centre of ${B.OBJECT}, which is partly assembled and sits on the black granite workbench. Amber ring glowing at the edge of frame, razor-thin focus on the gold core. ${B.STYLE}`,
+   anim:`Very slow push-in. The micro-gripper descends with deliberate precision and places the gold core into the centre of the lattice, pauses for a beat, then the tweezer fingers open and the gripper withdraws straight up. Absolutely steady, no wobble. Audio: delicate servo ticks, a tiny metallic seating click. ${B.AUDIO}`,
+   vo:"Seven axes place components smaller than a grain of sand.",
+   overlay:"Callout: 7 AXES · 0.01° JOINT RESOLUTION, with a thin targeting reticle centred on the gold core.",
+   check:["Gold core stays the same size throughout","Gripper fingers open cleanly","No hand or human element appears"]},
+  {n:"06", name:"Inline inspection", tc:"0:29 to 0:35", dur:6, refs:["R1","R3","R4"],
+   purpose:"The arm scans its finished work. HyperFrames adds the measurement HUD on top.",
+   image:`Medium shot of ${B.ROBOT} It holds a compact scanning head angled down at ${B.OBJECT}, which sits on the granite workbench. A thin bright blue-white laser scan line fans across the sphere and a faint projected grid pattern falls on the granite. Behind it is ${B.LAB} ${B.STYLE}`,
+   anim:`Slow orbit to the right. The arm moves the scanning head in a smooth arc around the sphere while the laser line sweeps continuously across the lattice surface, light rippling over its geometry. Audio: soft scanning sweep tone, gentle servo hum. ${B.AUDIO}`,
+   vo:"And it inspects its own work as it goes, at over a million points per second.",
+   overlay:"Measurement HUD: scan frame brackets, point counter climbing to 1.2 M PTS/S, tolerance readout Δ 0.8 µm · PASS.",
+   check:["Scan line stays on the sphere","Arm and sphere match R1 and R4","Background stays clean for the HUD"]},
+  {n:"07", name:"Finished part", tc:"0:35 to 0:40", dur:5, refs:["R1","R4"],
+   purpose:"Product hero. The finished sphere turns on a plinth while the arm retracts behind it.",
+   image:`Product hero shot of ${B.OBJECT}, resting on a small rotating black display plinth on the granite workbench. ${B.ROBOT} It is in soft focus in the background, retracting upward, amber rings glowing. A crisp highlight glints across the titanium lattice, dramatic clean side light, background falling from dark to white. ${B.STYLE}`,
+   anim:`Slow push-in toward the sphere as the plinth rotates smoothly. Glints of light travel across the lattice and the gold core catches the light. In the background the robotic arm finishes retracting and settles into a still ready pose. Audio: soft low whoosh, faint motor hum. ${B.AUDIO}`,
+   vo:"From digital design to finished part, in a single cell.",
+   overlay:"Centred line: DESIGN TO FINISHED PART. ONE CELL.",
+   check:["Sphere rotates without morphing","Arm stays soft and secondary","Gold core still visible"]},
+  {n:"08", name:"Outro", tc:"0:40 to 0:45", dur:5, refs:["R1","R3","R4"],
+   purpose:"Wide closing shot. Lights dim, rings glow, the end card builds over it.",
+   image:`Wide symmetrical shot of the full ${B.LAB} ${B.ROBOT} It stands in a calm rest pose at the centre of the granite workbench, with ${B.OBJECT} on a small black plinth beside it. Generous empty space in the upper third of the frame. The room lights are slightly dimmed so the amber rings stand out. ${B.STYLE}`,
+   anim:`Locked-off camera with a very slow pull-back. The ceiling lights dim gently to about half brightness, leaving the amber light rings glowing on the still robotic arm. Nothing else moves. Audio: room tone slowly fading out, a single soft low tone. ${B.AUDIO}`,
+   vo:"Orivex ARC-7. Precision, without compromise.",
+   overlay:"End card over the dimmed shot: ORIVEX mark, ARC-7, tagline PRECISION, WITHOUT COMPROMISE, placeholder URL orivex.example.",
+   check:["Upper third is clean for the end card","Arm does not move","Lighting matches shot 01's room"]}
+];
+
+const VO_FULL = SHOTS.map(s=>s.vo).join("\n\n");
+const MUSIC = `45-second instrumental for a premium robotics product film. Minimal, precise, cinematic electronic. 96 BPM. Clean pulsing synth arpeggio, deep warm sub bass, crisp mechanical percussion ticks, airy pads, no vocals.
+Structure: 0:00 to 0:05 near silence, a low drone swells as lights come on. 0:05 soft kick and arpeggio enter. 0:11 to 0:29 steady build, adding glassy plucks and tighter percussion. 0:29 to 0:35 tension lifts with a rising filter sweep. 0:35 full but restrained peak. 0:40 everything drops to a sustained pad with one deep low hit. Clean ending at 0:45, no fade-out tail longer than 2 seconds.
+Mood: confident, clinical, sophisticated, high-tech. Leave space in the mid range for a spoken voiceover.`;
+const SFX = [
+  ["Power-up","Relay clicks in sequence, electrical hum, rising tone","01"],
+  ["Servo movement","Smooth precise robotic servo whir, quiet","02, 05, 06, 07"],
+  ["Tool lock","Magnetic clunk plus short digital chirp","03"],
+  ["Laser","High-frequency laser hiss with fine crackle","04"],
+  ["Scan","Soft sweeping sine tone, gentle","06"],
+  ["UI ticks","Very soft digital ticks under each spec callout","03 to 07 (overlay hits)"],
+  ["End hit","Single deep cinematic low boom, short tail","08"]
+];
+
+const STEPS = [
+  {id:"overview", grp:"Plan", label:"Overview"},
+  {id:"setup", grp:"Plan", label:"Set up Flow"},
+  {id:"refs", grp:"Images", label:"Reference images"},
+  ...SHOTS.map(s=>({id:"shot"+s.n, grp:"Shots", label:s.n+" "+s.name, tc:s.tc.split(" to ")[0], shot:s})),
+  {id:"vo", grp:"Audio", label:"Voiceover"},
+  {id:"music", grp:"Audio", label:"Music and sound"},
+  {id:"overlays", grp:"Assembly", label:"Overlays and brand"},
+  {id:"handoff", grp:"Assembly", label:"Hand-off checklist"}
+];
+
+let done = {};
+try{ done = JSON.parse(localStorage.getItem("arc7-done")||"{}") }catch(e){ done = {} }
+function saveDone(){ try{ localStorage.setItem("arc7-done", JSON.stringify(done)) }catch(e){} }
+
+const esc = s => String(s).replace(/[&<>"]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let promptStore = [];
+function promptBox(title, sub, text){
+  const i = promptStore.push(text) - 1;
+  return `<div class="prompt"><div class="ph"><b>${esc(title)}${sub?`<small>${esc(sub)}</small>`:""}</b><button class="copy" data-copy="${i}">Copy</button></div><pre id="p${i}">${esc(text)}</pre></div>`;
+}
+const refName = id => REFS.find(r=>r.id===id);
+
+function renderStep(id){
+  promptStore = [];
+  const idx = STEPS.findIndex(s=>s.id===id);
+  const st = STEPS[idx];
+  let h = "";
+  if(id==="overview"){
+    h += `<p class="eyebrow">Step 0 · The plan</p><h2>A 45-second product film for a robot that does not exist</h2>
+    <p class="lede">ORIVEX ARC-7 is a fictional seven-axis precision fabrication arm. The film shows it build one object from start to finish in a clean white lab: power-up, reveal, tool change, laser etch, micro placement, self-inspection, finished part, end card. Everything you need to paste into Flow and Speechify is on the following pages.</p>
+    <div class="specs"><div><b>45 s</b><span>Final length. Long enough for 7 technical beats, short enough for LinkedIn autoplay.</span></div><div><b>8 shots</b><span>Generated as 8 s Flow clips, cut to 5 to 6 s each.</span></div><div><b>16:9 · 1080p</b><span>Master format. 9:16 and 1:1 cutdowns can be rendered from the same project.</span></div><div><b>4 refs</b><span>Robot, wrist, lab and object images keep every shot consistent.</span></div></div>
+    <div class="panel"><h3>Timeline</h3><div class="scroll"><div class="timeline">${SHOTS.map(s=>`<button class="seg" style="flex:${s.dur}" data-go="shot${s.n}"><small>${s.tc.split(" to ")[0]}</small><strong>${s.n} ${esc(s.name)}</strong><em>${esc(s.vo)}</em></button>`).join("")}</div></div></div>
+    <div class="panel"><h3>How the pieces fit</h3><div class="flow">
+      <div class="node"><div class="who">You · Flow</div><b>Reference images</b><span>Robot, wrist, lab, object. Generated once, reused everywhere.</span></div>
+      <div class="node"><div class="who">You · Flow</div><b>8 keyframes</b><span>One still per shot, made with the references attached.</span></div>
+      <div class="node"><div class="who">You · Flow</div><b>8 video clips</b><span>Each keyframe animated with its motion prompt.</span></div>
+      <div class="node"><div class="who">You · Speechify + music tool</div><b>Audio</b><span>8 voiceover lines and one 45 s music bed.</span></div>
+      <div class="node me"><div class="who">Claude · HyperFrames</div><b>Assembly</b><span>Edit, overlays, brand mark, HUD, captions, mix, render.</span></div>
+    </div></div>
+    <div class="grid2">
+      <div class="panel"><h3>Why the brand mark is not in Flow</h3><p style="margin:0">AI video models garble text and logos. Every word, number and logo on screen is added later as a crisp overlay in HyperFrames, so all Flow prompts say "no text, no logos".</p></div>
+      <div class="panel"><h3>Fictional, on purpose</h3><p style="margin:0">Orivex, ARC-7 and every spec in the script are invented for this mock-up. If the film is ever shown publicly, search the name first to make sure it does not belong to a real company.</p></div>
+    </div>`;
+  }
+  else if(id==="setup"){
+    h += `<p class="eyebrow">Step 1 · Before you generate</p><h2>Set up Flow and your folder</h2>
+    <p class="lede">Ten minutes of setup saves a lot of re-rolling. Flow's interface changes often, so button names may differ slightly from these.</p>
+    <div class="grid2">
+      <div class="panel"><h3>Flow settings</h3><ul class="clean">
+        <li>Create a new Flow project called <b>ORIVEX ARC-7</b>.</li>
+        <li>Aspect ratio <b>16:9</b> for everything: images and video.</li>
+        <li>Images: use Flow's image generation (or Gemini) and keep every reference in the project so you can attach it as an ingredient.</li>
+        <li>Video: use <b>Frames to Video</b> with the shot keyframe as the start frame.</li>
+        <li><b>Model per shot.</b> Omni 1.1 Flash is cheap and fast, and good at rooms, light and camera moves, but weak at robots moving their joints. Use it for shots 01, 07 and 08, and for 360p drafts of anything. For shots where the arm moves (02, 03, 04, 05, 06), use Veo 3.1 Quality for the keeper if your plan has it. If you stay on Omni, give those shots a start AND an end frame, and add "One continuous, unbroken shot, no cuts." to the end of the animation prompt.</li>
+        <li>Generate 2 to 4 variations per prompt and keep the best one.</li>
+        <li>Clip length: 8 to 10 s depending on the model. The edit uses 5 to 6 s of each, and the spare seconds give room to cut on the cleanest motion.</li>
+      </ul></div>
+      <div class="panel"><h3>Folder and file names</h3><p style="margin:0 0 10px">Make one folder on your computer and name files exactly like this so assembly is automatic:</p>
+<pre style="margin:0;font:13px/1.7 var(--f-mono);white-space:pre-wrap">ORIVEX ARC-7/
+  refs/    R1_arc7_hero.png  R2_arc7_wrist.png
+           R3_lab_plate.png  R4_lattice_sphere.png
+  frames/  S01.png ... S08.png
+  clips/   S01.mp4 ... S08.mp4
+  audio/   VO_01.mp3 ... VO_08.mp3
+           music.mp3  (optional: sfx/)</pre></div>
+    </div>
+    <div class="panel"><h3>The three rules of consistency</h3><ol class="clean">
+      <li><b>Never edit the robot description.</b> Every prompt in this guide contains the same ARC-7 paragraph word for word. Copy whole prompts; do not retype them.</li>
+      <li><b>Always attach the listed references.</b> Each shot page tells you which of R1 to R4 to add as ingredients.</li>
+      <li><b>Reject drift early.</b> If a keyframe's arm has a different shape or colour, regenerate the still. Fixing it in video is much harder.</li>
+    </ol></div>`;
+  }
+  else if(id==="refs"){
+    h += `<p class="eyebrow">Step 2 · Locks the look</p><h2>Generate the four reference images</h2>
+    <p class="lede">Make these first and do not move on until you are happy with R1. It is the robot's identity for the whole film.</p>`;
+    REFS.forEach(r=>{
+      h += `<div class="panel" style="display:flex;flex-direction:column;gap:14px"><div style="display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;justify-content:space-between"><h3 style="margin:0">${r.id} · ${esc(r.name)}</h3><span class="chip">${r.file}</span></div><p style="margin:0;color:var(--muted)">${esc(r.why)}</p>${promptBox("Image prompt","Paste into Flow image generation, 16:9",r.prompt)}<div><h4 style="font:600 12px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 6px">Accept it when</h4><ul class="clean">${r.check.map(c=>`<li>${esc(c)}</li>`).join("")}</ul></div></div>`;
+    });
+  }
+  else if(st.shot){
+    const s = st.shot;
+    h += `<p class="eyebrow">Shot ${s.n} · ${s.tc} · ${s.dur} s in the edit</p><h2>${esc(s.name)}</h2><p class="lede">${esc(s.purpose)}</p>
+    <div class="panel" style="display:flex;flex-direction:column;gap:8px"><h4 style="font:600 12px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0">Attach these references in Flow</h4><div class="chips">${s.refs.map(r=>`<span class="chip amber">${r} · ${esc(refName(r).name)}</span>`).join("")}</div></div>
+    ${promptBox("A · Keyframe image prompt","Save the result as frames/S"+s.n+".png",s.image)}
+    ${s.endImage ? promptBox("B · End frame image prompt","Attach S"+s.n+".png as the image to edit. Save the result as frames/S"+s.n+"_end.png",s.endImage) : ""}
+    ${promptBox((s.endImage?"C":"B")+" · Animation prompt", s.endImage ? "Frames to Video: start frame S"+s.n+".png, END frame S"+s.n+"_end.png. Save as clips/S"+s.n+".mp4" : "Frames to Video, start frame S"+s.n+".png. Save as clips/S"+s.n+".mp4",s.anim)}
+    ${s.alt ? `<div class="panel"><h3>If the shape keeps changing</h3><ul class="clean">${s.alt.map(a=>`<li><b>${esc(a[0])}.</b> ${esc(a[1])}</li>`).join("")}</ul></div>` : ""}
+    <div class="panel meta">
+      <div><h4>Voiceover line</h4><p class="vo">${esc(s.vo)}</p></div>
+      <div><h4>Overlay (added in HyperFrames)</h4><p>${esc(s.overlay)}</p></div>
+      <div><h4>Accept the clip when</h4><ul class="clean">${s.check.map(c=>`<li>${esc(c)}</li>`).join("")}</ul></div>
+    </div>`;
+  }
+  else if(id==="vo"){
+    h += `<p class="eyebrow">Step 11 · Speechify</p><h2>Record the voiceover</h2>
+    <p class="lede">80 words over 45 seconds leaves room for the picture and music to breathe. Export each line as its own file so it can be placed exactly on its shot.</p>
+    <div class="grid2">
+      <div class="panel"><h3>Voice direction</h3><ul class="clean">
+        <li>Voice: calm, low-to-mid register, documentary or premium tech narrator. Male or female both work; avoid anything upbeat or "announcer".</li>
+        <li>Speed about 0.9x. Slightly slower than conversational.</li>
+        <li>Full stops are deliberate. "Every pass. Every part." should land as two short beats.</li>
+        <li>Say "ARC-7" as "arc seven" and "Orivex" as "OR-ih-vex". If Speechify mispronounces, type it phonetically: <b>Arc Seven</b>, <b>Orrivex</b>.</li>
+        <li>Export MP3 or WAV, one file per line: VO_01 to VO_08.</li>
+      </ul></div>
+      <div class="panel"><h3>Timing</h3><div class="scroll"><table><thead><tr><th>File</th><th>Starts</th><th>Line</th></tr></thead><tbody>${SHOTS.map(s=>`<tr><td class="tc">VO_${s.n}</td><td class="tc">${s.tc.split(" to ")[0]}</td><td>${esc(s.vo)}</td></tr>`).join("")}</tbody></table></div><p class="note" style="margin:12px 0 0">Each line starts about half a second after its shot cut. Lines that run long are fine: HyperFrames will nudge the cut, not the voice.</p></div>
+    </div>
+    ${promptBox("Full script","Paste into Speechify, then split per line or export lines separately",VO_FULL)}`;
+  }
+  else if(id==="music"){
+    h += `<p class="eyebrow">Step 12 · Music bed and sound</p><h2>Music and sound design</h2>
+    <p class="lede">The prompt below works in most AI music tools (Suno, Udio, ElevenLabs Music, Google's music tools). Flow clips also carry their own generated sound effects, which the animation prompts already ask for.</p>
+    ${promptBox("Music prompt","Generate a few versions, keep the one with the cleanest ending",MUSIC)}
+    <div class="panel"><h3>Sound effects</h3><p style="margin:0 0 10px;color:var(--muted)">Keep the Flow clip audio. It will sit under the music at a low level. If a clip's sound is poor, these are the effects to replace it with.</p><div class="scroll"><table><thead><tr><th>Effect</th><th>Description</th><th>Shots</th></tr></thead><tbody>${SFX.map(r=>`<tr><td><b>${esc(r[0])}</b></td><td>${esc(r[1])}</td><td class="tc">${esc(r[2])}</td></tr>`).join("")}</tbody></table></div></div>
+    <div class="panel"><h3>Target mix</h3><ul class="clean"><li>Voiceover on top, always clear.</li><li>Music ducks about 8 dB under each voice line.</li><li>Flow sound effects low, felt more than heard, except the tool-lock clunk and the end hit.</li></ul></div>`;
+  }
+  else if(id==="overlays"){
+    h += `<p class="eyebrow">Step 13 · Built by Claude in HyperFrames</p><h2>Overlays and brand</h2>
+    <p class="lede">Nothing on this page needs to be made in Flow. These are drawn as clean vector graphics in the HyperFrames composition so every number and letter is sharp.</p>
+    <div class="mark-preview">
+      <div class="tile light"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17" fill="none" stroke="#14181B" stroke-width="3.2" stroke-dasharray="80 27" transform="rotate(-50 24 24)"/><circle cx="37.6" cy="13.6" r="4.2" fill="#D9670A"/></svg><div><div class="wm">ORIVEX</div><div class="sub">ROBOTICS</div></div></div>
+      <div class="tile dark"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17" fill="none" stroke="#F4F5F5" stroke-width="3.2" stroke-dasharray="80 27" transform="rotate(-50 24 24)"/><circle cx="37.6" cy="13.6" r="4.2" fill="#FF8A1F"/></svg><div><div class="wm">ORIVEX</div><div class="sub">ARC-7</div></div></div>
+    </div>
+    <p class="note" style="margin:0">Concept mark: an open orbit arc for the arm's reach, with an amber point for the tool tip. The amber matches the light rings on the robot.</p>
+    <div class="panel"><h3>Overlay list</h3><div class="scroll"><table><thead><tr><th>Shot</th><th>Overlay</th></tr></thead><tbody>${SHOTS.map(s=>`<tr><td class="tc">${s.n}</td><td>${esc(s.overlay)}</td></tr>`).join("")}</tbody></table></div></div>
+    <div class="panel"><h3>Graphic style</h3><ul class="clean">
+      <li>Type: condensed technical sans for labels, monospace for numbers and readouts.</li>
+      <li>Colour: white and graphite, with amber used only for live values and the brand point.</li>
+      <li>Motion: callouts draw on with a leader line in 0.4 s, numbers count up, everything exits in 0.25 s. No bounces.</li>
+      <li>Persistent corner bug from shot 02 to 07, small and 70% opacity.</li>
+      <li>Optional burned-in captions for silent autoplay on LinkedIn.</li>
+    </ul></div>`;
+  }
+  else if(id==="handoff"){
+    h += `<p class="eyebrow">Step 14 · Back to Claude</p><h2>Hand-off checklist</h2>
+    <p class="lede">When everything below is ticked, share the folder with Claude (connect it in the desktop app or attach the files) and say "assemble ARC-7".</p>
+    <div class="panel"><ul class="clean" style="list-style:none;padding:0;gap:10px">
+      ${["4 reference images in refs/ (useful for colour-matching the overlays)","8 clips in clips/, named S01.mp4 to S08.mp4, all 16:9","8 voiceover files in audio/, named VO_01 to VO_08","music.mp3 in audio/","Any clip you were unhappy with noted, with what is wrong (Claude can work around minor issues in the edit)"].map((t,i)=>`<li><label class="done-toggle"><input type="checkbox" id="ho${i}" data-ho="${i}" ${done["ho"+i]?"checked":""}> ${esc(t)}</label></li>`).join("")}
+    </ul></div>
+    <div class="panel"><h3>What Claude does next</h3><ol class="clean">
+      <li>Builds the HyperFrames project: clips trimmed to the timeline, colour-matched, light film grain.</li>
+      <li>Adds brand mark, title, spec callouts, inspection HUD and end card.</li>
+      <li>Places voice lines, mixes music and effects with ducking.</li>
+      <li>Renders a draft at 720p for your review, then the 1080p master.</li>
+      <li>Optional: 9:16 and 1:1 versions and a captioned cut.</li>
+    </ol></div>`;
+  }
+  // footer
+  const prev = STEPS[idx-1], next = STEPS[idx+1];
+  h += `<div class="foot"><button class="btn" ${prev?`data-go="${prev.id}"`:"disabled"}>← ${prev?esc(prev.label):"Start"}</button>
+    <label class="done-toggle"><input type="checkbox" id="done-${id}" data-done="${id}" ${done[id]?"checked":""}> Mark this step done</label>
+    <button class="btn primary" ${next?`data-go="${next.id}"`:"disabled"}>${next?esc(next.label):"Finished"} →</button></div>`;
+  document.getElementById("main").innerHTML = `<section class="step">${h}</section>`;
+  renderRail(id);
+  try{ history.replaceState(null,"","#"+id) }catch(e){}
+  try{ localStorage.setItem("arc7-step", id) }catch(e){}
+}
+
+function renderRail(active){
+  let g="", h="";
+  STEPS.forEach(s=>{
+    if(s.grp!==g){ g=s.grp; h+=`<div class="grp">${g}</div>`; }
+    h += `<button data-go="${s.id}" class="${done[s.id]?"done":""}" ${s.id===active?'aria-current="step"':""}><span class="dot"></span>${esc(s.label)}${s.tc?`<span class="tc">${s.tc}</span>`:""}</button>`;
+  });
+  document.getElementById("rail").innerHTML = h;
+  const n = STEPS.filter(s=>done[s.id]).length;
+  document.getElementById("progTxt").textContent = `${n} / ${STEPS.length} done`;
+  document.getElementById("progBar").style.width = (n/STEPS.length*100)+"%";
+}
+
+document.addEventListener("click", e=>{
+  const go = e.target.closest("[data-go]");
+  if(go && !go.disabled){ renderStep(go.dataset.go); window.scrollTo({top:0,behavior:"smooth"}); return; }
+  const cp = e.target.closest("[data-copy]");
+  if(cp){
+    const i = +cp.dataset.copy, text = promptStore[i];
+    const ok = ()=>{ cp.textContent="Copied"; cp.classList.add("ok"); setTimeout(()=>{cp.textContent="Copy";cp.classList.remove("ok")},1600); };
+    const fallback = ()=>{ const el=document.getElementById("p"+i); const r=document.createRange(); r.selectNodeContents(el); const sel=getSelection(); sel.removeAllRanges(); sel.addRange(r); cp.textContent="Selected, press Ctrl+C"; };
+    try{ navigator.clipboard.writeText(text).then(ok, fallback) }catch(err){ fallback() }
+  }
+});
+document.addEventListener("change", e=>{
+  const d = e.target.dataset;
+  if(d.done){ done[d.done]=e.target.checked; saveDone(); renderRail(d.done); }
+  if(d.ho!==undefined){ done["ho"+d.ho]=e.target.checked; saveDone(); }
+});
+
+let start = "overview";
+const hash = (location.hash||"").slice(1);
+let stored = null; try{ stored = localStorage.getItem("arc7-step") }catch(e){}
+if(STEPS.some(s=>s.id===hash)) start = hash; else if(stored && STEPS.some(s=>s.id===stored)) start = stored;
+renderStep(start);
+</script>
+
+</body></html>
