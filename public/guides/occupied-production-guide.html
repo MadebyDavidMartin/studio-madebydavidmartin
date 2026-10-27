@@ -1,0 +1,576 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Occupied</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&family=Courier+Prime&display=swap">
+<style>
+/* Layout: a film production book. Sticky section rail with live progress on wide screens, one column on phones. Shot cards carry copyable prompts and a Done box. Deliberately single dark look, like a screening room. */
+:root{
+  --ink:#0D1012; --panel:#151A1D; --panel2:#1B2226; --line:#2A3338; --paper:#E8E3D9; --muted:#97A3A6;
+  --rust:#D0642F; --rustsoft:#3A2117; --teal:#7FA3A3; --ok:#9CC3A0;
+  --display:"Cormorant Garamond","Times New Roman",serif; --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace; --script:"Courier Prime","Courier New",monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6}
+a{color:var(--rust)}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:20px;padding-block:28px 96px;display:grid;grid-template-columns:210px minmax(0,1fr);gap:44px}
+nav{position:sticky;top:calc(env(safe-area-inset-top,0px) + 20px);align-self:start;display:flex;flex-direction:column;gap:2px;font-size:14px}
+nav a{color:var(--paper);text-decoration:none;padding:6px 10px;border-radius:6px}
+nav a:hover,nav a:focus-visible{background:var(--panel2);outline:none}
+nav .prog{font-family:var(--mono);font-size:12px;color:var(--muted);padding:10px 10px 4px}
+nav .bar{height:3px;background:var(--line);margin:0 10px 12px;border-radius:2px;overflow:hidden}
+nav .bar i{display:block;height:100%;width:0;background:var(--rust);transition:width .3s}
+main{min-width:0;display:flex;flex-direction:column;gap:64px}
+.hero{border:1px solid var(--line);background:#07090A;border-radius:4px;overflow:hidden}
+.scope{aspect-ratio:2.39/1;max-width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:radial-gradient(ellipse at 50% 60%,#1d2a2d 0%,#090c0d 70%);text-align:center;padding:16px}
+.scope .k{font-family:var(--mono);font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted)}
+.scope h1{font-family:var(--display);font-weight:300;font-size:clamp(40px,8vw,92px);letter-spacing:.42em;margin:0 0 0 .42em;line-height:1}
+.scope .ts{font-family:var(--mono);font-size:12px;color:var(--rust);letter-spacing:.12em}
+.hero .meta{padding:22px 24px;display:flex;flex-direction:column;gap:14px}
+.logline{font-family:var(--display);font-size:clamp(20px,2.4vw,26px);line-height:1.35;margin:0;max-width:60ch;font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--mono);font-size:12px;padding:4px 10px;border-radius:3px;border:1px solid var(--line);color:var(--paper)}
+.chip.r{border-color:var(--rust);color:var(--rust)}
+section h2{font-family:var(--display);font-weight:500;font-size:34px;letter-spacing:.01em;margin:0 0 4px;text-wrap:balance}
+section > p.lead{margin:0 0 22px;color:var(--muted);max-width:70ch}
+h3{font-family:var(--body);font-weight:600;font-size:16px;margin:0}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:18px 20px;min-width:0}
+.panel ul,.panel ol{margin:8px 0 0;padding-left:18px}
+.panel li{margin:4px 0}
+.act{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--rust)}
+/* checklist */
+.phase{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:16px 20px;min-width:0}
+.phase h3{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.phase h3 span{font-family:var(--mono);font-size:12px;color:var(--muted);font-weight:400}
+.who{font-family:var(--mono);font-size:11px;padding:1px 7px;border-radius:3px;border:1px solid var(--line);color:var(--muted);margin-left:6px;white-space:nowrap}
+.who.d{border-color:var(--teal);color:var(--teal)}.who.c{border-color:var(--rust);color:var(--rust)}
+.steps{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:2px}
+.steps label{display:flex;gap:10px;align-items:flex-start;padding:6px 4px;border-radius:4px;cursor:pointer}
+.steps label:hover{background:var(--panel2)}
+input[type=checkbox]{accent-color:var(--rust);width:16px;height:16px;margin-top:4px;flex:none}
+input[type=checkbox]:focus-visible{outline:2px solid var(--rust);outline-offset:2px}
+.steps input:checked + span{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line)}
+/* screenplay */
+.screenplay{background:#F1ECE1;color:#1a1a1a;border-radius:4px;padding:32px clamp(16px,6vw,72px);font-family:var(--script);font-size:15px;line-height:1.5;max-width:780px;overflow-x:auto}
+.screenplay .sl{font-weight:700;text-transform:uppercase;margin:22px 0 8px}
+.screenplay .ac{margin:0 0 12px}
+.screenplay .ch{margin:12px 0 0 38%;text-transform:uppercase}
+.screenplay .pa{margin:0 0 0 30%;}
+.screenplay .di{margin:0 18% 10px 22%}
+.screenplay .tr{text-align:right;text-transform:uppercase;margin:12px 0}
+.screenplay .sc{font-size:12px;color:#7a6e5d}
+/* cards */
+.card{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.card-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.tc{font-family:var(--mono);font-size:12px;color:var(--rust);font-weight:600;font-variant-numeric:tabular-nums}
+.model{font-family:var(--mono);font-size:11px;padding:2px 8px;border-radius:3px;background:var(--panel2);color:var(--teal)}
+.card-head label{margin-left:auto;font-size:13px;display:flex;gap:6px;align-items:center;color:var(--muted);cursor:pointer}
+.card-head label input{margin-top:0}
+.why{margin:0;color:var(--muted);font-size:14.5px;max-width:74ch}
+.attach{font-size:13.5px;color:var(--muted);margin:0}
+.attach b{color:var(--paper);font-weight:600}
+.line{font-family:var(--script);font-size:14.5px;background:var(--rustsoft);border-radius:4px;padding:8px 12px;color:var(--paper)}
+.line b{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--rust);font-weight:600;margin-right:8px}
+.prompt{border:1px solid var(--line);border-radius:5px;background:#0F1416;min-width:0}
+.prompt .pbar{display:flex;align-items:center;gap:10px;padding:7px 10px 7px 14px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12px;color:var(--muted);flex-wrap:wrap}
+.prompt .pbar .tag{color:var(--paper);font-weight:600}
+.prompt .pbar button{margin-left:auto}
+.prompt pre{margin:0;padding:12px 14px;white-space:pre-wrap;word-wrap:break-word;font-family:var(--mono);font-size:12.5px;line-height:1.6;color:#D6D2C8}
+button.copy{font-family:var(--mono);font-size:12px;border:1px solid var(--line);background:var(--panel2);color:var(--paper);border-radius:4px;padding:3px 10px;cursor:pointer}
+button.copy:hover{border-color:var(--rust)}
+button.copy:focus-visible{outline:2px solid var(--rust);outline-offset:2px}
+button.copy.ok{background:var(--ok);color:#0D1012;border-color:var(--ok)}
+.note{font-size:14px;border-left:2px solid var(--rust);padding:2px 0 2px 12px;margin:0}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+td.t{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--rust)}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
+.tablewrap table{min-width:640px}
+.ov{background:#000;border-radius:4px;aspect-ratio:2.39/1;max-width:100%;position:relative;overflow:hidden;margin-top:10px}
+.ov .stamp{position:absolute;left:5%;bottom:12%;font-family:var(--mono);font-size:12px;color:#d9d4c8;letter-spacing:.14em;opacity:.8}
+.ov .notif{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(40,44,46,.92);border-radius:12px;padding:9px 14px;font-size:13px;color:#eee;min-width:min(240px,80%)}
+.ov .notif small{display:block;color:#aaa;font-size:11px}
+.ov .tt{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:300;letter-spacing:.42em;font-size:clamp(20px,4vw,34px);color:#e8e3d9}
+@media (max-width:900px){.wrap{grid-template-columns:minmax(0,1fr)} nav{display:none} .grid2,.grid3{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<nav aria-label="Sections">
+  <div class="prog" id="prog">0 of 0 done</div><div class="bar"><i id="progbar"></i></div>
+  <a href="#steps">Production steps</a><a href="#story">Story</a><a href="#script">Screenplay</a><a href="#look">Look</a><a href="#cast">Cast and places</a><a href="#refs">References</a><a href="#shots">Shots</a><a href="#voice">Voice plan</a><a href="#score">Score and sound</a><a href="#edit">Edit and overlays</a><a href="#files">Folder and naming</a>
+</nav>
+<main>
+
+<header class="hero" id="top">
+  <div class="scope"><span class="k">A short film · 90 seconds</span><h1>OCCUPIED</h1><span class="ts">3:12 AM</span></div>
+  <div class="meta">
+    <p class="logline">A sleep-deprived college student keeps dreaming that a stranger is sitting at his desk. Today, he walks home and opens the door.</p>
+    <div class="chips"><span class="chip r">90 s</span><span class="chip">Finish 2.39:1 inside 16:9</span><span class="chip">24 fps · 1080p</span><span class="chip">Flow: Omni Flash</span><span class="chip">Speechify</span><span class="chip">Suno</span><span class="chip">HyperFrames edit</span><span class="chip">File prefix OCC_</span></div>
+  </div>
+</header>
+
+<section id="steps">
+  <h2>Production steps</h2>
+  <p class="lead">The whole job in order. Ticks save in this browser only. Each reference and shot card further down has its own Done box as well; the counter on the left covers everything.</p>
+  <div style="display:flex;flex-direction:column;gap:14px" id="phaseList"></div>
+</section>
+
+<section id="story">
+  <h2>Story</h2>
+  <p class="lead">Built from your skeleton. The additions: a cold open that the ending repeats shot for shot, a dream timestamp that becomes a real one, doubles that are only ever seen from behind until the last minute, and a final phone notification that leaves the audience with the question.</p>
+  <div class="grid2">
+    <div class="panel"><span class="act">Cold open · 0 to 12 s</span><h3 style="margin-top:6px">The dream</h3><p>Night. First-person view: a dorm door swings open. Someone sits at the desk in the glow of a monitor, back to us. The chair turns. It is Eli. Smash to black. Title.</p></div>
+    <div class="panel"><span class="act">Act one · 12 to 36 s</span><h3 style="margin-top:6px">The cafe</h3><p>Late afternoon, rain on the window. Eli tells Maya the dream came back. She is kind about it and practical: he has barely slept. Outside, she heads to her own dorm. "Text me when you're home."</p></div>
+    <div class="panel"><span class="act">Act two · 36 to 61 s</span><h3 style="margin-top:6px">The walk</h3><p>Eli walks back across campus, lost in thought. In the crowd, at the crosswalk, on the dorm steps and in the stairwell, other young men wear his exact clothes. Their faces are always turned away. He never notices. The audience might.</p></div>
+    <div class="panel"><span class="act">Act three · 61 to 90 s</span><h3 style="margin-top:6px">The door</h3><p>He hesitates at his door. It opens exactly as in the dream, now in daylight. The chair turns: it is him. "You're early." He stumbles back, pounds on doors for help, and every door is answered by himself, annoyed, eating, on the phone. Then every door opens at once. Black. A phone buzzes: "home yet?"</p></div>
+  </div>
+  <div class="grid3" style="margin-top:16px">
+    <div class="panel"><h3>Why it plays at festivals</h3><ul><li>One clear idea, escalated three times.</li><li>The opening and the ending rhyme.</li><li>No exposition: the audience assembles it.</li></ul></div>
+    <div class="panel"><h3>Why it suits AI</h3><ul><li>One face, reused everywhere, is the subject of the film rather than a risk.</li><li>Doubles seen from behind avoid two faces in one frame.</li><li>Dialogue is short and mostly covered.</li></ul></div>
+    <div class="panel"><h3>The rust overshirt</h3><ul><li>Eli wears the only warm colour in a cool, teal grade.</li><li>Once the audience clocks the colour in the crowd, every rust-orange shape becomes a threat.</li></ul></div>
+  </div>
+</section>
+
+<section id="script">
+  <h2>Screenplay</h2>
+  <p class="lead">Twelve spoken lines in total. Scene numbers match the shot cards.</p>
+  <div class="screenplay">
+    <p class="sl">Cold open. Int. Eli's dorm room. Night <span class="sc">(S01 to S03)</span></p>
+    <p class="ac">POV. A door swings open. Monitor glow. A figure at the desk, back to us. The chair turns. ELI (21) stares into the lens, expressionless.</p>
+    <p class="tr">Smash cut to black.</p>
+    <p class="ac" style="text-align:center">OCCUPIED</p>
+    <p class="sl">Int. Campus cafe. Late afternoon <span class="sc">(S04 to S08)</span></p>
+    <p class="ac">Rain on the window. ELI and MAYA (21) at a window table. Eli holds his cup without drinking.</p>
+    <p class="ch">Eli</p><p class="di">I had it again. The dream.</p>
+    <p class="ch">Maya</p><p class="di">The room one?</p>
+    <p class="ac">He nods.</p>
+    <p class="ch">Eli</p><p class="di">I open the door, and someone's at my desk. He turns around...</p><p class="pa">(beat)</p><p class="di">And it's me.</p>
+    <p class="ac">Maya reaches across and covers his hand with hers.</p>
+    <p class="ch">Maya</p><p class="di">Hey. It's a dream. You've barely slept all week.</p>
+    <p class="ch">Eli</p><p class="pa">(a small exhale of a laugh)</p><p class="di">Yeah.</p>
+    <p class="sl">Ext. Cafe. Continuous <span class="sc">(S09)</span></p>
+    <p class="ch">Maya</p><p class="pa">(over her shoulder, walking away)</p><p class="di">Text me when you're home.</p>
+    <p class="ac">Eli watches her go.</p>
+    <p class="sl">Ext. Campus. Late afternoon <span class="sc">(S10 to S14)</span></p>
+    <p class="ac">Eli walks home. Among the students, young men in his exact clothes, faces always turned away. At the crosswalk one stands right beside him. He never notices.</p>
+    <p class="sl">Int. Residence hall, second floor. Continuous <span class="sc">(S15 to S19)</span></p>
+    <p class="ac">His door. His hand on the handle. He opens it. A figure at the desk, back to him. The chair turns. It is Eli.</p>
+    <p class="ac">Eli, frozen in the doorway.</p>
+    <p class="ch">Double (O.S.)</p><p class="pa">(calm)</p><p class="di">You're early.</p>
+    <p class="ch">Eli</p><p class="di">No. No, no, no.</p>
+    <p class="sl">Int. Corridor. Continuous <span class="sc">(S20 to S23)</span></p>
+    <p class="ch">Eli</p><p class="pa">(pounding on the next door)</p><p class="di">Hey! Hey, I need help!</p>
+    <p class="ac">The door opens. ELI, irritated.</p>
+    <p class="ch">Double</p><p class="di">Seriously?</p>
+    <p class="ac">Next door: ELI, a cup of noodles, chewing, staring. Next door: ELI, phone to his ear, one finger raised.</p>
+    <p class="ch">Double</p><p class="di">One sec.</p>
+    <p class="ac">Every door in the corridor opens. Every one of them is Eli. They all turn to look at him. The lights die.</p>
+    <p class="tr">Cut to black.</p>
+    <p class="ac">A phone buzzes. A notification: "Maya: home yet?"</p>
+  </div>
+</section>
+
+<section id="look">
+  <h2>Look</h2>
+  <p class="lead">The aim is a feature film, not an ad: real skin, motivated light, lens character, restraint in the camera.</p>
+  <div class="grid2">
+    <div class="panel"><h3>Camera</h3><ul>
+      <li>Anamorphic look: oval bokeh, gentle horizontal flares from practicals only.</li>
+      <li>Finished at 2.39:1. Generate 16:9 and keep heads and action in the middle band; the edit crops top and bottom.</li>
+      <li>Slow, deliberate moves: dolly, push-in, lateral track. Handheld only in the panic.</li>
+      <li>One-point symmetry in the corridor, echoing classic horror framing.</li>
+    </ul></div>
+    <div class="panel"><h3>Grade and texture</h3><ul>
+      <li>Cool teal shadows, muted amber skin, print-film contrast.</li>
+      <li>The rust overshirt is the only saturated warm colour.</li>
+      <li>Dream: blue monitor light, deep blacks. Reality: overcast daylight, fluorescent green-white indoors.</li>
+      <li>Claude adds unified grain, halation and the letterbox in the edit so every clip matches.</li>
+    </ul></div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px" id="styleBoxes"></div>
+</section>
+
+<section id="cast">
+  <h2>Cast and places</h2>
+  <p class="lead">Canonical descriptions. The character text is pasted into every shot prompt, word for word. The place text is used only to create the reference images; once a place reference exists, shot prompts just point to it ("the dorm room from the attached reference image") so the picture, not the words, sets the room.</p>
+  <div style="display:flex;flex-direction:column;gap:12px" id="canonList"></div>
+</section>
+
+<section id="refs">
+  <h2>References</h2>
+  <p class="lead">Make these images first, in 16:9, and approve them before any keyframe. R1 to R3 lock Eli; the doubles use the same three. Send them to Claude for a consistency check before moving on.</p>
+  <div id="refList" style="display:flex;flex-direction:column;gap:16px"></div>
+</section>
+
+<section id="shots">
+  <h2>Shots</h2>
+  <p class="lead">Twenty-four generated shots. For each: make the keyframe image with the listed references attached, approve it, then animate it with Frames to Video using the keyframe as the first frame. Where an end frame is listed, make it by editing the approved keyframe. Everything is Omni Flash. Omni is strong on light, rooms and camera moves and weaker on hands, bodies and lip sync, so the shots keep body movement small, let the camera do the moving, and keep speaking mouths small, in profile or off screen. Render 5 or 6 s clips for shots used for 4 s or less.</p>
+  <div id="shotList" style="display:flex;flex-direction:column;gap:18px"></div>
+</section>
+
+<section id="voice">
+  <h2>Voice plan</h2>
+  <p class="lead">Omni does not give reliable lip sync or a consistent voice, so the film is written around that. Every spoken line is recorded in Speechify with one locked voice per character, and most lines play where no mouth needs to match: through glass, over an insert, over a listener, over a back or at a distance.</p>
+  <div class="grid2">
+    <div class="panel"><h3>How it works</h3><ol>
+      <li><b>Lock two voices in Speechify.</b> One for Eli, one for Maya. Same voice, speed and settings for every line and every retake. If you clone a voice, use only a voice whose owner has agreed.</li>
+      <li><b>Record two master files, one per voice:</b> OCC_VO_ELI (all of Eli's lines plus the doubles' lines, in script order) and OCC_VO_MAYA. Each line on its own paragraph with a clear pause between lines. Claude splits them into the separate lines.</li>
+      <li><b>Eight of the twelve lines need no sync.</b> They play over the cafe window, the hands, Maya listening, Eli's back, or Eli's face while the double speaks off screen.</li>
+      <li><b>Four short lines are spoken on screen:</b> "And it's me." (profile), "No, no, no." (panic), "Seriously?" and "One sec." The motion prompt includes the words so the mouth moves about right. Claude places the Speechify take on the mouth movement in the edit.</li>
+      <li><b>Each of those four has a fallback</b> written on its shot card, so a bad mouth never blocks the film.</li>
+      <li><b>Omni's own audio</b> is muted under dialogue; Claude keeps it only for clean ambience and builds the rest.</li>
+    </ol></div>
+    <div class="panel"><h3>The doubles speak in Eli's voice</h3><ul>
+      <li>Same Speechify voice as Eli. That sameness is the scare.</li>
+      <li>Claude gives the doubles a drier, closer sound than Eli, as if they are slightly too near the microphone.</li>
+      <li>"You're early." is heard over Eli's frozen face, not seen on the double's mouth.</li>
+    </ul>
+    <h3 style="margin-top:16px">Panic and breaths</h3><ul>
+      <li>Text to speech can be flat on "No, no, no". Try a few takes with punctuation changes ("No. No... no, no!"). If none land, Claude breaks the line up with breaths and the panic carries it.</li>
+      <li>Breaths and gasps come from a sound library or Omni's clip audio, never from Speechify.</li>
+    </ul></div>
+  </div>
+  <div class="tablewrap" style="margin-top:16px"><table>
+    <thead><tr><th>File</th><th>Shot</th><th>Speaker</th><th>Line</th><th>On screen</th><th>Done</th></tr></thead>
+    <tbody id="voTable"></tbody></table></div>
+</section>
+
+<section id="score">
+  <h2>Score and sound</h2>
+  <p class="lead">One Suno instrumental carries the film. Make three generations, pick the best, and Claude cuts it to picture. Sound effects give the realism; they matter as much as the image.</p>
+  <div style="display:flex;flex-direction:column;gap:12px" id="songList"></div>
+  <div class="grid2" style="margin-top:16px">
+    <div class="panel"><h3>How the score sits</h3><ul>
+      <li>Cold open: drone only. Black title card: silence, then the espresso machine brings us into the cafe.</li>
+      <li>Cafe: the piano motif, very low, under the dialogue.</li>
+      <li>Walk: ticking pulse and rising strings; the street sound slowly thins out.</li>
+      <li>Doors: full dissonant climax, pounding on doors cut to the beat.</li>
+      <li>Lights out: hard cut to silence. Only the phone buzz.</li>
+    </ul></div>
+    <div class="panel"><h3>Sound effects</h3><ul class="steps" id="sfxList" style="margin-top:6px"></ul>
+      <p class="note" style="margin-top:10px">Keep Omni's own ambience where it is clean. Anything missing, Claude can source from a free sound library or you can save files into audio\sfx.</p></div>
+  </div>
+</section>
+
+<section id="edit">
+  <h2>Edit and overlays</h2>
+  <p class="lead">Claude assembles in HyperFrames once clips, voice and music are in the folder. Times are targets; the cut follows performances and the score.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Time</th><th>Picture</th><th>Sound</th><th>Overlay</th></tr></thead>
+    <tbody id="edlTable"></tbody></table></div>
+  <div class="grid3" style="margin-top:16px">
+    <div class="panel"><h3>Timestamps</h3><div class="ov"><span class="stamp">3:12 AM</span></div><p style="font-size:14px;color:var(--muted);margin:10px 0 0">Small mono text, lower left, low opacity. "3:12 AM" on the dream, "4:47 PM" when he reaches the real door.</p></div>
+    <div class="panel"><h3>Title card</h3><div class="ov"><span class="tt">OCCUPIED</span></div><p style="font-size:14px;color:var(--muted);margin:10px 0 0">Thin, widely spaced capitals on black, fading in over silence after the cold open.</p></div>
+    <div class="panel"><h3>Last frame</h3><div class="ov"><div class="notif"><small>Maya · now</small>home yet?</div></div><p style="font-size:14px;color:var(--muted);margin:10px 0 0">A plain phone notification on black, with the buzz. Nothing else.</p></div>
+  </div>
+  <div class="grid2" style="margin-top:16px">
+    <div class="panel"><h3>Finishing</h3><ul>
+      <li>Letterbox 2.39:1 over a 1920x1080 frame.</li>
+      <li>One grade applied over every clip so they match, plus fine grain and soft halation.</li>
+      <li>Dialogue around -24 LUFS short-term, final mix around -16 LUFS integrated for online play.</li>
+      <li>No overlay over faces or the doubles.</li>
+    </ul></div>
+    <div class="panel"><h3>Deliverables</h3><ul>
+      <li>OCC_v1_1080p.mp4 master and a web copy.</li>
+      <li>A 15 s teaser cut (cold open into title) for LinkedIn and the portfolio page.</li>
+      <li>Poster frame: the corridor of doors.</li>
+      <li>Optional 5 s credit tail after 90 s: "Written and directed by David Martin", plus a line naming the AI tools, which most AI film festivals ask for.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="files">
+  <h2>Folder and naming</h2>
+  <p class="lead">Save into Videos\Occupied. Strict names let Claude assemble automatically; Flow's added timestamps are fine.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Folder</th><th>What goes in</th><th>Names</th></tr></thead>
+    <tbody>
+      <tr><td>refs</td><td>The eight references</td><td class="t">OCC_R1_eli.png ... OCC_R8_street.png</td></tr>
+      <tr><td>frames</td><td>Approved keyframes and end frames</td><td class="t">OCC_S01.png, OCC_S03_end.png ...</td></tr>
+      <tr><td>clips</td><td>Final clips, highest resolution Flow offers</td><td class="t">OCC_S01.mp4 ... OCC_S23.mp4</td></tr>
+      <tr><td>audio\vo</td><td>Two Speechify master files</td><td class="t">OCC_VO_ELI.mp3, OCC_VO_MAYA.mp3</td></tr>
+      <tr><td>audio\music</td><td>The chosen Suno track (stems if offered)</td><td class="t">OCC_SCORE.wav</td></tr>
+      <tr><td>audio\sfx</td><td>Any sound effects you add</td><td class="t">OCC_SFX_knock.wav ...</td></tr>
+      <tr><td>renders</td><td>Claude's cuts, every version kept</td><td class="t">OCC_v1_1080p.mp4, OCC_v2 ...</td></tr>
+    </tbody></table></div>
+  <p class="note" style="margin-top:14px">Two people with the same face in one frame is the hardest thing for the models. This plan avoids it: whenever Eli and a double share a frame, one of them is seen from behind (R3). Keep it that way if you rework a shot.</p>
+</section>
+</main>
+</div>
+
+<script>
+const C = {
+ ELI:'Eli, a 21-year-old college student: slim build, about 180 cm tall, olive-toned skin, dark brown eyes, medium-length dark brown wavy hair pushed back and slightly messy, light stubble, tired eyes with faint shadows beneath them. He wears a rust-orange corduroy overshirt open over a charcoal grey hoodie, dark indigo straight-leg jeans and white canvas sneakers.',
+ BACK:'a young man seen only from behind, the same height and build as Eli, with the same medium-length dark brown wavy hair, wearing the same rust-orange corduroy overshirt over a charcoal grey hoodie, dark indigo straight-leg jeans and white canvas sneakers',
+ MAYA:'Maya, a 21-year-old college student: auburn hair in a loose low braid with a few loose strands, light freckles, green eyes, natural minimal makeup, a cream cable-knit sweater with the sleeves pushed up, small gold hoop earrings.',
+ CAFE:'a small independent cafe near a university campus in autumn 2026: a large window onto the street with raindrops on the glass, warm pendant bulbs, pale oak tables, white ceramic cups, potted plants, a chrome espresso machine at the back, overcast late-afternoon daylight.',
+ ROOM:'Eli\'s dorm room: a narrow single room with cream-painted cinder-block walls, a plain wooden desk under a window with the blinds half closed, a large computer monitor on the desk, a black mesh office chair, a green-shaded desk lamp, a stack of textbooks with plain spines, a single bed with a grey blanket against the left wall, a few small plain photos pinned above the desk.',
+ HALL:'the second-floor corridor of an older red-brick university residence hall: a long straight corridor, worn speckled linoleum floor, cream cinder-block walls, identical dark wooden doors evenly spaced on both sides, each with a small blank brass plate, fluorescent ceiling panels, a fire door with a narrow window at the far end. Symmetrical one-point perspective.',
+ STREET:'a tree-lined street at the edge of a North American university campus in late October 2026: red-brick academic buildings, maple trees with orange and yellow leaves, pavement damp from earlier rain with fallen leaves, students walking with backpacks, bicycles at racks, slim modern street lamps, overcast sky, late-afternoon light.'
+};
+const STYLE_X = ' Photorealistic cinematic film still from a modern psychological thriller, shot on an ARRI Alexa 35 with anamorphic lenses, shallow depth of field, subtle film grain, soft halation on highlights, muted teal-and-amber grade with print-film contrast, motivated practical lighting. Composed for a 2.39:1 widescreen crop. No text, signs, captions, logos or watermarks anywhere.';
+const STYLE = ' Photorealistic cinematic film still from a modern psychological thriller, shot on an ARRI Alexa 35 with anamorphic lenses, shallow depth of field, oval bokeh, natural skin texture with visible pores, subtle film grain, soft halation on highlights, muted teal-and-amber grade with print-film contrast, motivated practical lighting. Composed for a 2.39:1 widescreen crop: heads and key action sit in the middle band of the frame. No text, signs, captions, logos or watermarks anywhere.';
+const LOCK = ' His face, hair and clothing stay exactly the same throughout.';
+const VEO = ' Natural, understated film acting. No subtitles. No music.';
+function fill(s){return s.replace(/\{(\w+)\}/g,(m,k)=>C[k]||m)}
+// In shot prompts, places point to their attached reference instead of re-describing it, so the reference image wins.
+const PLACE = {
+ CAFE:'the cafe from the attached cafe reference image, exactly as shown.',
+ ROOM:'the dorm room from the attached room reference image, with its layout, furniture, walls and window exactly as shown.',
+ HALL:'the corridor from the attached corridor reference image, exactly as shown.',
+ STREET:'the campus street from the attached street reference image, exactly as shown.'
+};
+const SND = {"S01": "Audio: a low electrical room hum. Nobody speaks.", "S02": "Audio: only the low hum of the monitor. Nobody speaks.", "S03": "Audio: only a low hum and the faint creak of the chair. Nobody speaks.", "S04": "Audio: only rain tapping on the glass and the muffled street outside. No voices are heard.", "S05": "Audio: soft rain on the window and a quiet cafe murmur in the distance. Eli and Maya are silent.", "S06": "Audio: soft rain on the window and a quiet cafe murmur. Nobody nearby speaks.", "S07": "Audio: soft rain on the window and a quiet cafe murmur. Maya is silent.", "S08a": "Audio: he speaks only these three words, then soft rain and a quiet cafe murmur. No other speech.", "S08b": "Audio: soft rain on the window and a quiet cafe murmur. Nobody speaks.", "S09": "Audio: she speaks only that one line; otherwise damp street ambience, distant traffic and footsteps. No other speech.", "S10": "Audio: his footsteps on wet leaves and distant campus ambience. Nobody near the camera speaks.", "S11": "Audio: footsteps on damp pavement, distant traffic and faint campus chatter. Nobody near the camera speaks.", "S12": "Audio: the steady tick of a crossing signal, distant traffic and a light breeze. Nobody speaks.", "S13": "Audio: his footsteps on a tiled lobby floor, a page turning, muffled street ambience from the open door. Nobody speaks.", "S14": "Audio: footsteps climbing echoing concrete stairs and a fluorescent hum. Nobody speaks.", "S15": "Audio: his slow footsteps and a buzzing fluorescent light. Nobody speaks.", "S16": "Audio: slow, held breathing and a quiet corridor hum. Nobody speaks.", "S17": "Audio: a low room hum. Nobody speaks.", "S18": "Audio: the soft creak of the turning chair and a low room hum. Nobody speaks.", "S19": "Audio: silence and hard breathing, then he speaks only the words \"No. No, no, no.\" No other speech.", "S20": "Audio: hard breathing and a corridor hum, then the man in the doorway speaks only the word \"Seriously?\" No other speech.", "S21": "Audio: slow chewing, hard breathing and a fluorescent hum. Nobody speaks.", "S22": "Audio: the man in the doorway speaks only the words \"One sec.\" No other speech.", "S23": "Audio: a steady fluorescent hum and the shuffle of feet stepping forward in unison. Nobody speaks.", "S24": "Audio: a steady fluorescent hum. Nobody speaks."};
+function fillShot(s){return s.replace(/\{(\w+)\}/g,(m,k)=>PLACE[k]||C[k]||m)}
+
+const PHASES = [
+ {id:'p1', t:'Set up', d:'Day 1', items:[
+  ['d','Create Videos\\Occupied with refs, frames, clips, audio\\vo, audio\\music, audio\\sfx, renders'],
+  ['d','Read the screenplay; flag anything you want changed before generating']]},
+ {id:'p2', t:'References', d:'R1 to R8', items:[
+  ['d','Generate R1 to R8 (cards below)'],
+  ['d','Send R1, R2 and R3 to Claude for a face and wardrobe consistency check'],
+  ['c','Approve references or return fix-it edit prompts']]},
+ {id:'p3', t:'Keyframes', d:"S01 to S23", items:[
+  ['d','Make every keyframe still, plus end frames for S03 and S18'],
+  ['d','Send the full set to Claude in one batch'],
+  ['c','Frame-by-frame review: face match, wardrobe, hands, stray text, 2.39 crop safety'],
+  ['d','Regenerate or edit any rejected stills']]},
+ {id:'p4', t:'Animation', d:'Flow', items:[
+  ['d','Test S08a first (the profile line) to see how Omni handles a speaking mouth, then send it to Claude'],
+  ['d','Generate all clips in Omni Flash, highest resolution available'],
+  ['c','Clip review: best seconds of each, morphs, face drift, unusable takes'],
+  ['d','Re-run any clips Claude flags']]},
+ {id:'p5', t:'Voice', d:'Speechify', items:[
+  ['d','Audition voices on "I had it again. The dream." and "Text me when you\'re home." Pick Eli and Maya'],
+  ['d','Note the exact voice names and settings in the folder README'],
+  ['d','Record two master files in Speechify: OCC_VO_ELI and OCC_VO_MAYA (scripts in the Voice plan)']]},
+ {id:'p6', t:'Score and sound', d:'Suno', items:[
+  ['d','Generate the score three times; keep the best (download stems if offered)'],
+  ['d','Save any extra sound effects into audio\\sfx']]},
+ {id:'p7', t:'Edit', d:'Claude, HyperFrames', items:[
+  ['c','Assembly cut to the beat map; picture timing'],
+  ['c','Dialogue: Speechify lines placed, the four on-screen lines synced to mouths, room tone rebuilt'],
+  ['c','Score edit, sound design, mix to about -16 LUFS'],
+  ['c','Grade, grain, halation, letterbox, overlays'],
+  ['c','Render v1']]},
+ {id:'p8', t:'Review and deliver', d:'', items:[
+  ['d','Watch v1 and send notes'],
+  ['c','v2 and v3 as needed; every version kept'],
+  ['c','Master, web copy, 15 s teaser, poster frame'],
+  ['d','Add to studio.madebydavidmartin.com and pick festivals']]}
+];
+
+const REFS = [
+ {id:'R1', name:'R1 · Eli, portrait', attach:'nothing', why:'The face of the film. Every Eli and every double uses it. Generate until the face is specific and believable, not model-pretty.',
+  img:'Head-and-shoulders portrait of {ELI} He looks just off camera with a quiet, preoccupied expression. Soft overcast window light from the left, a plain softly blurred dorm-room wall behind him. 85 mm look, eyes in sharp focus.'},
+ {id:'R2', name:'R2 · Eli, full body', attach:'OCC_R1_eli', why:'Locks the outfit, the backpack and the proportions.',
+  img:'Full-body photo of {ELI} The same man as in the attached portrait. He stands on a damp campus sidewalk with fallen leaves, a black backpack over one shoulder, hands in his jeans pockets, facing the camera. Overcast late-afternoon light.'},
+ {id:'R3', name:'R3 · Eli, from behind', attach:'OCC_R2_eli_full', why:'The doubles. Every shot of a double in a crowd uses this view, and so does every shot where Eli shares the frame with a double.',
+  img:'Full-body photo of {BACK}, walking away from the camera along a damp campus sidewalk with fallen leaves, a black backpack over one shoulder. The back of his head and his clothing are clearly visible. Overcast late-afternoon light.'},
+ {id:'R4', name:'R4 · Maya, portrait', attach:'nothing', why:'Locks Maya for the cafe scene.',
+  img:'Head-and-shoulders portrait of {MAYA} A warm, slightly concerned half-smile, looking just off camera. Soft overcast window light, a softly blurred cafe interior behind her. 85 mm look.'},
+ {id:'R5', name:'R5 · The cafe', attach:'nothing', why:'The cafe interior, empty, used for S04 to S08.',
+  img:'Interior of {CAFE} An empty window table for two in the foreground with two white ceramic cups. Nobody in the frame.'},
+ {id:'R6', name:'R6 · The dorm room', attach:'nothing', why:'Used twice: at night in the dream and in daylight at the end. The layout must match.',
+  img:'Wide view from the open doorway into {ROOM} The desk and chair are straight ahead, the chair facing the desk with its back to the camera, the monitor switched on and glowing pale blue. Grey late-afternoon light through the half-closed blinds. Nobody in the room.'},
+ {id:'R7', name:'R7 · Second-floor corridor', attach:'nothing', why:'The corridor of doors for S15 to S23.',
+  img:'Wide view down {HALL} Every door is closed. Nobody in the corridor. Camera at eye height in the exact centre of the corridor.'},
+ {id:'R7b', name:'R7b · Corridor, side angle', attach:'OCC_R7_corridor', why:'The same corridor as R7, turned to face a door in the side wall. Used for S16 (his view of his own door) and helpful for the door-knocking shots S20 to S22 if Flow centres them.',
+  img:'The same residence hall corridor as in the attached reference image, with the same cream cinder-block walls, speckled floor, dark wooden doors, brass plates and fluorescent ceiling lights, now seen from a different angle: the camera stands near the left-hand wall and looks diagonally across the corridor at one dark wooden door in the right-hand wall. That door is in the right third of the frame, closed. The corridor continues into the background on the left. Nobody in the corridor.'},
+ {id:'R8', name:'R8 · Campus street', attach:'nothing', why:'Locks the campus, season and weather for the walk.',
+  img:'Wide view of {STREET} A red-brick residence hall with a stone entrance and glass doors on the right side of the street. A few students in the distance, none close to the camera.'}
+];
+
+const SHOTS = [
+ {id:'S01', t:'0.0 to 3.5', name:'The dream door', model:'Omni Flash, played in reverse', attach:'R6, R3',
+  why:'The first image of the film: a door barely ajar slowly swings open to reveal the figure at the desk. Flow could not draw the barely-open door as a start frame (it invented double doors), so this is shot backwards: start from the open view, let the door swing almost shut, and Claude plays the clip in reverse. The figure is still, so the reversal is invisible.',
+  img:'First-person view through a wide open door, looking into {ROOM} It is now night: the room is dark, lit only by the pale blue glow of the monitor. The young man from the attached back-view reference sits in the desk chair with his back to the camera.',
+  mo:'One continuous, unbroken shot, no cuts. Static camera. The single dark wooden door slowly swings closed on its own and keeps closing until it hides the desk and the seated figure completely. It stops just short of shut: the door now fills the frame, with only a thin vertical sliver of blue light along its edge and nothing of the room visible. The figure at the desk stays perfectly still with his back to the camera until the door hides him.'},
+ {id:'S02', t:'3.5 to 7.0', name:'The back of the chair', model:'Omni Flash', attach:'R3, R6',
+  why:'Slow push toward the figure. The chair starts to turn as we cut.',
+  img:'Medium shot from just inside the doorway at night: {BACK}, sitting in the black mesh office chair at the desk, facing the glowing monitor, in {ROOM} The only light is the pale blue monitor glow rimming his hair and shoulders. His face is completely hidden.',
+  mo:'One continuous, unbroken shot, no cuts. Very slow push-in toward the seated figure. Near the end the chair begins to rotate slowly toward the camera, a few degrees only. His face stays hidden. The pale blue monitor light stays steady.'},
+ {id:'S03', t:'7.0 to 9.0', name:'The face', model:'Omni Flash, start and end frames', attach:'R1, R2, R6',
+  why:'The reveal. Start and end frames stop the face from morphing during the turn. Smash to black on the final frame.',
+  img:'Close-up at night: {ELI} He sits in the black mesh chair at his desk, his head and shoulders turned three-quarters away from the camera, the right side of his face in deep shadow, lit only by pale blue monitor light from behind. Dark cinder-block wall behind.',
+  end:'Edit this image. Only change: he has turned fully toward the camera and looks straight into the lens with a calm, expressionless face, his face half lit by the cold blue monitor light from the side. Nothing else changes.',
+  mo:'One continuous, unbroken shot, no cuts. Static camera. The chair rotates slowly and he turns to face the camera, ending with his eyes looking straight into the lens. He does not blink. Completely still at the end.'+LOCK},
+ {id:'S04', t:'12.0 to 19.0', name:'Cafe window', model:'Omni Flash', attach:'R1, R2, R4, R5',
+  line:['ELI / MAYA (through the glass)','I had it again. The dream. / The room one?','VO_01, VO_02'],
+  why:'Establishes the real world: warm, rainy, ordinary. The first two lines play over this shot, so their mouths must not be readable. The camera is outside and focused on the raindrops; the couple stays soft behind the glass, side-on to us.',
+  img:'Shot from outside on the rainy sidewalk, looking at the cafe window. The rain-covered glass fills the entire frame and the focus is on the raindrops on the glass, sharp and glistening. Behind the glass, soft and out of focus, Eli and Maya from the attached references sit across a small window table from each other, seen side-on in profile, warm pendant bulbs glowing above them. Eli is troubled and tense: shoulders hunched, head lowered, both hands gripping his cup, a worried frown. Maya leans toward him with concern. Reflections of maple trees, street lamps and the grey sky lie over the glass. Interior: {CAFE}',
+  mo:'One continuous, unbroken shot, no cuts. Slow lateral dolly along the outside of the window. The focus stays on the raindrops on the glass for the whole shot; the couple inside stays soft and out of focus. Raindrops run slowly down the glass and reflections slide across it. Inside, Eli stays hunched and troubled, staring down into his cup with a worried frown, rubbing his forehead once with one hand; Maya leans toward him, concerned. Both stay seated.'},
+ {id:'S05', t:'19.0 to 21.0', name:'Eli nods', model:'Omni Flash', attach:'R1, R2, R4, R5',
+  why:'His silent answer to "The room one?". Maya\'s braid soft in the foreground gives depth. No speaking in this shot.',
+  img:'Medium close-up over Maya\'s shoulder, her auburn braid soft and out of focus in the left foreground: {ELI} He sits at the window table, both hands around a white ceramic cup, looking down at it, lips closed, a tired, worried frown, tense and shaken. Setting: {CAFE} Rain-dotted window light on his face.',
+  mo:'One continuous, unbroken shot, no cuts. Very slow push-in. Eli keeps his lips closed and his worried frown, looks up at Maya with troubled eyes, nods slowly once, then looks back down at his cup, his jaw tight. Maya stays still in the foreground.'+LOCK},
+ {id:'S06', t:'21.0 to 24.5', name:'Hands on the cup', model:'Omni Flash', attach:'R2, R5',
+  line:['ELI (off screen)','I open the door, and someone\'s at my desk.','VO_03'],
+  why:'Insert. The line plays over it, so no lip sync is needed.',
+  img:'Close-up of a young man\'s hands wrapped around a white ceramic cup of black coffee on a pale oak cafe table, the cuffs of a rust-orange corduroy overshirt over charcoal grey hoodie sleeves. Rain-dotted window light. Shallow depth of field.',
+  mo:'One continuous, unbroken shot, no cuts. Very slow push-in. The hands stay still around the cup; one thumb moves slowly along the rim. The surface of the coffee trembles very slightly. The cup keeps its exact shape.'},
+ {id:'S07', t:'24.5 to 26.5', name:'Maya listens', model:'Omni Flash', attach:'R4, R3, R5',
+  line:['ELI (off screen)','He turns around...','VO_04a'],
+  why:'Coverage: we hear Eli while we watch her face change. Eli\'s shoulder in the foreground is from behind.',
+  img:'Medium close-up over Eli\'s shoulder (rust-orange corduroy overshirt and dark wavy hair soft in the right foreground, his face not visible): {MAYA} She sits across the window table, listening closely with gentle concern, lips closed. Setting: {CAFE}',
+  mo:'One continuous, unbroken shot, no cuts. Static camera. Maya listens in silence, her lips closed. Her expression shifts slowly from concern to unease. She keeps looking at him.'},
+ {id:'S08a', t:'26.5 to 28.5', name:'"And it\'s me."', model:'Omni Flash', attach:'R1, R2, R5',
+  line:['ELI','And it\'s me.','VO_04b'],
+  why:'Three words, in profile against the window, which makes sync forgiving. If the mouth does not match, Claude plays the line over his silent profile and it reads as a thought.',
+  img:'Profile close-up of {ELI} He sits at the cafe window table, looking out through the rain-streaked glass, eyes unfocused, lost in the memory, his face drawn and anxious. Setting: {CAFE} Soft grey window light along his profile.',
+  mo:'One continuous, unbroken shot, no cuts. Very slow push-in. Still looking out of the window, he says very quietly: "And it\'s me." Then he is silent and still, unsettled.'+LOCK+VEO},
+ {id:'S08b', t:'28.5 to 32.0', name:'Her hand on his', model:'Omni Flash', attach:'R2, R4, R5',
+  line:['MAYA / ELI (off screen)','Hey. It\'s a dream. You\'ve barely slept all week. / Yeah.','VO_05, VO_06'],
+  why:'An insert of her hand covering his, with both lines over it. Tender, and no lip sync. Keep the motion minimal: hands are Omni\'s weakest area.',
+  img:'Close-up on a pale oak cafe table: a young woman\'s hand, the cuff of a cream cable-knit sweater at her wrist and a small gold ring, resting on top of a young man\'s hand beside a white ceramic cup. His sleeve is a rust-orange corduroy cuff over charcoal grey. Rain-dotted window light, shallow depth of field.',
+  mo:'One continuous, unbroken shot, no cuts. Static camera, very slow push-in. Her hand rests on his and gives one small, gentle squeeze. Both hands stay in place and keep their exact shape and five fingers each. Steam rises faintly from the cup.'},
+ {id:'S09', t:'32.0 to 36.0', name:'"Text me when you\'re home."', model:'Omni Flash', attach:'R3, R4, R8',
+  line:['MAYA','Text me when you\'re home.','VO_07'],
+  why:'Eli from behind in the foreground; Maya already a few steps away, calling back over her shoulder. At that distance her mouth is small, so sync is forgiving. The last warm moment.',
+  img:'On the damp sidewalk outside the cafe on {STREET} Foreground right, out of focus: {BACK}, a black backpack over one shoulder. Mid-ground, several steps away and walking away from him: {MAYA} now wearing a dark green wool coat over the sweater, a tote bag on her shoulder, glancing back at him over her shoulder with a smile.',
+  mo:'One continuous, unbroken shot, no cuts. Static camera. Maya, walking slowly away, looks back over her shoulder, smiles and calls out: "Text me when you\'re home." Then she faces forward and keeps walking down the street. Eli stays still in the foreground, watching her go. Leaves drift down.'+VEO},
+ {id:'S10', t:'36.0 to 41.0', name:'Walking home', model:'Omni Flash', attach:'R1, R2, R8, R3',
+  why:'Leading tracking shot. Far behind him, out of focus, a figure in the same rust overshirt walks away. Do not point it out.',
+  img:'Medium shot, camera tracking backwards in front of {ELI} He walks toward the camera along the street, a black backpack over one shoulder, hands in pockets, eyes down, pensive. Setting: {STREET} Students blurred in the background; far behind him, out of focus, one young man in the same rust-orange overshirt walks away from the camera.',
+  mo:'One continuous, unbroken shot, no cuts. Smooth steady backwards tracking shot at walking pace. Eli walks toward the camera, deep in thought. Leaves fall slowly. Background students walk naturally and stay out of focus.'+LOCK},
+ {id:'S11', t:'41.0 to 45.0', name:'His view ahead', model:'Omni Flash', attach:'R3, R8',
+  why:'Eli\'s point of view as he walks home: the camera moving forward is Eli walking, so nobody stands around doing nothing. A few students ahead, backs to us. One of them, in his rust jacket, turns a corner and is gone. One double only, small and from behind.',
+  img:'First-person view at eye level, walking along the sidewalk of the campus street from the attached street reference, looking ahead down the sidewalk. A few students walk ahead in the same direction, well spaced out, their backs to the camera. About ten metres ahead, among them, a young man in a rust-orange corduroy overshirt and dark jeans, with no bag, walks away from the camera, back turned, just about to turn left around the corner of a red-brick building. Damp pavement, fallen maple leaves, overcast late-afternoon light.',
+  mo:'One continuous, unbroken shot, no cuts. Smooth forward walking point-of-view shot with a gentle, natural sway, moving slowly down the sidewalk. The people ahead keep walking away at an easy pace, their backs to the camera. The young man in the rust-orange overshirt turns left around the corner of the building and is gone. Leaves drift down. Everyone keeps their back to the camera.'},
+ {id:'S12', t:'45.0 to 49.0', name:'The crosswalk', model:'Omni Flash', attach:'R1, R2, R8',
+  why:'Eli waiting at a crosswalk, side-on, lost in thought. Across the road, softly out of focus, a bus shelter with a few ordinary people waiting. One of them, sitting on the bench with his head bowed over his phone, wears Eli\'s rust jacket. Nobody walks, nobody turns, nobody looks at anybody: everyone simply waits, which is what people do at a crosswalk and a bus stop, so Omni has nothing to invent. Cut before the light changes.',
+  img:'Waist-up medium shot at a campus crosswalk. The camera stands on the sidewalk a couple of steps behind and beside the young man, looking across the road. In the left third of the frame: {ELI} He stands at the edge of the curb facing the road, waiting for the walk signal, his head turned to his left to look up the street toward the oncoming traffic and the crossing light, so his face is seen in profile, troubled and lost in thought, a black backpack strap over his shoulder, hands in his jacket pockets. Setting: {STREET} In the right two-thirds of the frame, across the road, softly out of focus in the background, a bus shelter with four people waiting: a woman in a camel coat holding a closed umbrella, an older man in a navy jacket reading a folded newspaper, a student in a grey puffer jacket looking down the road, and, sitting on the bench, a young man in a rust-orange corduroy jacket with his head bowed over his phone, his face hidden. Everyone is still.',
+  mo:'One continuous, unbroken shot, no cuts. Static camera. A quiet held moment: everyone stays where they are, waiting. Eli stands completely still at the curb, feet planted, lost in thought; only his eyes move, and he blinks once. Across the road, the people at the bus shelter wait with small natural movements only: the woman shifts her umbrella, the older man turns a page, the young man on the bench keeps his head bowed over his phone. Nobody walks and nobody turns around. A few leaves drift down.'+LOCK},
+ {id:'S13', t:'49.0 to 52.5', name:'Into the lobby', model:'Omni Flash', attach:'R1, R2',
+  why:'Starts with Eli already one step inside the lobby, the open front door just behind him, so Omni never has to move him through the doorway (it cut instead of walking him through). He walks a few slow steps toward the camera with his eyes on his phone the whole time: keeping his face down and the distance short stops his face drifting. Keyframe only, no end frame: Flow edits cannot move a person closer. Render 5 s; Claude uses the cleanest 3.5 s.',
+  img:'Inside the warm, softly lit lobby of an older red-brick university residence hall on an autumn afternoon, looking toward the open front door. Through the doorway behind him: grey daylight, stone steps and orange maple leaves outside. A student sits on a worn sofa to one side, reading, and another stands at a row of wooden mail cubbies on the side wall. {ELI} He has just stepped inside and stands one step in from the open doorway, facing the camera about four metres away, his head bowed as he looks down at the phone in his hand, his expression tired and troubled. The lobby is well lit by warm ceiling lights and lamps, well exposed, with soft fill light so his face and the room are clearly visible.',
+  mo:'One continuous, unbroken shot, no cuts. Static camera inside the lobby. The young man in the rust-orange overshirt takes two slow steps toward the camera, his head bowed, looking down at his phone the whole time. The student on the sofa keeps reading and the student at the mail cubbies stays at the wall. Calm, everyday scene.'+LOCK},
+ {id:'S14', t:'52.5 to 56.5', name:'The stairwell', model:'Omni Flash, start and end frames', attach:'R3',
+  why:'Camera at the bottom of the stairs, looking up. Eli is seen from behind climbing up and away from us; on the landing above, a figure in rust leans over the rail, face in shadow, and steps back out of view. The end frame pins the direction: he finishes higher up than he starts.',
+  img:'Low angle from the bottom of a worn concrete stairwell in an older residence hall, looking up the stairs, cold fluorescent light, a painted metal handrail. {BACK}, a black backpack over one shoulder, is on the lower steps with his back to the camera, climbing upward, one hand on the rail. On the landing above the top of the flight, a young man in a rust-orange overshirt leans over the rail looking down, his face completely in shadow.',
+  end:'Edit this image. Only change: the young man with the backpack is now near the top of the flight, much higher up the stairs and smaller in the frame, still seen from behind, and the landing above is empty: the figure leaning on the rail is gone. Nothing else changes.',
+  mo:'One continuous, unbroken shot, no cuts. Static camera at the bottom of the stairs. The young man with the backpack climbs up the stairs, step by step, moving away from the camera and higher in the frame, his back to the camera the whole time. Above, the shadowed figure leans on the rail for a moment, then steps back out of view. The fluorescent light stays steady and even.'},
+ {id:'S15', t:'56.5 to 61.0', name:'The corridor', model:'Omni Flash', attach:'R3, R7',
+  why:'One-point perspective from behind. The longest walk in the film. The lights stay steady in the clip; Omni makes flicker look like a glitch, so Claude adds one subtle flicker in the edit if it helps.',
+  img:'Wide symmetrical one-point-perspective shot down {HALL} {BACK} walks slowly away from the camera down the exact centre of the corridor, a black backpack over one shoulder. The fluorescent ceiling panels give steady, even light.',
+  mo:'One continuous, unbroken shot, no cuts. The camera follows slowly behind him at a steady distance, perfectly centred. He walks slowly down the middle of the corridor. The lighting stays steady and even. All the doors stay closed.'},
+ {id:'S16', t:'61.0 to 64.0', name:'Someone is inside', model:'Omni Flash', attach:'R7b if you made it, otherwise nothing',
+  why:'Rebuilt as Eli\'s point of view, like the dream door in S01, which Flow accepted. No person in the frame at all, so the filter has nothing to object to. The tension comes from what he sees: a thin line of blue monitor light under his closed door and the sound of someone typing inside. The clip itself is only a slow push-in: when Omni was asked for a shadow it drew feet and see-through doors, so Claude adds one shadow crossing the light in the edit. S17 then opens the same door from the same viewpoint. The "4:47 PM" timestamp appears here.',
+  img:'First-person view standing in a residence hall corridor, directly facing a closed dark wooden door in the side wall, about two steps away. The door fills the centre of the frame: dark wood grain, a small blank brass plate, a round brass doorknob on the right. Cream cinder-block walls on either side, a speckled linoleum floor. A thin, bright line of cold blue light glows through the gap under the door from the room inside. Steady, cold overhead fluorescent light in the corridor. Nobody in the frame.',
+  mo:'One continuous, unbroken shot, no cuts. Very slow push-in toward the closed door, with a faint, slightly unsteady handheld drift, as if someone is holding their breath. The solid wooden door stays closed, still and completely opaque, and the thin line of blue light under it stays steady and unchanged. Only the camera moves.'},
+ {id:'S17', t:'64.0 to 67.0', name:'The door opens', model:'Omni Flash, played in reverse', attach:'R3, R6',
+  why:'The rhyme with S01, in grey daylight, made the same way: start from the open view, the door swings almost shut, and Claude plays it in reverse so it reads as the door slowly opening. If you already have a good fully open frame, animate that.',
+  img:'First-person view from the corridor through a wide open dark wooden door into {ROOM} Grey late-afternoon light through the half-closed blinds, the monitor glowing pale blue. {BACK}, sits in the black mesh chair at the desk, back to the camera, facing the monitor.',
+  mo:'One continuous, unbroken shot, no cuts. Static camera. The single dark wooden door slowly swings closed on its own and keeps closing until it hides the desk and the seated figure completely. It stops just short of shut: the door now fills the frame, with only a thin vertical sliver of grey light along its edge and nothing of the room visible. The seated figure stays perfectly still with his back to the camera until the door hides him.'},
+ {id:'S18', t:'67.0 to 70.0', name:'The double turns', model:'Omni Flash, start and end frames', attach:'R3, R6',
+  why:'The double turns, exactly as in the dream, and simply looks at him. Silent. His line comes in the next shot, over Eli\'s face.',
+  img:'Medium shot from the open doorway, grey late-afternoon light. The young man from the attached back-view reference sits in the black mesh office chair at the desk, facing the glowing monitor, seen from directly behind: the high back of the chair, the back of his head with its dark wavy hair, the grey hood and the rust-orange shoulders of his overshirt. The monitor glows pale blue in front of him. Setting: {ROOM}',
+  end:'Attach this image and OCC_R1_eli. Edit this image. Only change: the chair has turned and he faces the camera directly, with the face of the attached Eli portrait, relaxed in the chair, one arm on the armrest, looking straight into the lens with a calm, faintly patient expression. Nothing else changes.',
+  mo:'One continuous, unbroken shot, no cuts. Static camera. The chair turns slowly toward the camera. He looks straight into the lens with his lips closed and then simply waits, perfectly still.'+LOCK},
+ {id:'S19', t:'70.0 to 74.0', name:'"You\'re early." / "No, no, no."', model:'Omni Flash', attach:'R1, R2, R3, R7',
+  line:['DOUBLE (off screen) / ELI','You\'re early. / No. No, no, no.','VO_08, VO_09'],
+  why:'Classic horror grammar: we hear the double while we watch Eli\'s face. Then panic, which hides any lip-sync mismatch. Over the seated double\'s shoulder from behind, so only one face is visible.',
+  img:'Inside the dorm room, looking back toward the open doorway. The camera is at the desk end of the room, so the desk, the lamp and the window are behind the camera and out of view. In the soft foreground on the left, {BACK}, sits in the black mesh office chair, which is turned to face the doorway. The plain cream cinder-block wall runs along the left side of the frame; the foot of a single bed with a grey blanket runs along the right-hand wall. In the open doorway stands {ELI} He is frozen, his face pale with shock, the corridor behind him lit by steady fluorescent light.',
+  mo:'One continuous, unbroken shot, no cuts. Static camera. For a moment Eli stands frozen in the doorway, staring. Then he stumbles backwards out of the doorway into the corridor, shaking his head, breathing hard, saying: "No. No, no, no." The seated figure in the foreground stays perfectly still.'+LOCK+VEO},
+ {id:'S20', t:'74.0 to 78.0', name:'Door 1: "Seriously?"', model:'Omni Flash, plate plus one clip', attach:'R1, R2',
+  line:['ELI (off screen) / DOUBLE','Hey! Hey, I need help! / Seriously?','VO_10, VO_11'],
+  why:'Eli\'s point of view: the camera is Eli, so only one face is on screen. Built as a cut, not an animated door: first a closed neighbour\'s door while we hear him pound on it and shout (knocks and line added in the edit), then a hard cut on the sound of the latch to the door open and him standing there. No door has to move on camera, which is where Omni glitched. Two images: the closed-door plate below, and the open-door keyframe (the frame you already have works; use the one where he stands inside the doorway).',
+  img:'First-person view at eye level from a residence hall corridor, looking straight into an open dorm room doorway. The doorway is set flush in the flat corridor wall and seen straight on: the camera faces the wall squarely, and only a narrow strip of flat cream cinder-block wall, in the same plane as the dark wooden door frame, shows at the left and right edges of the frame. The corridor ceiling lights are above the frame, out of view. Standing in the doorway, facing the camera, one hand resting on the edge of the open wooden door: a man with the face of the attached Eli portrait, in the same rust-orange corduroy overshirt and charcoal grey hoodie, irritated. He carries no bag. Behind him, a clearly different dorm room: warm yellow lamplight, a string of warm fairy lights along the wall, colourful abstract posters with no words, an acoustic guitar on an unmade bed, clothes piled on a chair. He is the only person in the frame.',
+  extra:[['CLOSED DOOR PLATE · IMAGE','16:9, attach nothing','First-person view at eye level in a residence hall corridor, facing a closed dark wooden door straight on, about one step away. The door is set flush in a flat cream cinder-block wall and fills the centre of the frame: dark wood grain, a small blank brass plate, a round brass doorknob. Warm yellow light glows in the thin gap under the door. Steady, cold corridor light. Nobody in the frame.'+STYLE_X],['CLOSED DOOR PLATE · MOTION','Frames to Video, plate as first frame','One continuous, unbroken shot, no cuts. Static camera with a faint, slightly unsteady handheld drift. The closed door stays shut and still. Nothing else moves. Audio: a quiet corridor hum. Nobody speaks.']],
+  mo:'One continuous, unbroken shot, no cuts. Static camera at eye level. The man in the doorway frowns and says, annoyed: "Seriously?" Then he stares into the lens, waiting. He keeps his hand on the door and stays in the doorway. He is the only person in the shot. Natural, understated film acting. No subtitles. No music. Audio: he speaks only the word "Seriously?" No other speech.'},
+ {id:'S21', t:'78.0 to 80.5', name:'Door 2: noodles', model:'Omni Flash', attach:'R1, R2',
+  why:'A hard cut straight to the next open door, no closed-door plate: the pace speeds up. A different room: dim, blue-and-purple gaming light, two monitors, empty cans. He is eating instant noodles and simply stares. No line.',
+  img:'First-person view at eye level from a residence hall corridor, looking straight into an open dorm room doorway. The doorway is set flush in the flat corridor wall and seen straight on: the camera faces the wall squarely, and only a narrow strip of flat cream cinder-block wall, in the same plane as the dark wooden door frame, shows at the left and right edges of the frame. The corridor ceiling lights are above the frame, out of view. Standing in the doorway, facing the camera, he carries no bag. One hand rests on the edge of the open door; the other holds a paper cup of instant noodles with a plastic fork in it. He has the face of the attached Eli portrait and wears the same rust-orange corduroy overshirt and charcoal grey hoodie, mid-chew, with a completely blank expression. Behind him, a clearly different dorm room: dim, lit by blue and purple LED strip light, a desk with two glowing monitors, a gaming chair, empty cans on the desk. He is the only person in the frame.',
+  mo:'One continuous, unbroken shot, no cuts. Static camera at eye level. The man in the doorway keeps chewing slowly, staring blankly into the lens, saying nothing. He stays in the doorway. The noodle cup stays in his hand and keeps its shape. He is the only person in the shot. Audio: slow chewing and a faint hum. Nobody speaks.'},
+ {id:'S22', t:'80.5 to 82.5', name:'Door 3: "One sec."', model:'Omni Flash', attach:'R1, R2',
+  line:['DOUBLE','One sec.','VO_12'],
+  why:'He answers mid phone call, holds up a finger, "One sec.", and turns back to his call. The door closing is done in the edit: Claude cuts to the closed-door plate from S20 with a door-shut sound, because the clip with the door swinging toward the camera was refused by Flow. If this is refused too, drop S22: two doors are enough before S23. A third distinct room: tidy, bright, plants on the windowsill, golden evening light.',
+  img:'First-person view at eye level from a residence hall corridor, looking straight into an open dorm room doorway. The doorway is set flush in the flat corridor wall and seen straight on: the camera faces the wall squarely, and only a narrow strip of flat cream cinder-block wall, in the same plane as the dark wooden door frame, shows at the left and right edges of the frame. The corridor ceiling lights are above the frame, out of view. Standing in the doorway, facing the camera, he carries no bag. One hand rests on the edge of the open door; the other holds a phone to his ear. He has the face of the attached Eli portrait and wears the same rust-orange corduroy overshirt and charcoal grey hoodie, busy and distracted. Behind him, a clearly different dorm room: tidy and bright, golden evening light through the window, potted plants on the windowsill, a neatly made bed. He is the only person in the frame.',
+  mo:'One continuous, unbroken shot, no cuts. Static camera at eye level. Holding a phone to his ear, the man in the doorway glances at the lens, lifts one finger and says flatly: "One sec." Then he looks away, back to his phone call, calm and distracted. He stays in the doorway. He is the only person in the shot. Natural, understated film acting. No subtitles. No music.'},
+ {id:'S23', t:'82.5 to 87.5', name:'Every door', model:'Omni Flash', attach:'R1, R2, R3, R7',
+  why:'The poster image and the final shot (S24 dropped): Claude holds on this, flickers the lights out over it and cuts to black. Eli from behind in the centre; every door opens and a double steps out and turns to look at him. Faces small with distance, so the model holds them.',
+  img:'Wide symmetrical one-point-perspective shot down {HALL} In the exact centre foreground, {BACK} stands frozen in fear: shoulders hunched and raised toward his ears, both hands out of his pockets and held tense and half raised in front of him, one foot half a step back as if about to retreat, his head turning from side to side toward the doorways. Every door on both sides of the corridor is open, and in each doorway stands the same young man in the same rust-orange corduroy overshirt and charcoal grey hoodie, all with the face of the attached Eli portrait, all looking at the man in the centre.',
+  mo:'One continuous, unbroken shot, no cuts. Very slow push-in from behind the man in the centre. Along both sides, the young men in the doorways step forward half a pace into the corridor in unison and stand still, all staring at him. The man in the centre flinches, takes one small step backwards and turns his head from side to side, his shoulders hunched, his hands raised and tense. The fluorescent lighting stays steady and even.'},
+];
+
+const SONG = [
+ {tag:'STYLE OF MUSIC', sub:'Suno, instrumental on', text:'Cinematic psychological thriller film score, instrumental, 70 BPM, sparse and intimate. A simple, haunting four-note felt piano motif, warm analog synth drone, sustained low cello and contrabass, subtle ticking clock pulse, reversed piano swells. Slowly builds into dense dissonant strings, pulsing sub bass and heavy low percussion hits, then ends abruptly with a hard stop. Modern indie thriller soundtrack, dark, melancholic, unsettling, high fidelity.'},
+ {tag:'EXCLUDE STYLES', sub:'', text:'vocals, choir, lyrics, pop, EDM drop, rock drums, guitar solo, upbeat, happy, jazz, lo-fi hip hop, trailer braams, long fade-out'},
+ {tag:'LYRICS FIELD (structure only)', sub:'', text:'[Intro: eerie low drone, distant single piano notes]\n\n[Theme: soft felt piano motif, melancholy, very quiet]\n\n[Build: ticking clock pulse, low strings rising slowly]\n\n[Tension: dissonant strings, heartbeat sub bass, growing]\n\n[Climax: full dissonant orchestra, pounding low hits]\n\n[Hard stop]\n\n[End]'}
+];
+
+const SFX = ['Door hinge creak and latch (dream and real door)','Monitor and room hum, night ambience','Cafe: espresso machine hiss, cups, low murmur, rain on glass','Campus street: footsteps on wet leaves, distant traffic, bike bell','Building door, stairwell footsteps and echo','Fluorescent buzz and flicker','Knocking and pounding on doors','Headphones leakage, noodle slurp, phone muffled voice','Phone buzz on black'];
+
+const VO = [
+ ['VO_01','S04','Eli','I had it again. The dream.','Through glass'],
+ ['VO_02','S04','Maya','The room one?','Through glass'],
+ ['VO_03','S06','Eli','I open the door, and someone\'s at my desk.','Over hands'],
+ ['VO_04a','S07','Eli','He turns around...','Over Maya'],
+ ['VO_04b','S08a','Eli','And it\'s me.','Profile, synced'],
+ ['VO_05','S08b','Maya','Hey. It\'s a dream. You\'ve barely slept all week.','Over hands'],
+ ['VO_06','S08b','Eli','Yeah. (with a small breath of a laugh)','Over hands'],
+ ['VO_07','S09','Maya','Text me when you\'re home.','At a distance'],
+ ['VO_08','S19','Double (Eli voice)','You\'re early.','Over Eli\'s face'],
+ ['VO_09','S19','Eli','No. No, no, no.','Panic, synced'],
+ ['VO_10','S20','Eli','Hey! Hey, I need help!','Off screen (his POV)'],
+ ['VO_11','S20','Double (Eli voice)','Seriously?','Face, synced'],
+ ['VO_12','S22','Double (Eli voice)','One sec.','Face, synced']
+];
+
+const EDL = [
+ ['0.0 to 3.5','S01 dream door opens','Drone, low room hum, door creak','"3:12 AM"'],
+ ['3.5 to 9.0','S02, S03 chair turns, Eli\'s face','Drone swells, cut dead on black',''],
+ ['9.0 to 12.0','Black','Silence, then espresso hiss','Title: OCCUPIED'],
+ ['12.0 to 21.0','S04 window (first two lines), S05 Eli nods','Rain, cafe murmur, piano motif low','None'],
+ ['21.0 to 32.0','S06 hands, S07 Maya, S08a profile, S08b her hand','Dialogue, piano','None'],
+ ['32.0 to 36.0','S09 Maya leaves','Street ambience','None'],
+ ['36.0 to 49.0','S10 walk, S11 crowd, S12 crosswalk','Ticking pulse enters; street thins','None'],
+ ['49.0 to 61.0','S13 entrance, S14 stairwell, S15 corridor','Strings rise, fluorescent buzz','None'],
+ ['61.0 to 67.0','S16 his POV: light under the door, a shadow moves; S17 door opens','Music drops to near silence; muffled typing from inside','"4:47 PM" on S16'],
+ ['67.0 to 74.0','S18 the double turns, S19 Eli frozen, then retreats','"You\'re early." off screen, one low hit, breath','None'],
+ ['74.0 to 82.5','S20, S21, S22 doors','Climax; knocks cut to the beat','None'],
+ ['82.5 to 87.5','S23 every door, lights flicker out over it','Peak, then hard cut to silence','None'],
+ ['87.5 to 90.0','Black','Phone buzz','"Maya · home yet?"']
+];
+
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function promptBox(tag,sub,text){return `<div class="prompt"><div class="pbar"><span class="tag">${tag}</span><span>${sub}</span><button class="copy" type="button">Copy</button></div><pre>${esc(text)}</pre></div>`}
+function store(){try{return JSON.parse(localStorage.getItem('occ_done')||'{}')}catch(e){return{}}}
+function save(o){try{localStorage.setItem('occ_done',JSON.stringify(o))}catch(e){}}
+const done=store(); const ids=[];
+function box(id,label){ids.push(id);return `<label><input type="checkbox" id="chk-${id}" data-k="${id}" ${done[id]?'checked':''}> ${label||'Done'}</label>`}
+const who={d:'<span class="who d">David</span>',c:'<span class="who c">Claude</span>'};
+
+document.getElementById('phaseList').innerHTML=PHASES.map((p,pi)=>`<div class="phase"><h3>${pi+1}. ${p.t}<span>${p.d}</span></h3><ul class="steps">${p.items.map((it,i)=>{const id=p.id+'_'+i;ids.push(id);return `<li><label><input type="checkbox" id="chk-${id}" data-k="${id}" ${done[id]?'checked':''}><span>${esc(it[1])} ${who[it[0]]}</span></label></li>`}).join('')}</ul></div>`).join('');
+
+document.getElementById('styleBoxes').innerHTML=promptBox('STYLE SUFFIX','already at the end of every image prompt',STYLE.trim())+promptBox('MOTION ENDINGS','added where they apply',LOCK.trim()+'\n'+VEO.trim()+'  (dialogue shots only)');
+
+const CANON=[['ELI','Eli'],['BACK','Eli from behind, and every double in a crowd'],['MAYA','Maya'],['CAFE','The cafe'],['ROOM','The dorm room'],['HALL','The corridor'],['STREET','The campus']];
+document.getElementById('canonList').innerHTML=CANON.map(c=>promptBox(c[1].toUpperCase(),'canonical text',C[c[0]])).join('');
+
+document.getElementById('refList').innerHTML=REFS.map(r=>`<article class="card"><div class="card-head"><h3>${r.name}</h3>${box(r.id)}</div><p class="why">${r.why}</p><p class="attach"><b>Attach:</b> ${r.attach==='nothing'?'nothing':r.attach}</p>${promptBox('IMAGE PROMPT','16:9',fill(r.img)+STYLE)}</article>`).join('');
+
+document.getElementById('shotList').innerHTML=SHOTS.map(s=>`<article class="card"><div class="card-head"><span class="tc">${s.t} s</span><h3>${s.id} · ${esc(s.name)}</h3><span class="model">${s.model}</span>${box(s.id)}</div><p class="why">${esc(s.why)}</p>${s.line?`<div class="line"><b>${esc(s.line[0])}</b>${esc(s.line[1])} <span style="color:var(--muted);font-family:var(--mono);font-size:11px">(${s.line[2]})</span></div>`:''}<p class="attach"><b>Attach:</b> ${s.attach.split(', ').map(x=>'OCC_'+x).join(', ')}</p>${promptBox(s.rev?'1 · END FRAME (make first)':'KEYFRAME PROMPT','16:9, style suffix included',fillShot(s.img)+STYLE)}${s.end?promptBox(s.rev?'2 · START FRAME':'END FRAME',s.rev?'attach image 1, then':'attach the approved keyframe, then',s.end):''}${(s.extra||[]).map(x=>promptBox(x[0],x[1],x[2])).join('')}${promptBox(s.mo2?'MOTION PROMPT · CLIP A':'MOTION PROMPT',s.moLabel||(s.rev?'Frames to Video: image 2 first, image 1 last':(s.end?'Frames to Video: keyframe first, end frame last':'Frames to Video: keyframe as first frame')),s.mo+(s.mo2?'':' '+(SND[s.id]||'')))}${s.mo2?promptBox('MOTION PROMPT · CLIP B',s.mo2Label,s.mo2):''}</article>`).join('');
+
+document.getElementById('voTable').innerHTML=VO.map(v=>`<tr><td class="t">${v[0]}</td><td class="t">${v[1]}</td><td>${v[2]}</td><td style="font-family:var(--script)">${esc(v[3])}</td><td>${v[4]}</td><td>${box(v[0],'')}</td></tr>`).join('');
+
+document.getElementById('songList').innerHTML=SONG.map(s=>promptBox(s.tag,s.sub||'paste into Suno',s.text)).join('');
+document.getElementById('sfxList').innerHTML=SFX.map((x,i)=>{const id='sfx'+i;ids.push(id);return `<li><label><input type="checkbox" id="chk-${id}" data-k="${id}" ${done[id]?'checked':''}><span>${esc(x)}</span></label></li>`}).join('');
+document.getElementById('edlTable').innerHTML=EDL.map(e=>`<tr><td class="t">${e[0]}</td><td>${esc(e[1])}</td><td>${esc(e[2])}</td><td>${esc(e[3])}</td></tr>`).join('');
+
+function prog(){const d=store();const n=ids.filter(i=>d[i]).length;document.getElementById('prog').textContent=n+' of '+ids.length+' done';document.getElementById('progbar').style.width=(ids.length?100*n/ids.length:0)+'%'}
+document.addEventListener('change',e=>{const k=e.target.dataset&&e.target.dataset.k;if(!k)return;const d=store();d[k]=e.target.checked;save(d);prog()});
+prog();
+document.addEventListener('click',e=>{const b=e.target.closest('button.copy');if(!b)return;const pre=b.closest('.prompt').querySelector('pre');const txt=pre.textContent;
+ const ok=()=>{b.textContent='Copied';b.classList.add('ok');setTimeout(()=>{b.textContent='Copy';b.classList.remove('ok')},1400)};
+ const fallback=()=>{const r=document.createRange();r.selectNodeContents(pre);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected';setTimeout(()=>{b.textContent='Copy'},1400)};
+ try{navigator.clipboard.writeText(txt).then(ok,fallback)}catch(err){fallback()}});
+</script>
+
+</body></html>
