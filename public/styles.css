@@ -1164,7 +1164,7 @@ h1,h2{font-family:"Clash Display","Geist",sans-serif;letter-spacing:-.018em}
 
 /* Feature video player (self-hosted MP4) */
 .feature-vid{margin:0 auto clamp(28px,4vw,48px);max-width:880px;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#0C0F14}
-.feature-vid video{display:block;width:100%;aspect-ratio:16/9}
+.feature-vid video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
 .feature-vid-cap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:14px 18px;font:500 12px/1.5 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .feature-vid-cap b{color:var(--ink);letter-spacing:.1em}
 
