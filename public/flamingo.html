@@ -10,11 +10,12 @@
 .fg-cta{background:var(--pink);color:#fff!important;padding:9px 20px;border-radius:999px;font-weight:700}
 .fg-cta:hover{background:var(--plum)}
 /* Hero */
-.fg-hero{background:linear-gradient(180deg,var(--blush) 0%,#FFE3EE 78%,#FFD9E8 100%);padding:clamp(28px,5vw,56px) 0 0;overflow:hidden}
+.fg-hero{position:relative;background:linear-gradient(180deg,rgba(255,244,248,.9) 0%,rgba(255,227,238,.82) 55%,rgba(255,217,232,.9) 100%),url("img/flamingo/kv-16x9.jpg") center 30%/cover no-repeat var(--blush);padding:clamp(52px,7vw,96px) 0 clamp(56px,6.5vw,88px);overflow:hidden}
+.fg-hero .fg-wrap{position:relative;z-index:1}
 .fg-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(20px,4vw,48px);align-items:center}
 @media(max-width:860px){.fg-hero-grid{grid-template-columns:1fr}}
 .fg-hero .fg-kicker{display:inline-block;background:#fff;color:var(--pink);border:1px solid var(--fgline);border-radius:999px;padding:6px 14px;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
-.fg-hero h1{font-size:clamp(38px,5.4vw,64px);line-height:1.02;margin:16px 0 14px;font-weight:700}
+.fg-hero h1{font-size:clamp(44px,6vw,76px);line-height:1.02;margin:16px 0 14px;font-weight:700}
 .fg-hero h1 .fg-pink{color:var(--pink)}
 .fg-hero p{font-size:clamp(16px,1.6vw,19px);line-height:1.55;max-width:52ch;margin:0 0 20px}
 .fg-price{display:inline-flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--fgline);border-radius:18px;padding:12px 18px;box-shadow:0 10px 30px rgba(59,20,49,.08)}
@@ -93,9 +94,24 @@
 .fg-pgcard h2 a{color:inherit;text-decoration:none}
 .fg-pgcard h2 a:hover{text-decoration:underline}
 .fg-pgdesc{margin:0;font-size:16px;line-height:1.6}
-.fg-pgbtn{flex-shrink:0;background:var(--pink);color:#fff;font-weight:700;padding:13px 22px;border-radius:999px;text-decoration:none}
-.fg-pgbtn:hover{background:#d12f7a}
+.fg-pgcard a.fg-pgbtn{flex-shrink:0;background:var(--pink);color:#fff;font-weight:700;padding:13px 22px;border-radius:999px;text-decoration:none}
+.fg-pgcard a.fg-pgbtn:hover{background:#d12f7a;color:#fff}
 @media(max-width:640px){.fg-pgcard{flex-direction:column;align-items:flex-start}}
+/* Themed footer (added 2026-11-07, same pattern as the SOLENTEI footer) */
+.fg-foot{background:var(--plum);box-shadow:0 0 0 100vmax var(--plum);clip-path:inset(0 -100vmax);padding-block:clamp(56px,7vw,90px);text-align:center;color:#fff}
+.fg-foot .fg-lockup{display:block;width:min(420px,84%);height:auto;margin:0 auto 30px;border-radius:18px}
+.fg-foot h2{font-family:"Fredoka",sans-serif;font-weight:600;color:#fff;font-size:clamp(30px,4.2vw,46px);margin:0 0 12px}
+.fg-foot p{color:#F9CFE0;max-width:560px;margin:0 auto 20px;line-height:1.65}
+.fg-foot-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+.fg-foot-btns a{font-weight:700;padding:12px 22px;border-radius:999px;text-decoration:none}
+.fg-foot-btns .b1{background:var(--pink);color:#fff}
+.fg-foot-btns .b1:hover{background:#d12f7a}
+.fg-foot-btns .b2{border:1.5px solid #F5A3C8;color:#F5A3C8}
+.fg-foot-btns .b2:hover{background:rgba(245,163,200,.14)}
+.fg-foot-nav{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.fg-foot-nav a{color:#D9A8C0;text-decoration:none;font-size:14px}
+.fg-foot-nav a:hover{color:#fff}
+.fg-foot .fg-ff{font-size:12.5px;color:#B98AA5!important;max-width:none}
 </style></head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="head-in"><a class="mark mark-logo" href="./" aria-label="madebydavidmartin, home"><img src="/img/logo-madebydavidmartin-portfolio.png" alt="madebydavidmartin portfolio" width="505" height="99"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span></span>Menu</button><nav class="nav" id="site-nav" aria-label="Main"><a href="work.html">Work</a><a href="method.html">Method</a><span class="dd"><a class="dd-btn" href="video.html" aria-haspopup="true" aria-expanded="false">Video<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><span class="dd-menu"><a href="video.html">My Process</a><a href="flamingo.html" aria-current="page">FlaminGo</a><a href="solentei.html">SOLENTEI 369</a><a href="occupied.html">OCCUPIED</a><a href="orivex.html">ORIVEX ARC-7</a><a href="fizzypop.html">Fizzy Pop</a><a href="djc.html">DJC Media</a></span></span><a href="about.html">About</a><a href="https://jp.madebydavidmartin.com/" lang="ja">日本語</a><a class="nav-course" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair Course</a></nav><a class="course-btn" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener"><span class="cb-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span><span class="cb-tx"><b>Director&rsquo;s Chair</b><small>AI Enablement Course</small></span></a></div></header>
 <main class="fg" id="main">
 
@@ -269,4 +285,13 @@
     </div>
   </section>
 </main>
-<footer class="foot" id="contact"><div class="wrap foot-in"><div class="foot-brand"><a class="mark foot-logo" href="./"><img src="/img/logo-madebydavidmartin-wordmark-dark.png" alt="madebydavidmartin" width="2327" height="370"></a></div><div class="foot-cta"><h2>Thanks for visiting.</h2><p>If something here is useful to you or your team, I would be glad to hear about it.</p><div class="btns"><a class="btn btn-light" href="mailto:david.angus.martin@gmail.com">Email me</a><a class="btn btn-ghost" href="https://www.linkedin.com/in/david-martin-7a246522" target="_blank" rel="noopener">Connect on LinkedIn</a></div></div><nav class="foot-nav" aria-label="Footer"><a href="./" >Home</a><a href="work.html">Work</a><a href="video.html">Video</a><a href="method.html">Method</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="occupied.html">OCCUPIED</a><a href="orivex.html">ORIVEX</a><a href="flamingo.html" aria-current="page">FlaminGo</a><a href="solentei.html">SOLENTEI 369</a><a href="fizzypop.html">Fizzy Pop!</a><a href="djc.html">DJC</a><a href="https://jp.madebydavidmartin.com/" lang="ja">日本語</a><a href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair course</a></nav><p class="foot-fine">This is a personal portfolio. &copy; 2026 David Martin.</p></div></footer><script src="script.js?v=c1004"></script></body></html>
+<footer class="fg-foot">
+  <div class="fg-wrap">
+    <img class="fg-lockup" src="img/flamingo/logo-stacked.png" alt="flaminGO Mobile" loading="lazy">
+    <h2>Thanks for visiting.</h2>
+    <p>If something here is useful to you or your team, I would be glad to hear about it.</p>
+    <div class="fg-foot-btns"><a class="b1" href="mailto:david.angus.martin@gmail.com">Email me</a><a class="b2" href="https://www.linkedin.com/in/david-martin-7a246522" target="_blank" rel="noopener">Connect on LinkedIn</a></div>
+    <nav class="fg-foot-nav" aria-label="Footer"><a href="./">Home</a><a href="work.html">Work</a><a href="method.html">Method</a><a href="video.html">Video</a><a href="flamingo.html" aria-current="page">FlaminGo</a><a href="solentei.html">SOLENTEI 369</a><a href="occupied.html">OCCUPIED</a><a href="orivex.html">ORIVEX</a><a href="fizzypop.html">Fizzy Pop!</a><a href="djc.html">DJC</a><a href="about.html">About</a><a href="https://jp.madebydavidmartin.com/" lang="ja">&#26085;&#26412;&#35486;</a><a href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair course</a></nav>
+    <p class="fg-ff">This is a personal portfolio. flaminGO Mobile is a fictional carrier. &copy; 2026 David Martin.</p>
+  </div>
+</footer><script src="script.js?v=c1004"></script></body></html>
