@@ -7,15 +7,8 @@
 .fg a{color:var(--pink)}
 .fg-wrap{max-width:1180px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
 /* Carrier chrome bar */
-.fg-carrier{position:sticky;top:0;z-index:30;background:rgba(255,244,248,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--fgline)}
-.fg-carrier-in{display:flex;align-items:center;gap:26px;max-width:1180px;margin:0 auto;padding:10px clamp(16px,4vw,40px)}
-.fg-carrier img{height:34px;width:auto;display:block}
-.fg-cnav{display:flex;gap:22px;margin-left:auto;font-weight:600;font-size:15px}
-.fg-cnav a{color:var(--plum);text-decoration:none}
-.fg-cnav a:hover{color:var(--pink)}
 .fg-cta{background:var(--pink);color:#fff!important;padding:9px 20px;border-radius:999px;font-weight:700}
 .fg-cta:hover{background:var(--plum)}
-@media(max-width:760px){.fg-cnav a:not(.fg-cta){display:none}}
 /* Hero */
 .fg-hero{background:linear-gradient(180deg,var(--blush) 0%,#FFE3EE 78%,#FFD9E8 100%);padding:clamp(28px,5vw,56px) 0 0;overflow:hidden}
 .fg-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(20px,4vw,48px);align-items:center}
@@ -29,10 +22,8 @@
 .fg-price span{font-size:14px;line-height:1.35}
 .fg-hero figure{margin:0}
 .fg-hero figure img{width:100%;height:auto;display:block;border-radius:22px;box-shadow:0 24px 60px rgba(59,20,49,.18)}
+.fg-hero figure video{width:100%;height:auto;display:block;border-radius:22px;box-shadow:0 24px 60px rgba(59,20,49,.18);background:#3B1431}
 .fg-hero figcaption{font-size:13px;color:#8A5B76;padding:10px 4px 0}
-.fg-player{background:var(--plum);padding:clamp(22px,4vw,44px) 0}
-.fg-player video{width:100%;height:auto;display:block;border-radius:18px;background:#000}
-.fg-player .fg-cap{color:#F9CFE0;font-size:14px;margin:12px 2px 0}
 .fg-stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 .fg-stat{background:#fff;border:1px solid var(--fgline);border-radius:14px;padding:10px 16px;font-size:14px}
 .fg-stat b{font-family:'Fredoka',sans-serif;color:var(--pink);font-size:17px;margin-right:6px}
@@ -93,20 +84,20 @@
  .fg-plan,.fg-ref,.fg-shot,.fg-price,.fg-stat,.fg-pill{background-color:#fff;color:#3B1431}
  .fg-plan p,.fg-shot p{color:#3B1431}
 }
+/* Production guide card (added 2026-11-07, same pattern as the other film pages) */
+.fg-pg{padding:clamp(30px,4.5vw,52px) 0 0}
+.fg-pgcard{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;border:1px solid var(--fgline);border-radius:18px;padding:clamp(24px,3.4vw,38px);background:linear-gradient(120deg,#fff, #FFF4F8)}
+.fg-pgtext{max-width:640px;flex:1 1 340px}
+.fg-pgkicker{font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);margin:0 0 10px}
+.fg-pgcard h2{font-size:clamp(25px,3.2vw,36px);line-height:1.15;margin:0 0 10px}
+.fg-pgcard h2 a{color:inherit;text-decoration:none}
+.fg-pgcard h2 a:hover{text-decoration:underline}
+.fg-pgdesc{margin:0;font-size:16px;line-height:1.6}
+.fg-pgbtn{flex-shrink:0;background:var(--pink);color:#fff;font-weight:700;padding:13px 22px;border-radius:999px;text-decoration:none}
+.fg-pgbtn:hover{background:#d12f7a}
+@media(max-width:640px){.fg-pgcard{flex-direction:column;align-items:flex-start}}
 </style></head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="head-in"><a class="mark mark-logo" href="./" aria-label="madebydavidmartin, home"><img src="/img/logo-madebydavidmartin-portfolio.png" alt="madebydavidmartin portfolio" width="505" height="99"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span></span>Menu</button><nav class="nav" id="site-nav" aria-label="Main"><a href="work.html">Work</a><a href="method.html">Method</a><span class="dd"><a class="dd-btn" href="video.html" aria-haspopup="true" aria-expanded="false">Video<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><span class="dd-menu"><a href="video.html">My Process</a><a href="flamingo.html" aria-current="page">FlaminGo</a><a href="solentei.html">SOLENTEI 369</a><a href="occupied.html">OCCUPIED</a><a href="orivex.html">ORIVEX ARC-7</a><a href="fizzypop.html">Fizzy Pop</a><a href="djc.html">DJC Media</a></span></span><a href="about.html">About</a><a href="https://jp.madebydavidmartin.com/" lang="ja">日本語</a><a class="nav-course" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair Course</a></nav><a class="course-btn" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener"><span class="cb-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span><span class="cb-tx"><b>Director&rsquo;s Chair</b><small>AI Enablement Course</small></span></a></div></header>
 <main class="fg" id="main">
-  <div class="fg-carrier">
-    <div class="fg-carrier-in">
-      <img src="img/flamingo/logo-badge.png" alt="flaminGO" width="312" height="110">
-      <nav class="fg-cnav" aria-label="flaminGO Mobile (fictional)">
-        <a href="#plans">Plans</a>
-        <a href="#film">The film</a>
-        <a href="#frankie">Meet Frankie</a>
-        <a href="#build">How it was made</a>
-        <a class="fg-cta" href="#film">Switch to pink</a>
-      </nav>
-    </div>
-  </div>
 
   <section class="fg-hero">
     <div class="fg-wrap fg-hero-grid">
@@ -123,17 +114,24 @@
           <span class="fg-stat"><b>-16</b>LUFS mix</span>
         </div>
       </div>
-      <figure>
-        <img src="img/flamingo/kv-16x9.jpg" alt="Frankie the flamingo balancing on top of a smartphone against a pink studio backdrop" width="1376" height="768">
-        <figcaption>The key visual: Frankie, phone-sized, on top of the phone. Built from the same references as the film.</figcaption>
+      <figure id="film">
+        <video controls playsinline preload="none" poster="img/flamingo/poster.jpg" aria-label="flaminGO Mobile, Big-Carrier Bill, a 35-second spec commercial by David Martin"><source src="video/flamingo.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/flamingo.mp4">Download the MP4</a>.</video>
+        <figcaption>The film itself: &ldquo;Big-Carrier Bill,&rdquo; 34.7 seconds, 1920&times;1080, 24 fps. Spec ad. flaminGO Mobile is a fictional brand. Plans, prices and coverage shown are for illustration only.</figcaption>
       </figure>
     </div>
   </section>
 
-  <section class="fg-player" id="film">
+
+  <section class="fg-pg" id="production-guide">
     <div class="fg-wrap">
-      <video controls playsinline preload="none" poster="img/flamingo/poster.jpg" aria-label="flaminGO Mobile, Big-Carrier Bill, a 35-second spec commercial by David Martin"><source src="video/flamingo.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/flamingo.mp4">Download the MP4</a>.</video>
-      <p class="fg-cap">flaminGO Mobile: &ldquo;Big-Carrier Bill.&rdquo; 34.7 seconds, 1920&times;1080, 24 fps. Spec ad. flaminGO Mobile is a fictional brand. Plans, prices and coverage shown are for illustration only.</p>
+      <div class="fg-pgcard">
+        <div class="fg-pgtext">
+          <p class="fg-pgkicker">The Production Guide</p>
+          <h2><a href="guides/flamingo-production-guide.html" target="_blank" rel="noopener">Read the complete production guide for flaminGO Mobile: Big-Carrier Bill.</a></h2>
+          <p class="fg-pgdesc">Concept and brand, the seven locked references, all ten shots with their lines, the voice conversion method, music, graphics, the five cuts and deliverables, documented in full. The guide opens in a new tab.</p>
+        </div>
+        <a class="fg-pgbtn" href="guides/flamingo-production-guide.html" target="_blank" rel="noopener">View Production Guide &#8599;</a>
+      </div>
     </div>
   </section>
 
