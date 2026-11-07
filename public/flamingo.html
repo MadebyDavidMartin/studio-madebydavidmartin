@@ -10,9 +10,12 @@
 .fg-cta{background:var(--pink);color:#fff!important;padding:9px 20px;border-radius:999px;font-weight:700}
 .fg-cta:hover{background:var(--plum)}
 /* Hero */
-.fg-hero{position:relative;background:linear-gradient(180deg,rgba(255,244,248,.9) 0%,rgba(255,227,238,.82) 55%,rgba(255,217,232,.9) 100%),url("img/flamingo/kv-16x9.jpg") center 30%/cover no-repeat var(--blush);padding:clamp(52px,7vw,96px) 0 clamp(56px,6.5vw,88px);overflow:hidden}
-.fg-hero .fg-wrap{position:relative;z-index:1}
-.fg-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(20px,4vw,48px);align-items:center}
+.fg-hero{position:relative;background:var(--blush);padding:clamp(52px,7vw,96px) 0 clamp(56px,6.5vw,88px);overflow:hidden}
+.fg-hero-bg{position:absolute;z-index:0;width:145%;max-width:none;height:auto;left:-24%;top:50%;transform:translateY(-52%);opacity:.5;pointer-events:none}
+.fg-hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(255,244,248,.62) 0%,rgba(255,227,238,.5) 55%,rgba(255,217,232,.72) 100%)}
+.fg-hero .fg-wrap{max-width:none;width:100%;padding-inline:clamp(16px,4vw,52px)}
+.fg-hero .fg-wrap{position:relative;z-index:2}
+.fg-hero-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.45fr);gap:clamp(20px,4vw,48px);align-items:center}
 @media(max-width:860px){.fg-hero-grid{grid-template-columns:1fr}}
 .fg-hero .fg-kicker{display:inline-block;background:#fff;color:var(--pink);border:1px solid var(--fgline);border-radius:999px;padding:6px 14px;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
 .fg-hero h1{font-size:clamp(44px,6vw,76px);line-height:1.02;margin:16px 0 14px;font-weight:700}
@@ -116,23 +119,17 @@
 <main class="fg" id="main">
 
   <section class="fg-hero">
+    <img class="fg-hero-bg" src="img/flamingo/kv-16x9.jpg" alt="" aria-hidden="true">
     <div class="fg-wrap fg-hero-grid">
       <div>
         <span class="fg-kicker">Spec commercial &middot; Fictional carrier</span>
         <h1>Big-carrier bill?<br><span class="fg-pink">Switch to pink.</span></h1>
         <p>flaminGO Mobile is a carrier that does not exist, and this is its launch site, built the way a real carrier would build it. The difference: everything on this page is also the case study for the 35-second spec commercial that introduced it, directed end to end by David Martin and made with AI.</p>
         <div class="fg-price"><b>$25/mo*</b><span>Plans from twenty-five bucks a month.<br>No contracts. No hidden fees.</span></div>
-        <div class="fg-stats">
-          <span class="fg-stat"><b>34.7s</b>final cut</span>
-          <span class="fg-stat"><b>10</b>shots</span>
-          <span class="fg-stat"><b>7</b>master references</span>
-          <span class="fg-stat"><b>5</b>cuts, v1 to v5</span>
-          <span class="fg-stat"><b>-16</b>LUFS mix</span>
-        </div>
       </div>
       <figure id="film">
         <video controls playsinline preload="none" poster="img/flamingo/poster.jpg" aria-label="flaminGO Mobile, Big-Carrier Bill, a 35-second spec commercial by David Martin"><source src="video/flamingo.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/flamingo.mp4">Download the MP4</a>.</video>
-        <figcaption>The film itself: &ldquo;Big-Carrier Bill,&rdquo; 34.7 seconds, 1920&times;1080, 24 fps. Spec ad. flaminGO Mobile is a fictional brand. Plans, prices and coverage shown are for illustration only.</figcaption>
+        
       </figure>
     </div>
   </section>
