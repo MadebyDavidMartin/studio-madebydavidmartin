@@ -1,0 +1,274 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>flaminGO Mobile: Big-Carrier Bill, a spec commercial by David Martin | David Martin, Creative Professional</title><meta name="description" content="Big-Carrier Bill, a 35-second spec commercial for flaminGO Mobile, a fictional carrier. A phone-sized flamingo, a very long bill, and a carrier site built as the case study. Directed end to end by David Martin, made with AI."><link rel="canonical" href="https://studio.madebydavidmartin.com/flamingo"><meta name="theme-color" content="#FFF4F8"><meta name="author" content="David Martin"><meta property="og:type" content="website"><meta property="og:site_name" content="David Martin, Creative Professional"><meta property="og:title" content="flaminGO Mobile: Big-Carrier Bill, a spec commercial by David Martin"><meta property="og:description" content="Switch to pink. A 35-second carrier commercial for a carrier that does not exist, directed end to end, made with AI."><meta property="og:url" content="https://studio.madebydavidmartin.com/flamingo"><meta property="og:image" content="https://studio.madebydavidmartin.com/img/flamingo/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://studio.madebydavidmartin.com/img/flamingo/og.jpg"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="icon" href="favicon.ico" sizes="any"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Figtree:wght@400;500;600;700&display=swap"><link rel="stylesheet" href="styles.css?v=c1032"><style>
+/* flaminGO page. Loaded after styles.css so it takes priority on this page.
+   The page is a working mock-up of the fictional carrier's own site, in the
+   brand's blush and plum, so it stays light in both colour schemes. */
+.fg{--pink:#EC3D8C;--plum:#3B1431;--lpink:#F5A3C8;--blush:#FFF4F8;--coral:#FF8FA8;--fgline:#F3D3E0;color:var(--plum);color-scheme:light;font-family:'Figtree',system-ui,sans-serif}
+.fg h1,.fg h2,.fg h3,.fg .fg-display{font-family:'Fredoka','Figtree',sans-serif}
+.fg a{color:var(--pink)}
+.fg-wrap{max-width:1180px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+/* Carrier chrome bar */
+.fg-carrier{position:sticky;top:0;z-index:30;background:rgba(255,244,248,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--fgline)}
+.fg-carrier-in{display:flex;align-items:center;gap:26px;max-width:1180px;margin:0 auto;padding:10px clamp(16px,4vw,40px)}
+.fg-carrier img{height:34px;width:auto;display:block}
+.fg-cnav{display:flex;gap:22px;margin-left:auto;font-weight:600;font-size:15px}
+.fg-cnav a{color:var(--plum);text-decoration:none}
+.fg-cnav a:hover{color:var(--pink)}
+.fg-cta{background:var(--pink);color:#fff!important;padding:9px 20px;border-radius:999px;font-weight:700}
+.fg-cta:hover{background:var(--plum)}
+@media(max-width:760px){.fg-cnav a:not(.fg-cta){display:none}}
+/* Hero */
+.fg-hero{background:linear-gradient(180deg,var(--blush) 0%,#FFE3EE 78%,#FFD9E8 100%);padding:clamp(28px,5vw,56px) 0 0;overflow:hidden}
+.fg-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(20px,4vw,48px);align-items:center}
+@media(max-width:860px){.fg-hero-grid{grid-template-columns:1fr}}
+.fg-hero .fg-kicker{display:inline-block;background:#fff;color:var(--pink);border:1px solid var(--fgline);border-radius:999px;padding:6px 14px;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.fg-hero h1{font-size:clamp(38px,5.4vw,64px);line-height:1.02;margin:16px 0 14px;font-weight:700}
+.fg-hero h1 .fg-pink{color:var(--pink)}
+.fg-hero p{font-size:clamp(16px,1.6vw,19px);line-height:1.55;max-width:52ch;margin:0 0 20px}
+.fg-price{display:inline-flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--fgline);border-radius:18px;padding:12px 18px;box-shadow:0 10px 30px rgba(59,20,49,.08)}
+.fg-price b{font-family:'Fredoka',sans-serif;font-size:30px;color:var(--pink)}
+.fg-price span{font-size:14px;line-height:1.35}
+.fg-hero figure{margin:0}
+.fg-hero figure img{width:100%;height:auto;display:block;border-radius:22px;box-shadow:0 24px 60px rgba(59,20,49,.18)}
+.fg-hero figcaption{font-size:13px;color:#8A5B76;padding:10px 4px 0}
+.fg-player{background:var(--plum);padding:clamp(22px,4vw,44px) 0}
+.fg-player video{width:100%;height:auto;display:block;border-radius:18px;background:#000}
+.fg-player .fg-cap{color:#F9CFE0;font-size:14px;margin:12px 2px 0}
+.fg-stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.fg-stat{background:#fff;border:1px solid var(--fgline);border-radius:14px;padding:10px 16px;font-size:14px}
+.fg-stat b{font-family:'Fredoka',sans-serif;color:var(--pink);font-size:17px;margin-right:6px}
+/* Sections */
+.fg-sec{padding:clamp(38px,6vw,72px) 0}
+.fg-sec.alt{background:var(--blush)}
+.fg-sec h2{font-size:clamp(28px,3.6vw,42px);line-height:1.08;margin:8px 0 14px;font-weight:700}
+.fg-sec .fg-lede{font-size:clamp(16px,1.5vw,18px);line-height:1.6;max-width:68ch}
+.fg-eyebrow{color:var(--pink);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px}
+.fg-plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:26px}
+.fg-plan{background:#fff;border:1px solid var(--fgline);border-radius:20px;padding:22px;box-shadow:0 8px 24px rgba(59,20,49,.05)}
+.fg-plan .fg-ic{width:42px;height:42px;border-radius:50%;background:var(--pink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Fredoka',sans-serif;font-weight:700;font-size:19px;margin-bottom:12px}
+.fg-plan h3{margin:0 0 8px;font-size:19px}
+.fg-plan p{margin:0;font-size:15px;line-height:1.55}
+.fg-plan.hero-plan{background:var(--plum);color:#fff;border-color:var(--plum)}
+.fg-plan.hero-plan p{color:#F9CFE0}
+.fg-plan.hero-plan .fg-big{font-family:'Fredoka',sans-serif;font-size:40px;color:var(--lpink);line-height:1}
+.fg-fine{font-size:13px;color:#8A5B76;margin-top:18px}
+.fg-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,44px);align-items:start}
+@media(max-width:860px){.fg-two{grid-template-columns:1fr}}
+.fg-two figure{margin:0}
+.fg-two figure img,.fg-fig img{width:100%;height:auto;display:block;border-radius:18px}
+.fg-two figcaption,.fg-fig figcaption{font-size:13px;color:#8A5B76;padding:9px 2px 0}
+.fg-fig{margin:22px 0 0}
+.fg-pill{display:inline-block;background:#fff;border:1px solid var(--fgline);border-radius:999px;padding:8px 16px;font-weight:600;font-size:15px;margin:0 8px 8px 0;box-shadow:0 4px 14px rgba(59,20,49,.05)}
+.fg-pill i{font-style:normal;color:var(--pink);margin-right:7px}
+.fg-refs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:24px}
+.fg-ref{background:#fff;border:1px solid var(--fgline);border-radius:16px;overflow:hidden}
+.fg-ref img{width:100%;height:auto;display:block}
+.fg-ref div{padding:12px 14px}
+.fg-ref b{font-family:'Fredoka',sans-serif;font-size:15px}
+.fg-ref p{margin:4px 0 0;font-size:13.5px;line-height:1.5;color:#6E4459}
+.fg-shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:26px}
+.fg-shot{background:#fff;border:1px solid var(--fgline);border-radius:18px;overflow:hidden;box-shadow:0 8px 24px rgba(59,20,49,.05)}
+.fg-shot img{width:100%;height:auto;display:block}
+.fg-shot div{padding:16px 18px 18px}
+.fg-shot .fg-snum{color:var(--pink);font-weight:700;font-size:12.5px;letter-spacing:.07em;text-transform:uppercase}
+.fg-shot h3{margin:5px 0 7px;font-size:19px}
+.fg-shot p{margin:0;font-size:14.5px;line-height:1.55}
+.fg-shot .fg-line{margin-top:9px;font-weight:600;color:var(--plum)}
+.fg-shot .fg-line span{color:var(--pink)}
+.fg-swatches{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.fg-sw{border-radius:14px;padding:14px 16px;font-size:13.5px;font-weight:600;min-width:140px;border:1px solid var(--fgline)}
+.fg-table{width:100%;border-collapse:collapse;margin-top:22px;font-size:15px;background:#fff;border-radius:16px;overflow:hidden}
+.fg-table th,.fg-table td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--fgline);vertical-align:top;line-height:1.5}
+.fg-table th{font-family:'Fredoka',sans-serif;font-weight:600;background:var(--blush);width:200px}
+.fg-table tr:last-child th,.fg-table tr:last-child td{border-bottom:0}
+@media(max-width:640px){.fg-table th{width:120px}}
+.fg-endcard{background:var(--plum);color:#fff;border-radius:24px;padding:clamp(24px,4vw,44px);display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(20px,4vw,40px);align-items:center}
+@media(max-width:860px){.fg-endcard{grid-template-columns:1fr}}
+.fg-endcard img{width:100%;height:auto;display:block;border-radius:16px}
+.fg-endcard h2{color:#fff;margin-top:0}
+.fg-endcard p{color:#F9CFE0;line-height:1.6}
+.fg-endcard .fg-fine{color:#D9A8C0}
+@media (prefers-color-scheme:dark){
+ .fg{--pink:#EC3D8C;--plum:#3B1431;--lpink:#F5A3C8;--blush:#FFF4F8;--fgline:#F3D3E0;color:#3B1431;color-scheme:light}
+ .fg-sec,.fg-hero{background-color:#FFF4F8}
+ .fg-plan,.fg-ref,.fg-shot,.fg-price,.fg-stat,.fg-pill{background-color:#fff;color:#3B1431}
+ .fg-plan p,.fg-shot p{color:#3B1431}
+}
+</style></head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="head-in"><a class="mark mark-logo" href="./" aria-label="madebydavidmartin, home"><img src="/img/logo-madebydavidmartin-portfolio.png" alt="madebydavidmartin portfolio" width="505" height="99"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span></span>Menu</button><nav class="nav" id="site-nav" aria-label="Main"><a href="work.html">Work</a><a href="method.html">Method</a><span class="dd"><a class="dd-btn" href="video.html" aria-haspopup="true" aria-expanded="false">Video<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><span class="dd-menu"><a href="video.html">My Process</a><a href="flamingo.html" aria-current="page">FlaminGo</a><a href="solentei.html">SOLENTEI 369</a><a href="occupied.html">OCCUPIED</a><a href="orivex.html">ORIVEX ARC-7</a><a href="fizzypop.html">Fizzy Pop</a><a href="djc.html">DJC Media</a></span></span><a href="about.html">About</a><a href="https://jp.madebydavidmartin.com/" lang="ja">日本語</a><a class="nav-course" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair Course</a></nav><a class="course-btn" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener"><span class="cb-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span><span class="cb-tx"><b>Director&rsquo;s Chair</b><small>AI Enablement Course</small></span></a></div></header>
+<main class="fg" id="main">
+  <div class="fg-carrier">
+    <div class="fg-carrier-in">
+      <img src="img/flamingo/logo-badge.png" alt="flaminGO" width="312" height="110">
+      <nav class="fg-cnav" aria-label="flaminGO Mobile (fictional)">
+        <a href="#plans">Plans</a>
+        <a href="#film">The film</a>
+        <a href="#frankie">Meet Frankie</a>
+        <a href="#build">How it was made</a>
+        <a class="fg-cta" href="#film">Switch to pink</a>
+      </nav>
+    </div>
+  </div>
+
+  <section class="fg-hero">
+    <div class="fg-wrap fg-hero-grid">
+      <div>
+        <span class="fg-kicker">Spec commercial &middot; Fictional carrier</span>
+        <h1>Big-carrier bill?<br><span class="fg-pink">Switch to pink.</span></h1>
+        <p>flaminGO Mobile is a carrier that does not exist, and this is its launch site, built the way a real carrier would build it. The difference: everything on this page is also the case study for the 35-second spec commercial that introduced it, directed end to end by David Martin and made with AI.</p>
+        <div class="fg-price"><b>$25/mo*</b><span>Plans from twenty-five bucks a month.<br>No contracts. No hidden fees.</span></div>
+        <div class="fg-stats">
+          <span class="fg-stat"><b>34.7s</b>final cut</span>
+          <span class="fg-stat"><b>10</b>shots</span>
+          <span class="fg-stat"><b>7</b>master references</span>
+          <span class="fg-stat"><b>5</b>cuts, v1 to v5</span>
+          <span class="fg-stat"><b>-16</b>LUFS mix</span>
+        </div>
+      </div>
+      <figure>
+        <img src="img/flamingo/kv-16x9.jpg" alt="Frankie the flamingo balancing on top of a smartphone against a pink studio backdrop" width="1376" height="768">
+        <figcaption>The key visual: Frankie, phone-sized, on top of the phone. Built from the same references as the film.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="fg-player" id="film">
+    <div class="fg-wrap">
+      <video controls playsinline preload="none" poster="img/flamingo/poster.jpg" aria-label="flaminGO Mobile, Big-Carrier Bill, a 35-second spec commercial by David Martin"><source src="video/flamingo.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/flamingo.mp4">Download the MP4</a>.</video>
+      <p class="fg-cap">flaminGO Mobile: &ldquo;Big-Carrier Bill.&rdquo; 34.7 seconds, 1920&times;1080, 24 fps. Spec ad. flaminGO Mobile is a fictional brand. Plans, prices and coverage shown are for illustration only.</p>
+    </div>
+  </section>
+
+  <section class="fg-sec" id="plans">
+    <div class="fg-wrap">
+      <span class="fg-eyebrow">Plans &amp; pricing*</span>
+      <h2>Everything Frankie promises, he promises on camera.</h2>
+      <p class="fg-lede">A carrier page lives or dies on its plan cards, so here they are, exactly as pitched in the film. Every claim below is spoken by Frankie, shown as a caption, or both. That was the rule in production too: if it is claimed, it is on screen.</p>
+      <div class="fg-plans">
+        <article class="fg-plan hero-plan"><div class="fg-big">$25</div><h3>Plans from $25/mo*</h3><p>The price badge spins in at the balance act and again on the packshot. It is the only number in the spot, so it had to be the biggest thing on the page too.</p></article>
+        <article class="fg-plan"><div class="fg-ic">&#10003;</div><h3>No contracts</h3><p>Caption one of the stacked pair that lands while Frankie balances on the rim of a coffee mug.</p></article>
+        <article class="fg-plan"><div class="fg-ic">&#10003;</div><h3>No hidden fees</h3><p>Caption two. The joke of the film is a phone bill long enough to build a nest out of; the offer is the opposite of that bill.</p></article>
+        <article class="fg-plan"><div class="fg-ic">&#8596;</div><h3>Unlimited talk, text &amp; data</h3><p>Three signal bars pop onto the phone screen one by one as Frankie says it, with three soft pops in the mix.</p></article>
+        <article class="fg-plan"><div class="fg-ic">&#9673;</div><h3>Coast-to-coast coverage</h3><p>&ldquo;Same coast-to-coast coverage as the big guys,&rdquo; delivered standing on top of the bill itself.</p></article>
+        <article class="fg-plan"><div class="fg-ic">&#8646;</div><h3>Keep your number. Keep your phone.</h3><p>The switch pitch, delivered from Marcus&rsquo;s shoulder, at his eye level, like a friend letting him in on something.</p></article>
+      </div>
+      <p class="fg-fine">*Spec ad. flaminGO Mobile is a fictional brand. Plans, prices and coverage shown are for illustration only.</p>
+    </div>
+  </section>
+
+  <section class="fg-sec alt">
+    <div class="fg-wrap fg-two">
+      <div>
+        <span class="fg-eyebrow">The story</span>
+        <h2>One long bill, one small flamingo.</h2>
+        <p class="fg-lede">Marcus winces at a phone bill so long it spills across the table: &ldquo;Oof. That&rsquo;s a big-carrier bill.&rdquo; Standing on one leg beside his coffee mug is Frankie, a flamingo about the height of the mug, who has opinions about that bill.</p>
+        <p class="fg-lede">Frankie makes the whole pitch from the furniture: balancing on the bill, pointing at the phone, standing on the rim of the mug, riding on Marcus&rsquo;s shoulder for the switch line. Then the button. Marcus finds Frankie settled into a nest woven from the old bill itself. &ldquo;Is that&hellip; my old bill?&rdquo; &ldquo;Finally good for something.&rdquo;</p>
+        <p class="fg-lede">Packshot, an announcer, and Frankie&rsquo;s closer: &ldquo;Switch to pink.&rdquo; End card, with the sung jingle: &ldquo;Let&rsquo;s go, flaminGO!&rdquo;</p>
+      </div>
+      <figure>
+        <img src="img/flamingo/still-nest-2.jpg" alt="Frankie sitting in a nest woven from a long paper phone bill while Marcus laughs" width="1600" height="900" loading="lazy">
+        <figcaption>The button, at 26.5 seconds: the big-carrier bill, finally good for something.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="fg-sec" id="frankie">
+    <div class="fg-wrap">
+      <span class="fg-eyebrow">Meet Frankie</span>
+      <h2>A mascot is a consistency problem.</h2>
+      <p class="fg-lede">Frankie had to be the same bird, at the same size, in a photoreal kitchen and a pink studio, standing next to a mug, a phone and a man, ten shots in a row. The system that held him together was built before any shot was: seven master references, approved in order, and a rule that the references win. Shot prompts name what each attached image is and describe only the shot; they never re-describe Frankie in words, because text competes with the picture.</p>
+      <p style="margin-top:18px">
+        <span class="fg-pill"><i>R3</i>The size lock: Frankie a little taller than the mug, a little shorter than the phone, attached to every Frankie shot</span>
+        <span class="fg-pill"><i>3 max</i>ingredients per shot, never more</span>
+        <span class="fg-pill"><i>Edit</i>Small faults fixed with an edit prompt, never a regenerate</span>
+      </p>
+      <div class="fg-refs">
+        <article class="fg-ref"><img src="img/flamingo/r1-frankie.jpg" alt="Frankie full body reference" width="1200" height="669" loading="lazy"><div><b>R1 &middot; Frankie, full body</b><p>The character lock. Coral pink, not magenta, cream beak with a charcoal tip, one leg tucked.</p></div></article>
+        <article class="fg-ref"><img src="img/flamingo/r2-frankie-face.jpg" alt="Frankie face close-up reference" width="1200" height="669" loading="lazy"><div><b>R2 &middot; Frankie, face</b><p>Same face, eye colour and beak as R1, close enough to check the expression work.</p></div></article>
+        <article class="fg-ref"><img src="img/flamingo/r3-frankie-scale.jpg" alt="Frankie standing between a coffee mug and a smartphone, at his exact size" width="1200" height="669" loading="lazy"><div><b>R3 &middot; The size reference</b><p>Frankie between the mug and the phone. Every shot&rsquo;s scale comes from this one image.</p></div></article>
+        <article class="fg-ref"><img src="img/flamingo/r4-marcus.jpg" alt="Marcus portrait reference" width="1200" height="669" loading="lazy"><div><b>R4 &middot; Marcus, portrait</b><p>Early thirties, mustard sweater over a white tee. Attached to every shot he is in.</p></div></article>
+        <article class="fg-ref"><img src="img/flamingo/r5-marcus-full.jpg" alt="Marcus full body reference" width="1200" height="669" loading="lazy"><div><b>R5 &middot; Marcus, full body</b><p>Same face as R4, for the wide shots.</p></div></article>
+        <article class="fg-ref"><img src="img/flamingo/r6-kitchen.jpg" alt="The kitchen set reference" width="1200" height="669" loading="lazy"><div><b>R6 &middot; The kitchen</b><p>Window on the left in every kitchen shot. No pink in the room; pink arrives with Frankie.</p></div></article>
+        <article class="fg-ref"><img src="img/flamingo/r7-studio.jpg" alt="The pink studio and phone reference" width="1200" height="669" loading="lazy"><div><b>R7 &middot; The studio</b><p>Warm coral backdrop and the white phone, screen a plain blush glow, ready for the logo to be placed in the edit.</p></div></article>
+        <article class="fg-ref"><img src="img/flamingo/kv-4x5.jpg" alt="Key visual of Frankie balancing on a smartphone, vertical crop" width="1200" height="896" loading="lazy"><div><b>KV1 &middot; Key visual</b><p>Frankie on the phone, built from R3 and R7. The campaign image, in 16:9 and 4:5.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="fg-sec alt">
+    <div class="fg-wrap">
+      <span class="fg-eyebrow">The film, shot by shot</span>
+      <h2>Ten shots, one joke, told straight.</h2>
+      <p class="fg-lede">These are the approved start frames the clips were animated from. Each motion prompt described movement only, then the locks: Frankie keeps his size, shape and colours; Marcus keeps his face; one continuous, unbroken shot, no cuts.</p>
+      <div class="fg-shots">
+        <article class="fg-shot"><img src="img/flamingo/s01-big-bill.jpg" alt="Marcus holding up a very long paper phone bill" width="1376" height="768" loading="lazy"><div><span class="fg-snum">S01 &middot; The big bill</span><h3>The problem, at full length</h3><p>The bill unfolds into a concertina strip long enough to spill off the table. No Frankie yet; just the wince.</p><p class="fg-line"><span>Marcus (voice):</span> &ldquo;Oof. That&rsquo;s a big-carrier bill.&rdquo;</p></div></article>
+        <article class="fg-shot"><img src="img/flamingo/s02-frankie-appears.jpg" alt="Frankie standing on one leg on the kitchen table beside a mug" width="1376" height="768" loading="lazy"><div><span class="fg-snum">S02 &middot; Frankie appears</span><h3>Let the reveal land</h3><p>No graphics on this shot at all. A small wave, a tilt of the head, and the name tag arrives beside him.</p><p class="fg-line"><span>Frankie:</span> &ldquo;Hi! Frankie. From Flamingo.&rdquo;</p></div></article>
+        <article class="fg-shot"><img src="img/flamingo/s03-double-take.jpg" alt="Marcus doing a double take at Frankie across the table" width="1376" height="768" loading="lazy"><div><span class="fg-snum">S03 &middot; Double take</span><h3>Polite disbelief</h3><p>Shot past Frankie in soft focus, so the size joke reads in a single frame: tiny bird, full-size reaction.</p><p class="fg-line"><span>Marcus:</span> &ldquo;You&rsquo;re&hellip; a flamingo.&rdquo;</p></div></article>
+        <article class="fg-shot"><img src="img/flamingo/s04-the-pitch.jpg" alt="Frankie standing on the paper bill, wing swept out in a presenting gesture" width="1376" height="768" loading="lazy"><div><span class="fg-snum">S04 &middot; The pitch</span><h3>Standing on the evidence</h3><p>Frankie delivers the coverage line standing on top of the bill itself. The coast-to-coast caption stays clear of him, lower left.</p><p class="fg-line"><span>Frankie:</span> &ldquo;A small one. Big savings, though.&rdquo;</p></div></article>
+        <article class="fg-shot"><img src="img/flamingo/s05-unlimited.jpg" alt="Frankie beside the phone on the table, pointing at its pink screen" width="1376" height="768" loading="lazy"><div><span class="fg-snum">S05 &middot; Unlimited</span><h3>A locked-off camera, on purpose</h3><p>The camera does not move in this shot, so the three signal bars could be pinned to the phone screen in the edit, popping on one by one.</p><p class="fg-line"><span>Frankie:</span> &ldquo;Unlimited talk, text and data.&rdquo;</p></div></article>
+        <article class="fg-shot"><img src="img/flamingo/s06-balance-act.jpg" alt="Frankie balancing on the rim of a coffee mug, wings spread" width="1376" height="768" loading="lazy"><div><span class="fg-snum">S06 &middot; Balance act</span><h3>The hardest frame in the film</h3><p>Built by editing the approved S02 frame rather than generating fresh, so Frankie stays identical. Foot on top of the rim, toes curled over it, wings level.</p><p class="fg-line"><span>Frankie:</span> &ldquo;No contracts. No hidden fees. Plans from twenty-five bucks a month.&rdquo;</p></div></article>
+        <article class="fg-shot"><img src="img/flamingo/s07-shoulder-ride.jpg" alt="Frankie standing on Marcus&rsquo;s shoulder as Marcus looks at his phone" width="1376" height="768" loading="lazy"><div><span class="fg-snum">S07 &middot; Shoulder ride</span><h3>The switch, at eye level</h3><p>Frankie rides the shoulder and nods along with the phone. The phone screen stays turned away from camera.</p><p class="fg-line"><span>Frankie:</span> &ldquo;Switching&rsquo;s easy. Keep your number. Keep your phone.&rdquo;</p></div></article>
+        <article class="fg-shot"><img src="img/flamingo/s08b-the-nest.jpg" alt="Frankie sitting in a nest woven from the old paper bill" width="1376" height="768" loading="lazy"><div><span class="fg-snum">S08 &middot; The nest</span><h3>The button, built late</h3><p>This ending was written after the third cut, when the original closer was not landing. The premise pays off: the bill becomes the nest. It replaced the earlier shot outright.</p><p class="fg-line"><span>Marcus:</span> &ldquo;Is that&hellip; my old bill?&rdquo; <span>Frankie:</span> &ldquo;Finally good for something.&rdquo;</p></div></article>
+        <article class="fg-shot"><img src="img/flamingo/s09-packshot.jpg" alt="Frankie leaning against the upright phone in the pink studio" width="1376" height="768" loading="lazy"><div><span class="fg-snum">S09 &middot; Packshot</span><h3>The carrier moment</h3><p>Into the pink studio. The stacked logo is tracked onto the phone screen through the push-in, and the price badge sits in the empty left third.</p><p class="fg-line"><span>Announcer:</span> &ldquo;Flamingo Mobile.&rdquo;</p></div></article>
+        <article class="fg-shot"><img src="img/flamingo/s10-switch-to-pink.jpg" alt="Frankie in the pink studio tipping a wing to his brow" width="1376" height="768" loading="lazy"><div><span class="fg-snum">S10 &middot; Switch to pink</span><h3>Room for the end card</h3><p>Frankie holds the left third and salutes; the right two-thirds were composed empty so the end card could build beside him.</p><p class="fg-line"><span>Frankie:</span> &ldquo;Switch to pink.&rdquo;</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="fg-sec">
+    <div class="fg-wrap fg-two">
+      <div>
+        <span class="fg-eyebrow">Voice &amp; sound</span>
+        <h2>Keep the performance. Change only the voice.</h2>
+        <p class="fg-lede">The animation performances already had the right timing, with beaks and mouths moving on the right syllables. So the dialogue was extracted shot by shot, run through Speechify Studio Voice Changer into one consistent voice per character, and put back at its original timestamps. Timing never changed, so the sync held, measured at 0 ms offset on every line.</p>
+        <p class="fg-lede">Frankie is Speechify&rsquo;s Lindsey, with the accent on. The announcer is Julien. Two lines were re-recorded as text to speech late in the edit and time-fitted word by word onto the existing beak movement. The music is a Suno tropical-pop bed at 104 BPM, cut on bar lines and ducked under every line, plus a Suno sung jingle for the end card. Paper rustles, three soft pops for the signal bars, a ceramic tink as Frankie settles on the mug rim, and a twinkle on the wink. Mix at -16 LUFS.</p>
+      </div>
+      <figure>
+        <img src="img/flamingo/still-captions.jpg" alt="Frankie on the mug with the captions No contracts and No hidden fees" width="1600" height="900" loading="lazy">
+        <figcaption>From the final cut at 16.9 seconds: the stacked captions, the corner bug, and Frankie exactly where the captions are not.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="fg-sec alt" id="build">
+    <div class="fg-wrap">
+      <span class="fg-eyebrow">Graphics &amp; brand</span>
+      <h2>Built like a carrier, coloured like a flamingo.</h2>
+      <p class="fg-lede">The logo is David&rsquo;s artwork: the bird on one leg, &ldquo;flamin&rdquo; in plum, &ldquo;GO&rdquo; in pink, MOBILE in spaced capitals between two pink rules. Captions are white pills with a pink icon disc and plum text, set in Fredoka, with Figtree for labels and fine print. A wordmark bug sits in the bottom right corner through the film and leaves as the end card arrives. Supers never cover Frankie, a face, or the phone screen.</p>
+      <div class="fg-swatches">
+        <span class="fg-sw" style="background:#EC3D8C;color:#fff">flaminGO pink<br>#EC3D8C</span>
+        <span class="fg-sw" style="background:#3B1431;color:#fff">Plum<br>#3B1431</span>
+        <span class="fg-sw" style="background:#F5A3C8;color:#3B1431">Light pink<br>#F5A3C8</span>
+        <span class="fg-sw" style="background:#FFF4F8;color:#3B1431">Blush<br>#FFF4F8</span>
+        <span class="fg-sw" style="background:#FF8FA8;color:#3B1431">Frankie coral<br>his feathers, warm, never magenta</span>
+      </div>
+      <figure class="fg-fig">
+        <img src="img/flamingo/still-endcard.jpg" alt="The end card: Frankie beside the flaminGO Mobile logo and the line Let&rsquo;s go, flaminGO" width="1600" height="900" loading="lazy">
+        <figcaption>The end card at 33.8 seconds, on the logo&rsquo;s own blush, with the required fine print doing its job.</figcaption>
+      </figure>
+
+      <table class="fg-table">
+        <tr><th>Stills</th><td>Nano Banana Pro in Google Flow, 2K, 16:9. References approved first; small faults fixed with single-change edit prompts.</td></tr>
+        <tr><th>Motion</th><td>Omni Flash 1.1 in Google Flow, frames to video, 6 to 8 second clips, one continuous shot per take.</td></tr>
+        <tr><th>Voices</th><td>Flow&rsquo;s own dialogue performances, converted in Speechify Studio Voice Changer and replaced at their original timestamps; new lines by Speechify text to speech, fitted to the mouths.</td></tr>
+        <tr><th>Music</th><td>Suno: tropical-pop bed, C major, 104 BPM, plus the sung &ldquo;Let&rsquo;s go, flaminGO!&rdquo; jingle on the end card.</td></tr>
+        <tr><th>Graphics</th><td>Name tag, pill captions, signal bars pinned to the screen, price badge, corner bug, tracked screen logo, end card. Built as overlays in the edit.</td></tr>
+        <tr><th>Edit</th><td>Five cuts. v5 runs 34.7 seconds: a re-voiced opening line, the nest ending in place of the original closer, and the price badge timed to clear before the final cut.</td></tr>
+        <tr><th>Direction</th><td>Concept, direction and production by David Martin, made with AI. Logo supplied by David Martin.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="fg-sec">
+    <div class="fg-wrap">
+      <div class="fg-endcard">
+        <div>
+          <span class="fg-eyebrow" style="color:#F5A3C8">Why a fake carrier gets a real site</span>
+          <h2>The page is part of the proof.</h2>
+          <p>A spec spot shows the film. This page shows the system around the film: a brand, a mascot that holds together, a graphics package, a voice pipeline, and a storefront that could go live tomorrow. That is the whole job of a creative director on a launch like this, done end to end.</p>
+          <p class="fg-fine">Spec ad. flaminGO Mobile is a fictional brand. Plans, prices and coverage shown are for illustration only.</p>
+        </div>
+        <img src="img/flamingo/logo-stacked.png" alt="The flaminGO Mobile logo: a pink flamingo on one leg above the wordmark" width="2160" height="1440" loading="lazy">
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="foot" id="contact"><div class="wrap foot-in"><div class="foot-brand"><a class="mark foot-logo" href="./"><img src="/img/logo-madebydavidmartin-wordmark-dark.png" alt="madebydavidmartin" width="2327" height="370"></a></div><div class="foot-cta"><h2>Thanks for visiting.</h2><p>If something here is useful to you or your team, I would be glad to hear about it.</p><div class="btns"><a class="btn btn-light" href="mailto:david.angus.martin@gmail.com">Email me</a><a class="btn btn-ghost" href="https://www.linkedin.com/in/david-martin-7a246522" target="_blank" rel="noopener">Connect on LinkedIn</a></div></div><nav class="foot-nav" aria-label="Footer"><a href="./" >Home</a><a href="work.html">Work</a><a href="video.html">Video</a><a href="method.html">Method</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="occupied.html">OCCUPIED</a><a href="orivex.html">ORIVEX</a><a href="flamingo.html" aria-current="page">FlaminGo</a><a href="solentei.html">SOLENTEI 369</a><a href="fizzypop.html">Fizzy Pop!</a><a href="djc.html">DJC</a><a href="https://jp.madebydavidmartin.com/" lang="ja">日本語</a><a href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair course</a></nav><p class="foot-fine">This is a personal portfolio. &copy; 2026 David Martin.</p></div></footer><script src="script.js?v=c1004"></script></body></html>
