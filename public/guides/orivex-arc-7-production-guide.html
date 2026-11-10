@@ -121,7 +121,7 @@ label.done-toggle input{width:18px;height:18px;accent-color:var(--ok)}
       <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17" fill="none" stroke="var(--ink)" stroke-width="3.2" stroke-dasharray="80 27" transform="rotate(-50 24 24)"/><circle cx="37.6" cy="13.6" r="4.2" fill="var(--amber)"/></svg>
       <div>
         <h1>ORIVEX ARC-7</h1>
-        <p>Production guide for a 45-second fictional product film. Google Flow, Speechify, HyperFrames.</p>
+        <p>Production guide for a 45-second concept product film. Google Flow, Speechify, HyperFrames.</p>
       </div>
     </div>
     <div class="progress"><span id="progTxt">0 / 0 done</span><div class="bar"><i id="progBar"></i></div></div>
@@ -269,8 +269,8 @@ function renderStep(id){
   const st = STEPS[idx];
   let h = "";
   if(id==="overview"){
-    h += `<p class="eyebrow">Step 0 · The plan</p><h2>A 45-second product film for a robot that does not exist</h2>
-    <p class="lede">ORIVEX ARC-7 is a fictional seven-axis precision fabrication arm. The film shows it build one object from start to finish in a clean white lab: power-up, reveal, tool change, laser etch, micro placement, self-inspection, finished part, end card. Everything you need to paste into Flow and Speechify is on the following pages.</p>
+    h += `<p class="eyebrow">Step 0 · The plan</p><h2>A 45-second product film for a proof-of-concept robot</h2>
+    <p class="lede">ORIVEX ARC-7 is a proof-of-concept seven-axis precision fabrication arm. The film shows it build one object from start to finish in a clean white lab: power-up, reveal, tool change, laser etch, micro placement, self-inspection, finished part, end card. Everything you need to paste into Flow and Speechify is on the following pages.</p>
     <div class="specs"><div><b>45 s</b><span>Final length. Long enough for 7 technical beats, short enough for LinkedIn autoplay.</span></div><div><b>8 shots</b><span>Generated as 8 s Flow clips, cut to 5 to 6 s each.</span></div><div><b>16:9 · 1080p</b><span>Master format. 9:16 and 1:1 cutdowns can be rendered from the same project.</span></div><div><b>4 refs</b><span>Robot, wrist, lab and object images keep every shot consistent.</span></div></div>
     <div class="panel"><h3>Timeline</h3><div class="scroll"><div class="timeline">${SHOTS.map(s=>`<button class="seg" style="flex:${s.dur}" data-go="shot${s.n}"><small>${s.tc.split(" to ")[0]}</small><strong>${s.n} ${esc(s.name)}</strong><em>${esc(s.vo)}</em></button>`).join("")}</div></div></div>
     <div class="panel"><h3>How the pieces fit</h3><div class="flow">
