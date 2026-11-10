@@ -99,6 +99,16 @@
 .hl-top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:2px 4px 12px}
 .hl-logo{height:34px;width:auto;display:block}
 .hl-card{background:rgba(12,10,14,.62);border:none;border-radius:16px;padding:12px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 24px 50px rgba(8,8,10,.35)}
+.hl-hold{background:rgba(12,10,14,.62);border:none;border-radius:16px;padding:16px 18px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 24px 50px rgba(8,8,10,.35);margin-top:14px}
+.hl-hold h3{margin:0 0 4px;font-size:19px;color:#FFF7FA;letter-spacing:-.01em}
+.hl-hold p{margin:0 0 12px;font-size:13.5px;line-height:1.5;color:rgba(255,244,248,.82)}
+.hl-hold .hold-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.hl-hold .hold-btn{border:0;cursor:pointer;background:#E84393;color:#fff;font:700 14px/1 var(--sans);padding:11px 18px;border-radius:999px}
+.hl-hold .hold-btn:hover{background:#C2185B}
+.hl-hold .hold-pill{display:none;background:#FFF3F8;color:#8A1C4F;font:700 12px/1 var(--sans);letter-spacing:.08em;padding:7px 12px;border-radius:999px}
+.hl-hold .hold-pill.on{display:inline-block}
+.hl-hold .hold-note{display:none;margin:10px 0 0;font-size:13px;color:rgba(255,244,248,.82);font-style:italic}
+.hl-hold .hold-note.on{display:block}
 .hl-card video{display:block;width:100%;aspect-ratio:16/9;height:auto;border-radius:10px;background:#000}
 .hl-body{padding:14px 6px 6px}
 .hl-title{margin:0 0 8px;font-size:clamp(20px,1.8vw,24px);line-height:1.2;color:#FFF7FA;letter-spacing:-.01em}
@@ -227,6 +237,13 @@ main .cine::after{opacity:1;inset:0 auto;left:50%;width:100vw;transform:translat
             <p class="hl-line">Frankie has been on hold with the big guys for three hours. flaminGO answers on the first ring. Then he asks to be put back on hold. <span class="hl-specs">45 seconds &middot; spec commercial</span></p>
             <a class="hl-link" href="flamingo.html#hold-please">See both films and how they were made &rarr;</a>
           </div>
+        </div>
+        <div class="hl-hold">
+          <h3>Miss being on hold?</h3>
+          <p>The full hold music from the film, all 108 seconds of it. You know you do.</p>
+          <div class="hold-row"><button class="hold-btn" id="holdBtnHome" type="button">Put me on hold</button><span class="hold-pill" id="holdPillHome">ON HOLD 0:00</span></div>
+          <p class="hold-note" id="holdNoteHome">Your call is important to us.</p>
+          <audio id="holdAudioHome" src="audio/hold-music.mp3" preload="none" loop></audio>
         </div>
       </div>
     </div>
@@ -423,5 +440,17 @@ main .cine::after{opacity:1;inset:0 auto;left:50%;width:100vw;transform:translat
 <section class="band cta-band-white"><div class="cta-in"><div><h2>Ready to direct something worth making?</h2><p>Creative direction, video, campaigns and AI-native production. Tell me what you&rsquo;re building.</p></div><a class="btn btn-primary" href="contact.html">Start a conversation &rarr;</a></div></section>
 </main><footer class="foot" id="contact"><div class="wrap foot-in"><div class="foot-brand"><a class="mark foot-logo" href="./"><img src="/img/logo-madebydavidmartin-wordmark-dark.png" alt="madebydavidmartin" width="2327" height="370"></a></div><div class="foot-cta"><h2>Thanks for visiting.</h2><p>If something here is useful to you or your team, I would be glad to hear about it.</p><div class="btns"><a class="btn btn-light" href="mailto:david.angus.martin@gmail.com">Email me</a><a class="btn btn-ghost" href="https://www.linkedin.com/in/david-martin-7a246522" target="_blank" rel="noopener">Connect on LinkedIn</a></div></div><nav class="foot-nav" aria-label="Footer"><a href="./" aria-current="page">Home</a><a href="work.html">Work</a><a href="video.html">Video</a><a href="method.html">Method</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="occupied.html">OCCUPIED</a><a href="orivex.html">ORIVEX</a><a href="solentei.html">SOLENTEI 369</a><a href="fizzypop.html">Fizzy Pop!</a><a href="djc.html">DJC</a><a href="https://jp.madebydavidmartin.com/" lang="ja">日本語</a><a href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair course</a></nav><p class="foot-fine">This is a personal portfolio. &copy; 2026 David Martin.</p></div></footer><script>
 (function(){var v=document.getElementById('cineVisual');if(!v)return;if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;var stage=v.querySelector('.fizz-stage');var hero=v.closest('.cine');var raf=null;function set(e){var r=stage.getBoundingClientRect();var x=(e.clientX-(r.left+r.width/2))/r.width;var y=(e.clientY-(r.top+r.height/2))/r.height;x=Math.max(-1,Math.min(1,x));y=Math.max(-1,Math.min(1,y));stage.style.setProperty('--mx',(x*16).toFixed(1)+'px');stage.style.setProperty('--my',(y*12).toFixed(1)+'px');}hero.addEventListener('pointermove',function(e){if(raf)return;raf=requestAnimationFrame(function(){raf=null;set(e);});});hero.addEventListener('pointerleave',function(){stage.style.setProperty('--mx','0px');stage.style.setProperty('--my','0px');});})();
-</script><script src="script.js?v=c1004"></script></body><!-- rebuild trigger for hero-studio-warm.jpg -->
+</script><script src="script.js?v=c1004"></script>
+<script>
+(function(){
+  var btn=document.getElementById('holdBtnHome'),pill=document.getElementById('holdPillHome'),note=document.getElementById('holdNoteHome'),au=document.getElementById('holdAudioHome'),t0=0,timer=null;
+  function fmt(s){return Math.floor(s/60)+':'+('0'+Math.floor(s%60)).slice(-2)}
+  function tick(){pill.textContent='ON HOLD '+fmt((Date.now()-t0)/1000)}
+  btn.addEventListener('click',function(){
+    if(au.paused){au.play();t0=Date.now();tick();timer=setInterval(tick,500);btn.textContent='Hang up';pill.classList.add('on');note.classList.add('on');}
+    else{au.pause();au.currentTime=0;clearInterval(timer);btn.textContent='Put me on hold';pill.classList.remove('on');note.classList.remove('on');pill.textContent='ON HOLD 0:00';}
+  });
+})();
+</script>
+</body><!-- rebuild trigger for hero-studio-warm.jpg -->
 </html>
