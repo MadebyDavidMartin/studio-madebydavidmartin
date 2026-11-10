@@ -16,7 +16,7 @@
 .fg-hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(255,244,248,.62) 0%,rgba(255,227,238,.5) 55%,rgba(255,217,232,.72) 100%)}
 .fg-hero .fg-wrap{max-width:1400px;width:100%;padding-inline:clamp(16px,4vw,52px)}
 .fg-hero .fg-wrap{position:relative;z-index:2}
-.fg-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);gap:clamp(20px,4vw,48px);align-items:stretch}
+.fg-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);gap:clamp(20px,4vw,48px);align-items:start}
 @media(max-width:860px){.fg-hero-grid{grid-template-columns:1fr}}
 .fg-hero .fg-kicker{display:inline-block;background:#fff;color:var(--pink);border:1px solid var(--fgline);border-radius:999px;padding:6px 14px;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
 .fg-hero h1{font-size:clamp(44px,6vw,76px);line-height:1.02;margin:16px 0 14px;font-weight:700}
@@ -30,10 +30,10 @@
 .fg-hero figure video{width:100%;height:auto;display:block;border-radius:22px;box-shadow:0 24px 60px rgba(59,20,49,.18);background:#3B1431}
 .fg-hero figcaption{font-size:13px;color:#8A5B76;padding:10px 4px 0}
 .fg-hero-copy{max-width:880px}
-.fg-hero-fig{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 24px 60px rgba(59,20,49,.18);min-height:340px}
-.fg-hero figure.fg-hero-fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%;border-radius:0;box-shadow:none}
+.fg-hero-fig{margin:0;width:330px;justify-self:center}
+.fg-hero figure.fg-hero-fig img{width:100%;height:auto;display:block;border-radius:0;box-shadow:none;filter:drop-shadow(0 18px 24px rgba(59,20,49,.20))}
 .fg-hero-duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.5vw,26px);margin-top:clamp(22px,3vw,34px)}
-@media(max-width:860px){.fg-hero-duo{grid-template-columns:1fr}.fg-hero-fig{aspect-ratio:5/6}}
+@media(max-width:860px){.fg-hero-duo{grid-template-columns:1fr}.fg-hero-fig{width:min(300px,84%);margin-inline:auto}}
 .fg-hero-film{margin:0}
 .fg-hero-film video{width:100%;height:auto;display:block;border-radius:18px;box-shadow:0 24px 60px rgba(59,20,49,.18);background:#3B1431}
 .fg-hero-film figcaption{font-size:14px;color:#6E4459;padding:11px 4px 0}
@@ -158,7 +158,7 @@
       </div>
       <!-- Hero art: Frankie on the phone, filling the right column from the kicker line down to the price box -->
       <figure class="fg-hero-fig">
-        <img src="img/flamingo/bird-on-phone.jpg" alt="Frankie the flamingo, wings spread, standing on one leg on top of a phone showing the flaminGO Mobile logo" width="824" height="1366">
+        <img src="img/flamingo/bird-on-phone.png" alt="Frankie the flamingo, wings spread, standing on one leg on top of a phone showing the flaminGO Mobile logo" width="412" height="683">
       </figure>
       </div>
       <!-- The two films, side by side under the intro, spanning the full width -->
