@@ -29,6 +29,13 @@
 .fg-hero figure img{width:100%;height:auto;display:block;border-radius:22px;box-shadow:0 24px 60px rgba(59,20,49,.18)}
 .fg-hero figure video{width:100%;height:auto;display:block;border-radius:22px;box-shadow:0 24px 60px rgba(59,20,49,.18);background:#3B1431}
 .fg-hero figcaption{font-size:13px;color:#8A5B76;padding:10px 4px 0}
+.fg-hero-copy{max-width:880px}
+.fg-hero-films{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,34px);margin-top:clamp(30px,4.5vw,48px)}
+@media(max-width:860px){.fg-hero-films{grid-template-columns:1fr}}
+.fg-hero-film{margin:0}
+.fg-hero-film video{width:100%;height:auto;display:block;border-radius:18px;box-shadow:0 24px 60px rgba(59,20,49,.18);background:#3B1431}
+.fg-hero-film figcaption{font-size:14px;color:#6E4459;padding:11px 4px 0}
+.fg-hero-film figcaption b{font-family:'Fredoka',sans-serif;color:var(--plum);font-size:15.5px}
 .fg-stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 .fg-stat{background:#fff;border:1px solid var(--fgline);border-radius:14px;padding:10px 16px;font-size:14px}
 .fg-stat b{font-family:'Fredoka',sans-serif;color:var(--pink);font-size:17px;margin-right:6px}
@@ -139,17 +146,23 @@
 
   <section class="fg-hero">
     <img class="fg-hero-bg" src="img/flamingo/logo-bird.png" alt="" aria-hidden="true">
-    <div class="fg-wrap fg-hero-grid">
-      <div>
+    <div class="fg-wrap">
+      <div class="fg-hero-copy">
         <span class="fg-kicker">Two spec commercials &middot; Fictional carrier</span>
         <h1>Skip the<br><span class="fg-pink">hold.</span></h1>
-        <p>flaminGO Mobile is a carrier that does not exist. This page is its home: two spec commercials, the brand, and the system that made them. The newest is &ldquo;Hold, Please&rdquo;: Frankie, three hours into a hold with the big guys, finally calls flaminGO, and a person answers. The first spot, &ldquo;Big-Carrier Bill,&rdquo; is below. Directed end to end by David Martin, made with AI.</p>
+        <p>flaminGO Mobile is a carrier that does not exist. This page is its home: two spec commercials, the brand, and the system that made them. The newest is &ldquo;Hold, Please&rdquo;: Frankie, three hours into a hold with the big guys, finally calls flaminGO, and a person answers. The first spot, &ldquo;Big-Carrier Bill,&rdquo; introduced him. Both films play right here. Directed end to end by David Martin, made with AI.</p>
         <div class="fg-price"><b>$25/mo*</b><span>Plans from twenty-five bucks a month.<br>No contracts. No hidden fees.</span></div>
       </div>
-      <figure id="film">
-        <video controls playsinline preload="none" poster="img/flamingo/hp-poster.jpg" aria-label="flaminGO Mobile, Hold, Please, a 45-second spec commercial by David Martin"><source src="video/hold-please.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/hold-please.mp4">Download the MP4</a>.</video>
-        <figcaption>&ldquo;Hold, Please&rdquo; (2026), the second flaminGO spot. The first, &ldquo;Big-Carrier Bill,&rdquo; has its own section further down.</figcaption>
-      </figure>
+      <div class="fg-hero-films" id="film">
+        <figure class="fg-hero-film">
+          <video controls playsinline preload="none" poster="img/flamingo/hp-poster.jpg" aria-label="flaminGO Mobile, Hold, Please, a 45-second spec commercial by David Martin"><source src="video/hold-please.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/hold-please.mp4">Download the MP4</a>.</video>
+          <figcaption><b>Hold, Please</b> &middot; The newest spot &middot; 45.7 seconds</figcaption>
+        </figure>
+        <figure class="fg-hero-film">
+          <video controls playsinline preload="none" poster="img/flamingo/poster.jpg" aria-label="flaminGO Mobile, Big-Carrier Bill, a 35-second spec commercial by David Martin"><source src="video/flamingo.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/flamingo.mp4">Download the MP4</a>.</video>
+          <figcaption><b>Big-Carrier Bill</b> &middot; The first spot &middot; 34.7 seconds</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -235,12 +248,6 @@
       <figure>
         <img src="img/flamingo/still-nest-2.jpg" alt="Frankie sitting in a nest woven from a long paper phone bill while Marcus laughs" width="1600" height="900" loading="lazy">
         <figcaption>The button, at 26.5 seconds: the big-carrier bill, finally good for something.</figcaption>
-      </figure>
-    </div>
-    <div class="fg-wrap">
-      <figure class="fg-filmplayer">
-        <video controls playsinline preload="none" poster="img/flamingo/poster.jpg" aria-label="flaminGO Mobile, Big-Carrier Bill, a 35-second spec commercial by David Martin"><source src="video/flamingo.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/flamingo.mp4">Download the MP4</a>.</video>
-        <figcaption>&ldquo;Big-Carrier Bill&rdquo; (2026), the first flaminGO spot.</figcaption>
       </figure>
     </div>
   </section>
