@@ -192,7 +192,7 @@ main .cine::after{opacity:1;inset:0 auto;left:50%;width:100vw;transform:translat
 @media(max-width:900px){.pjump-tags{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:560px){.pjump-tags{grid-template-columns:repeat(2,1fr)}.pjump-tags li{font-size:12.5px}}
 </style>
-</head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="head-in"><a class="mark mark-logo" href="./" aria-label="madebydavidmartin, home"><img src="/img/logo-madebydavidmartin-portfolio.png" alt="madebydavidmartin portfolio" width="505" height="99"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span></span>Menu</button><nav class="nav" id="site-nav" aria-label="Main"><a href="work.html">Problems I Solve</a><a href="method.html">Method</a><span class="dd"><button type="button" class="dd-btn" aria-haspopup="true" aria-expanded="false">Production Work<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><span class="dd-menu"><a href="flamingo.html">FlaminGo</a><a href="fizzypop.html">Fizzy Pop</a><a href="orivex.html">ORIVEX ARC-7</a><a href="solentei.html">SOLENTEI 369</a><a href="occupied.html">OCCUPIED</a></span></span><a href="video.html">Process</a><a href="djc.html">DJC Media</a><a href="about.html">About</a><a class="nav-course" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair Course</a></nav><a class="course-btn" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener"><span class="cb-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span><span class="cb-tx"><b>Director&rsquo;s Chair</b><small>AI Enablement Course</small></span></a></div></header><main class="wrap" id="main">
+</head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="head-in"><a class="mark mark-logo" href="./" aria-label="madebydavidmartin, home"><img src="/img/logo-madebydavidmartin-portfolio.png" alt="madebydavidmartin portfolio" width="505" height="99"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span></span>Menu</button><nav class="nav" id="site-nav" aria-label="Main"><a href="work.html">Problems I Solve</a><a href="method.html">Method</a><span class="dd"><button type="button" class="dd-btn" aria-haspopup="true" aria-expanded="false">Video Production<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><span class="dd-menu"><a href="flamingo.html">FlaminGo</a><a href="fizzypop.html">Fizzy Pop</a><a href="orivex.html">ORIVEX ARC-7</a><a href="solentei.html">SOLENTEI 369</a><a href="occupied.html">OCCUPIED</a></span></span><a href="video.html">Process</a><a href="djc.html">DJC Media</a><a href="about.html">About</a><a class="nav-course" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair Course</a></nav><a class="course-btn" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener"><span class="cb-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span><span class="cb-tx"><b>Director&rsquo;s Chair</b><small>AI Enablement Course</small></span></a></div></header><main class="wrap" id="main">
 <style>
 .fws{font-size:clamp(28px,4.4vw,54px);line-height:1.14;font-weight:600;letter-spacing:-.015em;max-width:22ch;margin:0 0 18px}
 .fws em{color:var(--blue);font-style:normal}
@@ -416,6 +416,10 @@ main .cine::after{opacity:1;inset:0 auto;left:50%;width:100vw;transform:translat
 <style>
 .ps-sec .ps-list{border-top:1px solid var(--line)}
 .ps-row{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:10px 48px;padding:20px 0;border-bottom:1px solid var(--line)}
+.ps-toggle{margin:2px 0 18px;padding:10px 20px;border:1.5px solid #D85A20;border-radius:999px;background:transparent;color:#D85A20;font:600 14.5px/1.2 inherit;cursor:pointer}
+.ps-toggle:hover{background:#D85A20;color:#fff}
+.ps-list[hidden]{display:none}
+
 .ps-row h3{font-size:clamp(17px,1.6vw,20px);line-height:1.3;margin:0}
 .ps-row p{margin:0;max-width:62ch}
 @media (max-width:760px){.ps-row{grid-template-columns:1fr;gap:6px;padding:18px 0}}
@@ -423,7 +427,8 @@ main .cine::after{opacity:1;inset:0 auto;left:50%;width:100vw;transform:translat
 
 <section class="sec band-white ps-sec" id="problems">
   <div class="sec-head"><div><span class="eyebrow">At a glance</span><h2>Problems I solve.</h2></div><p>The short version of this site: the problems that land on my desk, and what happens next.</p></div>
-  <div class="ps-list">
+  <button class="ps-toggle" type="button" aria-expanded="false" aria-controls="psList">Show the list <span aria-hidden="true">&darr;</span></button>
+  <div class="ps-list" id="psList" hidden>
     <div class="ps-row"><h3>AI spend is rising and nothing is changing.</h3><p>I turn AI into governed, adopted capability that survives daily use: agents draft, people decide.</p></div>
     <div class="ps-row"><h3>Knowledge lives in inboxes and leaves when people do.</h3><p>I build governed knowledge bases teams can search and trust. One source, 86 files, used every day.</p></div>
     <div class="ps-row"><h3>The company cannot explain itself on video, and AI video looks fake.</h3><p>I direct film-led work end to end, including <a href="occupied.html">Occupied</a>, a photorealistic AI thriller where the same face holds in every shot.</p></div>
@@ -452,5 +457,7 @@ main .cine::after{opacity:1;inset:0 auto;left:50%;width:100vw;transform:translat
   });
 })();
 </script>
-</body><!-- rebuild trigger for hero-studio-warm.jpg -->
+<script>
+(function(){var b=document.querySelector('.ps-toggle');if(!b)return;var l=document.getElementById('psList');b.addEventListener('click',function(){var open=l.hasAttribute('hidden');if(open){l.removeAttribute('hidden');b.setAttribute('aria-expanded','true');b.innerHTML='Hide the list <span aria-hidden="true">&uarr;</span>';}else{l.setAttribute('hidden','');b.setAttribute('aria-expanded','false');b.innerHTML='Show the list <span aria-hidden="true">&darr;</span>';}});})();
+</script></body><!-- rebuild trigger for hero-studio-warm.jpg -->
 </html>
