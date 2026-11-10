@@ -231,7 +231,7 @@ main .cine::after{opacity:1;inset:0 auto;left:50%;width:100vw;transform:translat
       <div class="cine-visual hero-latest">
         <div class="hl-card">
           <div class="hl-top"><p class="hl-eyebrow">Recent project</p><img class="hl-logo" src="img/flamingo/logo-badge.png" alt="flaminGO" width="312" height="110"></div>
-          <video controls playsinline preload="none" poster="img/flamingo/hp-poster.jpg" aria-label="flaminGO Mobile, Hold, Please, a 45-second spec commercial"><source src="video/hold-please.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/hold-please.mp4">Download the MP4</a>.</video>
+          <video controls playsinline preload="none" poster="img/flamingo/hold-please-thumbnail.jpg" aria-label="flaminGO Mobile, Hold, Please, a 45-second spec commercial"><source src="video/hold-please.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/hold-please.mp4">Download the MP4</a>.</video>
           <div class="hl-body">
             <h2 class="hl-title">flaminGO Mobile: &ldquo;Hold, Please&rdquo;</h2>
             <p class="hl-line">Frankie has been on hold with the big guys for three hours. flaminGO answers on the first ring. Then he asks to be put back on hold. <span class="hl-specs">45 seconds &middot; spec commercial</span></p>
@@ -416,9 +416,9 @@ main .cine::after{opacity:1;inset:0 auto;left:50%;width:100vw;transform:translat
 <style>
 .ps-sec .ps-list{border-top:1px solid var(--line)}
 .ps-row{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:10px 48px;padding:20px 0;border-bottom:1px solid var(--line)}
-.ps-toggle{margin:2px 0 18px;padding:10px 20px;border:1.5px solid #D85A20;border-radius:999px;background:transparent;color:#D85A20;font:600 14.5px/1.2 inherit;cursor:pointer}
-.ps-toggle:hover{background:#D85A20;color:#fff}
-.ps-list[hidden]{display:none}
+.ps-toggle{margin:2px 0 18px;padding:10px 22px;border:1.5px solid #15191C;border-radius:999px;background:transparent;color:#15191C;font:600 14.5px/1.2 inherit;cursor:pointer}
+.ps-toggle:hover{background:#15191C;color:#fff}
+.ps-list.ps-collapsed .ps-row:nth-child(n+2){display:none}
 
 .ps-row h3{font-size:clamp(17px,1.6vw,20px);line-height:1.3;margin:0}
 .ps-row p{margin:0;max-width:62ch}
@@ -427,8 +427,8 @@ main .cine::after{opacity:1;inset:0 auto;left:50%;width:100vw;transform:translat
 
 <section class="sec band-white ps-sec" id="problems">
   <div class="sec-head"><div><span class="eyebrow">At a glance</span><h2>Problems I solve.</h2></div><p>The short version of this site: the problems that land on my desk, and what happens next.</p></div>
-  <button class="ps-toggle" type="button" aria-expanded="false" aria-controls="psList">Show the list <span aria-hidden="true">&darr;</span></button>
-  <div class="ps-list" id="psList" hidden>
+  <button class="ps-toggle" type="button" aria-expanded="false" aria-controls="psList">Expand</button>
+  <div class="ps-list ps-collapsed" id="psList">
     <div class="ps-row"><h3>AI spend is rising and nothing is changing.</h3><p>I turn AI into governed, adopted capability that survives daily use: agents draft, people decide.</p></div>
     <div class="ps-row"><h3>Knowledge lives in inboxes and leaves when people do.</h3><p>I build governed knowledge bases teams can search and trust. One source, 86 files, used every day.</p></div>
     <div class="ps-row"><h3>The company cannot explain itself on video, and AI video looks fake.</h3><p>I direct film-led work end to end, including <a href="occupied.html">Occupied</a>, a photorealistic AI thriller where the same face holds in every shot.</p></div>
@@ -458,6 +458,6 @@ main .cine::after{opacity:1;inset:0 auto;left:50%;width:100vw;transform:translat
 })();
 </script>
 <script>
-(function(){var b=document.querySelector('.ps-toggle');if(!b)return;var l=document.getElementById('psList');b.addEventListener('click',function(){var open=l.hasAttribute('hidden');if(open){l.removeAttribute('hidden');b.setAttribute('aria-expanded','true');b.innerHTML='Hide the list <span aria-hidden="true">&uarr;</span>';}else{l.setAttribute('hidden','');b.setAttribute('aria-expanded','false');b.innerHTML='Show the list <span aria-hidden="true">&darr;</span>';}});})();
+(function(){var b=document.querySelector('.ps-toggle');if(!b)return;var l=document.getElementById('psList');b.addEventListener('click',function(){var collapsed=l.classList.toggle('ps-collapsed');b.setAttribute('aria-expanded',collapsed?'false':'true');b.textContent=collapsed?'Expand':'Collapse';});})();
 </script></body><!-- rebuild trigger for hero-studio-warm.jpg -->
 </html>
