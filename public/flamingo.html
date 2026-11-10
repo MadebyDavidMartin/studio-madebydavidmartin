@@ -16,7 +16,7 @@
 .fg-hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(255,244,248,.62) 0%,rgba(255,227,238,.5) 55%,rgba(255,217,232,.72) 100%)}
 .fg-hero .fg-wrap{max-width:1400px;width:100%;padding-inline:clamp(16px,4vw,52px)}
 .fg-hero .fg-wrap{position:relative;z-index:2}
-.fg-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);gap:clamp(20px,4vw,48px);align-items:start}
+.fg-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);gap:clamp(20px,4vw,48px);align-items:stretch}
 @media(max-width:860px){.fg-hero-grid{grid-template-columns:1fr}}
 .fg-hero .fg-kicker{display:inline-block;background:#fff;color:var(--pink);border:1px solid var(--fgline);border-radius:999px;padding:6px 14px;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
 .fg-hero h1{font-size:clamp(44px,6vw,76px);line-height:1.02;margin:16px 0 14px;font-weight:700}
@@ -30,8 +30,10 @@
 .fg-hero figure video{width:100%;height:auto;display:block;border-radius:22px;box-shadow:0 24px 60px rgba(59,20,49,.18);background:#3B1431}
 .fg-hero figcaption{font-size:13px;color:#8A5B76;padding:10px 4px 0}
 .fg-hero-copy{max-width:880px}
-.fg-hero-films{display:grid;grid-template-columns:1fr;gap:clamp(18px,2.5vw,26px);margin-top:0;width:76%;justify-self:center}
-@media(max-width:860px){.fg-hero-films{width:100%}}
+.fg-hero-fig{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 24px 60px rgba(59,20,49,.18);min-height:340px}
+.fg-hero figure.fg-hero-fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%;border-radius:0;box-shadow:none}
+.fg-hero-duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.5vw,26px);margin-top:clamp(22px,3vw,34px)}
+@media(max-width:860px){.fg-hero-duo{grid-template-columns:1fr}.fg-hero-fig{aspect-ratio:5/6}}
 .fg-hero-film{margin:0}
 .fg-hero-film video{width:100%;height:auto;display:block;border-radius:18px;box-shadow:0 24px 60px rgba(59,20,49,.18);background:#3B1431}
 .fg-hero-film figcaption{font-size:14px;color:#6E4459;padding:11px 4px 0}
@@ -154,8 +156,13 @@
         <p>flaminGO Mobile is a proof-of-concept carrier brand, created to demonstrate a complete campaign. This page is its home: two spec commercials, the brand, and the system that made them. The newest is &ldquo;Hold, Please&rdquo;: Frankie, three hours into a hold with the big guys, finally calls flaminGO, and a person answers. The first spot, &ldquo;Big-Carrier Bill,&rdquo; introduced him. Both films play right here. Directed end to end by me, made with AI.</p>
         <div class="fg-price"><b>$25/mo*</b><span>Plans from twenty-five bucks a month.<br>No contracts. No hidden fees.</span></div>
       </div>
-      <!-- Hero films: stacked at the right of the intro copy, Big-Carrier Bill over Hold, Please -->
-      <div class="fg-hero-films" id="film">
+      <!-- Hero art: Frankie on the phone, filling the right column from the kicker line down to the price box -->
+      <figure class="fg-hero-fig">
+        <img src="img/flamingo/bird-on-phone.jpg" alt="Frankie the flamingo, wings spread, standing on one leg on top of a phone showing the flaminGO Mobile logo" width="824" height="1366">
+      </figure>
+      </div>
+      <!-- The two films, side by side under the intro, spanning the full width -->
+      <div class="fg-hero-duo" id="film">
         <figure class="fg-hero-film">
           <video controls playsinline preload="none" poster="img/flamingo/poster.jpg" aria-label="flaminGO Mobile, Big-Carrier Bill, a 35-second spec commercial"><source src="video/flamingo.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/flamingo.mp4">Download the MP4</a>.</video>
           <figcaption><b>Big-Carrier Bill</b> &middot; The first spot &middot; 34.7 seconds</figcaption>
@@ -164,7 +171,6 @@
           <video controls playsinline preload="none" poster="img/flamingo/hp-poster.jpg" aria-label="flaminGO Mobile, Hold, Please, a 45-second spec commercial"><source src="video/hold-please.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/hold-please.mp4">Download the MP4</a>.</video>
           <figcaption><b>Hold, Please</b> &middot; The newest spot &middot; 45.7 seconds</figcaption>
         </figure>
-      </div>
       </div>
     </div>
   </section>
