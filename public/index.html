@@ -92,6 +92,19 @@
   .fizz-disc,.fizz-glow,.fizz-can,.fizz-bubbles i,.fizz-spark{animation:none}
 }
 
+/* ===== Hero: Latest work player (Nov 2026) ===== */
+@media(min-width:901px){.cine-hero{grid-template-columns:minmax(0,1fr) minmax(0,540px)}}
+.hero-latest{margin-left:0}
+.hl-eyebrow{margin:0 0 10px;font-size:12.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#FFC7DE;text-shadow:0 1px 10px rgba(8,8,10,.5)}
+.hl-card{background:rgba(12,10,14,.62);border:1px solid rgba(255,255,255,.28);border-radius:16px;padding:12px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 24px 50px rgba(8,8,10,.35)}
+.hl-card video{display:block;width:100%;aspect-ratio:16/9;height:auto;border-radius:10px;background:#000}
+.hl-body{padding:14px 6px 6px}
+.hl-title{margin:0 0 8px;font-size:clamp(20px,1.8vw,24px);line-height:1.2;color:#FFF7FA;letter-spacing:-.01em}
+.hl-line{margin:0 0 12px;font-size:15px;line-height:1.55;color:rgba(255,244,248,.88)}
+.hl-specs{white-space:nowrap;opacity:.72}
+.hl-link{font-weight:650;color:#FF9EC4;text-decoration:none;border-bottom:1px solid rgba(255,158,196,.45)}
+.hl-link:hover{color:#FFC7DE;border-color:#FFC7DE}
+
 .showcase-feature{margin:26px 0}
 .showcase-feature .flag-card{margin:0}
 
@@ -203,7 +216,17 @@ main .cine::after{opacity:1;inset:0 auto;left:50%;width:100vw;transform:translat
         <p class="cine-lede">I take creative projects from strategy to launch: video, campaigns, content, brand and digital experience, made hands-on with AI where it earns its place.</p>
         <div class="btns"><a class="btn btn-primary btn-cine" href="video.html">Watch the work</a><a class="btn btn-ghost btn-ghost-cine" href="method.html">The method</a></div>
       </div>
-      
+      <div class="cine-visual hero-latest">
+        <p class="hl-eyebrow">Latest work</p>
+        <div class="hl-card">
+          <video controls playsinline preload="none" poster="img/flamingo/hp-poster.jpg" aria-label="flaminGO Mobile, Hold, Please, a 45-second spec commercial by David Martin"><source src="video/hold-please.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/hold-please.mp4">Download the MP4</a>.</video>
+          <div class="hl-body">
+            <h2 class="hl-title">flaminGO Mobile: &ldquo;Hold, Please&rdquo;</h2>
+            <p class="hl-line">Frankie has been on hold with the big guys for three hours. flaminGO answers on the first ring. Then he asks to be put back on hold. <span class="hl-specs">45 seconds &middot; spec commercial</span></p>
+            <a class="hl-link" href="flamingo.html#hold-please">See both films and how they were made &rarr;</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
