@@ -16,7 +16,7 @@
 .fg-hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(255,244,248,.62) 0%,rgba(255,227,238,.5) 55%,rgba(255,217,232,.72) 100%)}
 .fg-hero .fg-wrap{max-width:1400px;width:100%;padding-inline:clamp(16px,4vw,52px)}
 .fg-hero .fg-wrap{position:relative;z-index:2}
-.fg-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);gap:clamp(20px,4vw,48px);align-items:center}
+.fg-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);gap:clamp(20px,4vw,48px);align-items:start}
 @media(max-width:860px){.fg-hero-grid{grid-template-columns:1fr}}
 .fg-hero .fg-kicker{display:inline-block;background:#fff;color:var(--pink);border:1px solid var(--fgline);border-radius:999px;padding:6px 14px;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
 .fg-hero h1{font-size:clamp(44px,6vw,76px);line-height:1.02;margin:16px 0 14px;font-weight:700}
@@ -30,8 +30,8 @@
 .fg-hero figure video{width:100%;height:auto;display:block;border-radius:22px;box-shadow:0 24px 60px rgba(59,20,49,.18);background:#3B1431}
 .fg-hero figcaption{font-size:13px;color:#8A5B76;padding:10px 4px 0}
 .fg-hero-copy{max-width:880px}
-.fg-hero-films{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,34px);margin-top:clamp(30px,4.5vw,48px)}
-@media(max-width:860px){.fg-hero-films{grid-template-columns:1fr}}
+.fg-hero-films{display:grid;grid-template-columns:1fr;gap:clamp(18px,2.5vw,26px);margin-top:0;width:85%;justify-self:center}
+@media(max-width:860px){.fg-hero-films{width:100%}}
 .fg-hero-film{margin:0}
 .fg-hero-film video{width:100%;height:auto;display:block;border-radius:18px;box-shadow:0 24px 60px rgba(59,20,49,.18);background:#3B1431}
 .fg-hero-film figcaption{font-size:14px;color:#6E4459;padding:11px 4px 0}
@@ -147,6 +147,7 @@
   <section class="fg-hero">
     <img class="fg-hero-bg" src="img/flamingo/logo-bird.png" alt="" aria-hidden="true">
     <div class="fg-wrap">
+      <div class="fg-hero-grid">
       <div class="fg-hero-copy">
         <span class="fg-kicker">Two spec commercials &middot; Concept carrier</span>
         <h1>Skip the<br><span class="fg-pink">hold.</span></h1>
@@ -155,13 +156,14 @@
       </div>
       <div class="fg-hero-films" id="film">
         <figure class="fg-hero-film">
-          <video controls playsinline preload="none" poster="img/flamingo/hp-poster.jpg" aria-label="flaminGO Mobile, Hold, Please, a 45-second spec commercial"><source src="video/hold-please.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/hold-please.mp4">Download the MP4</a>.</video>
-          <figcaption><b>Hold, Please</b> &middot; The newest spot &middot; 45.7 seconds</figcaption>
-        </figure>
-        <figure class="fg-hero-film">
           <video controls playsinline preload="none" poster="img/flamingo/poster.jpg" aria-label="flaminGO Mobile, Big-Carrier Bill, a 35-second spec commercial"><source src="video/flamingo.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/flamingo.mp4">Download the MP4</a>.</video>
           <figcaption><b>Big-Carrier Bill</b> &middot; The first spot &middot; 34.7 seconds</figcaption>
         </figure>
+        <figure class="fg-hero-film">
+          <video controls playsinline preload="none" poster="img/flamingo/hp-poster.jpg" aria-label="flaminGO Mobile, Hold, Please, a 45-second spec commercial"><source src="video/hold-please.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/hold-please.mp4">Download the MP4</a>.</video>
+          <figcaption><b>Hold, Please</b> &middot; The newest spot &middot; 45.7 seconds</figcaption>
+        </figure>
+      </div>
       </div>
     </div>
   </section>
