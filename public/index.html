@@ -144,7 +144,7 @@ main .cine::after{background:linear-gradient(90deg,rgba(8,8,10,.74),rgba(8,8,10,
 .cine::before{content:"";position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100vw;z-index:0;pointer-events:none;opacity:0;animation:cineBgIn 1.8s ease .15s forwards;background:url("img/hero-banner.jpg?v=13") center 62%/cover no-repeat}
 .cine-in{position:relative;z-index:1}
 @keyframes cineBgIn{from{opacity:0}to{opacity:var(--hero-photo-o,.8)}}
-@media (prefers-reduced-motion:reduce){.cine::before{animation:none;opacity:var(--hero-photo-o,.8)}}
+@media (prefers-reduced-motion:reduce){.cine::before{animation:none;opacity:var(--hero-photo-o,.8)}main .cine::after{animation:none;opacity:1}}
 @media (prefers-color-scheme:dark){.cine{--ink:#2B2119;--muted:#6B5B4C;--line:#E3DED3;--card:#FFFDF9;--blue:#0E6B5C;--blue-deep:#0A5146;color:#2B2119;color-scheme:light}}
 </style><style>
 /* ===== Page band rhythm (Oct 2026) ===== */
@@ -174,9 +174,10 @@ main section.cta-band-white .btn-primary{background:#1A120C;border-color:#1A120C
 @media (prefers-color-scheme:dark){.cine{--ink:#F7F3EA;--muted:#DCD6C8;color:#F7F3EA}}
 @media (max-width:900px){main .cine::after{background:linear-gradient(180deg,rgba(8,8,10,.42),rgba(8,8,10,.62))}}
 /* Boardroom hero (Nov 2026): brighter photo, so deeper shading behind the copy */
-main .cine::after{opacity:1;inset:0 auto;left:50%;width:100vw;transform:translateX(-50%);background:linear-gradient(90deg,rgba(8,8,10,.80) 0%,rgba(8,8,10,.62) 36%,rgba(8,8,10,.22) 58%,rgba(8,8,10,0) 74%)}
+main .cine::after{opacity:0;inset:0 auto;left:50%;width:100vw;transform:translateX(-50%);animation:cineVeilIn 1.8s ease .15s forwards;background:linear-gradient(180deg,rgba(8,8,10,.26),rgba(8,8,10,.13) 45%,rgba(8,8,10,.30)),linear-gradient(90deg,rgba(8,8,10,.52) 0%,rgba(8,8,10,.32) 40%,rgba(8,8,10,.10) 64%,rgba(8,8,10,0) 80%)}
+@keyframes cineVeilIn{from{opacity:0}to{opacity:1}}
 .cine-title,.cine-sub,.cine-lede{text-shadow:0 2px 18px rgba(0,0,0,.45)}
-@media (max-width:900px){main .cine::after{background:linear-gradient(180deg,rgba(8,8,10,.58),rgba(8,8,10,.70))}.cine::before{background-position:72% 62%}}
+@media (max-width:900px){main .cine::after{background:linear-gradient(180deg,rgba(8,8,10,.46),rgba(8,8,10,.56))}.cine::before{background-position:72% 62%}}
 /* Problems jump section (Oct 2026): a plain section header, no box. */
 #problems{scroll-margin-top:96px}
 .pjump{margin:48px 0}
