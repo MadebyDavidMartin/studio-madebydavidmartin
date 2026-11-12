@@ -277,13 +277,13 @@ main .cine::after{opacity:1;inset:0 auto;left:50%;width:100vw;transform:translat
 /* Spotlight productions (Oct 2026): video-page style, minimal. Eyebrow, title + pill, video, one line. */
 #selected-video .show-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px 30px;margin:30px 0 6px}
 @media(max-width:900px){#selected-video .show-grid{grid-template-columns:1fr}}
-.mini-prod h3{font-size:clamp(26px,2.8vw,36px);line-height:1.1;margin:8px 0 0;letter-spacing:-.01em}
+.mini-prod h3{font-size:clamp(23px,2.4vw,29px);line-height:1.1;margin:8px 0 0;letter-spacing:-.01em;white-space:nowrap}@media(max-width:900px){.mini-prod h3{white-space:normal}}
 .mini-prod .feature-vid{margin:14px 0 12px;max-width:none}
 .mini-prod p{margin:0;font-size:15px;line-height:1.55;color:var(--muted);max-width:52ch}
 .show-grid .mini-prod{display:flex;flex-direction:column}
 .show-grid .mini-prod h3{min-height:1.1em}
 #selected-video .mini-prod .page-pill{margin:0 0 12px;transform:none;width:250px;text-align:center;align-self:flex-start}
-#selected-video .mini-prod h3.hp-title{white-space:nowrap;font-size:clamp(26px,2.8vw,36px)}
+
 .show-grid .mini-prod p{flex:1}
 .show-grid .mini-prod .guide-link{align-self:flex-start}
 .page-pill{display:inline-block;vertical-align:middle;margin-left:14px;padding:9px 18px;border-radius:999px;background:#D85A20;color:#fff;font:600 14px/1.2 var(--sans,'Geist',system-ui,sans-serif);letter-spacing:.01em;text-decoration:none;white-space:nowrap;transform:translateY(-4px)}
@@ -332,17 +332,17 @@ main .cine::after{opacity:1;inset:0 auto;left:50%;width:100vw;transform:translat
       <div class="show-grid">
     <div class="mini-prod">
       <span class="eyebrow">Spec commercial &middot; Mobile carrier</span>
+      <h3>flaminGO Mobile.</h3><figure class="feature-vid"><video controls playsinline preload="none" poster="img/flamingo/poster.jpg" aria-label="flaminGO Mobile, Big-Carrier Bill, a 35-second spec commercial"><source src="video/flamingo.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/flamingo.mp4">Download the MP4</a>.</video></figure>
+      <a class="page-pill" href="flamingo.html">Official flaminGO page &rarr;</a>
+      <p>Big-Carrier Bill. 35 seconds. A phone-sized flamingo named Frankie talks Marcus out of a very long phone bill. Written and directed by me.</p>
+      <a class="guide-link" href="guides/flamingo-production-guide.html" target="_blank" rel="noopener">View Production Guide &rarr;</a>
+    </div>
+<div class="mini-prod">
+      <span class="eyebrow">Spec commercial &middot; Mobile carrier</span>
       <h3>flaminGO Mobile: Flag on the Play.</h3><figure class="feature-vid"><video controls playsinline preload="none" poster="img/flamingo/fop-poster.jpg" aria-label="flaminGO Mobile, Flag on the Play, a 23-second big-game spec commercial"><source src="video/flag-on-the-play.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/flag-on-the-play.mp4">Download the MP4</a>.</video></figure>
       <a class="page-pill" href="flamingo.html#flag-on-the-play">Official flaminGO page &rarr;</a>
       <p>Flag on the Play. 23 seconds. A stadium of seventy thousand people on hold, and Frankie, in a referee shirt, throws the flag for holding. Written and directed by me.</p>
       <a class="guide-link" href="guides/flag-on-the-play-production-guide.html" target="_blank" rel="noopener">View Production Guide &rarr;</a>
-    </div>
-<div class="mini-prod">
-      <span class="eyebrow">Spec commercial &middot; Mobile carrier</span>
-      <h3 class="hp-title">flaminGO Mobile: Hold, Please.</h3><figure class="feature-vid"><video controls playsinline preload="none" poster="img/flamingo/hp-poster.jpg" aria-label="flaminGO Mobile, Hold, Please, a 45-second spec commercial"><source src="video/hold-please.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/hold-please.mp4">Download the MP4</a>.</video></figure>
-      <a class="page-pill" href="flamingo.html#hold-please">Official flaminGO page &rarr;</a>
-      <p>Hold, Please. 45 seconds. Frankie, three hours on hold, calls flaminGO and asks to be put back on hold. Written and directed by me.</p>
-      <a class="guide-link" href="guides/hold-please-production-guide.html" target="_blank" rel="noopener">View Production Guide &rarr;</a>
     </div>
 <div class="mini-prod">
       <span class="eyebrow">Spec commercial &middot; 1970s cola</span>
