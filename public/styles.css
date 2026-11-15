@@ -1287,3 +1287,15 @@ main .band.slate.has-banner.banner-about::after{background-image:url(/img/hero-a
 /* Header nav (Oct 2026): Home removed from the top menu (the logo goes home); OCCUPIED added */
 @media (min-width:1000px) and (max-width:1279px){.head-in{gap:10px 12px}.nav a{font-size:13.5px;padding:8px 6px}.mark-logo img{width:210px;height:auto}}
 @media (min-width:1000px) and (max-width:1099px){.mark-logo img{width:180px}.nav a{font-size:13px;padding:8px 5px}}
+
+/* Header single-row fit (Nov 15, 2026): with the language link restored, keep
+   logo, nav and the course button on one line at desktop widths. Scoped to
+   1280px and up, where the horizontal header layout applies. */
+@media (min-width:1280px){
+  .head-in{flex-wrap:nowrap;max-width:1280px}
+  .head-in .nav{min-width:0}
+  .nav a{font-size:13.5px;padding:8px 6px}
+  .dd-btn{font-size:13.5px;padding:8px 6px;white-space:nowrap}
+  .mark-logo img{width:210px;height:auto}
+  .head-in .course-btn{flex:0 0 auto}
+}
