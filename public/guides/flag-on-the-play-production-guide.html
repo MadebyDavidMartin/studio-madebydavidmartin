@@ -135,6 +135,21 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:.92em;background:#fff;bo
 </table>
 </div></section>
 
+<section><div class="wrap">
+<p class="k">The plan as a workflow</p>
+<h2>This plan, rebuilt as a Figma Weave board</h2>
+<p>After the film was finished, this production plan was turned into a runnable workflow in Figma Weave, a node-based canvas for AI image and video. Weave offers no way to build a board from a document, but nodes copied in Weave land on the clipboard as structured text, and pasting that text back rebuilds them. Working with Claude, I worked out that format from four copied samples: prompt nodes, model nodes and their settings, the connections between them, and an uploaded image. Claude now writes a complete board from the plan, and it pastes straight in.</p>
+<table>
+<tr><th>Board</th><td>34 nodes and 37 connections, laid out left to right in production order. Node titles carry the shot name, its timing in the plan and its render length, for example &ldquo;S3 Clip (6.0 to 10.5 s, render 6 s)&rdquo;.</td></tr>
+<tr><th>Inputs</th><td>Two upload nodes: the plain Frankie reference and the actor photo from Spot 01.</td></tr>
+<tr><th>References</th><td>Four chained steps, each a prompt node feeding an image model: R1 Frankie, referee (an edit of the plain Frankie upload), R2 the stadium (text only), R3 the player (from the actor photo and R2), and R4 Frankie&rsquo;s size on the field (from R1 and R2).</td></tr>
+<tr><th>Shots</th><td>Six rows, S1 to S6. Each has a start-frame prompt and a motion prompt; the start frame is wired to the references that shot needs, then into the video step as its first frame, with the motion prompt as the video prompt.</td></tr>
+<tr><th>Settings</th><td>Start frames: Nano Banana 2.1, 2K, 16:9, high thinking (Weave does not offer Nano Banana Pro, so start frames can differ slightly from the Flow versions). Video steps: Omni Flash 1.1, 6 seconds, 16:9, 720p.</td></tr>
+<tr><th>Run</th><td>The four references and all six start frames ran from the board, each matching its shot. The video steps are wired and set but not yet run, because Weave&rsquo;s video models need a paid plan.</td></tr>
+</table>
+<p>The point of the board is the rerun. Every step is its own node, so a weak start frame is one node to run again, and a change to Frankie runs only what follows from him. Voice, music, graphics and the edit stay outside the board.</p>
+</div></section>
+
 <footer class="doc"><div class="wrap">
 <p class="fine">Spec ad. flaminGO Mobile is a fictional brand. Plans, prices and coverage shown are for illustration only. Production guide for flaminGO Mobile: Flag on the Play, by David Martin.</p>
 </div></footer>

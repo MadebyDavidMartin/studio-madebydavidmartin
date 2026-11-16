@@ -207,6 +207,34 @@
     </div>
   </section>
 
+  <section class="fg-sec alt" id="workflow">
+    <style>
+    .fg-wf-note{font-size:13.5px;color:#8A5B76;line-height:1.6;margin:22px 0 0;max-width:760px}
+    .fg-wf-tall img{max-height:620px;width:auto;max-width:100%;margin:0 auto}
+    </style>
+    <div class="fg-wrap">
+      <span class="fg-eyebrow">The plan as a workflow</span>
+      <h2>The same plan, as a board you can run.</h2>
+      <div class="fg-two">
+        <div>
+          <p class="fg-lede">Every spot starts as a written build plan: references, start frames, motion prompts, model settings and render lengths, worked out shot by shot. I make the film by working down that plan by hand. For Flag on the Play I wanted to know whether the plan itself could become the workflow.</p>
+          <p class="fg-lede">Figma Weave, a node-based canvas for AI image and video, has no way to build a board from a written plan. When you copy nodes in Weave, though, they land on the clipboard as structured text, and pasting that text back rebuilds them. Working with Claude, I worked out that format from a handful of copied samples. Now Claude writes the board itself, straight from the plan.</p>
+          <p class="fg-lede">The result is the whole of Flag on the Play on one board: 34 nodes and 37 connections, with every prompt and setting already in place. Two photos go in. Four references are built from them: the referee, the stadium, the player, and Frankie at his true size. Six start frames are built from those references, one per shot, each wired to the video step that animates it.</p>
+          <p class="fg-lede">I pasted the board, added the two photos and pressed run. The references and all six start frames came out of the board, each one matching its shot. Because every step is its own node, a shot that looks wrong is one node to rerun, and if Frankie changes, only what follows from him runs again.</p>
+        </div>
+        <figure class="fg-wf-tall">
+          <img src="img/flamingo/weave-board.jpg" alt="The full Flag on the Play board in Figma Weave, zoomed out: two upload nodes and four reference chains on the left, six shot rows of prompts, start frames and video steps on the right" width="966" height="1723" loading="lazy">
+          <figcaption>The whole board, zoomed out: uploads and references on the left, six shot rows on the right.</figcaption>
+        </figure>
+      </div>
+      <figure class="fg-fig">
+        <img src="img/flamingo/weave-s3row.jpg" alt="The S3 shot row in Figma Weave: the start-frame and motion prompts, the generated start frame of Frankie raising a yellow flag beside the football, and the video step it feeds" width="1800" height="1164" loading="lazy">
+        <figcaption>S3, Flag on the play: start-frame prompt and motion prompt on the left, the start frame the board generated in the middle, and the video step it feeds on the right.</figcaption>
+      </figure>
+      <p class="fg-wf-note">The finished film was made in Google Flow, before the board existed. On the board, the video steps are wired and set but have not been run yet, because Weave&rsquo;s video models need a paid plan. Voice, music, graphics and the edit stay outside the board, as before. The full plan is in the <a href="guides/flag-on-the-play-production-guide.html" target="_blank" rel="noopener">Flag on the Play production guide</a>.</p>
+    </div>
+  </section>
+
   <section class="fg-pg" id="production-guide">
     <div class="fg-wrap">
       <div class="fg-pgcard">
