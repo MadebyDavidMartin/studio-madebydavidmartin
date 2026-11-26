@@ -93,11 +93,7 @@
 }
 
 /* ===== Hero: Latest work player (Nov 2026) ===== */
-@media(min-width:901px){.cine-hero{grid-template-columns:minmax(0,1fr) minmax(0,540px)}.cine-visual{min-height:0}.hero-latest{min-height:0}.hl-card{min-height:0}.hl-card video{flex:1 1 0%;min-height:0}
-.cine-hero{position:relative;grid-template-columns:minmax(0,720px)}
-.cine-copy{max-width:calc(100% - 588px)}
-.cine-visual{position:absolute;top:0;right:0;bottom:0;width:540px;margin-left:0}
-.hl-card{height:100%}}
+@media(min-width:901px){.cine-hero{grid-template-columns:minmax(0,1fr) minmax(0,540px)}.cine-visual{min-height:0}.hero-latest{min-height:0}.hl-card{min-height:0}.hl-vid{position:relative;flex:1 1 0%;min-height:0;border-radius:10px;overflow:hidden}.hl-vid video{position:absolute;inset:0;width:100%;height:100%}}
 .hero-latest{margin-left:0;display:flex;flex-direction:column}
 .hl-eyebrow{margin:0;font-size:16px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff}
 .hl-top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:2px 4px 12px}
@@ -237,7 +233,7 @@ main .cine::after{opacity:1;inset:0 auto;left:50%;width:100vw;transform:translat
       <div class="cine-visual hero-latest">
         <div class="hl-card">
           <div class="hl-top"><img class="hl-logo" src="img/flamingo/logo-badge.png" alt="flaminGO" width="312" height="110"><h2 class="hl-title" style="margin:0;font-size:clamp(19px,1.7vw,23px);text-align:right">flaminGO Mobile: &ldquo;Hold, Please&rdquo;</h2></div>
-          <video controls playsinline preload="none" poster="img/flamingo/hold-please-thumbnail.jpg" aria-label="flaminGO Mobile, Hold, Please, a 45-second spec commercial"><source src="video/hold-please.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/hold-please.mp4">Download the MP4</a>.</video>
+          <div class="hl-vid"><video controls playsinline preload="none" poster="img/flamingo/hold-please-thumbnail.jpg" aria-label="flaminGO Mobile, Hold, Please, a 45-second spec commercial"><source src="video/hold-please.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/hold-please.mp4">Download the MP4</a>.</video></div>
           <div class="hl-body">
             <div class="hl-row">
               <p class="hl-specsline">45 seconds &middot; spec commercial</p>
