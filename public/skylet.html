@@ -29,9 +29,17 @@
 .sky-stills figure{margin:0}
 .sky-stills img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block;border-radius:12px;border:1px solid var(--line)}
 .sky-stills figcaption{font:600 11.5px/1 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:9px}
-.sky-song{background:linear-gradient(150deg,#EAF7FF,#F7FBFF);border:1px solid var(--line);border-radius:20px;padding:36px;display:flex;gap:32px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-.sky-song h2{margin:0 0 10px}
-.sky-song p{max-width:560px}
+.sky-song{background:linear-gradient(150deg,#0E2A47,#134069);border-radius:20px;padding:clamp(26px,4vw,40px);display:flex;gap:clamp(22px,3.5vw,36px);align-items:center;flex-wrap:wrap;color:#fff}
+.sky-cover{width:190px;height:190px;object-fit:cover;border-radius:14px;box-shadow:0 18px 40px rgba(3,16,30,.5);flex:none}
+.sky-songbody{flex:1;min-width:min(100%,330px)}
+.sky-song h2{color:#fff;margin:0 0 8px;font-size:clamp(32px,3.8vw,46px)}
+.sky-song .meta{font:600 12px/1.5 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#8FD3F4;margin:0 0 14px}
+.sky-song p{color:#D7EBF8;line-height:1.65;margin:0 0 14px;max-width:560px}
+.sky-lyric{border-left:5px solid var(--lime);padding:4px 0 4px 18px;margin:18px 0}
+.sky-lyric p{font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.45;margin:0;color:#fff}
+.sky-song audio{width:100%;display:block;margin-top:16px}
+.sky-dl-lime{display:inline-block;background:var(--lime);color:var(--navy);font-family:'Sora',sans-serif;font-weight:600;font-size:15px;text-decoration:none;border-radius:999px;padding:13px 24px;margin-top:16px;white-space:nowrap}
+.sky-dl-lime:hover{background:#D8F98A}
 .sky-dl{display:inline-block;background:var(--navy);color:#fff;font-family:'Sora',sans-serif;font-weight:600;font-size:15.5px;text-decoration:none;border-radius:999px;padding:15px 26px;white-space:nowrap}
 .sky-dl:hover{background:#16406B}
 .sky-pg{background:var(--navy);border-radius:20px;padding:40px;display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap}
@@ -117,12 +125,16 @@
   <section class="sky-sec">
     <div class="sky-wrap">
       <div class="sky-song">
-        <div>
-          <span class="sky-eyebrow">The full track</span>
-          <h2>Hear the whole song.</h2>
-          <p class="sky-lede dim" style="margin:0">Thirty seconds of the song made the spot. The full track runs a minute and forty-one seconds, verses and all, and it is yours to keep. Take it for a drive, a run, or your own rooftop.</p>
+        <img class="sky-cover" src="img/skylet/label-front.png" alt="SKYLET Cucumber Lime bottle label, the cover art for Feel the Lift" width="800" height="800" loading="lazy">
+        <div class="sky-songbody">
+          <p class="sky-pgkicker">Featuring the song</p>
+          <h2>Feel the Lift</h2>
+          <p class="meta">SKYLET &middot; Summer soul-pop &middot; 96 BPM &middot; 1:41</p>
+          <p>Some commercials borrow a song. This one was written around one. &ldquo;Feel the Lift&rdquo; was composed from the spot&rsquo;s own script, so the lyrics tell the same story as the pictures: the heat, the climb, the pour. Thirty seconds of it carry the film. This is the whole track, verses and all.</p>
+          <div class="sky-lyric"><p>&ldquo;Sky-let! Sparkling Water! Feel the lift!&rdquo;</p></div>
+          <audio controls preload="none" src="audio/skylet-feel-the-lift.mp3" aria-label="Feel the Lift, the full SKYLET song, one minute and forty-one seconds"></audio>
+          <a class="sky-dl-lime" href="audio/skylet-feel-the-lift.mp3" download="SKYLET - Feel the Lift (full song).mp3">Download the song (MP3)</a>
         </div>
-        <a class="sky-dl" href="audio/skylet-feel-the-lift.mp3" download="SKYLET - Feel the Lift (full song).mp3">Download the full song (MP3)</a>
       </div>
       <div class="sky-tools" aria-label="Tools used">
         <span>Nano Banana Pro, stills</span><span>Omni Flash 1.1, clips</span><span>Google Flow</span><span>Speechify, voiceover</span><span>Suno, song and jingle</span><span>Finished in HyperFrames</span>
