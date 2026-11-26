@@ -53,7 +53,7 @@
 .flowline{margin:0 0 14px}
 
 /* ===== Dynamic Fizzy hero (Oct 2026) ===== */
-.cine-hero{display:grid;grid-template-columns:minmax(0,720px);gap:clamp(20px,3.5vw,48px);align-items:stretch}
+.cine-hero{display:grid;grid-template-columns:minmax(0,720px);gap:clamp(20px,3.5vw,48px);align-items:center}
 .cine-copy{position:relative;z-index:2;min-width:0}
 .cine-hero .cine-title{font-size:clamp(48px,5.9vw,98px)}
 .cine-visual{position:relative;z-index:1;min-width:0;margin-left:clamp(-90px,-6vw,-24px)}
@@ -93,7 +93,7 @@
 }
 
 /* ===== Hero: Latest work player (Nov 2026) ===== */
-@media(min-width:901px){.cine-hero{grid-template-columns:minmax(0,1fr) minmax(0,540px)}.cine-visual{min-height:0}.hero-latest{min-height:0}.hl-card{min-height:0}}
+@media(min-width:901px){.cine-hero{grid-template-columns:minmax(0,1fr) minmax(0,540px)}.cine-visual{min-height:0}.hero-latest{min-height:0}.hl-card{min-height:0}.hl-eyebrow{position:absolute;bottom:100%;right:8px;margin:0 0 6px}}
 .hero-latest{margin-left:0;display:flex;flex-direction:column}
 .hl-eyebrow{margin:0;font-size:16px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff}
 .hl-top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:2px 4px 12px}
@@ -116,7 +116,7 @@
 .hl-line{margin:0 0 12px;font-size:15px;line-height:1.55;color:rgba(255,244,248,.88)}
 .hl-specs{white-space:nowrap;opacity:.72}
 .hl-link{display:inline-block;margin-top:2px;font-weight:650;font-size:13.5px;color:#fff;text-decoration:none;border:1.5px solid rgba(255,255,255,.75);border-radius:999px;padding:7px 14px;background:rgba(255,255,255,.10)}
-.hl-specsline{margin:0;font-size:14px;font-weight:600;letter-spacing:-.01em;color:rgba(255,244,248,.92);white-space:nowrap}
+.hl-specsline{margin:0;font-size:11px;font-weight:600;letter-spacing:-.01em;color:rgba(255,244,248,.92);white-space:nowrap}
 .hl-row{display:flex;align-items:center;justify-content:space-between;gap:14px}
 .hl-row .hl-link{margin-top:0;flex:none}
 .hl-link:hover{color:#fff;background:rgba(255,255,255,.24);border-color:#fff}
