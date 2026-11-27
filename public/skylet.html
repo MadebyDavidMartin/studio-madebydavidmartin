@@ -22,7 +22,7 @@
 .sky-films{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:42px}
 .sky-films figure{margin:0;position:relative}
 .sky-films video,.sky-hero-main video{width:100%;height:auto;aspect-ratio:16/9;display:block;border-radius:14px;border:1px solid rgba(143,211,244,.45);background:#000;box-shadow:0 22px 44px rgba(2,12,24,.4)}
-.sky-films figcaption,.sky-hero-main figcaption{margin-top:11px;font-size:13.5px;color:#9CC8E4}
+.sky-films figcaption,.sky-hero-main figcaption{margin:0 0 10px;font-size:13.5px;color:#9CC8E4}
 .sky-films figcaption b,.sky-hero-main figcaption b{color:#fff;font-family:'Sora',sans-serif}
 .sky-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:34px}
 .sky-film video{width:100%;height:auto;aspect-ratio:16/9;display:block;border-radius:14px;border:1px solid var(--line);background:#000}
@@ -37,7 +37,8 @@
 .sky-herofilm{position:relative}
 .sky-hero .sky-wrap{max-width:1400px}
 .sky-hero-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,3.5vw,48px);align-items:center}
-.sky-hero-main{margin:0}
+.sky-hero-main{margin:0;width:82%;margin-inline:auto}
+.sky-films.two figure{width:82%;margin-inline:auto}
 .sky-films.two{grid-template-columns:1fr 1fr;margin-top:26px}
 .sky-stills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
 .sky-stills figure{margin:0}
@@ -91,11 +92,11 @@
           <h1>Feel the <span class="lift">lift.</span></h1>
           <p>A city baking at noon. High above it, one rooftop, one cold bottle, and a single bubble climbing through the glass. SKYLET is a fictional sparkling water, Cucumber Lime, and this is its launch spot: thirty seconds, directed end to end by me, made with AI, in three versions. Sung in English, narrated, and sung in Japanese, all three films play right here, and every one ends on the same sung jingle.</p>
         </div>
-        <figure class="sky-hero-main"><video controlsList="nodownload" controls playsinline preload="none" poster="img/skylet/SKYLET_poster_english_1920x1080.jpg" aria-label="SKYLET Sparkling Water, Feel the Lift, the song version, a 30-second spec commercial"><source src="video/SKY_Lift_v8_song_web.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/SKY_Lift_v8_song_web.mp4">Download the MP4</a>.</video><figcaption><b>The song version</b> &middot; English &middot; 30 seconds</figcaption></figure>
+        <figure class="sky-hero-main"><figcaption><b>The song version</b> &middot; English &middot; 30 seconds</figcaption><video controlsList="nodownload" controls playsinline preload="none" poster="img/skylet/SKYLET_poster_english_1920x1080.jpg" aria-label="SKYLET Sparkling Water, Feel the Lift, the song version, a 30-second spec commercial"><source src="video/SKY_Lift_v8_song_web.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/SKY_Lift_v8_song_web.mp4">Download the MP4</a>.</video></figure>
       </div>
       <div class="sky-films two">
-        <figure><video controlsList="nodownload" controls playsinline preload="none" poster="img/skylet/SKYLET_poster_english_1920x1080.jpg" aria-label="SKYLET Sparkling Water, Feel the Lift, the voiceover version, a 30-second spec commercial"><source src="video/skylet-vo.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/skylet-vo.mp4">Download the MP4</a>.</video><figcaption><b>The voiceover version</b> &middot; English &middot; 30 seconds</figcaption></figure>
-        <figure><video controlsList="nodownload" controls playsinline preload="none" poster="img/skylet/SKYLET_poster_japanese_1920x1080.jpg" aria-label="SKYLET Sparkling Water, Feel the Lift, the Japanese version, a 30-second spec commercial"><source src="video/SKY_Lift_JP_v2_web.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/SKY_Lift_JP_v2_web.mp4">Download the MP4</a>.</video><figcaption><b>The Japanese version</b> &middot; <span class="sky-jp">&#26085;&#26412;&#35486;&#29256;</span> &middot; 30 seconds</figcaption></figure>
+        <figure><figcaption><b>The voiceover version</b> &middot; English &middot; 30 seconds</figcaption><video controlsList="nodownload" controls playsinline preload="none" poster="img/skylet/SKYLET_poster_english_1920x1080.jpg" aria-label="SKYLET Sparkling Water, Feel the Lift, the voiceover version, a 30-second spec commercial"><source src="video/skylet-vo.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/skylet-vo.mp4">Download the MP4</a>.</video></figure>
+        <figure><figcaption><b>The Japanese version</b> &middot; <span class="sky-jp">&#26085;&#26412;&#35486;&#29256;</span> &middot; 30 seconds</figcaption><video controlsList="nodownload" controls playsinline preload="none" poster="img/skylet/SKYLET_poster_japanese_1920x1080.jpg" aria-label="SKYLET Sparkling Water, Feel the Lift, the Japanese version, a 30-second spec commercial"><source src="video/SKY_Lift_JP_v2_web.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/SKY_Lift_JP_v2_web.mp4">Download the MP4</a>.</video></figure>
       </div>
     </div>
   </section>
