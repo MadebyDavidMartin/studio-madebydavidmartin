@@ -19,6 +19,12 @@
 .sky-lede{font-size:16.5px;line-height:1.7;color:var(--ink);max-width:680px;margin:0 0 14px}
 .sky-lede.dim{color:var(--muted)}
 .sky-duo{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:34px}
+.sky-films{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:42px}
+.sky-films figure{margin:0;position:relative}
+.sky-films video{width:100%;height:auto;aspect-ratio:16/9;display:block;border-radius:14px;border:1px solid rgba(143,211,244,.45);background:#000;box-shadow:0 22px 44px rgba(2,12,24,.4)}
+.sky-films figcaption{margin-top:11px;font-size:13.5px;color:#9CC8E4}
+.sky-films figcaption b{color:#fff;font-family:'Sora',sans-serif}
+.sky-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:34px}
 .sky-film video{width:100%;height:auto;aspect-ratio:16/9;display:block;border-radius:14px;border:1px solid var(--line);background:#000}
 .sky-film h3{font-family:'Sora',sans-serif;color:var(--navy);font-size:20px;margin:16px 0 8px}
 .sky-film p{font-size:15px;line-height:1.65;color:var(--muted);margin:0}
@@ -68,7 +74,7 @@
 .sky-foot-nav{display:flex;gap:18px;flex-wrap:wrap;border-top:1px solid rgba(143,211,244,.25);padding-top:22px}
 .sky-foot-nav a{color:#9CC8E4;text-decoration:none;font-size:13.5px}
 .sky-ff{font-size:12.5px;color:#6E97B5;margin-top:18px}
-@media(max-width:820px){.sky-duo{grid-template-columns:1fr}.sky-stills{grid-template-columns:1fr 1fr}.sky-endcard{grid-template-columns:1fr}.sky-hero{padding:44px 0 52px}}
+@media(max-width:820px){.sky-duo{grid-template-columns:1fr}.sky-films{grid-template-columns:1fr}.sky-trio{grid-template-columns:1fr}.sky-stills{grid-template-columns:1fr 1fr}.sky-endcard{grid-template-columns:1fr}.sky-hero{padding:44px 0 52px}}
 </style></head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="head-in"><a class="mark mark-logo" href="./" aria-label="madebydavidmartin, home"><img src="/img/logo-madebydavidmartin-portfolio.png" alt="madebydavidmartin portfolio" width="505" height="99"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span></span>Menu</button><nav class="nav" id="site-nav" aria-label="Main"><a href="work.html">Creative Possibilities</a><a href="method.html">Method</a><span class="dd"><button type="button" class="dd-btn" aria-haspopup="true" aria-expanded="false">Video Works<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><span class="dd-menu"><a href="skylet.html" aria-current="page">SKYLET</a><a href="flamingo.html">FlaminGo</a><a href="fizzypop.html">Fizzy Pop</a><a href="orivex.html">ORIVEX ARC-7</a><a href="solentei.html">SOLENTEI 369</a><a href="occupied.html">OCCUPIED</a></span></span><a href="djc.html">DJC Media</a><span class="dd"><button type="button" class="dd-btn" aria-haspopup="true" aria-expanded="false">David<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><span class="dd-menu"><a href="about.html">About</a><a href="video.html">Process</a></span></span><a href="https://jp.madebydavidmartin.com/" lang="ja">日本語</a><a class="nav-course" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener">Director&rsquo;s Chair Course</a></nav><a class="course-btn" href="https://madebydavidmartin.com/course/" target="_blank" rel="noopener"><span class="cb-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span><span class="cb-tx"><b>Director&rsquo;s Chair</b><small>AI Enablement Course</small></span></a></div></header>
 <main class="sky" id="main">
 
@@ -77,11 +83,12 @@
       <img class="sky-wordmark" src="img/skylet/wordmark-white.png" alt="SKYLET Sparkling Water">
       <div style="margin-top:30px"><span class="sky-kicker">Spec commercial &middot; Sparkling water</span></div>
       <h1>Feel the <span class="lift">lift.</span></h1>
-      <p>A city baking at noon. High above it, one rooftop, one cold bottle, and a single bubble climbing through the glass. SKYLET is a fictional sparkling water, Cucumber Lime, and this is its launch spot: thirty seconds, directed end to end by me, made with AI, and finished in three versions: sung in English, narrated, and sung in Japanese, each one ending on the same sung jingle.</p>
-      <figure class="sky-herofilm"><img class="sky-badge" src="img/skylet/SKYLET_corner_badge.png" alt="" aria-hidden="true">
-        <video controlsList="nodownload" controls playsinline preload="none" poster="img/skylet/SKYLET_poster_english_1920x1080.jpg" aria-label="SKYLET Sparkling Water, Feel the Lift, the song version, a 30-second spec commercial"><source src="video/SKY_Lift_v8_song_web.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/SKY_Lift_v8_song_web.mp4">Download the MP4</a>.</video>
-        <figcaption><b>Feel the Lift, the song version</b> &middot; 30 seconds &middot; 1920 &times; 1080</figcaption>
-      </figure>
+      <p>A city baking at noon. High above it, one rooftop, one cold bottle, and a single bubble climbing through the glass. SKYLET is a fictional sparkling water, Cucumber Lime, and this is its launch spot: thirty seconds, directed end to end by me, made with AI, in three versions. Sung in English, narrated, and sung in Japanese, all three films play right here, and every one ends on the same sung jingle.</p>
+      <div class="sky-films">
+        <figure><img class="sky-badge" src="img/skylet/SKYLET_corner_badge.png" alt="" aria-hidden="true"><video controlsList="nodownload" controls playsinline preload="none" poster="img/skylet/SKYLET_poster_english_1920x1080.jpg" aria-label="SKYLET Sparkling Water, Feel the Lift, the song version, a 30-second spec commercial"><source src="video/SKY_Lift_v8_song_web.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/SKY_Lift_v8_song_web.mp4">Download the MP4</a>.</video><figcaption><b>The song version</b> &middot; English &middot; 30 seconds</figcaption></figure>
+        <figure><video controlsList="nodownload" controls playsinline preload="none" poster="img/skylet/SKYLET_poster_english_1920x1080.jpg" aria-label="SKYLET Sparkling Water, Feel the Lift, the voiceover version, a 30-second spec commercial"><source src="video/skylet-vo.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/skylet-vo.mp4">Download the MP4</a>.</video><figcaption><b>The voiceover version</b> &middot; English &middot; 30 seconds</figcaption></figure>
+        <figure><video controlsList="nodownload" controls playsinline preload="none" poster="img/skylet/SKYLET_poster_japanese_1920x1080.jpg" aria-label="SKYLET Sparkling Water, Feel the Lift, the Japanese version, a 30-second spec commercial"><source src="video/SKY_Lift_JP_v2_web.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/SKY_Lift_JP_v2_web.mp4">Download the MP4</a>.</video><figcaption><b>The Japanese version</b> &middot; <span class="sky-jp">&#26085;&#26412;&#35486;&#29256;</span> &middot; 30 seconds</figcaption></figure>
+      </div>
     </div>
   </section>
 
@@ -90,26 +97,25 @@
       <span class="sky-eyebrow">One film, three soundtracks</span>
       <h2>The same thirty seconds, told three ways.</h2>
       <p class="sky-lede">Every version opens on the same bubble, crosses the same baking city and lands on the same rooftop. What changes is who tells the story. In the song version, a full commercial song with lyrics does the talking. In the voiceover version, a narrator speaks across the spot and the music steps back underneath him. In the Japanese version, a city-pop song carries it and the on-screen text turns Japanese, while the tagline and the jingle stay in English, the way a global brand keeps its sound logo. All three close on the same sung ending: &ldquo;Sky-let! Sparkling Water! Feel the lift!&rdquo;, the ending every future SKYLET spot will carry.</p>
-      <div class="sky-duo">
+      <div class="sky-trio">
         <div class="sky-film">
           <span class="sky-tag song">The song version</span>
-          <video controlsList="nodownload" controls playsinline preload="none" poster="img/skylet/SKYLET_poster_english_1920x1080.jpg" aria-label="SKYLET Sparkling Water, Feel the Lift, the song version, a 30-second spec commercial"><source src="video/SKY_Lift_v8_song_web.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/SKY_Lift_v8_song_web.mp4">Download the MP4</a>.</video>
           <h3>Carried by the song</h3>
           <p>A real commercial song, written from the spot&rsquo;s own narration script so the lyrics carry the story: the heat, the climb, the pour, the lift. Summer soul-pop at 96 BPM, built on a rising whistle hook, ending on the jingle and one clean snap.</p>
         </div>
         <div class="sky-film">
           <span class="sky-tag vo">The voiceover version</span>
-          <video controlsList="nodownload" controls playsinline preload="none" poster="img/skylet/SKYLET_poster_english_1920x1080.jpg" aria-label="SKYLET Sparkling Water, Feel the Lift, the voiceover version, a 30-second spec commercial"><source src="video/skylet-vo.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/skylet-vo.mp4">Download the MP4</a>.</video>
           <h3>Carried by a narrator</h3>
           <p>The same cut with a narrator, Eli, speaking across the whole spot, a super on screen for every line, and the music mixed underneath the voice. The version a client asks for when the message has to land word for word.</p>
         </div>
+        <div class="sky-film">
+          <span class="sky-tag jp">The Japanese version &middot; <span class="sky-jp">&#26085;&#26412;&#35486;&#29256;</span></span>
+          <h3>Carried by a city-pop song</h3>
+          <p>The same film, finished for Japan: a Japanese city-pop song, Japanese on-screen text, and the flavour renamed <span class="sky-jp">&#12365;&#12485;&#12358;&#12426;&#65206;&#12521;&#12452;&#12512;</span> (Cucumber Lime). The tagline and the sung jingle stay in English. <span class="sky-jp">&#12473;&#12506;&#12483;&#12463;&#24195;&#21578;&#12290;SKYLET&#12399;&#26550;&#31354;&#12398;&#12502;&#12521;&#12531;&#12489;&#12391;&#12377;&#12290;</span></p>
+        </div>
       </div>
-      <div class="sky-film" style="margin-top:28px">
-        <span class="sky-tag jp">The Japanese version &middot; <span class="sky-jp">&#26085;&#26412;&#35486;&#29256;</span></span>
-        <video controlsList="nodownload" controls playsinline preload="none" poster="img/skylet/SKYLET_poster_japanese_1920x1080.jpg" aria-label="SKYLET Sparkling Water, Feel the Lift, the Japanese version, a 30-second spec commercial"><source src="video/SKY_Lift_JP_v2_web.mp4" type="video/mp4">Your browser can&rsquo;t play this video. <a href="video/SKY_Lift_JP_v2_web.mp4">Download the MP4</a>.</video>
-        <h3>Carried by a city-pop song</h3>
-        <p>The same film, finished for Japan: a Japanese city-pop song, Japanese on-screen text, and the flavour renamed <span class="sky-jp">&#12365;&#12485;&#12358;&#12426;&#65206;&#12521;&#12452;&#12512;</span> (Cucumber Lime). The tagline and the sung jingle stay in English. <span class="sky-jp">&#12473;&#12506;&#12483;&#12463;&#24195;&#21578;&#12290;SKYLET&#12399;&#26550;&#31354;&#12398;&#12502;&#12521;&#12531;&#12489;&#12391;&#12377;&#12290;</span></p>
-        <div class="sky-stills">
+      <span class="sky-eyebrow" style="margin-top:38px">The Japanese version in six frames</span>
+      <div class="sky-stills">
           <figure><img src="img/skylet/SKYLET_JP_still_01.jpg" alt="SKYLET, frame 1 from the finished Japanese version" width="1920" height="1080" loading="lazy"><figcaption>Frame 01</figcaption></figure>
           <figure><img src="img/skylet/SKYLET_JP_still_02.jpg" alt="SKYLET, frame 2 from the finished Japanese version" width="1920" height="1080" loading="lazy"><figcaption>Frame 02</figcaption></figure>
           <figure><img src="img/skylet/SKYLET_JP_still_03.jpg" alt="SKYLET, frame 3 from the finished Japanese version" width="1920" height="1080" loading="lazy"><figcaption>Frame 03</figcaption></figure>
@@ -117,7 +123,6 @@
           <figure><img src="img/skylet/SKYLET_JP_still_05.jpg" alt="SKYLET, frame 5 from the finished Japanese version" width="1920" height="1080" loading="lazy"><figcaption>Frame 05</figcaption></figure>
           <figure><img src="img/skylet/SKYLET_JP_still_06.jpg" alt="SKYLET, frame 6 from the finished Japanese version, the end card" width="1920" height="1080" loading="lazy"><figcaption>Frame 06</figcaption></figure>
         </div>
-      </div>
     </div>
   </section>
 
