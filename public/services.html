@@ -117,7 +117,20 @@ main section.cta-band-white .btn-primary{background:#fff;color:#121619}
 .sv-contact-in{max-width:1180px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
 .sv-contact h2{font-family:'Clash Display',sans-serif;font-size:clamp(30px,4.4vw,52px);margin:0 0 14px;color:#fff}
 .sv-contact p{color:#C9CDD4;line-height:1.65;max-width:56ch;margin:0 0 28px;font-size:17px}
-@media(max-width:960px){.sv-films{grid-template-columns:1fr}.sv-offers{grid-template-columns:1fr}.sv-prices{grid-template-columns:1fr}.sv-steps{grid-template-columns:1fr 1fr}.sv-stats{grid-template-columns:repeat(3,1fr);gap:16px}.sv-about{grid-template-columns:1fr}}
+.sv-logos{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,30px)}
+.sv-logo{margin:0}
+.sv-logo .tile{height:172px;border-radius:16px;display:flex;align-items:center;justify-content:center;padding:26px;border:1px solid var(--line);overflow:hidden}
+.sv-logo img{max-width:80%;max-height:98px;width:auto;height:auto;display:block}
+.sv-logo figcaption{margin-top:10px;font-size:13.5px;color:var(--muted);text-align:center}
+.sv-logo .t-skylet{background:linear-gradient(150deg,#CDEEFB,#8FCCF0)}
+.sv-logo .t-flamingo{background:#FBE3EE}
+.sv-logo .t-fizzy{background:linear-gradient(150deg,#D21432,#9E0C24);border-color:#9E0C24}
+.sv-logo .t-fizola{background:#FAF1DC}
+.sv-logo .t-orivex{background:#10151C;border-color:#10151C}
+.sv-logo .t-solentei{background:#000;border-color:#000}
+.sv-logo .wm{font-family:'Clash Display',sans-serif;font-weight:600;letter-spacing:.3em;padding-left:.3em;color:#fff;font-size:25px;text-align:center;line-height:1.25}
+.sv-logo .wm span{display:block;font-size:11px;letter-spacing:.34em;padding-left:.34em;color:#E8A87C;margin-top:5px}
+@media(max-width:960px){.sv-logos{grid-template-columns:1fr 1fr}.sv-films{grid-template-columns:1fr}.sv-offers{grid-template-columns:1fr}.sv-prices{grid-template-columns:1fr}.sv-steps{grid-template-columns:1fr 1fr}.sv-stats{grid-template-columns:repeat(3,1fr);gap:16px}.sv-about{grid-template-columns:1fr}}
 
 .sv-ic{width:48px;height:48px;border-radius:50%;background:#10151C;color:#F4F1EA;display:inline-flex;align-items:center;justify-content:center;flex:none;box-shadow:0 10px 22px rgba(4,10,24,.18)}
 .sv-ic svg{width:22px;height:22px}
@@ -201,6 +214,20 @@ main section.cta-band-white .btn-primary{background:#fff;color:#121619}
 </section>
 
 <section class="sv-sec">
+  <div class="sv-kick">Brand identities</div>
+  <h2 class="sv-h2">Brands built from a blank page.</h2>
+  <p class="sv-sub">Every identity in this wall was created in this studio: the name, the logo, the packaging and the film that launched it. A commission can start the same way, with nothing but an idea.</p>
+  <div class="sv-logos">
+    <figure class="sv-logo"><div class="tile t-skylet"><img src="img/skylet/wordmark-navy.png" alt="SKYLET"></div><figcaption>Sparkling water</figcaption></figure>
+    <figure class="sv-logo"><div class="tile t-flamingo"><img src="img/flamingo/logo-stacked.png" alt="flaminGO"></div><figcaption>Mobile carrier</figcaption></figure>
+    <figure class="sv-logo"><div class="tile t-fizzy"><img src="img/fizzypop/FP_logo_white_flat.svg" alt="Fizzy Pop"></div><figcaption>Cherry cola, 1976 and 2026</figcaption></figure>
+    <figure class="sv-logo"><div class="tile t-fizola"><img src="img/fizola/FZ_logo_red.png" alt="Fizola"></div><figcaption>Cola, the funk take</figcaption></figure>
+    <figure class="sv-logo"><div class="tile t-orivex"><div class="wm">ORIVEX<span>ARC-7</span></div></div><figcaption>Industrial robotics</figcaption></figure>
+    <figure class="sv-logo"><div class="tile t-solentei"><img src="img/solentei/emblem-on-black.jpg" alt="SOLENTEI 369"></div><figcaption>Luxury electric vehicle</figcaption></figure>
+  </div>
+</section>
+
+<section class="sv-sec white">
   <div class="sv-kick">Services</div>
   <h2 class="sv-h2">Video production for modern brands.</h2>
   <p class="sv-sub">From individual commercials to coordinated campaign assets, each engagement is developed around your brand, audience and communication objectives.</p>
@@ -211,7 +238,7 @@ main section.cta-band-white .btn-primary{background:#fff;color:#121619}
   </div>
 </section>
 
-<section class="sv-sec white">
+<section class="sv-sec">
   <div class="sv-kick">Production process</div>
   <h2 class="sv-h2">A clear, collaborative production process.</h2>
   <p class="sv-sub">Every project follows an agreed creative and production framework, with defined deliverables, timelines and pricing established before production begins.</p>
@@ -223,7 +250,7 @@ main section.cta-band-white .btn-primary{background:#fff;color:#121619}
   </div><div class="sv-formats"><span class="fl">Made for</span><span class="sv-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M9 20h6M12 16v4"/></svg>Television &amp; digital</span><span class="sv-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>Vertical &amp; square social</span><span class="sv-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.9 5.7 3.9 9s-1.4 6.4-3.9 9c-2.5-2.6-3.9-5.7-3.9-9S9.5 5.6 12 3z"/></svg>English &amp; Japanese versions</span></div>
 </section>
 
-<section class="sv-sec">
+<section class="sv-sec white">
   <div class="sv-kick">Pricing</div>
   <h2 class="sv-h2">Production rates</h2>
   <p class="sv-sub">Each project is scoped according to its creative requirements, production complexity and deliverables. The following rates provide a starting point for commissioning work. AI-powered production offers a more streamlined approach to creating high-quality commercial content, allowing more of the production budget to be focused on creative development, direction and the finished work.</p>
@@ -235,7 +262,7 @@ main section.cta-band-white .btn-primary{background:#fff;color:#121619}
   <p class="sv-cadnote">Canadian clients can be invoiced in Canadian dollars. Your quote confirms the currency and the exact figure.</p>
 </section>
 
-<section class="sv-sec white">
+<section class="sv-sec">
   <div class="sv-kick">The director</div>
   <h2 class="sv-h2">Experience behind every frame.</h2>
   <div class="sv-about">
@@ -252,7 +279,7 @@ main section.cta-band-white .btn-primary{background:#fff;color:#121619}
   </div>
 </section>
 
-<section class="sv-sec">
+<section class="sv-sec white">
   <div class="sv-kick">Questions</div>
   <h2 class="sv-h2">Frequently asked questions</h2>
   <div class="sv-faq">
