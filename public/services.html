@@ -113,8 +113,8 @@ main section.cta-band-white .btn-primary{background:#fff;color:#121619}
 .sv-about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
 .sv-about p{font-size:16.5px;line-height:1.7;color:var(--muted);margin:0 0 16px}
 .sv-about p b{color:var(--ink)}
-.sv-contact{background:#10151C;color:#F4F1EA;width:100vw;margin:clamp(44px,6vw,84px) calc(50% - 50vw) 0;padding:clamp(48px,6vw,80px) clamp(16px,4vw,48px)}
-.sv-contact-in{max-width:1180px;margin:0 auto}
+.sv-contact{color:#F4F1EA;width:100vw;margin:clamp(44px,6vw,84px) calc(50% - 50vw) 0;padding:clamp(48px,6vw,80px) 0;background:linear-gradient(to bottom,rgba(16,21,28,.45),rgba(16,21,28,.86) 78%,#10151C),linear-gradient(100deg,rgba(16,21,28,.95) 25%,rgba(16,21,28,.72) 60%,rgba(16,21,28,.48)),url('img/fizzypop-2026-poster.jpg') center 38%/cover no-repeat #10151C}
+.sv-contact-in{max-width:1180px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
 .sv-contact h2{font-family:'Clash Display',sans-serif;font-size:clamp(30px,4.4vw,52px);margin:0 0 14px;color:#fff}
 .sv-contact p{color:#C9CDD4;line-height:1.65;max-width:56ch;margin:0 0 28px;font-size:17px}
 @media(max-width:960px){.sv-films{grid-template-columns:1fr}.sv-offers{grid-template-columns:1fr}.sv-prices{grid-template-columns:1fr}.sv-steps{grid-template-columns:1fr 1fr}.sv-stats{grid-template-columns:repeat(3,1fr);gap:16px}.sv-about{grid-template-columns:1fr}}
@@ -132,6 +132,9 @@ main section.cta-band-white .btn-primary{background:#fff;color:#121619}
 .sv-step-top .n{margin:0}
 .sv-faq div{position:relative;padding-left:58px}
 .sv-faq .sv-ic{position:absolute;left:0;top:18px;background:#10151C}
+
+.sv-sec.white{background:#fff;box-shadow:0 0 0 100vmax #fff;clip-path:inset(0 -100vmax);padding-bottom:clamp(44px,6vw,84px)}
+.sv-sec.white + .sv-sec{padding-top:0}
 .sv-formats{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:24px}
 .sv-formats .fl{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-right:4px}
 .sv-chip{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:9px 15px;font-size:13.5px;font-weight:600;color:var(--ink)}
@@ -160,7 +163,7 @@ main section.cta-band-white .btn-primary{background:#fff;color:#121619}
 </div></section>
 
 <div class="sv-wrap">
-<section class="sv-sec" id="work">
+<section class="sv-sec white" id="work">
   <div class="sv-kick">Selected work</div>
   <h2 class="sv-h2">Creative work, brought to life.</h2>
   <p class="sv-sub">Each project demonstrates a different aspect of my approach to creative development and AI-powered production. From developing an original brand identity to creating consistent characters and sophisticated product visuals, these films showcase what is possible when creative direction leads the process.</p>
@@ -209,7 +212,7 @@ main section.cta-band-white .btn-primary{background:#fff;color:#121619}
   </div>
 </section>
 
-<section class="sv-sec">
+<section class="sv-sec white">
   <div class="sv-kick">Production process</div>
   <h2 class="sv-h2">A clear, collaborative production process.</h2>
   <p class="sv-sub">Every project follows an agreed creative and production framework, with defined deliverables, timelines and pricing established before production begins.</p>
@@ -233,7 +236,7 @@ main section.cta-band-white .btn-primary{background:#fff;color:#121619}
   <p class="sv-cadnote">Canadian clients can be invoiced in Canadian dollars. Your quote confirms the currency and the exact figure.</p>
 </section>
 
-<section class="sv-sec">
+<section class="sv-sec white">
   <div class="sv-kick">The director</div>
   <h2 class="sv-h2">Experience behind every frame.</h2>
   <div class="sv-about">
