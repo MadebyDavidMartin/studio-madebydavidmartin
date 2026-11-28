@@ -1299,3 +1299,11 @@ main .band.slate.has-banner.banner-about::after{background-image:url(/img/hero-a
   .mark-logo img{width:210px;height:auto}
   .head-in .course-btn{flex:0 0 auto}
 }
+
+/* Header logo: 20 percent larger and aligned with the homepage hero text
+   edge (David, 2026-11-28; first set on the services page, now site-wide). */
+.head-in .mark-logo img{width:384px;height:54px}
+@media(max-width:560px){.head-in .mark-logo img{width:307px;height:43px}}
+@media(min-width:1000px) and (max-width:1279px){.head-in .mark-logo img{width:252px;height:auto}}
+@media(min-width:1000px) and (max-width:1099px){.head-in .mark-logo img{width:216px}}
+@media(min-width:1280px){.head-in .mark-logo{margin-left:64px}.head-in .mark-logo img{width:252px;height:auto}}
